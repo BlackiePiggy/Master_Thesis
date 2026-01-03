@@ -1,0 +1,20 @@
+\contentsline {table}{\numberline {2.1}{\ignorespaces 各类弹性功率（Flex Power）模式及其特征}}{11}{table.caption.19}%
+\contentsline {table}{\numberline {2.2}{\ignorespaces 2024 年三次弹性功率事件期间 GPS 卫星的弹性功率开关时间（按 PRN 列示）}}{26}{table.caption.26}%
+\contentsline {table}{\numberline {2.3}{\ignorespaces 2024 年三个弹性功率事件中，各卫星基于 15 分钟短时窗估计得到的 C1W–C2W 与 C1C–C1W DCB 结果的均方根（单位：ns）}}{27}{table.caption.29}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces 不同弹性功率检测方法的比较}}{36}{table.caption.40}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces AFPD-DTW实验的数据集}}{37}{table.caption.41}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces 2020--2021 年检测到的 GPS S2W 弹性功率变化事件（标注 * 的事件为以往方法未检测到）}}{51}{table.caption.50}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces 2022 年 1 月至 2025 年 7 月期间检测到的 GPS S2W 弹性功率变化事件}}{52}{table.caption.51}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces 2024 年 6 月 1--7 日期间基于 S2W 信号的 IIR-M 与 IIF 卫星实时检测性能（\%）}}{55}{table.caption.54}%
+\contentsline {table}{\numberline {3.6}{\ignorespaces 2024 年 6 月 2 日 GPS S2W 弹性功率激活时间段}}{55}{table.caption.55}%
+\contentsline {table}{\numberline {3.7}{\ignorespaces 多星座与多频点弹性功率事件检测结果：BDS（2023 年 1 月--2025 年 7 月）与 GPS（2024 年 1 月--2025 年 7 月）}}{57}{table.caption.58}%
+\contentsline {table}{\numberline {3.8}{\ignorespaces 各类弹性功率（Flex Power）检测算法性能对比\blx@tocontentsinit {0}\cite {yang2022real,esenbuuga2023recent,meng2024real}}}{58}{table.caption.60}%
+\contentsline {table}{\numberline {3.9}{\ignorespaces AFPD-DTW 在多星座与多频点场景下的整体检测性能}}{58}{table.caption.61}%
+\contentsline {table}{\numberline {6.1}{\ignorespaces 非差非组合PPP（UCUD-PPP）解算策略与参数配置}}{89}{table.caption.76}%
+\contentsline {table}{\numberline {6.2}{\ignorespaces 单频精密单点定位（SF-PPP）解算策略与参数配置}}{90}{table.caption.77}%
+\contentsfinish 
+\contentsfinish 
+\contentsfinish 
+\contentsfinish 
+\contentsfinish 
+\contentsfinish 

@@ -1,0 +1,521 @@
+% !TEX root = ../main.tex
+
+\chapter{GNSS事件对定位性能影响评估}
+
+GNSS事件带来的无论是信号层面的质量波动，还是导航电文参数的异常，其影响评估的最终落脚点都在于用户终端的定位性能。对于高精度定位用户而言，理解并量化这些事件对最终坐标解算精度的影响至关重要。GNSS事件种类繁多，其中星载产品异常通常会导致卫星信号中断或被完好性监测系统剔除，其影响具有显性和不可逆的特征。相比之下，弹性功率事件具有更强的隐蔽性。正如第二章所述，弹性功率调整期间，卫星的伪距硬件延迟发生显著变化，进而引起DCB参数的漂移。在精密单点定位（PPP）中，DCB是解决观测方程秩亏、维持参数估计稳定性的关键修正量。如果在使用精密钟差产品时未正确处理弹性功率引发的DCB变化，将直接导致定位模型的系统性偏差，影响收敛时间和定位精度。本章主要聚焦于弹性功率事件对精密定位性能的影响评估。首先，本章将从PPP的函数模型入手，详细推导双频IF模型与非差非组合模型，从理论层面探明DCB在观测方程中的具体作用机制及其对定位解算的影响路径。随后，设计针对弹性功率期间的DCB估计策略，并选取典型的弹性功率事件时段进行实验。最后，通过对比分析不同处理策略下的定位结果以评估弹性功率事件对用户端精密定位性能的具体影响。
+
+\section{PPP原始观测方程及函数模型}
+精密单点定位（Precise Point Positioning, PPP）是指利用全球分布的参考站网解算的精密卫星轨道和钟差产品，对单台GNSS接收机的非差观测值进行处理，以获得高精度位置坐标、接收机钟差及大气延迟参数的技术。构建严密的函数模型是实现PPP高精度解算的基础。
+
+\subsection{原始观测方程}
+GNSS的基本观测值包括伪距（Code Pseudorange）和载波相位（Carrier Phase）。假设接收机为 $r$，卫星为 $s$，在频率 $j$ ($j=1, 2, ...$) 上的原始观测方程可表示为：
+
+\begin{equation}
+\left\{
+\begin{aligned}
+P_{r,j}^s &= \rho_r^s + c(dt_r - dt^s) + T_r^s + I_{r,j}^s + d_{r,j} - d_{j}^s + \epsilon_{P,j}\\
+L_{r,j}^s &= \rho_r^s + c(dt_r - dt^s) + T_r^s - I_{r,j}^s + \lambda_j N_{r,j}^s + b_{r,j} - b_{j}^s + \epsilon_{L,j}
+\end{aligned}
+\right.
+\label{eq:gnss_raw_obs}
+\end{equation}
+其中：
+\begin{itemize}
+    \item $P_{r,j}^s$ 和 $L_{r,j}^s$ 分别为伪距观测值和载波相位观测值（单位：米）；
+    \item $\rho_r^s$ 为卫星天线相位中心至接收机天线相位中心的几何距离；
+    \item $c$ 为真空中的光速；
+    \item $dt_r$ 和 $dt^s$ 分别为接收机钟差和卫星钟差；
+    \item $T_r^s$ 为对流层延迟（包含干分量和湿分量）；
+    \item $I_{r,j}^s$ 为频率 $j$ 处的电离层延迟一阶项；
+    \item $\lambda_j$ 为载波波长；
+    \item $N_{r,j}^s$ 为整周模糊度（Integer Ambiguity）；
+    \item $d_{r,j}$ 和 $d_{j}^s$ 分别为接收机端和卫星端的伪距硬件延迟（Code Bias）；
+    \item $b_{r,j}$ 和 $b_{j}^s$ 分别为接收机端和卫星端的相位硬件延迟（Phase Bias）；
+    \item $\epsilon_{P,j}$ 和 $\epsilon_{L,j}$ 分别包含了多路径效应及测量噪声。
+\end{itemize}
+
+上述方程中，几何距离 $\rho_r^s$ 实际上是关于接收机位置坐标 $(x_r, y_r, z_r)$ 的非线性函数。在实际平差计算中，通常利用泰勒级数展开将其线性化。此外，相对论效应、萨格纳克效应（Sagnac effect）、天线相位中心偏差（PCO）及变化（PCV）、潮汐负荷（固体潮、海潮、极潮）等误差项需在进入平差模型前通过模型改正予以消除。
+
+\subsection{双频IF组合模型}
+电离层延迟是GNSS信号穿过大气层时受自由电子含量影响产生的最大误差源之一，其量级可达数十米。由于电离层是一种色散介质，其延迟量与信号频率的平方成反比，这为利用双频观测值消除电离层影响提供了物理基础。双频无电离层组合（Ionosphere-Free, IF）模型，旨在通过对两个不同频率的观测值进行特定的线性组合，以数学方式消除一阶电离层延迟的影响。该模型无需引入外部电离层先验信息即可实现分米级甚至厘米级的定位精度，因此成为精密单点定位中最经典且应用最为广泛的函数模型。
+
+基于电离层的色散特性，构建消电离层组合的关键在于确定组合系数。假设接收机使用频率为 $f_1$ 和 $f_2$ 的双频信号，为了消除一阶电离层项 $I_{r,j}^s$，同时保留几何距离 $\rho_r^s$ 的几何尺度不变，根据线性组合原理，可定义双频消电离层组合观测值 $P_{IF}$ 和 $L_{IF}$。设组合系数分别为 $\alpha_{12}$ 和 $\beta_{12}$，其数学表达式及约束条件如下：
+\begin{equation}
+\left\{
+\begin{aligned}
+&\alpha_{12} = \frac{f_1^2}{f_1^2 - f_2^2}, \quad \beta_{12} = - \frac{f_2^2}{f_1^2 - f_2^2} \\
+&P_{IF} = \alpha_{12} P_{r,1}^s + \beta_{12} P_{r,2}^s \\
+&L_{IF} = \alpha_{12} L_{r,1}^s + \beta_{12} L_{r,2}^s
+\end{aligned}
+\right.
+\end{equation}
+将原始观测方程代入上式，并忽略高阶电离层残差项，可得双频IF组合的线性化观测方程：
+\begin{equation}
+\left\{
+\begin{aligned}
+P_{IF} &= \rho_r^s + c \cdot \bar{dt}_r - c \cdot \bar{dt}^s + T_r^s + \varepsilon_{P,IF} \\
+L_{IF} &= \rho_r^s + c \cdot \bar{dt}_r - c \cdot \bar{dt}^s + T_r^s + \lambda_{IF} \bar{N}_{IF} + \varepsilon_{L,IF}
+\end{aligned}
+\right.
+\end{equation}
+式中，$\lambda_{IF}$ 为组合波长。
+
+双频IF模型的主要优势在于其能够在观测方程层面严格消除电离层一阶延迟，从而显著降低系统误差对定位结果的影响，尤其适用于全球尺度、长基线以及电离层活动较强区域的高精度PPP解算。此外，该模型避免了显式估计电离层参数，使函数模型更加简洁，有利于提高参数估计的稳定性。然而，双频IF组合也存在一定的不足。由于线性组合放大了观测噪声，其组合后的伪距和载波相位噪声水平均高于原始单频观测值；同时，IF组合导致模糊度失去整数特性，限制了传统整周模糊度固定技术的直接应用，从而在一定程度上影响收敛速度。
+
+需要特别说明的是，线性组合过程不可避免地对模型中的硬件延迟与模糊度参数产生了重组效应。方程中的接收机钟差 $\bar{dt}_r$ 实际上吸收了接收机端的消电离层组合伪距硬件延迟；而卫星钟差 $\bar{dt}^s$ 则对应于IGS提供的精密钟差产品。若不加以处理，将对钟差参数及定位结果产生系统性偏移。因此，在基于双频IF伪距观测进行精密单点定位时，通常需要引入由分析中心提供的卫星端DCB产品，或通过模型重参数化将其吸收到接收机钟差中进行处理。相比之下，在仅使用载波相位IF组合或采用无电离层相位主导的PPP模型时，DCB对最终定位结果的影响相对较弱，可根据具体应用需求进行取舍。由于IGS精密钟差通常是基于双频消电离层组合生成的，其数值中已包含了卫星端的伪距硬件延迟，因此在采用与IGS产品一致的频率对（如在GPS系统中是L1/L2，也写作C1C/C2W，在BDS系统中则是C2I/C6I）进行解算时，无需额外引入差分码偏差（Differential Code Bias, DCB）改正。然而，这一参数重组导致相位方程中的模糊度参数 $\bar{N}_{IF}$ 不再具有整数特性，而是退化为包含整周模糊度及收发两端未被钟差吸收的硬件延迟偏差的浮点数（Float Ambiguity），这也是传统PPP通常获得浮点解的原因。
+
+
+\subsection{非差非组合模型}
+双频IF组合模型中，虽然通过线性组合有效地消除了电离层一阶项的影响，但该方法存在噪声放大和电离层信息丢失两个显著的理论缺陷。非差非组合(Uncombined and Undifferenced, UC/UD)模型直接利用原始的频率观测值构建方程，将电离层延迟作为待估参数进行估计，从而避免了观测值组合带来的噪声放大，并保留了所有原始观测信息。非差非组合模型在灵活性、多系统融合以及大气建模方面具有的显著优势使其成为近年来GNSS高精度定位领域的研究热点。
+
+根据观测信号的物理传输机制，假设接收机为 $r$，观测到的卫星为 $s$，对于频率 $f_1$ 和 $f_2$，顾及电离层延迟、对流层延迟及相关硬件延迟偏差，其非差非组合原始观测方程组可表述为：
+
+\begin{equation}
+\left\{
+\begin{aligned}
+P^{s}_{r,1} &=
+\rho^{s}_{r}
++ c\,dt_r
+- c\,dt^{s}
++ m^{s}_{r,d} Z_{r,d}
++ m^{s}_{r,w} Z_{r,w}
++ I^{s}_{r,1}
++ b_{r,1}
+- b^{s}_{1}
++ \varepsilon^{s}_{1,P}, \\
+P^{s}_{r,2} &=
+\rho^{s}_{r}
++ c\,dt_r
+- c\,dt^{s}
++ m^{s}_{r,d} Z_{r,d}
++ m^{s}_{r,w} Z_{r,w}
++ \gamma_2 I^{s}_{r,1}
++ b_{r,2}
+- b^{s}_{2}
++ \varepsilon^{s}_{2,P}, \\
+L^{s}_{r,1} &=
+\rho^{s}_{r}
++ c\,dt_r
+- c\,dt^{s}
++ m^{s}_{r,d} Z_{r,d}
++ m^{s}_{r,w} Z_{r,w}
+- I^{s}_{r,1}
++ \lambda^{s}_{1}
+\left(
+N^{s}_{r,1}
++ B_{r,1}
+- B^{s}_{1}
+\right)
++ \varepsilon^{s}_{1,\varphi}, \\
+L^{s}_{r,2} &=
+\rho^{s}_{r}
++ c\,dt_r
+- c\,dt^{s}
++ m^{s}_{r,d} Z_{r,d}
++ m^{s}_{r,w} Z_{r,w}
+- \gamma_2 I^{s}_{r,1}
++ \lambda^{s}_{2}
+\left(
+N^{s}_{r,2}
++ B_{r,2}
+- B^{s}_{2}
+\right)
++ \varepsilon^{s}_{2,\varphi}.
+\end{aligned}
+\right.
+\label{eq:gnss_obs}
+\end{equation}
+其中：
+\begin{itemize}
+  \item $P^{s}_{r,j},\, L^{s}_{r,j}$：分别为频率 $j\,(j=1,2)$ 的伪距（单位：m）和载波相位观测值（单位：m）；
+  \item $\rho^{s}_{r}$：卫星至接收机的几何距离；
+  \item $c$：真空中的光速；
+  \item $dt_r,\, dt^{s}$：分别为接收机钟差和卫星钟差；
+  \item $Z_{r,d},\, Z_{r,w}$：分别为接收机天顶对流层干延迟（Hydrostatic/Dry Delay）和湿延迟（Wet Delay）；
+  \item $m^{s}_{r,d},\, m^{s}_{r,w}$：分别为对应的干分量和湿分量投影函数（Mapping Function）；
+  \item $I^{s}_{r,1}$：$f_1$ 频率上的视线方向电离层延迟，
+        $\gamma_2=(f_1/f_2)^2$ 为电离层频率转换因子；
+  \item $b_{r,j},\, b^{s}_{j}$：分别为接收机端和卫星端在频率 $j$ 上的伪距硬件延迟（单位：m）；
+  \item $\lambda^{s}_{j}$：载波波长；
+  \item $N^{s}_{r,j}$：频率 $j$ 上的整周模糊度（单位：周，cycle）；
+  \item $B_{r,j},\, B^{s}_{j}$：分别为接收机端和卫星端在频率 $j$ 上的载波相位硬件延迟（单位：周，cycle）；
+  \item $\varepsilon^{s}_{j,P},\, \varepsilon^{s}_{j,\varphi}$：包含多路径效应及测量噪声的残差项。
+\end{itemize}
+
+
+由于接收机钟差与接收机伪距硬件延迟、卫星钟差与卫星伪距硬件延迟、以及模糊度参数与相位硬件延迟之间存在线性相关性，无法直接分离，在参数估计过程中会面临严重的秩亏（Rank Deficiency）问题。因此，必须引入精密星历和钟差产品，并对参数进行重组（Reparameterization）。
+
+解决模型秩亏的关键在于处理卫星钟差基准的不一致性以及接收机端参数的重新定义。由于IGS提供的精密卫星钟差产品 $dt^s_{IGS}$ 通常是基于双频消电离层组合（IF）生成的，该钟差内含了卫星端P1与P2码硬件延迟的线性组合（即 $c \cdot dt^s_{IGS} = c \cdot dt^s + \alpha_{12} b_1^s + \beta_{12} b_2^s$）。若直接将其应用于非差非组合模型，会导致模型物理意义不符，因此必须引入卫星端差分码偏差（Differential Code Bias, DCB）进行修正。定义卫星端DCB为 $DCB^s_{P1P2} = b_1^s - b_2^s$，利用该参数可将IF基准的精密钟差还原至原始频率层面，从而消除卫星端硬件延迟的影响。同时，对于对流层延迟，通常采用Saastamoinen模型结合实测气象参数或GPT模型精确计算干延迟 $Z_{r,d}$ 并从观测值中扣除，仅保留湿延迟 $Z_{r,w}$ 作为待估参数。
+
+在完成卫星端与大气模型的修正后，需进一步通过参数重组解决接收机端的秩亏问题。具体的重组策略是将接收机端 $f_1$ 频率的伪距硬件延迟 $b_{r,1}$ 吸收至接收机钟差参数中，形成广义接收机钟差 $\overline{dt}_r$；同时，电离层参数 $\overline{I}_{r,1}^s$ 也会相应吸收接收机及卫星端的差分码偏差，变为“有偏”电离层参数；而模糊度参数 $\overline{N}_{r,j}^s$ 则吸收了相位与伪距硬件延迟的残余项，转变为浮点模糊度。基于此策略，最终推导出的满秩线性化观测方程组如下：
+
+\begin{equation}
+\left\{
+\begin{aligned}
+p^{s}_{r,1} &=
+- \mathbf{u}^{s}_{r} \mathbf{x}
++ c \cdot \overline{dt}_r
++ m^{s}_{r,w} Z_{r,w}
++ \overline{I}^{s}_{r,1}
++ \varepsilon^{s}_{1,P}, \\
+p^{s}_{r,2} &=
+- \mathbf{u}^{s}_{r} \mathbf{x}
++ c \cdot \overline{dt}_r
++ m^{s}_{r,w} Z_{r,w}
++ \gamma_2 \overline{I}^{s}_{r,1}
+- c \cdot \overline{DCB}^{s}_{P1P2}
++ \varepsilon^{s}_{2,P}, \\
+l^{s}_{r,1} &=
+- \mathbf{u}^{s}_{r} \mathbf{x}
++ c \cdot \overline{dt}_r
++ m^{s}_{r,w} Z_{r,w}
+- \overline{I}^{s}_{r,1}
++ \lambda_1 \overline{N}^{s}_{r,1}
++ \varepsilon^{s}_{1,\varphi}, \\
+l^{s}_{r,2} &=
+- \mathbf{u}^{s}_{r} \mathbf{x}
++ c \cdot \overline{dt}_r
++ m^{s}_{r,w} Z_{r,w}
+- \gamma_2 \overline{I}^{s}_{r,1}
++ \lambda_2 \overline{N}^{s}_{r,2}
++ \varepsilon^{s}_{2,\varphi}.
+\end{aligned}
+\right.
+\label{eq:undiff_uncomb}
+\end{equation}
+
+在该模型中，待估参数向量定义为 $\mathbf{X} = \left[ \mathbf{x}, c \cdot \overline{dt}_r, Z_{r,w}, \overline{I}_{r,1}^s, \overline{N}_{r,1}^s, \overline{N}_{r,2}^s \right]^T$。通过上述线性化方程可以看出，非差非组合模型成功实现了在利用外部DCB产品修正卫星端偏差的前提下，利用卡尔曼滤波算法同时解算出接收机位置坐标、接收机钟差、对流层湿延迟、视线方向电离层延迟以及浮点模糊度。
+
+\subsection{单频模型}
+
+随着低成本GNSS芯片与物联网技术的发展，单频精密单点定位（Single-Frequency PPP, SF-PPP）在消费级市场中的应用日益广泛。与双频模型相比，单频模型仅使用单一频率（通常为$f_1$）的观测值，不仅面临严重的电离层延迟干扰，还存在观测值频率与精密钟差产品基准频率不一致的问题，这使得DCB的处理在单频PPP中显得尤为关键。
+
+对于单频接收机，其在 $f_1$ 频率上的原始观测方程为：
+\begin{equation}
+\left\{
+\begin{aligned}
+P_{r,1}^s &=
+\rho_r^s
++ c \left( dt_r - dt^s \right)
++ T_r^s
++ I_{r,1}^s
++ d_{r,1}
+- d_1^s
++ \varepsilon_{P,1}, \\
+L_{r,1}^s &=
+\rho_r^s
++ c \left( dt_r - dt^s \right)
++ T_r^s
+- I_{r,1}^s
++ \lambda_1 N_{r,1}^s
++ b_{r,1}
+- b_1^s
++ \varepsilon_{L,1}.
+\end{aligned}
+\right.
+\end{equation}
+
+
+在单频PPP解算策略中，通常采用IGS分析中心提供的全球电离层格网图（Global Ionospheric Maps, GIM）来修正一阶电离层延迟 $I_{r,1}^s$，或采用半和组合（GRAPHIC）消除电离层影响。若采用GIM模型修正策略，模型中的核心难点在于卫星钟差的代入。IGS提供的精密卫星钟差产品 $dt^s_{IGS}$ 是基于双频消电离层组合（IF）定义的。若将该钟差直接代入单频 $f_1$ 的观测方程中，必须考虑 $f_1$ 频率的硬件延迟与双频组合硬件延迟之间的差异。将 $c \cdot dt^s = c \cdot dt^s_{IGS} - (\alpha_{12} b_1^s + \beta_{12} b_2^s)$ 代入伪距方程，并整理可得：
+
+\begin{equation}
+\begin{aligned}
+P_{r,1}^s &=
+\rho_r^s
++ c \cdot dt_r
+- \left[
+c \cdot dt^s_{\mathrm{IGS}}
+-
+\left(
+\alpha_{12} b_1^s
++ \beta_{12} b_2^s
+\right)
+\right]
++ T_r^s
++ I_{r,1}^s(\mathrm{GIM})
++ d_{r,1}
+- d_1^s
++ \varepsilon_{P,1} \\
+&=
+\rho_r^s
++ c \cdot \overline{dt}_r
+- c \cdot dt^s_{\mathrm{IGS}}
++ T_r^s
++ I_{r,1}^s(\mathrm{GIM})
+-
+\left(
+d_1^s
+- \alpha_{12} b_1^s
+- \beta_{12} b_2^s
+\right)
++ \varepsilon_{P,1}.
+\end{aligned}
+\end{equation}
+
+
+
+假设卫星端的伪距硬件延迟与相位硬件延迟在量级上存在差异但在此处仅考虑伪距偏差（即近似认为 $d^s \approx b^s$ 以简化推导，或严格按照DCB定义），利用系数关系 $\alpha_{12} + \beta_{12} = 1$，上式中卫星端的残留硬件延迟项可化简为与差分码偏差相关的形式。最终，引入卫星端 DCB（$DCB_{P1P2}^s$）修正后的单频PPP线性化观测方程为：
+
+\begin{equation}
+\left\{
+\begin{aligned}
+p_{r,1}^s &=
+- \mathbf{u}_r^s \, \mathbf{x}
++ c \cdot \overline{dt}_r
++ m_w^s Z_{r,w}
++ I_{r,1}^s(\mathrm{GIM})
++ \frac{f_2^2}{f_1^2 - f_2^2}
+\, c \cdot DCB_{P1P2}^s
++ \varepsilon_{P,1}, \\
+l_{r,1}^s &=
+- \mathbf{u}_r^s \, \mathbf{x}
++ c \cdot \overline{dt}_r
++ m_w^s Z_{r,w}
+- I_{r,1}^s(\mathrm{GIM})
++ \lambda_1 \overline{N}_1^s
++ \varepsilon_{L,1}.
+\end{aligned}
+\right.
+\label{eq:sf_ppp}
+\end{equation}
+
+
+从式 (\ref{eq:sf_ppp}) 可以清晰地看到，单频PPP模型在理论上对卫星端DCB产品具有刚性依赖。在常规情况下，DCB被认为是极其稳定的；然而，在发生弹性功率事件时，卫星播发的伪距信号特性发生改变，导致真实的硬件延迟发生漂移。如果此时用户端仍使用事件发生前（或全天解算）的静态DCB产品进行修正，上述方程中的DCB改正项将与当前历元的真实偏差不符，产生的残差将直接被接收机钟差吸收或被错误地分配到位置参数中，从而导致定位精度的恶化。因此，利用单频PPP模型评估弹性功率期间DCB变化对定位的影响，能够直观地反映出该类事件对低成本用户端的潜在威胁。
+
+
+\section{数据集与实验设计}
+% ================== 思路 ===================
+% 前面分析了不同PPP模型，其中受DCB影响的有。。。
+
+% 当前IGS各分析中心的DCB产品均采用单日为单位进行估计，这是出于卫星端DCB相对稳定【参考文献】，所以默认采用这样的时间窗口为估计单位。但是由于弹性功率影响，DCB在单日中会发生变化，具体影响可以达到多大。。。。【参考文献】。
+
+% 基于这样的认知，为了探究不同的DCB估计策略的产品对PPP定位的影响，设计了不同的实验来进行探究PPP定位结果的性能区别。
+
+% 实验事件：2021DOY29，这一天BDS的多颗卫星的DCB均发生了跳变，其中跳变的时间集中在7-10h时间段，即0-7h属于没有卫星开启弹性功率功能，10-24h属于有弹性功率功能的卫星均开启了弹性功率功能。
+% 实验测站：MAL2以及其他多个测站
+% 不同系统：GPS和BDS
+% 不同DCB估计策略：IGS各ACs的单日DCB产品、自己估计的DCB单日产品、分段估计的DCB产品（分段依据弹性功率开启前和开启后将一天一分为二）
+% 不同PPP定位模型：双频非差非组合PPP、单频PPP
+
+% 探究目标：
+% 双频非差非组合PPP下弹性功率开启时间段，使用不同DCB产品的定位性能有何差别；
+% 单频PPP下弹性功率开启时间段，使用不同DCB产品的定位性能有何差别；
+% ================== 思路 ===================
+
+前文理论推导表明，DCB对不同模型的影响程度存在显著差异。在双频无电离层组合（IF）PPP模型中，若采用与精密钟差一致的频率组合，卫星端DCB已被吸收到钟差参数中，对最终定位结果的影响相对有限；而在双频非差非组合（UC）PPP模型中，DCB作为显式改正量参与观测方程，其数值准确性直接关系到电离层参数、接收机钟差及位置参数的合理分配；在单频PPP模型中，由于卫星钟差与观测频率基准不一致，DCB修正项以确定性模型形式进入伪距方程，对定位结果具有更为直接且刚性的影响。因此，DCB产品的时间稳定性及其与真实卫星硬件状态的一致性，是影响PPP定位性能的重要因素。为了从实测数据层面量化评估弹性功率事件引发的DCB跳变对定位性能的影响，本节制定了详细的实验方案。实验通过构建包含弹性功率事件的观测数据集，设计不同的DCB修正策略，并将其应用于不同的PPP函数模型，以全面剖析该类事件对用户端定位精度的具体影响机制。
+
+\subsection{实验数据选取与事件描述}
+\label{subsec:data_selection}
+
+实验选取2021年第029天（DOY 029）作为核心观测时段。根据前期监测结果，该日北斗卫星系统（BDS）中多颗卫星发生了明显的弹性功率调节事件，其特征表现为DCB参数在日内出现突变。以UTC时间为基准，该日卫星状态呈现出典型的三阶段特征，这为评估不同时段的定位性能提供了天然的实验窗口：
+
+\begin{enumerate}
+  \item \textbf{常规功率时段（00:00--07:00 UTC）：}  
+  卫星处于标称功率发射状态，硬件延迟稳定，符合传统静态DCB估计假设。
+  
+  \item \textbf{功率调整过渡期（07:00--10:00 UTC）：}  
+  卫星进行功率增强调整，信号处于非稳态。在此期间，不同卫星的DCB相继发生变化。
+  
+  \item \textbf{弹性功率开启时段（10:00--24:00 UTC）：}  
+  卫星完成调整并维持高功率发射模式。此时卫星端硬件延迟已稳定在新的数值水平，与常规功率时段相比存在显著的系统性偏差。
+\end{enumerate}
+
+为验证算法的普适性，实验选取了MGEX（Multi-GNSS Experiment）全球跟踪网中包括MAL2在内的分布于不同纬度的若干典型测站，以保证结果具有一定的代表性和普适性。观测数据时间分辨率为30 s，采用RINEX格式。实验时段内，测站观测环境良好，数据完整率均在95\%以上。
+
+\subsection{DCB修正策略设计}
+\label{subsec:dcb_strategies}
+
+针对弹性功率事件导致的DCB时变特性，本实验设计了三种不同的DCB输入产品/策略，作为后续PPP解算的外部修正项：
+
+\begin{itemize}
+  \item \textbf{策略 A：IGS分析中心发布的单日DCB产品}  
+  
+  直接采用IGS分析中心（如CAS或DLR）发布的官方单日DCB产品。该类产品代表了当前工程应用中精度相对有保障、使用最广泛的DCB产品，但其估计策略通常假定DCB在全天内保持恒定。该策略模拟了普通用户在未察觉弹性功率事件发生时的常规处理模式，作为实验的对照组。
+  
+  \item \textbf{策略 B：自估计单日静态DCB产品（Self-Est. Daily DCB）}  
+  
+  利用本文构建的电离层与DCB联合估计平台，假设DCB在24小时内为常数进行解算，记录为$DCB_{daily}$。通过比较策略A与策略B，可验证自研算法的可靠性，为后续对比实验提供统一基准。
+  
+  \item \textbf{策略 C：分段估计DCB产品（Self-Est. Segmented DCB）}  
+  
+  针对弹性功率调整的物理事实，不再参考单日恒定的假设。以弹性功率开启前和开启后为分界点，分别独立解算两个时段的DCB参数，记录为$DCB_{FP-ON}$和$DCB_{FP-OFF}$。该策略能够有效刻画弹性功率开启前后DCB发生的阶跃变化，代表了顾及事件影响的精细化处理组。
+
+\end{itemize}
+
+\subsection{PPP解算配置与实验分组}
+\label{subsec:ppp_config}
+
+基于前文推导的观测方程，实验将上述三种DCB修正策略分别应用于两类典型的PPP模型中，共形成6组对比实验。解算平台基于开源PPP软件RTKLIB进行二次开发，使其支持分段DCB产品的读取与历元级修正。
+
+各实验组的主要解算策略与参数配置如表 \ref{tab:ppp_strategy_full} 和 \ref{tab:sf_ppp_strategy} 所示。
+
+\begin{table}[htbp]
+\centering
+\caption{非差非组合PPP（UCUD-PPP）解算策略与参数配置}
+\label{tab:ppp_strategy_full}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{p{4.5cm} p{8.5cm}}
+\hline
+\textbf{配置项} & \textbf{处理策略与参数说明} \\
+\hline
+GNSS 系统 & BDS \\
+
+PPP 模型 & 非差非组合（Undifferenced and Uncombined PPP） \\
+
+数据处理软件 & Net\_Diff（Mou et al., 2023） \\
+
+观测数据采样间隔 & 30 s \\
+
+观测频率 & B1I, B3I \\
+
+参数估计方法 & 卡尔曼滤波（Kalman Filtering） \\
+
+截止高度角 & $7^{\circ}$ \\
+
+观测权函数 &
+基于高度角的权模型：  
+\[
+\sigma^2 = a^2 + \frac{b^2}{\sin^2(elevation)}
+\]
+\\
+
+卫星天线相位中心改正 & IGS14\_2196.atx \\
+
+接收机天线相位中心改正 & IGS14\_2196.atx \\
+
+精密轨道与钟差 &
+武汉大学（WUM）提供的多系统精密轨道与钟差产品 \\
+& 轨道间隔：5 min，钟差间隔：30 s \\
+
+对流层延迟 &
+干分量：Saastamoinen 模型改正 \\
+& 湿分量：随机游走模型估计 \\
+
+电离层延迟 &
+GIM 先验约束 + 白噪声参数估计（UC-PPP） \\
+
+接收机坐标 &
+日内常数（The constant of a day） \\
+
+载波模糊度 & 浮点解（Float Ambiguity） \\
+
+接收机钟差 & 随机游走模型（Random Walk） \\
+
+系统间偏差（ISB） &
+随机游走模型 \\
+& 同时估计 BDS-2 与 BDS-3 ISB \\
+
+差分码偏差（DCB）改正 &
+分别采用策略A、策略B、策略C进行修正\\
+
+收敛判据 &
+E/N/U 三个方向定位误差 \\
+& 连续 20 个历元小于 0.1 m \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[htbp]
+\centering
+\caption{单频精密单点定位（SF-PPP）解算策略与参数配置}
+\label{tab:sf_ppp_strategy}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{p{4.5cm} p{8.5cm}}
+\hline
+\textbf{配置项} & \textbf{处理策略与参数说明} \\
+\hline
+GNSS 系统 & BDS \\
+
+PPP 模型 & 单频精密单点定位（Single-Frequency PPP, SF-PPP） \\
+
+数据处理软件 & Net\_Diff（Mou et al., 2023） \\
+
+观测数据采样间隔 & 30 s \\
+
+观测频率 & B1I \\
+
+参数估计方法 & 卡尔曼滤波（Kalman Filtering） \\
+
+截止高度角 & $7^{\circ}$ \\
+
+观测权函数 &
+基于高度角的权模型：  
+\[
+\sigma^2 = a^2 + \frac{b^2}{\sin^2(elevation)}
+\]
+\\
+
+卫星天线相位中心改正 & IGS14\_2196.atx \\
+
+接收机天线相位中心改正 & IGS14\_2196.atx \\
+
+精密轨道与钟差 &
+武汉大学（WUM）提供的精密轨道与钟差产品 \\
+& 轨道间隔：5 min，钟差间隔：30 s \\
+
+电离层延迟 &
+采用 GIM 格网产品进行一阶电离层改正 \\
+& 残余电离层延迟作为白噪声参数估计 \\
+
+对流层延迟 &
+干分量：Saastamoinen 模型改正 \\
+& 湿分量：随机游走模型估计 \\
+
+接收机坐标 &
+日内常数（The constant of a day） \\
+
+载波模糊度 & 浮点解（Float Ambiguity） \\
+
+接收机钟差 & 随机游走模型（Random Walk） \\
+
+差分码偏差（DCB）改正 &
+分别采用策略A、策略B、策略C进行修正\\
+
+系统间偏差（ISB） &
+不估计（单系统 BDS 解算） \\
+
+收敛判据 &
+E/N/U 三个方向定位误差 \\
+& 连续 20 个历元小于 0.20--0.30 m \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{性能评价指标}
+
+为了客观评价弹性功率事件对定位性能的影响，本文主要采用以下两个指标进行量化分析：
+
+\begin{enumerate}
+  \item \textbf{收敛时间（Convergence Time）：}  
+  定义为定位结果在东（E）、北（N）、天（U）三个方向上的绝对位置偏差均连续20个历元小于10~cm（双频PPP）或20--30~cm（单频PPP）所需的时间。考虑到弹性功率事件发生于解算过程中，本文重点关注弹性功率事件发生后滤波器是否出现重收敛现象及其稳定性。
+  
+  \item \textbf{定位精度（Positioning Accuracy）：}  
+  采用收敛后的定位结果与IGS发布的测站坐标真值进行差分，计算三维坐标的均方根误差（RMS），其计算公式为：
+  \begin{equation}
+  RMS = \sqrt{\frac{1}{n} \sum_{i=1}^{n} \left( X_{\mathrm{est},i} - X_{\mathrm{true}} \right)^2 },
+  \end{equation}
+  其中 $X_{\mathrm{est},i}$ 为第 $i$ 个历元的估计坐标，$X_{\mathrm{true}}$ 为测站参考真值，$n$ 为参与统计的历元数。
+\end{enumerate}
+
+\section{实验结果分析}
+
+\subsection{非差非组合 PPP 使用不同DCB策略实验结果}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{c6/UCUDPPP.png}
+  \caption{BDS 非差非组合 PPP 在弹性功率事件期间使用不同策略DCB产品的 ENU 定位误差}
+  \label{fig:uduc_ppp_result}
+\end{figure}
+
+\subsection{单频 PPP 使用不同DCB策略实验结果}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{c6/SFPPP.png}
+  \caption{BDS 单频 PPP 在弹性功率事件期间使用不同策略DCB产品的 ENU 定位误差}
+  \label{fig:sf_ppp_result}
+\end{figure}
+
+\section{本章小节}

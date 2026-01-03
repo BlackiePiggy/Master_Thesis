@@ -1,0 +1,933 @@
+% !TeX root = ../main.tex
+
+
+\chapter{基于载噪比时序的弹性功率异常检测方法}
+
+\section{弹性功率检测问题定义}
+
+\subsection{弹性功率检测模型}
+
+弹性功率检测的核心任务是根据卫星观测数据及其相关的时空上下文信息，识别卫星在特定时刻是否处于高功率发射状态。这在本质上是一个基于时间序列观测的二元状态检测（Binary State Detection）问题。
+
+对于任意一颗卫星 $s$，我们在时刻 $t$ 的观测向量$\mathbf{x}_t^s$ 由基础C/N0信息和时空上下文信息共同构成。例如，可以形式定义如下：
+\begin{equation}
+    \mathbf{x}_t^s = [c_t^s, \mathbf{g}_t^s, \mathbf{k}_t^s]^\top
+\end{equation}
+其中：
+\begin{itemize}
+    \item $c_t^s \in \mathbb{R}$ 为核心观测值，即时刻 $t$ 的载噪比（$C/N_0$）时间序列读数；
+    \item $\mathbf{g}_t^s = [\alpha_t^s, \epsilon_t^s]^\top$ 代表几何空间信息（Geometric Context），包含卫星相对于接收机的方位角（$\alpha$）和高度角（$\epsilon$）；
+    \item $\mathbf{k}_t^s \in \mathbb{R}^m$ 代表辅助先验信息（Auxiliary Meta-info），如接收机硬件类型、信号频段标识或其他通信链路参数。
+\end{itemize}
+
+我们的目标是构建一个通用的检测机制或映射函数 $\mathcal{F}$，将上述多维观测空间映射到二元状态空间 $\mathcal{S} = \{0, 1\}$。令 $y_t^s$ 表示时刻 $t$ 的真实状态：
+\begin{equation}
+    y_t^s = 
+    \begin{cases} 
+    1, & \text{Flex Power Activated} \\
+    0, & \text{Nominal State}
+    \end{cases}
+\end{equation}
+
+检测算法的输出 $\hat{y}_t^s$ 可以形式化为：
+\begin{equation}
+    \hat{y}_t^s = \mathcal{F}(\mathbf{X}_{t-w:t+w}^s)
+\end{equation}
+其中，$\mathbf{X}_{t-w:t+w}^s$ 表示以 $t$ 为中心的局部时间窗口内的观测序列。函数 $\mathcal{F}(\cdot)$ 既可以是基于统计阈值的判决规则（Threshold-based Rule），也可以是复杂的非线性映射模型（Non-linear Mapping Model）。最终，该过程生成一个检测结果的时间序列 $\hat{\mathcal{Y}}^s = \{\hat{y}_1^s, \dots, \hat{y}_T^s\}$，用于表征灵巧功率的开启与关闭时段。
+
+\subsection{检测评估标准}
+
+为了全面评估检测方法的有效性，我们将检测结果序列 $\hat{\mathcal{Y}}$ 与真实状态序列 $\mathcal{Y}$ 进行逐点比对。基于混淆矩阵（Confusion Matrix），我们定义以下基础统计量：
+
+\begin{itemize}
+    \item \textbf{True Positive (TP):} 灵巧功率激活且被正确检测的时刻数。
+    \begin{equation}
+        \text{TP} = \sum_{t} \mathbb{I}(\hat{y}_t = 1 \land y_t = 1)
+    \end{equation}
+    \item \textbf{False Positive (FP):} 处于正常状态但被误报为激活的时刻数（虚警）。
+    \begin{equation}
+        \text{FP} = \sum_{t} \mathbb{I}(\hat{y}_t = 1 \land y_t = 0)
+    \end{equation}
+    \item \textbf{True Negative (TN):} 处于正常状态且被正确识别的时刻数。
+    \begin{equation}
+        \text{TN} = \sum_{t} \mathbb{I}(\hat{y}_t = 0 \land y_t = 0)
+    \end{equation}
+    \item \textbf{False Negative (FN):} 灵巧功率激活但未被检出的时刻数（漏检）。
+    \begin{equation}
+        \text{FN} = \sum_{t} \mathbb{I}(\hat{y}_t = 0 \land y_t = 1)
+    \end{equation}
+\end{itemize}
+
+基于上述统计量，采用以下指标量化检测性能：
+
+\begin{equation}
+    \text{Precision} = \frac{\text{TP}}{\text{TP} + \text{FP}}, \quad
+    \text{Recall} = \frac{\text{TP}}{\text{TP} + \text{FN}}
+\end{equation}
+
+\begin{equation}
+    \text{F1-Score} = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}
+\end{equation}
+其中，Precision 反映了检测结果的可信度，Recall 反映了算法对灵巧功率事件的覆盖能力，而 F1-Score 则是两者的综合评价，特别适用于正负样本不平衡的检测场景。
+
+\subsubsection{检测场景}
+
+考虑到弹性功率功能的物理特性及实际应用需求，我们将检测问题细分为两个具有不同时间粒度的互补场景：后处理检测（Post-processing Detection）与实时检测（Real-time Detection）。
+
+\paragraph{Scenario I: Post-processing Detection (Daily-level)}
+在后处理模式下，检测的基本单元为“单日”。对于卫星 $s$ 在第 $d$ 天的观测全集 $\mathcal{X}_d^s$，我们的目标是判断该日内是否存在灵巧功率激活事件。输出标签 $Y_d^s \in \{0, 1\}$ 定义如下：
+\begin{equation}
+    Y_d^s = \mathcal{F}_{\text{daily}}(\mathcal{X}_d^s)
+\end{equation}
+\textbf{Rationale:} 这种定义的合理性基于弹性功率的低频切换特性。由于弹性功率通常表现为持续数小时甚至数周的稳态模式，而非高频脉冲，以单日为单位进行检测具有显著优势：
+\begin{itemize}
+    \item \textbf{鲁棒性 (Robustness):} 通过聚合全天的统计特征，可以有效抑制由多径效应或信号闪烁引起的局部瞬态噪声，从而降低虚警率。
+    \item \textbf{计算效率 (Computational Efficiency):} 该层级可作为一种粗粒度筛选（Coarse-grained Screening），快速排除未激活的天数，从而减少后续细粒度分析的计算开销。
+\end{itemize}
+
+\paragraph{Scenario II: Real-time Detection (Epoch-level)}
+在实时或细粒度检测模式下，检测的基本单元为单个“观测历元”（Epoch）。给定采样间隔为 $\Delta t$ 的数据流（例如，对于高频采样 $\Delta t = 1\text{s}$，对于标准采样 $\Delta t = 30\text{s}$），我们在时刻 $t$ 的检测目标是输出当前的瞬时状态 $y_t^s$：
+\begin{equation}
+    y_t^s = \mathcal{F}_{\text{real-time}}(\mathbf{x}_t^s, \mathbf{H}_{t-1})
+\end{equation}
+其中 $\mathbf{H}_{t-1}$ 代表历史状态记忆。
+
+\textbf{Rationale:} 此场景侧重于高精度的事件定位，其优势在于：
+\begin{itemize}
+    \item \textbf{时间分辨率 (Temporal Resolution):} 能够精确捕捉灵巧功率激活的“上升沿”和“下降沿”（Rising/Falling Edges），提供秒级的事件边界定位。
+    \item \textbf{适应性 (Adaptability):} 该定义与采样率解耦，既适用于一般监测场景，也能满足高动态接收机对实时性修正的低延迟需求。通常结合日级检测结果，在确定状态发生变化后，进一步利用此模式进行精确定位。
+\end{itemize}
+
+\section{现有检测方法}
+
+目前，大多数弹性功率检测方法都基于$C/N_0$时间序列，近年来已发展出多种方法，如表\ref{tab:detection_methods}所示。Esenbuğa等人提出了一种自动灵巧功率检测器（FPD），通过识别$C/N_0$时间序列中的阶跃上升（step lift）来检测灵巧功率事件\cite{esenbuuga2023recent}。FPD通过计算当前检测点前后5分钟观测窗口平均值之间的差异来确定灵巧功率是否激活。然而，FPD仅限于连续时间序列，由于接收机每天仅在部分时段跟踪MEO卫星，无法保证滑动窗口总能捕捉到上升沿和下降沿。因此，FPD只能检测阶跃上升，而无法检测整体提升模式，并且需要超过200个测站的数据才能做出准确判断。此外，由于需要$\pm 5$分钟的窗口数据，它无法应用于实时检测。Yang等人提出了一种利用随机森林算法和恒虚警率检测的机器学习方法\cite{yang2022real}。虽然该方法改进了阈值选择并避免了仅检测阶跃上升的问题，但它需要大量的训练数据标注，并且在不同天线和接收机类型的兼容性方面面临问题。Meng等人开发了一种基于建模的方法，利用历史数据构建不同方位角和高度角的$C/N_0$模型\cite{meng2024real}。该方法通过将实时数据与模型进行比较来检测灵巧功率。尽管实现了高精度，但该方法在实时检测中需要进行空间插值计算，并且由于不同接收机-天线组合的模型不兼容，面临巨大的数据需求。多项研究采用了高增益天线来检测灵巧功率的变化\cite{jimenez2010measured,thoelert2018gps,tang2022analysis}。然而，高增益天线检测方法的应用受到高成本和所需设备获取受限的限制。
+
+\begin{table*}[htbp]
+\centering
+\caption{不同弹性功率检测方法的比较}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\textwidth}{p{2.7cm} p{4.7cm} X p{3cm}}
+\toprule
+\textbf{检测方法} & \textbf{描述} & \textbf{优点} & \textbf{缺点 / 挑战} \\
+\midrule
+
+基于 C/N0 的跃变变化\cite{esenbuga2020impact} &
+通过分析 C/N0 观测值时间序列，寻找超过阈值的跃变以判断弹性功率状况。 &
+原理简单，对 GPS 系统效果较好。 &
+噪声可能导致误判；对 C/N0 变化不显著的 BDS-2 卫星易漏报。 \\
+
+基于 C/N0 的线性关系\cite{wu2025novel} &
+利用不同信号 C/N0 间的线性关系推算另一个信号，实现实时检测。 &
+精度高，不依赖机器学习方法。 &
+主要针对 GPS 系统，适用性待扩展。 \\
+
+双频指标\cite{lu2025new} &
+针对 BDS-2 卫星，利用 C/N0 与硬件延时作为双阈值进行检测。 &
+显著降低 BDS-2 的漏报率。 &
+方法特定于 BDS-2。 \\
+
+基于随机森林\cite{yang2022real} &
+结合图像特征、多项式拟合、CFAR 和 分类器实现实时监测。 &
+自动化程度高，噪声容忍度强。 &
+依赖历史训练数据；实时数据丢失影响性能。 \\
+
+基于 XGBoost\cite{du2025gps} &
+利用 LEO 卫星数据训练 XGBoost 模型检测 GPS 弹性功率。 &
+精度高（>90\%），适应不同区域和季节变化。 &
+需要大量 LEO 卫星数据支持。 \\
+\bottomrule
+\end{tabularx}
+\label{tab:detection_methods}
+\end{table*}
+
+\section{数据来源与预处理}
+
+为了评估 AFPD-DTW 的性能，我们分别进行了事后处理检测与实时检测实验，使用的数据集如表\ref{tab:afpd_tab_1}所示。
+
+\begin{table}[htbp]
+\centering
+\caption{AFPD-DTW实验的数据集}
+\label{tab:afpd_tab_1}
+
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{
+    p{1.5cm}   % 固定列 1
+    p{2.0cm}     % 固定列 2
+    p{1.5cm}         % 自动列 3
+    X          % 自动列 4
+    p{2.0cm}   % 固定列 5
+}
+
+\toprule
+\textbf{实验类型} & \textbf{时间} &
+\textbf{测站} &
+\textbf{接收机-天线类型} &
+\textbf{GNSS\&频段} \\
+\midrule
+
+\multirow{8}{*}{\textbf{后处理}}
+& \multirow{8}{*}{\parbox{2cm}{\centering Jan 2020 - July 2025}}
+& AIRA & TRIMBLE ALLOY / TRM59800.00 & \multirow{8}{*}{GPS--S2W} \\
+& & BIK0 & SEPT POLARX5 / JAV\_RINGANT\_G3T & \\
+& & CAS1 & TRIMBLE ALLOY / LEIAR25.R3 & \\
+& & HAL1 & SEPT POLARX5 / JAVRINGANT\_DM & \\
+& & HLFX & SEPT POLARX5 / TPSCR.G3 & \\
+& & KAT1 & SEPT POLARX5 / LEIAR25.R3 & \\
+& & SAVO & TRIMBLE NETR9 / TRM115000.00 & \\
+& & STFU & JAVAD TRE\_G3TH / TRM57971.00 & \\
+\midrule
+
+\multirow{10}{*}{\textbf{实时处理}}
+& \multirow{10}{*}{\parbox{2cm}{\centering June 1--7, 2024}}
+& ABPO & SEPT POLARX5 / ASH701945G\_M & \multirow{10}{*}{GPS--S2W} \\
+& & CUSV & JAVAD TRE\_3 DELTA / JAVRINGANT\_DM & \\
+& & FAA1 & SEPT POLARX5 / LEIAR25.R4 & \\
+& & KOKV & JAVAD TRE\_G3TH / ASH701945G\_M & \\
+& & KOS1 & SEPT POLARX5E / LEIAR25.R3 & \\
+& & KOUR & SEPT POLARX5TR / SEPCHOKE\_B3E6 & \\
+& & MKEA & SEPT POLARX5 / JAVRINGANT\_DM & \\
+& & NKLG & SEPT POLARX5 / TRM59800.00 & \\
+& & NNOR & SEPT POLARX5TR / SEPCHOKE\_B3E6 & \\
+& & OUS2 & SEPT POLARX5 / SEPCHOKE\_B3E6 & \\
+\midrule
+
+\textbf{多星座}
+& Jan 2023 - July 2025
+& 与后处理相同
+& 与后处理相同
+& BDS--S2I, S6I, S7I \\
+\midrule
+ 
+\textbf{多频段}
+& Jan 2024 - July 2025
+& 与后处理相同
+& 与后处理相同
+& GPS--S1C, S1W \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
+
+在事后处理检测中，我们使用了 2020--2025 年间来自 8 个 IGS 站点的每日 30 秒采样 S2W C/N\textsubscript{0} 数据，这些站点包括：AIRA、BIK0、CAS1、HAL1、HLFX、KAT1、SAVO 和 STFU。
+
+随后，在实时检测实验中，我们选取了 2024 年 6 月 1 日至 2024 年 6 月 7 日期间来自 10 个 IGS 站点的数据：ABPO、CUSV、FAA1、KOKV、KOS1、KOUR、MKEA、NKLG、NNOR 和 OUS2。
+
+站点选择基于两个主要标准：  
+\begin{enumerate}
+    \item 持续稳定的 C/N\textsubscript{0} 观测可用性；
+    \item 广泛的地理分布，以确保足够的空间覆盖与冗余。
+\end{enumerate}
+此外，通过 IGS 元数据对硬件一致性进行了验证。
+
+图\ref{fig:afpd_6}展示了参与这两项实验的站点分布，其中红色三角形与蓝色圆点分别代表用于事后处理与用于实时检测的站点。这些 30 秒数据均来自 CDDIS（\url{https://gdc.cddis.eosdis.nasa.gov/pub/gnss/data/daily}）。
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/afpd/图片6.png}
+    \caption{用于 AFPD-DTW 检测中事后处理与实时处理实验的站点全球分布}
+    \label{fig:afpd_6}
+\end{figure}
+
+在多星座与多频点验证方面，我们沿用事后处理实验中的同一批站点，对 2023 年 1 月至 2025 年 7 月期间的北斗 BDS S2I、S6I 与 S7I 信号，以及 2024 年 7 月至 2025 年 7 月期间的 GPS S1C 与 S1W 信号进行了检测。
+
+
+\section{滑动窗口FPD检测方法}
+
+传统的人工观察法虽然能够直观识别 GNSS 卫星弹性功率的开启与关闭，但在实际应用中面临显著局限。一方面，全球 GNSS 测站数量庞大、可见卫星众多；另一方面，不同卫星系统包含多个频点信号，使得逐一人工判读 C/N\textsubscript{0} 时间序列几乎不具可行性，且极其耗费人力与时间成本。为此，DLR 的 Peter Steigenberger 提出了一种自动化的弹性功率检测算法——FPD（Flex Power Detector\cite{esenbuuga2023recent}。
+
+FPD 方法的核心思想是：当卫星在非弹性功率与弹性功率模式之间切换时，地面测站接收到的载噪比 C/N\textsubscript{0} 时间序列会出现明显的阶跃式变化。通过对多测站 C/N\textsubscript{0} 序列中这种阶跃特征进行统计检测，可以实现对 FP 状态切换的可靠判识。
+
+在具体实现中，FPD 算法首先对原始观测数据进行质量控制。设某测站在历元 \(t\) 接收到的载噪比观测值为 \(C(t)\)，FPD 仅保留满足高度角不小于 \(30^\circ\) 且
+\begin{equation}
+    C(t) \ge 30~\mathrm{dB\!-\!Hz}
+\end{equation}
+的观测值，以减小低仰角与弱信号引入的噪声影响。
+
+随后，对筛选后的 C/N\textsubscript{0} 序列计算相邻历元差分：
+\begin{equation}
+    \Delta C(t) = C(t) - C(t-1),
+\end{equation}
+用于捕获可能存在的瞬时阶跃变化。然而，考虑到部分弹性功率切换并非完全突变，而可能表现为短时间内的渐变特征，FPD 进一步引入滑动平均差分检测。具体而言，在当前历元 \(t\) 前后各取 \(5\) 分钟时间窗口（对应若干历元），分别计算窗口平均值：
+\begin{equation}
+    \bar{C}_{\text{pre}}(t), \qquad \bar{C}_{\text{post}}(t),
+\end{equation}
+并计算两者之差：
+\begin{equation}
+    \Delta \bar{C}(t) = \bar{C}_{\text{post}}(t) - \bar{C}_{\text{pre}}(t).
+\end{equation}
+该量能够有效反映缓变阶跃型的功率变化特征，从而提高检测的鲁棒性。
+
+在单测站层面，若 \(\Delta C(t)\) 或 \(\Delta \bar{C}(t)\) 显示出显著的正向阶跃变化，则认为该测站在历元 \(t\) 检测到一次潜在的弹性功率切换事件。为避免由局部噪声或异常观测引起的误判，FPD 采用多测站一致性判决策略：在同一历元 \(t\)，若在约 \(250\) 个 IGS 测站中，至少有 \(20\) 个测站同时检测到正向阶跃变化，则判定对应卫星在该历元切换至弹性功率（FP ON）模式；反之，则认为卫星处于非弹性功率（FP OFF）状态。
+
+通过结合单站阶跃检测与多站统计一致性判决，FPD 方法在保证计算效率的同时，有效抑制了噪声和偶发异常的影响，实现了对 GNSS 卫星弹性功率切换的自动化、规模化检测。
+
+基于上述原理，本文采用 FPD 算法对 BAIE 等 20 个 IGS 测站在 2019—2023 年期间接收的 GPS 卫星三频载噪比（C/N\textsubscript{0}）数据进行了弹性功率的事后处理检测。部分实验结果如图\ref{fig:fpd_result}所示。其中，图\ref{fig:fpd_result}(a) 给出了 2020 年 BAIE 测站接收的 G05 卫星 S2W 频点的原始 C/N\textsubscript{0} 时间序列及对应的 FPD 检测结果；图中依据先前通过人工观察法识别得到的结果，对不同已知弹性功率模式对应的时间区间采用不同颜色进行标注。图\ref{fig:fpd_result}(b) 则展示了同一时间段内 BAIE 测站接收的 G03 卫星 S2W 频点的原始载噪比数据及其 FPD 检测结果，同样采用不同颜色对各类弹性功率模式进行覆盖。
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{figures/fpd_result.png}
+    \caption{2020 年BAIE G05 S2W FPD 算法检测结果}
+    \label{fig:fpd_result}
+\end{figure}
+
+从实验结果可以直观发现，不同卫星的检测效果存在明显差异。相较于 G05 S2W，G03 S2W 的 FPD 检测结果整体表现较差：其异常值主要集中在 Mode6 与 Mode8 区间，仅在这些时间段被判定为弹性功率开启状态；而 G05 S2W 的检测结果则除 Mode9 未能成功识别外，其余弹性功率模式基本均得到了较为准确的探测。
+
+进一步分析表明，该差异主要源于两颗卫星载噪比时间序列变化特征的不同。G03 的 C/N\textsubscript{0} 序列在弹性功率开启时多表现为整体抬升，而 G05 的变化特征则以明显的阶跃式抬升为主。由于 FPD 算法本质上依赖于对阶跃变化的检测，因此其对阶跃抬升型模式具有较高的敏感性，而对整体抬升型变化的检测能力相对有限。
+
+此外，FPD 算法在应用过程中还需对载噪比数据进行高度角过滤，通常设置高度角截止值为 \(30^\circ\)。这是因为在低高度角条件下，C/N\textsubscript{0} 数据噪声水平较高，容易出现突变，这类突变恰好是 FPD 算法容易误判为弹性功率阶跃的特征，因此必须通过预处理加以抑制。然而，这种过滤策略也会导致大量观测数据被剔除，从而减少可用样本数量。对于弹性功率区域主要出现在较低高度角、或当日高高度角观测本身较少的情况，这种数据损失会显著增加检测难度。图\ref{fig:fpd_gaodujiao}展示了采用 \(30^\circ\) 高度角作为载噪比截止角后的数据分布情况，可以看出该阈值会过滤掉相当比例的有效观测信息。
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{figures/fpd_elangle.png}
+    \caption{高度角截止滤除数据示意图}
+    \label{fig:fpd_gaodujiao}
+\end{figure}
+
+在计算效率方面，大量实验表明 FPD 算法的整体耗时较长。在一台配置为 Intel(R) Core(TM) i7-9750H CPU @ 2.60\,GHz、内存 32.0\,GB 的计算机上，采用 C 语言实现的 FPD 算法对单一频点一整年的数据进行处理约需 20\,min，使用 Python 实现耗时约 21\,min，而 MATLAB 实现的处理时间则高达约 90\,min。考虑到实际应用中需要同时处理数百个 IGS 测站、多个卫星以及多频点数据，FPD 算法在整体计算量和时间消耗上均十分可观，这使其在实时弹性功率监测场景中的适用性受到明显限制。
+
+\section{基于动态时间规划（DTW）的检测方法}
+本节首先介绍 AFPD-DTW 的整体处理流程，随后解释其各处理步骤的具体细节，最后给出阈值确定策略。
+
+\subsection{AFPD-DTW检测方法处理流程}
+AFPD-DTW 的处理流程包括三个主要步骤，如图\ref{fig:afpd_4}所示。第一步是数据处理模块，它收集多站观测数据，包括观测文件、导航星历以及提供站坐标的 SINEX 文件。随后提取 C/N₀ 观测值，并与计算得到的卫星高度角进行结合。参考 FPD 方法\cite{esenbuuga2023recent}中的实际策略，为减轻多路径与噪声影响，剔除高度角低于 30° 的数据。
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{figures/afpd/图片4.png}
+    \caption{AFPD-DTW流程图}
+    \label{fig:afpd_4}
+\end{figure}
+
+第二步是将预处理后的数据输入 AFPD-DTW 检测模块。具体而言，当 AFPD-DTW 接收到新的数据时，若为事后处理（post-processing），系统会首先检查当日序列是否完整；若不完整，则重置模型。而在实时检测中，则直接使用当前窗口的数据。随后流程会验证当前是否存在有效模型：若不存在，则将当前数据作为新模型，将该日标记为检测起始日（day 1），并等待下一批观测数据；若存在有效模型，则使用重叠序列计算 DTW 异常得分。当该得分超过由四分位距（IQR）方法确定的阈值时，即判定存在弹性功率事件；反之，则将当前数据纳入模型以进一步更新，从而增强模型的稳健性。
+
+第三步是数据融合模块，用于对同一卫星的多站结果进行整合。具体而言，每颗卫星会对应多个 DTW 异常得分，这些得分通过加权投票方案（weighted voting）进行融合，得到最终的异常得分。当该得分超过阈值时，即检测到弹性功率事件。为验证检测事件的空间一致性，还利用卫星地面轨迹检查激活区域及激活中心。最终输出内容包括检测到的弹性功率事件列表及对应的检测时间线。
+
+\subsection{AFPD-DTW检测方法}
+AFPD-DTW 的核心假设是：在非弹性功率（non-flex-power）条件下，GNSS 信号的 C/N\textsubscript{0} 时间序列呈现高度可重复的日周期模式。当目标日的序列模式与前几天存在显著偏离时，即表明发生了弹性功率变化。与基线建模方法相比，AFPD-DTW 使用前几天的稳定序列作为动态参考模型，并利用 DTW 计算当前序列与该模型之间的异常得分。
+
+在事后处理模式下，设$S_i = (s_{i,1}, s_{i,2}, \ldots, s_{i,T})$
+表示需要检测的当天 C/N\textsubscript{0} 序列，其中 \(T\) 为当日观测历元数。该序列与前 \(N\) 天的平均序列比较：
+\begin{equation}
+S_{\text{model}} = \frac{1}{N}\sum_{j=1}^{N} S_{i-j}.
+\end{equation}
+采用平均可平滑逐日波动，得到更稳健的参考序列。随后计算差分：
+\begin{equation}
+\mathrm{diff}_S = S_i - S_{\text{model}}.
+\end{equation}
+若 \(\mathrm{diff}_S\) 超过阈值 \(\mathrm{thre}\)，则判定为弹性功率事件。
+
+然而，该直接差分方法虽然高效，但存在以下两大限制：
+\begin{enumerate}
+    \item 对 C/N\textsubscript{0} 噪声非常敏感，易产生虚警；
+    \item 序列间存在时间错位：GPS 轨道重复周期为 11 h 58 min，而观测为 24 h 太阳日，导致逐日比较容易出错。
+\end{enumerate}
+
+为解决上述问题，引入动态时间规整（Dynamic Time Warping, DTW）。DTW 通过动态对齐序列并计算最优路径距离来衡量相似性 \cite{berndt1994using}。给定模型序列 \(S_{\text{model}}\) 和目标序列 \(S_{\text{target}}\)：
+\begin{equation}
+S_{\text{model}} = (x_1, x_2, \ldots, x_N), \qquad
+S_{\text{target}} = (y_1, y_2, \ldots, y_M),
+\end{equation}
+其中 \(N\) 和 \(M\) 为两序列长度。定义局部距离函数：
+\[
+D(i,j) = d(x_i, y_j) = \lvert x_i - y_j \rvert.
+\]
+累积距离矩阵 \(C\) 通过下式递推得到：
+\begin{equation}
+C(i,j) = D(i,j) + \min\left( C(i-1,j),\; C(i,j-1),\; C(i-1,j-1) \right),
+\end{equation}
+初始化为 \(C(1,1) = D(1,1)\)。最终 DTW 距离为
+\[
+\mathrm{DTW}(S_{\text{model}}, S_{\text{target}}) = C(N,M),
+\]
+作为异常度量：值越小序列越相似，越大则可能存在弹性功率变化。检测规则为：
+\begin{equation}
+\mathrm{DTW}_S >
+\mathrm{thre} \Rightarrow \text{弹性功率事件}, \qquad
+\mathrm{DTW}_S \le \mathrm{thre} \Rightarrow \text{正常状态}.
+\end{equation}
+
+在实时检测中，设采样间隔为 \(\Delta t\)，窗口长度为 \(W\)。定义当前窗口与模型窗口为：
+\[
+\mathcal{W}_t = \{t-W+1, \ldots, t\},\qquad
+S_i^t = \{ s_{i,\tau} \mid \tau \in \mathcal{W}_t \},\qquad
+M_t = \{ m_\tau \mid \tau \in \mathcal{W}_t \}.
+\]
+其中 \(s_{i,\tau}\) 为第 \(i\) 天第 \(\tau\) 历元的 C/N\textsubscript{0}，\(m_\tau\) 为模型序列对齐至对应历元的值。
+
+实时 DTW 使用 Sakoe–Chiba 带约束（半宽 \(r \le 3\)）：
+\[
+\lvert p - q \rvert \le r.
+\]
+它限制时间偏移并将计算复杂度由 \(O(W^2)\) 降到 \(O(Wr)\)。
+
+局部代价与带约束递推为：
+\begin{equation}
+d(s_{i,\tau}, m_\kappa) = s_{i,\tau} - m_\kappa,
+\end{equation}
+\begin{equation}
+C_t(p,q) = d(s_{i,t-W+p}, m_{t-W+q}) +
+\min\left(
+C_t(p-1,q),\;
+C_t(p,q-1),\;
+C_t(p-1,q-1)
+\right),
+\end{equation}
+其中 \(p,q \in \{1,\ldots,W\}\) 且须满足 \(\lvert p-q \rvert \le r\)，初始化为：
+\begin{equation}
+C_t(1,1) = d(s_{i,t-W+1}, m_{t-W+1}).
+\end{equation}
+
+最优路径 \(P_t\) 的长度为 \(L(P_t)\)，归一化 DTW 距离为：
+\begin{equation}
+d_t = \frac{C_t(W,W)}{L(P_t)}.
+\end{equation}
+
+实时判决规则为：
+\begin{equation}
+\begin{cases}
+d_t > \mathrm{thre}_{\mathrm{rt}}, & \text{弹性功率事件}, \\
+d_t \le \mathrm{thre}_{\mathrm{rt}}, & \text{非事件}.
+\end{cases}
+\end{equation}
+
+当不同日期处于相同的弹性功率状态时，DTW 值保持较低。如图\ref{fig:afpd_5}所示：
+
+\begin{enumerate}
+    \item 当两序列均为 OFF 状态时，残差小于 1，DTW 值为 116.92；
+    \item 当两序列均为 ON 且无阶跃偏移时，DTW = 76.91；
+    \item 当存在阶跃偏移时，尽管残差超过 5，DTW = 131.57 仍与前例接近，说明 DTW 能识别模式相似性且对时间偏移不敏感。
+\end{enumerate}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{figures/afpd/图片5.png}
+    \caption{在不同场景下，DTW 方法与差分方法的异常评分结果对比}
+    \label{fig:afpd_5}
+\end{figure}
+
+相比之下，当实际发生弹性功率变化时，DTW 值会显著升高。在图\ref{fig:afpd_5}(d)与图\ref{fig:afpd_5}(e)中，当 C/N\textsubscript{0} 数据出现阶跃式提升或整体提升时，DTW 值分别上升至 2368.88 和 2681.97，其量级比保持一致状态时高出一个数量级。
+
+值得注意的是，DTW 同样能够有效处理中存在较强噪声的情况。在图\ref{fig:afpd_5}(f)中，尽管测试数据包含明显噪声，差分值最高达到 10，但 DTW 值仍保持在较低水平（286.04）。这种对噪声具有强鲁棒性的检测能力，使 DTW 方法能够同时适用于阶跃式提升和整体提升两类模式。
+
+
+\subsection{阈值策略}
+有效的阈值确定对于将 DTW 距离度量正确转化为弹性功率检测结果至关重要。阈值过小会导致误报（false alarms），而阈值过大则会造成漏检（missed detections）。本文采用 IQR（Interquartile Range）方法，其自适应阈值特性在实际应用中效果良好。相比之下，静态阈值无法在不同卫星与站点之间通用，而机器学习方法则需要标注数据与频繁更新模型，因此均不适用于本场景。
+
+首先从 DTW 序列 \( \mathrm{DTW}_S \) 中计算四分位数，即第 25 百分位数 \(Q_1\) 和第 75 百分位数 \(Q_3\)。随后计算 IQR：
+\begin{equation}
+\mathrm{IQR} = Q_3 - Q_1.
+\end{equation}
+
+为了检测异常点，依据 IQR 定义上下阈值。通常使用系数 \(k\)（典型取值为 1.5）：
+\begin{equation}
+\text{Upper threshold} = Q_3 + k \cdot \mathrm{IQR}, \qquad
+\text{Lower threshold} = Q_1 - k \cdot \mathrm{IQR}.
+\end{equation}
+
+对 DTW 序列中的每个数据点 \(x_i\) 与阈值进行比较，异常判断条件为：
+\begin{equation}
+x_i > Q_3 + k\cdot\mathrm{IQR}, \qquad
+x_i < Q_1 - k\cdot\mathrm{IQR}.
+\end{equation}
+
+因此，最终的异常判定规则可写为：
+\begin{equation}
+\begin{cases}
+\mathrm{DTW}_S > Q_3 + k\cdot\mathrm{IQR}, & \text{弹性功率事件}, \\
+\mathrm{DTW}_S < Q_1 - k\cdot\mathrm{IQR}, & \text{弹性功率事件}, \\
+Q_1 - k\cdot\mathrm{IQR} \le \mathrm{DTW}_S \le Q_3 + k\cdot\mathrm{IQR}, & \text{非弹性功率事件}.
+\end{cases}
+\end{equation}
+
+为了评估 AFPD-DTW 的检测性能，我们采用标准分类指标。根据阈值分类结果定义 True Positives (TP)、False Positives (FP)、True Negatives (TN) 和 False Negatives (FN)。对应指标计算如下：
+\[
+\mathrm{TPR}=\frac{TP}{TP+FN}, \qquad
+\mathrm{FPR}=\frac{FP}{FP+TN},
+\]
+\begin{equation}
+\mathrm{Accuracy}=\frac{TP+TN}{TP+TN+FP+FN}, \qquad
+\mathrm{Precision}=\frac{TP}{TP+FP}.
+\end{equation}
+其中，TPR 表示真实弹性功率事件被正确检测的概率；FPR 表示非事件被误分类的概率。Accuracy 衡量整体检测的正确率，Precision 则反映检测为事件的结果中有多少为真正事件。综合这些指标，可对 AFPD-DTW 的检测性能进行全面评估。
+
+\subsection{基于DTW方法的检测结果}
+本节将通过事后处理、实时检测以及多星座／多频点检测实验对 AFPD-DTW 进行评估，并进一步与现有方法进行对比分析。
+
+\subsubsection{后处理结果分析}
+事后处理检测使用 2020--2025 年的全年数据进行验证。图\ref{fig:afpd_7}和图\ref{fig:afpd_8}展示了各站点的 S2W 信号 DTW 异常得分。在按天统计的异常得分中，数值越高表示发生弹性功率变化事件的可能性越大，不同颜色代表不同的卫星。图中可以清晰观察到某些日期多个卫星同时出现高异常得分的情况，特别是在 2021 年的弹性功率事件期间尤为明显。相比之下，2020 年的弹性功率事件更加集中，这与当年更复杂且频繁的弹性功率活动相对应。
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{figures/afpd/图片7.png}
+    \caption{2020 年不同 GPS 卫星 S2W 信号的 DTW 异常得分时间序列。彩色圆点表示不同的 GPS 卫星。较高的 DTW 异常得分表示发生弹性功率变化事件的可能性更大}
+    \label{fig:afpd_7}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{figures/afpd/图片8.png}
+    \caption{2021 年不同 GPS 卫星 S2W 信号的 DTW 异常得分时间序列}
+    \label{fig:afpd_8}
+\end{figure}
+
+需要注意的是，由于数据缺失，部分日期未显示异常得分，例如 CAS1 站在 2020 年 4 月至 6 月期间的缺测。通过多站点的验证，我们发现：若具备高质量 C/N\textsubscript{0} 数据，即便使用极少量站点，也能够确定弹性功率激活日期。
+
+为了识别具体的弹性功率事件日期，我们对 DTW 异常得分进行了异常检测。图\ref{fig:afpd_9}展示了基于动态 IQR 阈值方法的九组分类结果，用于区分弹性功率事件。由于弹性功率激活日期远少于非激活日期，IQR 分类器会将激活日期识别为异常点。对于分类表现欠佳的情况（如图\ref{fig:afpd_9}中 SAVO G01 与 G03），可通过多个站点与多个卫星的简单等权或加权投票策略有效避免误判。
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{figures/afpd/图片9.png}
+    \caption{基于动态 IQR 阈值的方法用于区分多站点–多卫星组合的 S2W 信号中的弹性功率事件（红色）与非事件（蓝色）}
+    \label{fig:afpd_9}
+\end{figure}
+
+表\ref{tab:afpd_tab_2}给出了 AFPD-DTW 事后处理算法在 2020 与 2021 年的弹性功率事件检测结果，这些结果与已有研究\cite{steigenberger2019flex,wu2024effects,meng2024real}报告的事件高度一致。表\ref{tab:afpd_tab_3}将 AFPD-DTW 的事后处理结果扩展至 2022 年 1 月至 2025 年 7 月的弹性功率事件，为后续相关研究提供了重要参考。此外，我们还识别出若干 FPD 未能检测到的弹性功率事件（以 * 标注），进一步验证了所提出算法的鲁棒性。
+
+\begin{table*}[htbp]
+\centering
+\caption{2020--2021 年检测到的 GPS S2W 弹性功率变化事件（标注 * 的事件为以往方法未检测到）}
+\label{tab:afpd_tab_2}
+% 如果你的模板支持 booktabs，建议添加 \usepackage{booktabs}
+\begin{tabular}{cccccccc}
+\hline % 若使用 booktabs 可改为 \toprule
+\textbf{事件} & \textbf{日期} & \textbf{事件} & \textbf{日期} & \textbf{事件} & \textbf{日期} & \textbf{事件} & \textbf{日期} \\
+\hline % 若使用 booktabs 可改为 \midrule
+
+1  & 2020/2/14       & 12 & 2020/9/13        & 23 & 2021/1/16       & 34 & 2021/10/23 \\
+2  & 2020/5/4        & 13 & \textbf{*2020/9/18} & 24 & 2021/3/5        & 35 & 2021/10/24 \\
+3  & 2020/5/5        & 14 & \textbf{*2020/9/19} & 25 & 2021/3/6        & 36 & 2021/10/26 \\
+4  & 2020/5/9        & 15 & 2020/10/1        & 26 & 2021/5/2        & 37 & 2021/10/27 \\
+5  & 2020/6/14       & 16 & 2020/10/19       & 27 & 2021/5/17       & 38 & \textbf{*2021/11/3} \\
+6  & 2020/6/20       & 17 & 2020/10/24       & 28 & 2021/5/31       & 39 & \textbf{*2021/11/4} \\
+7  & 2020/6/23       & 18 & 2020/10/26       & 29 & 2021/6/5        & 40 & 2021/11/16 \\
+8  & 2020/7/3        & 19 & 2020/11/5        & 30 & 2021/9/11       & 41 & 2021/11/17 \\
+9  & \textbf{*2020/7/10} & 20 & 2020/11/16       & 31 & 2021/9/15       &    &  \\
+10 & 2020/8/3        & 21 & 2020/11/21       & 32 & 2021/9/23       &    &  \\
+11 & 2020/8/22       & 22 & 2021/1/12        & 33 & 2021/9/25       &    &  \\
+
+\hline % 若使用 booktabs 可改为 \bottomrule
+\end{tabular}
+\end{table*}
+
+
+\begin{table*}[htbp]
+\centering
+\caption{2022 年 1 月至 2025 年 7 月期间检测到的 GPS S2W 弹性功率变化事件}
+\begin{tabularx}{\textwidth}{YYYYYYYY}
+\hline
+\textbf{Event} & \textbf{Date} & \textbf{Event} & \textbf{Date} &
+\textbf{Event} & \textbf{Date} & \textbf{Event} & \textbf{Date} \\
+\hline
+
+1 & 2022/5/24 & 30 & 2023/6/22 & 59 & 2023/11/6 & 88 & 2024/2/17 \\
+2 & 2022/5/25 & 31 & 2023/6/23 & 60 & 2023/11/7 & 89 & 2024/3/5 \\
+3 & 2022/6/13 & 32 & 2023/6/24 & 61 & 2023/11/9 & 90 & 2024/4/29 \\
+4 & 2022/6/18 & 33 & 2023/6/26 & 62 & 2023/11/10 & 91 & 2024/4/30 \\
+5 & 2022/7/11 & 34 & 2023/6/27 & 63 & 2023/12/4 & 92 & 2024/5/10 \\
+6 & 2022/7/12 & 35 & 2023/6/29 & 64 & 2023/12/8 & 93 & 2024/5/11 \\
+7 & 2022/7/16 & 36 & 2023/7/22 & 65 & 2023/12/11 & 94 & 2024/5/26 \\
+8 & 2022/8/18 & 37 & 2023/7/29 & 66 & 2023/12/12 & 95 & 2024/5/27 \\
+9 & 2022/8/19 & 38 & 2023/8/22 & 67 & 2023/12/14 & 96 & 2024/6/4 \\
+10 & 2022/8/20 & 39 & 2023/8/23 & 68 & 2024/1/4 & 97 & 2024/6/7 \\
+11 & 2022/8/21 & 40 & 2023/8/24 & 69 & 2024/1/19 & 98 & 2024/6/8 \\
+12 & 2022/8/22 & 41 & 2023/8/25 & 70 & 2024/1/20 & 99 & 2024/6/15 \\
+13 & 2022/8/23 & 42 & 2023/8/26 & 71 & 2024/1/20 & 100 & 2024/6/26 \\
+14 & 2022/8/24 & 43 & 2023/8/27 & 72 & 2024/1/21 & 101 & 2024/6/27 \\
+15 & 2022/9/6 & 44 & 2023/8/28 & 73 & 2024/1/22 & 102 & 2024/7/25 \\
+16 & 2022/9/7 & 45 & 2023/8/29 & 74 & 2024/1/23 & 103 & 2024/7/26 \\
+17 & 2022/9/10 & 46 & 2023/9/21 & 75 & 2024/1/24 & 104 & 2025/3/31 \\
+18 & 2022/9/18 & 47 & 2023/9/22 & 76 & 2024/1/25 & 105 & 2025/4/4 \\
+19 & 2022/9/26 & 48 & 2023/9/23 & 77 & 2024/1/26 & 106 & 2025/4/5 \\
+20 & 2022/10/3 & 49 & 2023/9/24 & 78 & 2024/1/30 & 107 & 2025/4/12 \\
+21 & 2022/10/6 & 50 & 2023/10/3 & 79 & 2024/1/31 & 108 & 2025/4/14 \\
+22 & 2022/12/5 & 51 & 2023/10/4 & 80 & 2024/2/1 & 109 & 2025/4/19 \\
+23 & 2022/12/10 & 52 & 2023/10/6 & 81 & 2024/2/2 & 110 & 2025/4/28 \\
+24 & 2023/4/24 & 53 & 2023/10/7 & 82 & 2024/2/5 & 111 & 2025/4/29 \\
+25 & 2023/4/25 & 54 & 2023/10/24 & 83 & 2024/2/6 & 112 & 2025/5/1 \\
+26 & 2023/4/28 & 55 & 2023/10/25 & 84 & 2024/2/9 & 113 & 2025/5/8 \\
+27 & 2023/4/29 & 56 & 2023/10/26 & 85 & 2024/2/10 & 114 & 2025/5/9 \\
+28 & 2023/5/1 & 57 & 2023/11/1 & 86 & 2024/2/14 & 115 & 2025/5/13 \\
+29 & 2023/5/16 & 58 & 2023/11/2 & 87 & 2024/2/15 &     &        \\
+
+\hline
+\end{tabularx}
+\label{tab:afpd_tab_3}
+\end{table*}
+
+图\ref{fig:afpd_10}展示了三例 AFPD-DTW 成功检测而 FPD 未检测到的 2020--2021 年多站点 S2W C/N\textsubscript{0} 时间序列。其中不同颜色的点代表不同站点的观测，红色与绿色阴影线分别表示弹性功率的激活与关闭区间，并附有时间戳。
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{figures/afpd/图片10.png}
+    \caption{2020–2021 年期间多站 S2W C/N₀ 时间序列中由 FPD 漏检的三次弹性功率模式转换}
+    \label{fig:afpd_10}
+\end{figure}
+
+例如，2020 年 7 月 8 日与 9 日，G05 的弹性功率分别在 1:24 关闭、11:25 激活，而在 7 月 10 日，这两个时刻变为 0:22 与 13:15，显示出模式转换。2020 年 9 月 18 日，弹性功率切换到全球覆盖模式，并于 9 月 19 日关闭。类似地，2021 年 11 月 3 日，激活/关闭时间由 00:00/12:00 突然变为 00:00/3:01，表明发生了另一次模式变化。这些模式转换均被 AFPD-DTW 成功检出，而 FPD 未能识别，进一步凸显了本方法的有效性。
+
+\subsubsection{实时结果分析}
+
+为了确保实时检测中对全天信号的完整覆盖，我们使用了 10 个站点在 2024 年 6 月 1--7 日期间的观测数据。图\ref{fig:afpd_11}给出了 AFPD-DTW 的实时检测结果，其中蓝色、绿色、红色和橙色分别表示 TP、TN、FP 和 FN。表\ref{tab:afpd_tab_4}的性能分析显示，AFPD-DTW 在实时检测中具有极高的可靠性。对所有 PRN 而言，TPR 均超过 99.6\%，其中 G15 的检测率最高，达到 99.93\%。FPR 极低，G01、G05、G06、G25 和 G31 的假阳性率为零。整体精度（Accuracy）始终保持在 99.74\% 至 99.97\% 之间。Precision 表现尤为优秀，多颗卫星达到 100\%，最低 Precision 也超过 99.95\%。总体而言，AFPD-DTW 的平均 TPR 为 99.86\%，FPR 为 0.053\%，Accuracy 为 99.88\%，Precision 为 99.98\%，充分展示了其在实时弹性功率检测中的卓越性能。
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{figures/afpd/图片11.png}
+    \caption{2024 年 6 月 1 日至 8 日期间 GPS 卫星的 AFPD-DTW 实时检测结果}
+    \label{fig:afpd_11}
+\end{figure}
+
+\begin{table*}[htbp]
+\centering
+\caption{2024 年 6 月 1--7 日期间基于 S2W 信号的 IIR-M 与 IIF 卫星实时检测性能（\%）}
+\begin{tabular}{lcccc @{\quad} lcccc}
+\hline
+\textbf{PRN} & \textbf{TPR} & \textbf{FPR} & \textbf{Accuracy} & \textbf{Precision} &
+\textbf{PRN} & \textbf{TPR} & \textbf{FPR} & \textbf{Accuracy} & \textbf{Precision} \\
+\hline
+
+\textbf{G01} & 99.89 & 0    & 99.92 & 100    &
+\textbf{G17} & 99.79 & 0.08 & 99.82 & 99.97 \\
+
+\textbf{G03} & 99.85 & 0.09 & 99.87 & 99.97 &
+\textbf{G24} & 99.92 & 0.04 & 99.93 & 99.99 \\
+
+\textbf{G05} & 99.92 & 0    & 99.94 & 100    &
+\textbf{G25} & 99.90 & 0    & 99.93 & 100    \\
+
+\textbf{G06} & 99.77 & 0    & 99.83 & 100    &
+\textbf{G26} & 99.92 & 0.04 & 99.93 & 99.99 \\
+
+\textbf{G07} & 99.95 & 0.10 & 99.94 & 99.97 &
+\textbf{G27} & 99.92 & 0.06 & 99.92 & 99.98 \\
+
+\textbf{G08} & 99.79 & 0.07 & 99.82 & 99.98 &
+\textbf{G29} & 99.87 & 0.12 & 99.87 & 99.95 \\
+
+\textbf{G09} & 99.93 & 0.09 & 99.93 & 99.97 &
+\textbf{G30} & 99.77 & 0.08 & 99.81 & 99.97 \\
+
+\textbf{G10} & 99.66 & 0.04 & 99.74 & 99.99 &
+\textbf{G31} & 99.77 & 0    & 99.83 & 100 \\
+
+\textbf{G12} & 99.98 & 0.07 & 99.97 & 99.97 &
+\textbf{G32} & 99.77 & 0.12 & 99.80 & 99.96 \\
+
+\textbf{G15} & 99.93 & 0.02 & 99.95 & 99.99 &
+\textbf{Ave} & 99.86 & 0.05 & 99.88 & 99.98 \\
+\hline
+\end{tabular}
+\label{tab:afpd_tab_4}
+\end{table*}
+
+
+与此同时，图\ref{fig:afpd_11}还揭示了检测期间弹性功率模式随时间的显著变化。在观测时段内，共检测到两种模式。模式 1 出现在 6 月 1--3 日及 6 月 7 日的部分时间段内；而模式 2 则在 6 月 4--6 日全天处于激活状态。表\ref{tab:afpd_tab_5}总结了这两种模式的开始与结束时间戳，其差异十分明显。
+
+\begin{table}[htbp]
+\centering
+\caption{2024 年 6 月 2 日 GPS S2W 弹性功率激活时间段}
+\label{tab:afpd_tab_5}
+\begin{tabularx}{\textwidth}{YYYYYYYY}
+\hline
+\textbf{PRN} & \textbf{Block} & \textbf{Start} & \textbf{End} & 
+\textbf{PRN} & \textbf{Block} & \textbf{Start} & \textbf{End} \\
+\hline
+
+\textbf{G01} & IIF   & 07:12:00 & 18:59:30 & \textbf{G15} & IIR-M & 00:00:00 & 11:23:30 \\
+\textbf{G03} & IIF   & 00:00:00 & 02:00:30 &              &       & 23:24:00 & 23:59:30 \\
+             &       & 14:00:30 & 23:59:30 & \textbf{G17} & IIR-M & 00:00:00 & 06:36:00 \\
+\textbf{G05} & IIR-M & 00:00:00 & 09:35:30 &              &       & 18:36:00 & 23:59:30 \\
+             &       & 21:36:00 & 23:59:30 & \textbf{G24} & IIF   & 01:00:30 & 13:00:00 \\
+\textbf{G06} & IIF   & 00:00:00 & 05:48:00 & \textbf{G25} & IIF   & 03:24:30 & 15:24:00 \\
+             &       & 17:49:00 & 23:59:30 & \textbf{G26} & IIF   & 07:24:30 & 19:24:00 \\
+\textbf{G07} & IIR-M & 00:00:00 & 03:24:00 & \textbf{G27} & IIF   & 09:48:30 & 21:48:00 \\
+             &       & 15:24:00 & 23:59:30 & \textbf{G29} & IIR-M & 01:48:00 & 13:36:00 \\
+\textbf{G08} & IIF   & 11:13:00 & 23:59:30 & \textbf{G30} & IIF   & 00:00:00 & 04:48:30 \\
+\textbf{G09} & IIF   & 00:00:00 & 02:24:00 &              &       & 16:49:00 & 23:59:30 \\
+             &       & 14:24:30 & 23:59:30 & \textbf{G31} & IIR-M & 07:24:00 & 19:23:30 \\
+\textbf{G10} & IIF   & 06:24:30 & 18:24:00 & \textbf{G32} & IIF   & 07:12:30 & 19:12:00 \\
+\textbf{G12} & IIR-M & 00:00:00 & 11:48:00 &              &       &          &          \\
+             &       & 23:48:30 & 23:59:30 &              &       &          &          \\
+
+\hline
+\end{tabularx}
+\end{table}
+
+模式 1 具有区域覆盖特征，覆盖范围为 30°W 至 150°E，但未呈现明显的激活中心（见图\ref{fig:afpd_12}）。相比之下，模式 2 提供全球覆盖（见图\ref{fig:afpd_13}）。
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.85\linewidth]{figures/afpd/图片12.png}
+    \caption{2024 年 6 月 2 日期间具有弹性功率激活的 GPS 卫星轨迹}
+    \label{fig:afpd_12}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.85\linewidth]{figures/afpd/图片13.png}
+    \caption{2024 年 6 月 4 日期间具有弹性功率激活的 GPS 卫星轨迹}
+    \label{fig:afpd_13}
+\end{figure}
+
+
+\subsubsection{多星座与多频段检测}
+
+为了评估 AFPD-DTW 在多星座与多频点场景中的适用性，我们采用了表\ref{tab:afpd_tab_1}中事后处理实验使用的同一组站点。对于北斗（BDS），对 2023 年 1 月至 2025 年 7 月期间的 S2I、S6I 和 S7I 信号进行了分析；对于 GPS，则分析了 2024 年 1 月至 2025 年 7 月期间的 S1C 与 S1W 信号。
+
+结果汇总于表\ref{tab:afpd_tab_6}。未在 BDS 的 S2I 与 S7I 信号，以及 GPS 的 S1C 信号中检测到弹性功率事件。对于 GPS S1W，所有检测到的事件均与 S2W 信号上观测到的事件完全一致。此外，我们观察到自 2025 年之后，卫星 G01 不再参与任何事件。经官方记录验证得知，2025 年 1 月 22 日，G01 从 SVN63（Block IIR-M）切换至 SVN80（Block III）（USCG Navigation Center 2025），进一步说明目前具备弹性功率能力的主要为 GPS Block IIR-M 与 IIF 卫星。
+
+\begin{table*}[htbp]
+\centering
+\caption{多星座与多频点弹性功率事件检测结果：BDS（2023 年 1 月--2025 年 7 月）与 GPS（2024 年 1 月--2025 年 7 月）}
+\begin{tabular}{lcccc}
+\hline
+\textbf{星座} & \textbf{事件编号} & \textbf{日期} & \textbf{频点} & \textbf{PRNs} \\
+\hline
+
+\multirow{10}{*}{\textbf{BDS}}
+& 1 & 2023/9/27 & \multirow{10}{*}{S6I}
+& IGSO: C06, C07, C08, C09, C10, C13, C16 \\
+
+& 2 & 2023/9/30 &  
+& IGSO: C07, C09, C10, C13, C16 \\
+
+& 3 & 2024/9/23 & 
+& MEO: C11, C12, C14 \\
+
+& 4 & 2024/9/30 &
+& IGSO: C07, C08, C09, C10, C13, C16; MEO: C11, C12 \\
+
+& 5 & 2024/10/29 &
+& IGSO: C07, C08, C09, C10, C13, C16 \\
+
+& 6 & 2024/10/30 &
+& MEO: C11, C12 \\
+
+& 7 & 2024/11/9 &
+& IGSO: C07, C09, C10, C16 \\
+
+& 8 & 2024/11/12 &
+&  \\
+
+& 9 & 2025/4/19 &
+& IGSO: C07, C08, C09, C10, C13, C16 \\
+
+& 10 & 2025/4/23 &
+& IGSO: C07, C08, C09, C10, C13, C16 \\
+\hline
+
+\multirow{14}{*}{\textbf{GPS}}
+& 1 & 2024/7/25 & S1W &  \\
+
+& 2 & 2024/7/26 &
+& G01, G03, G05, G06, G07, G08, G09, G10, G12, G15, \\
+&   &           &
+& G17, G24, G25, G26, G27, G29, G30, G31, G32 \\
+
+& 3 & 2025/3/31 &
+&  \\
+
+& 4 & 2025/4/4 &
+&  \\
+
+& 5 & 2025/4/5 &
+&  \\
+
+& 6 & 2025/4/12 &
+&  \\
+
+& 7 & 2025/4/14 &
+&  \\
+
+& 8 & 2025/4/19 &
+& G03, G05, G06, G07, G08, G09, G10, G12, G15, G17, \\
+&   &           &
+& G24, G25, G26, G27, G29, G30, G31, G32 \\
+
+& 9 & 2025/4/28 &
+&  \\
+
+& 10 & 2025/4/29 &
+&  \\
+
+& 11 & 2025/5/1 &
+&  \\
+
+& 12 & 2025/5/8 &
+&  \\
+
+& 13 & 2025/5/9 &
+&  \\
+
+& 14 & 2025/5/13 &
+&  \\
+
+\hline
+\end{tabular}
+\label{tab:afpd_tab_6}
+\end{table*}
+
+
+在 BDS S6I 信号上共检测到十次弹性功率事件，且全部发生在 BDS-2 卫星上。进一步分析表明，具有弹性功率功能的北斗卫星均为 IGSO 或 MEO 卫星，而 GEO 卫星未受到影响。
+
+我们通过卫星地面轨迹进行了验证，以确认弹性功率激活的实际存在。如图\ref{fig:apfd_14}所示，我们展示了两个北斗弹性功率事件的示例。区别在于：2023 年的事件同时影响了 IGSO 与 MEO 卫星，而 2024 年的事件仅涉及 IGSO 卫星。两种情况下，深色阴影区域均对应弹性功率的影响范围。
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.85\linewidth]{figures/afpd/图片14.png}
+    \caption{2024 年 9 月 23 日和 2023 年 9 月 27 日 BDS 卫星在 S6I 信号上触发弹性功率（Flex Power）时的轨迹}
+    \label{fig:apfd_14}
+\end{figure}
+
+值得注意的是，与 GPS S2W 信号不同，BDS S6I 信号在激活区域外表现出增强，而在区域内却表现为关闭状态。这可能表明在这两次北斗事件中，S6I 频段的发射功率被重新分配至其他频段，但这些频段的数据并未可用。
+
+\subsubsection{Comparison and discussion}
+
+AFPD-DTW 方法与以往方法（包括 FPD、基于随机森林的方法以及基线建模方法）的综合性能对比见表\ref{tab:afpd_tab_7}和\ref{tab:afpd_tab_8}。我们通过 C/N\textsubscript{0} 时间序列与卫星轨迹对多星座、多频点的弹性功率状态进行了人工核查，AFPD-DTW 在事后处理检测中取得了 99.94\% 的准确率。在实时检测中，AFPD-DTW 的 TPR 达到 99.87\%，并在仅使用 10 个站点的情况下保持了 99.89\% 的检测精度与 99.98\% 的精确率（Precision）。若进一步结合更多站点数据，这些指标仍有提升空间。
+
+\begin{table*}[htbp]
+\centering
+\caption{各类弹性功率（Flex Power）检测算法性能对比\cite{yang2022real,esenbuuga2023recent,meng2024real}}
+\begin{tabular}{lcccc}
+\hline
+\textbf{方法} & \textbf{年份} & \textbf{应用场景} & \textbf{数据需求} & \textbf{星座} \\
+\hline
+
+FPD & 2023 & 事后处理 & 需要超过 200 个站点数据 & GPS \\
+
+RF-based & 2022 & 实时检测 & 每个站点均需训练数据集 & GPS \\
+
+Baseline-modeling & 2024 & 实时检测 & 需要含已知弹性功率状态的历史数据 & GPS \\
+
+AFPD-DTW & 2025 & 事后处理 / 实时检测 & 仅需 8--10 个站点；无历史数据需求 & GPS / BDS \\
+\hline
+\end{tabular}
+\label{tab:afpd_tab_7}
+\end{table*}
+
+
+\begin{table*}[htbp]
+\centering
+\caption{AFPD-DTW 在多星座与多频点场景下的整体检测性能}
+\begin{tabular}{lcccccc}
+\hline
+\textbf{场景} & \textbf{星座/频率} & \textbf{时间} 
+& \textbf{Acc (\%)} & \textbf{Prec (\%)} & \textbf{TPR (\%)} & \textbf{FPR (\%)} \\
+\hline
+
+\multirow{3}{*}{\textbf{后处理}} 
+& GPS S2W & Jan 2020--July 2025 & 99.91 & 99.36 & 99.36 & 0.05 \\
+& BDS S6I & Jan 2023--July 2025 & 100 & 100 & 100 & 0 \\
+& Total   &  & 99.94 & 99.4 & 99.4 & 0.03 \\
+
+\hline
+
+\multirow{3}{*}{\textbf{实时}} 
+& GPS S2W & June 1--7, 2024 & 99.88 & 99.98 & 99.86 & 0.05 \\
+& BDS S6I & Sept 23--30, 2024 & 99.91 & 99.99 & 99.88 & 0.04 \\
+& Total   &  & 99.89 & 99.98 & 99.87 & 0.04 \\
+
+\hline
+\end{tabular}
+\label{tab:afpd_tab_8}
+\end{table*}
+
+
+在数据需求方面，AFPD-DTW 不依赖历史数据，仅需 8--10 个站点即可运行，因此能够在多星座、多频点环境中实现快速、简化的部署。相比之下，FPD 需要超过 200 个站点，而基于随机森林的方法需要大量标注训练数据；基于模型的方法则依赖大规模先验数据集和特定硬件配置。
+
+在检测效率方面，由于 AFPD-DTW 仅使用少量站点数据，相比 FPD 实现了约 20 倍的加速。这种大幅度的速度提升使得快速事后处理与实时检测成为可能，尤其是在站网规模不断扩大、卫星星座数量持续增长的背景下，其重要性更加显著。
+
+总而言之，AFPD-DTW 通过利用卫星日周期 C/N\textsubscript{0} 差分特性，并采用 DTW 校正周期不匹配问题，实现了高效且可靠的弹性功率检测。在实时与事后处理两种模式下，它在保持高精度的同时显著提升了检测速度，且对数据需求极低，无需任何预训练的基线模型。
+
+
+\section{基于深度学习的检测方法}
+
+尽管 AFPD-DTW 在处理时间错位和噪声方面表现出色，但其本质上属于一种“相对检测”策略：它依赖于将当前观测值与历史基准（如前几日的均值）进行差分比较。这种机制存在两个固有的局限性：首先，它对初始状态敏感，需要人为确认基准日处于非弹性功率状态；其次，当弹性功率事件基准模型被“污染”时，差分方法可能失效，从而难以判断当前的“绝对”功率状态。
+
+为了克服上述缺陷，本节提出一种基于深度学习的端到端检测框架。该方法的核心目标是构建一个具有高泛化能力的通用模型，旨在通过单一模型实现对不同测站、不同卫星对的实时状态判读，而无需针对特定链路进行独立建模。本质上，该方法将弹性功率检测建模为一个多变量时间序列分类问题：以归一化的信号强度序列及空间几何特征为输入，通过混合神经网络架构提取深层特征，最终输出当前时刻发生弹性功率事件的绝对概率。
+
+\subsection{方法}
+
+图\ref{fig:c3_dl_strcut}展示了用于弹性功率检测的深度学习架构。
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=1\linewidth]{figures/c3/dl/struct.png}
+\caption{用于弹性功率检测的深度学习架构}
+\label{fig:c3_dl_strcut}
+\end{figure}
+
+\subsubsection{数据预处理与特征工程}
+
+深度学习模型的性能高度依赖于输入数据的质量与表征形式。原始数据包括带有时间戳的 GNSS 信号日志、测站坐标、卫星位置以及不同信号分量的载噪比（C/N\textsubscript{0}）。
+
+Flex Power 检测的关键物理量为主信号（$S_1$）、副信号（$S_2$）的 C/N\textsubscript{0} 值及其差值（$\Delta_{\text{diff}} = S_2 - S_1$）。由于不同接收机、不同仰角下的基准噪声水平存在显著差异，直接使用原始分贝值会导致模型难以收敛。因此，我们采用 Z-Score 标准化处理：
+\begin{equation}
+x_{\text{norm}} = \frac{x - \mu_{\text{global}}}{\sigma_{\text{global}}},
+\end{equation}
+其中，$\mu_{\text{global}}$ 和 $\sigma_{\text{global}}$ 是在训练集上预先计算的全局均值和标准差。
+
+为了捕捉信号的瞬态特征与动态趋势，我们构建了复合输入向量：
+\begin{enumerate}
+\item \textbf{当前状态向量}：时间点 $t$ 的 $S_1$、$S_2$ 和 $\Delta_{\text{diff}}$ 的瞬时归一化值。
+\item \textbf{时序序列窗口}：构建长度为 $W$（本文取 $W=5$）的滑动窗口序列 $X_{seq} = [x_{t-W+1}, \dots, x_t]$。这使模型能够观察信号在短时间内的变化模式，从而区分噪声引起的波动与功率阶跃。
+\end{enumerate}
+
+GNSS 信号强度受多径效应和卫星机动影响显著。为了解耦这些环境因素，我们设计了显式的上下文嵌入：
+\begin{itemize}
+\item \textbf{周期性时间编码}：为了保持时间的连续性（例如 23:59 与 00:01 的邻近性），我们将时间分量 $v$（如小时、DOY）分解为正弦与余弦特征：
+\begin{equation}
+v_{\text{cyc}} = \left[ \sin\left(\frac{2\pi v}{P}\right), \cos\left(\frac{2\pi v}{P}\right) \right].
+\end{equation}
+\item \textbf{几何特征嵌入}：卫星的高度角 $\theta_{el}$ 和方位角 $\theta_{az}$ 通过三角函数变换 $(\sin\theta, \cos\theta)$ 映射为连续特征，以辅助模型识别低高度角下的自然多径衰减。
+\item \textbf{卫星身份嵌入 (Satellite Embedding)}：不同批次（Block）的卫星可能具有不同的功率特性。我们使用可学习的嵌入层（Learnable Embedding Layer）将离散的卫星 PRN 编号映射为密集向量 $E_{\text{sat}} \in \mathbb{R}^{32}$，使模型能够自适应地学习特定卫星的硬件偏差。
+\end{itemize}
+
+
+\subsubsection{混合神经网络架构}
+为了兼顾局部特征提取与全局依赖建模，本文提出了一个混合 CNN-Transformer 网络架构。该架构包含双流特征提取模块与多模态融合模块。
+
+针对输入的时序信号 $X_{seq}$，我们设计了并行的处理分支：
+\begin{itemize}
+\item \textbf{多尺度 CNN 分支}：用于捕捉局部突变。采用一维卷积神经网络（1D-CNN），堆叠三个卷积块，卷积核尺寸依次递增 ($k=[3, 5, 7]$)。每个卷积块包含卷积层、批归一化（Batch Normalization）、ReLU 激活函数和 Dropout 层。
+\item \textbf{Transformer 分支}：用于捕捉长程依赖。引入 Transformer 编码器，利用多头自注意力机制（Multi-Head Self-Attention）分析窗口内的全局上下文关联：
+\begin{equation}
+\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V.
+\end{equation}
+这使得模型在判断当前时刻状态时，能够有效利用窗口早期的信号趋势作为参考。
+\end{itemize}
+
+模型的最终判决基于多源信息的整合。我们将 CNN 提取的局部特征向量、Transformer 提取的全局特征向量、卫星嵌入 $E_{\text{sat}}$ 以及时空编码特征拼接为统一的特征向量 $F_{\text{fused}}$。该向量随即通过一个包含 LayerNorm 和 ReLU 的多层感知机（MLP）融合模块，以建模不同模态间的非线性交互。最后，通过全连接层与 Sigmoid 激活函数，输出当前历元发生弹性功率事件的概率 $P(y=1|x)$。
+
+\subsubsection{损失函数与模型训练}
+由于弹性功率事件在长期观测中属于稀疏事件，正负样本比例极不平衡。若使用标准交叉熵损失，模型倾向于预测“无事件”以获得较高的统计精度。为此，我们设计了复合损失函数 $\mathcal{L}_{\text{total}}$。
+
+采用 Focal Loss 降低简单负样本（即大量的正常观测数据）在梯度更新中的权重，迫使模型专注于难以分类的样本：
+\begin{equation}
+\mathcal{L}_{\text{Focal}}(p_t) = -\alpha (1-p_t)^\gamma \log(p_t),
+\end{equation}
+其中 $p_t$ 为模型对真实类别的预测概率，实验中设置平衡因子 $\alpha=0.25$，聚焦参数 $\gamma=2.0$。
+
+考虑到物理世界中功率状态不会在毫秒级内发生剧烈震荡（例如，不应出现 0-1-0 的高频跳变），我们在预测结果上施加平滑性惩罚 $\mathcal{L}_{\text{Smooth}}$：
+\begin{equation}
+\mathcal{L}{\text{Smooth}} = \frac{1}{B-1} \sum{i=1}^{B-1} | P(y|x_{i+1}) - P(y|x_i) |.
+\end{equation}
+最终损失函数为：
+\begin{equation}
+\mathcal{L}{\text{total}} = \mathcal{L}{\text{Focal}} + \lambda \mathcal{L}_{\text{Smooth}}.
+\end{equation}
+
+模型训练采用 AdamW 优化器，配合余弦退火（Cosine Annealing）学习率调度策略。为防止过拟合，基于验证集精度实施早停（Early Stopping）机制。在推理阶段，对于给定的输入数据流，模型输出概率值 $P_{\text{flex}}$。当 $P_{\text{flex}} > \tau$（阈值 $\tau$ 通常取 0.5）时，判定当前历元处于弹性功率激活状态。该方法不依赖历史基准序列，实现了对单历元数据的绝对状态检测，能够有效补充 AFPD-DTW 在复杂场景下的不足。
+
+
+\subsection{数据集与实验设计}
+
+本实验的数据来自于。。。经过了什么样的处理。。。具体见表格。。。采用。。。作为训练集，。。。作为测试集。。。
+
+为什么这样选择。。。
+
+\subsection{实验结果}
+
+\subsection{消融实验}
+
+\subsection{本章小结}
