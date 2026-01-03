@@ -1,0 +1,30 @@
+# LaTeX 编译产物
+*.pdf
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.bbl
+*.blg
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.xdv
+
+# 临时文件
+*.swp
+*~
+.*.swp
+.DS_Store
+Thumbs.db
+
+# 构建目录
+build/
+_output/
+
+# IDE 文件
+.vscode/
+.idea/
+*.code-workspace
