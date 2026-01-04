@@ -47,21 +47,21 @@
 \contentsline {figure}{\numberline {3.29}{\ignorespaces DLFPD时空泛化性实验ROC曲线}}{81}{figure.caption.83}%
 \contentsline {figure}{\numberline {3.30}{\ignorespaces DLFPD时空泛化性实验混淆矩阵}}{81}{figure.caption.84}%
 \contentsline {figure}{\numberline {3.31}{\ignorespaces DLFPD消融实验各实验组的精确率、召回率及 F1 值对比图}}{83}{figure.caption.87}%
-\contentsline {figure}{\numberline {5.1}{\ignorespaces 基于深度学习的星载产品分段遥测时序异常检测方法流程图}}{94}{figure.caption.91}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces 数据预处理与特征矩阵构建方法}}{94}{figure.caption.92}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces 时序自编码器模型设计与LSTM单元结构}}{95}{figure.caption.93}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces 训练数据、测试数据。其中训练数据为模拟星载产品遥测时序数据（左上），测试数据包含正常数据（左中）、斜率漂移异常数据（左下）、离群点异常数据（右上）、整体漂移异常数据（右中）、混合异常数据（右下）}}{97}{figure.caption.94}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces 正常数据（左）与斜率漂移异常数据（右）的原始遥测时序、平滑后时序与异常得分时序}}{97}{figure.caption.95}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces 离群点异常数据（左）与整体漂移异常数据（右）的原始遥测时序、平滑后时序与异常得分时序}}{97}{figure.caption.96}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces 混合异常数据的原始遥测时序、平滑后时序与异常得分时序}}{98}{figure.caption.97}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces 基于多维遥测时序STL分解的深度学习重构误差融合异常检测方法流程图}}{101}{figure.caption.98}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces 多维时序时间窗口降采样示意图}}{102}{figure.caption.99}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces 时序STL分解示意图}}{102}{figure.caption.100}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces 正常数据（左列）与离群点异常数据（右列）的原始遥测时序、降采样时序、分解后趋势项时序、周期项时序、残差项时序、异常分数时序与检测结果时序示意图}}{104}{figure.caption.101}%
-\contentsline {figure}{\numberline {5.12}{\ignorespaces 整体漂移数据（左列）与斜率变化数据（右列）的原始遥测时序、降采样时序、分解后趋势项时序、周期项时序、残差项时序、异常分数时序与检测结果时序示意图}}{105}{figure.caption.102}%
-\contentsline {figure}{\numberline {5.13}{\ignorespaces 混合异常数据的原始遥测时序、降采样时序、分解后趋势项时序、周期项时序、残差项时序、异常分数时序与检测结果时序示意图}}{106}{figure.caption.103}%
-\contentsline {figure}{\numberline {6.1}{\ignorespaces BDS 非差非组合 PPP 在弹性功率事件期间使用不同策略DCB产品的 ENU 定位误差}}{117}{figure.caption.106}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces BDS 单频 PPP 在弹性功率事件期间使用不同策略DCB产品的 ENU 定位误差}}{118}{figure.caption.107}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces 基于深度学习的星载产品分段遥测时序异常检测方法流程图}}{94}{figure.caption.92}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces 数据预处理与特征矩阵构建方法}}{95}{figure.caption.93}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces 时序自编码器模型设计与LSTM单元结构}}{96}{figure.caption.94}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces 训练数据、测试数据。其中训练数据为模拟星载产品遥测时序数据（左上），测试数据包含正常数据（左中）、斜率漂移异常数据（左下）、离群点异常数据（右上）、整体漂移异常数据（右中）、混合异常数据（右下）}}{97}{figure.caption.95}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces 正常数据（左）与斜率漂移异常数据（右）的原始遥测时序、平滑后时序与异常得分时序}}{98}{figure.caption.96}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces 离群点异常数据（左）与整体漂移异常数据（右）的原始遥测时序、平滑后时序与异常得分时序}}{99}{figure.caption.97}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces 混合异常数据的原始遥测时序、平滑后时序与异常得分时序}}{99}{figure.caption.98}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces 基于多维遥测时序STL分解的深度学习重构误差融合异常检测方法流程图}}{102}{figure.caption.101}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces 多维时序时间窗口降采样示意图}}{103}{figure.caption.102}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces 时序STL分解示意图}}{105}{figure.caption.103}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces 正常数据（左列）与离群点异常数据（右列）的原始遥测时序、降采样时序、分解后趋势项时序、周期项时序、残差项时序、异常分数时序与检测结果时序示意图}}{106}{figure.caption.104}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces 整体漂移数据（左列）与斜率变化数据（右列）的原始遥测时序、降采样时序、分解后趋势项时序、周期项时序、残差项时序、异常分数时序与检测结果时序示意图}}{107}{figure.caption.105}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces 混合异常数据的原始遥测时序、降采样时序、分解后趋势项时序、周期项时序、残差项时序、异常分数时序与检测结果时序示意图}}{108}{figure.caption.106}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces BDS 非差非组合 PPP 在弹性功率事件期间使用不同策略DCB产品的 ENU 定位误差}}{121}{figure.caption.109}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces BDS 单频 PPP 在弹性功率事件期间使用不同策略DCB产品的 ENU 定位误差}}{122}{figure.caption.110}%
 \contentsfinish 
 \contentsfinish 
 \contentsfinish 
