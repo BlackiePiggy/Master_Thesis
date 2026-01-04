@@ -1,28 +1,28 @@
 [0] Config.pm:308> INFO - This is Biber 2.20
 [0] Config.pm:311> INFO - Logfile is 'main.blg'
-[25] biber-darwin:340> INFO - === Sun Jan  4, 2026, 22:25:40
-[32] Biber.pm:420> INFO - Reading 'main.bcf'
-[80] Biber.pm:994> INFO - Found 92 citekeys in bib section 0
-[85] Biber.pm:4463> INFO - Processing section 0
-[90] Biber.pm:4654> INFO - Looking for bibtex file 'refs.bib' for section 0
-[92] bibtex.pm:1713> INFO - LaTeX decoding ...
+[26] biber-darwin:340> INFO - === Sun Jan  4, 2026, 23:50:07
+[33] Biber.pm:420> INFO - Reading 'main.bcf'
+[81] Biber.pm:994> INFO - Found 92 citekeys in bib section 0
+[86] Biber.pm:4463> INFO - Processing section 0
+[91] Biber.pm:4654> INFO - Looking for bibtex file 'refs.bib' for section 0
+[93] bibtex.pm:1713> INFO - LaTeX decoding ...
 [135] bibtex.pm:1519> INFO - Found BibTeX data source 'refs.bib'
-[720] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[720] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[720] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
-[720] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
-[746] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[778] bbl.pm:779> INFO - Output to main.bbl
-[778] Biber.pm:131> WARN - Possible typo (case mismatch) between datasource keys: 'Du2024Effects' and 'du2024effects' in file 'refs.bib'
-[778] Biber.pm:131> WARN - Possible typo (case mismatch) between datasource keys: 'Steigenberger2018GNSS' and 'steigenberger2018gnss' in file 'refs.bib'
-[778] Biber.pm:131> WARN - Possible typo (case mismatch) between datasource keys: 'Montenbruck2014Differential' and 'montenbruck2014differential' in file 'refs.bib'
-[778] Biber.pm:131> WARN - Possible typo (case mismatch) between datasource keys: 'Zhang2018Joint' and 'zhang2018joint' in file 'refs.bib'
-[778] Biber.pm:131> WARN - Duplicate entry key: 'Montenbruck2014Differential' in file 'refs.bib', skipping ...
-[778] Biber.pm:131> WARN - Possible typo (case mismatch) between datasource keys: 'Wang2016Determination' and 'wang2016determination' in file 'refs.bib'
-[778] Biber.pm:131> WARN - Possible typo (case mismatch) between datasource keys: 'Xiang2020Understanding' and 'xiang2020understanding' in file 'refs.bib'
-[778] Biber.pm:131> WARN - Duplicate entry key: 'Ammar2018Estimation' in file 'refs.bib', skipping ...
-[778] Biber.pm:131> WARN - Duplicate entry key: 'Wang2016Determination' in file 'refs.bib', skipping ...
-[778] Biber.pm:131> WARN - Duplicate entry key: 'Jin2016Assessment' in file 'refs.bib', skipping ...
-[778] Biber.pm:131> WARN - Duplicate entry key: 'Nwankwo2020The' in file 'refs.bib', skipping ...
-[778] Biber.pm:131> WARN - Duplicate entry key: 'Ibrahim2020Machine' in file 'refs.bib', skipping ...
-[778] Biber.pm:133> INFO - WARNINGS: 12
+[718] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[718] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[718] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
+[718] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[745] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[776] bbl.pm:779> INFO - Output to main.bbl
+[776] Biber.pm:131> WARN - Possible typo (case mismatch) between datasource keys: 'Du2024Effects' and 'du2024effects' in file 'refs.bib'
+[777] Biber.pm:131> WARN - Possible typo (case mismatch) between datasource keys: 'Steigenberger2018GNSS' and 'steigenberger2018gnss' in file 'refs.bib'
+[777] Biber.pm:131> WARN - Possible typo (case mismatch) between datasource keys: 'Montenbruck2014Differential' and 'montenbruck2014differential' in file 'refs.bib'
+[777] Biber.pm:131> WARN - Possible typo (case mismatch) between datasource keys: 'Zhang2018Joint' and 'zhang2018joint' in file 'refs.bib'
+[777] Biber.pm:131> WARN - Duplicate entry key: 'Montenbruck2014Differential' in file 'refs.bib', skipping ...
+[777] Biber.pm:131> WARN - Possible typo (case mismatch) between datasource keys: 'Wang2016Determination' and 'wang2016determination' in file 'refs.bib'
+[777] Biber.pm:131> WARN - Possible typo (case mismatch) between datasource keys: 'Xiang2020Understanding' and 'xiang2020understanding' in file 'refs.bib'
+[777] Biber.pm:131> WARN - Duplicate entry key: 'Ammar2018Estimation' in file 'refs.bib', skipping ...
+[777] Biber.pm:131> WARN - Duplicate entry key: 'Wang2016Determination' in file 'refs.bib', skipping ...
+[777] Biber.pm:131> WARN - Duplicate entry key: 'Jin2016Assessment' in file 'refs.bib', skipping ...
+[777] Biber.pm:131> WARN - Duplicate entry key: 'Nwankwo2020The' in file 'refs.bib', skipping ...
+[777] Biber.pm:131> WARN - Duplicate entry key: 'Ibrahim2020Machine' in file 'refs.bib', skipping ...
+[777] Biber.pm:133> INFO - WARNINGS: 12

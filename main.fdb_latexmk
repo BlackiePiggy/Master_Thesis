@@ -1,17 +1,17 @@
 # Fdb version 4
-["biber main"] 1767536738.94427 "main.bcf" "main.bbl" "main" 1767536795.50453 0
-  "main.bcf" 1767536754.05848 149964 74c4a2b93372a88eb6fa12c5cbcaeacf "xelatex"
+["biber main"] 1767541805.79487 "main.bcf" "main.bbl" "main" 1767542031.57976 0
+  "main.bcf" 1767541990.2474 150043 4bed9334723c2a0434e8ef748554a898 "xelatex"
   "refs.bib" 1767536721.52864 41632 4c5641fa74e41ac5b7fc11681c117c71 ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["xdvipdfmx"] 1767536754.21775 "main.xdv" "main.pdf" "main" 1767536795.50778 0
-  "main.xdv" 1767536754.05954 2482828 f148f838cfb3e0b9e6640fa6ed95f1a7 "xelatex"
+["xdvipdfmx"] 1767541990.34961 "main.xdv" "main.pdf" "main" 1767542031.58333 0
+  "main.xdv" 1767541990.24836 2629452 30f5aa9358fa153a86e8b72511038cd4 "xelatex"
   (generated)
   "main.pdf"
   (rewritten before read)
-["xelatex"] 1767536747.56189 "main.tex" "main.xdv" "main" 1767536795.50457 0
+["xelatex"] 1767541985.48975 "main.tex" "main.xdv" "main" 1767542031.5798 0
   "/System/Library/Fonts/Menlo.ttc" 1763819368 2156036 ec05dfca6821d85440da0899493002c3 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -318,7 +318,7 @@
   "contents/chapter2.tex" 1767516371.78253 54072 2edd42c93b5bfa321578bbe782010df4 ""
   "contents/chapter3.tex" 1767513896.5679 105853 0aae47fa6a7e467f12d6d1ff90a594bf ""
   "contents/chapter4.tex" 1767536052.67787 45403 7621a1321d3e4cf164c79465b40f53bf ""
-  "contents/chapter5.tex" 1767517633.21585 28704 9b269a96e337be0cd1039aca9f4d9303 ""
+  "contents/chapter5.tex" 1767541984.28904 48270 b34e063c240d5e41dcce1c4b0b5fdd9a ""
   "contents/digest.tex" 1766093844 2819 2a74d209bd26ff0ddf9680dd6913962d ""
   "contents/nomenclature.tex" 1766093844 1882 0aeae845d8e14c09f105d99680e857b3 ""
   "contents/resume.tex" 1766093844 766 d727db4898daf45212dc6e57dc2a716e ""
@@ -363,8 +363,10 @@
   "figures/c4/pic5.png" 1766219145.29928 2347345 897137a6f94adb35aa23e0d3f3a60bae ""
   "figures/c4/pic6.png" 1766219145.30476 1856063 ab0ee75a670b4857988648aca31dc94b ""
   "figures/c4/pic7.png" 1766219145.34455 193768 cbbe9f6cd0907b0ff84c35a8c3dcc671 ""
+  "figures/c5/DCB_15min_zeromean.png" 1767541471.74945 395431 21bfe5154dbf377de074700429f31733 ""
   "figures/c5/SFPPP.png" 1766717556.07921 492696 cb78c02136d9d138827386cdf81f8ee3 ""
   "figures/c5/UCUDPPP.png" 1766717557.35689 546964 b1453c171a7f745297037cd9eef35844 ""
+  "figures/c5/nonFP_DCB_15min_zeromean.png" 1767541471.75311 384226 13f8d7b56d6b0c22247ebe6f1ba2b418 ""
   "figures/dcb/fig1.png" 1766093854 1561417 d9fbf16ba885f963337b796b2e5bd8c4 ""
   "figures/dcb/fig10.png" 1766093852 2043819 14241eec198f6529bea5223fdc510ac2 ""
   "figures/dcb/fig11.png" 1766093852 1993977 f9105c5e0e941d990408a12da4be0200 ""
@@ -386,15 +388,15 @@
   "figures/patent1/pic5.png" 1766225327.52604 199703 79402fc44b183b0a8d13ad8e07d6c996 ""
   "figures/patent1/pic6.png" 1766225327.52683 225315 946706b00b59df4a4859bf73b203eeca ""
   "figures/patent1/pic7.png" 1766225327.52772 134609 35941fda0acfc8ef673be1e294b19970 ""
-  "main.aux" 1767536754.01127 70060 4f66375f3db8a67baf4c126ba98badba "xelatex"
-  "main.bbl" 1767536740.91372 297213 9b70704880a583bddb8d7d10a2df1d88 "biber main"
-  "main.loa" 1767536754.0595 34 83b51cfb875e1ec21e8877a3eccc4b16 "xelatex"
-  "main.lof" 1767536754.05941 11969 13637aa26ee3778241ea24992b4fcd89 "xelatex"
-  "main.lot" 1767536754.05947 4587 8c8091b8566e81eaff833e33a04d9e39 "xelatex"
-  "main.out" 1767536754.05607 11565 9a2f5b00bce15f5b0953e85a1abb0c7d "xelatex"
-  "main.run.xml" 1767536754.05919 2445 6ef12acf25d97fd9cd3b37c0f0fcfd56 "xelatex"
+  "main.aux" 1767541990.22596 72588 29997008956817481c31e21f38485ccf "xelatex"
+  "main.bbl" 1767541807.81002 297213 9b70704880a583bddb8d7d10a2df1d88 "biber main"
+  "main.loa" 1767541990.24833 34 83b51cfb875e1ec21e8877a3eccc4b16 "xelatex"
+  "main.lof" 1767541990.24815 12360 dc5a7db0cd6e6eeefc12317589f7129e "xelatex"
+  "main.lot" 1767541990.2483 5158 4b621c23165e825a41d1a57628ca4e76 "xelatex"
+  "main.out" 1767541990.24524 11581 77fa376388d1bb2bb48a7487e8984b33 "xelatex"
+  "main.run.xml" 1767541990.24798 2445 6ef12acf25d97fd9cd3b37c0f0fcfd56 "xelatex"
   "main.tex" 1767535407.20455 2403 b00a2cd4478e843e1e5751082dbb3df7 ""
-  "main.toc" 1767536754.05934 9137 21fdff1d44fbdc56c6274d6b98ce326d "xelatex"
+  "main.toc" 1767541990.24809 9521 201112a0863d30bef56ac5bb3d729003 "xelatex"
   "setup.tex" 1766197647.74481 6642 b82975f4874570e97253d71a632861f7 ""
   "sjtuthesis-bachelor.sty" 1766093844 2379 54836db1c2aa13e326f52d686e824560 ""
   (generated)
