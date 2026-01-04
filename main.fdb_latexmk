@@ -1,17 +1,17 @@
 # Fdb version 4
-["biber main"] 1767502406.85763 "main.bcf" "main.bbl" "main" 1767513523.59884 0
-  "main.bcf" 1767513483.39742 145896 eae5023c619204b80642db71490f6635 "xelatex"
-  "refs.bib" 1766093844 23083 6e9b2001e95975ea3d69125d414eb6e2 ""
+["biber main"] 1767515656.02284 "main.bcf" "main.bbl" "main" 1767516111.65792 0
+  "main.bcf" 1767516072.80275 148626 9df05da1215bc85ba3852586d7ac96c4 "xelatex"
+  "refs.bib" 1767514544.82644 33534 ff54ac5a1057cf181068fed4816e1104 ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["xdvipdfmx"] 1767513483.49937 "main.xdv" "main.pdf" "main" 1767513523.60233 0
-  "main.xdv" 1767513483.39823 2218388 e3ec24a7c5dbe07f70d1e9af1ee83617 "xelatex"
+["xdvipdfmx"] 1767516072.89834 "main.xdv" "main.pdf" "main" 1767516111.6612 0
+  "main.xdv" 1767516072.80392 2340792 f8aa05211a3fbbb746e81cf89f25a2a5 "xelatex"
   (generated)
   "main.pdf"
   (rewritten before read)
-["xelatex"] 1767513479.38035 "main.tex" "main.xdv" "main" 1767513523.59889 0
+["xelatex"] 1767516068.677 "main.tex" "main.xdv" "main" 1767516111.65796 0
   "/System/Library/Fonts/Menlo.ttc" 1763819368 2156036 ec05dfca6821d85440da0899493002c3 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -315,8 +315,8 @@
   "contents/acknowledgements.tex" 1766093844 691 0060f16d4f407ca74fb44bd848c1b7b3 ""
   "contents/app_maxwell_equations.tex" 1766093844 39 69b5d62fb6a445c9ef0576a1e6423199 ""
   "contents/chapter1.tex" 1766218872.2504 20525 7aebd27e0acd7847c46f9060424820f3 ""
-  "contents/chapter2.tex" 1766217967.78317 45557 ec12fb5f24c0b45196504d7ecaf88b81 ""
-  "contents/chapter3.tex" 1767513478.20229 105766 bbd88b8ea9ad8fe5e4d2a3858c53454b ""
+  "contents/chapter2.tex" 1767516065.32883 54081 054c788d827a658a7f1493db622651ef ""
+  "contents/chapter3.tex" 1767513896.5679 105853 0aae47fa6a7e467f12d6d1ff90a594bf ""
   "contents/chapter4.tex" 1766199029.98942 7940 8311919b25ceec1177f9211e024335bd ""
   "contents/chapter5.tex" 1766226402.3858 20070 6a57485828066e244adeb10925c93e91 ""
   "contents/chapter6.tex" 1766731462.21016 28704 424c3cf74223887b824d45f3e5bb4826 ""
@@ -387,15 +387,15 @@
   "figures/patent1/pic5.png" 1766225327.52604 199703 79402fc44b183b0a8d13ad8e07d6c996 ""
   "figures/patent1/pic6.png" 1766225327.52683 225315 946706b00b59df4a4859bf73b203eeca ""
   "figures/patent1/pic7.png" 1766225327.52772 134609 35941fda0acfc8ef673be1e294b19970 ""
-  "main.aux" 1767513483.38858 61336 a445a24c108935b973d26d6702d025e5 "xelatex"
-  "main.bbl" 1767502408.32194 130837 ab232726291fc8ca1590e0e018c2b8cc "biber main"
-  "main.loa" 1767513483.39819 34 83b51cfb875e1ec21e8877a3eccc4b16 "xelatex"
-  "main.lof" 1767513483.39811 11964 2c6a19e5e6eb9b341b04d137e50ac9da "xelatex"
-  "main.lot" 1767513483.39817 4179 921aeb60c5e57320fb9d353918d34a0d "xelatex"
-  "main.out" 1767513483.39536 13232 8a509683b43b6e127998af3bbd2378ce "xelatex"
-  "main.run.xml" 1767513483.39794 2445 6ef12acf25d97fd9cd3b37c0f0fcfd56 "xelatex"
+  "main.aux" 1767516072.78838 66465 63b0ed30df7d6f0dec6076ec99800014 "xelatex"
+  "main.bbl" 1767515657.50387 216651 5db5bafd85472664a2bc530e250a7711 "biber main"
+  "main.loa" 1767516072.80389 34 83b51cfb875e1ec21e8877a3eccc4b16 "xelatex"
+  "main.lof" 1767516072.80366 11967 a6a78501e01060425e181bf6490c9a15 "xelatex"
+  "main.lot" 1767516072.80387 4179 8b542285568dd0bfd00dd02abd3b27b1 "xelatex"
+  "main.out" 1767516072.80061 13272 2188ea0e7d0170e5b3c9e5ca1a928a68 "xelatex"
+  "main.run.xml" 1767516072.80351 2445 6ef12acf25d97fd9cd3b37c0f0fcfd56 "xelatex"
   "main.tex" 1766668344.79758 2429 f45a0d35e9d12809b7c7e9050972ccf8 ""
-  "main.toc" 1767513483.39805 9451 c228033f051828adc473e2641da44d66 "xelatex"
+  "main.toc" 1767516072.80361 9580 9e852fdb344ca46ea0514824e2781f8e "xelatex"
   "setup.tex" 1766197647.74481 6642 b82975f4874570e97253d71a632861f7 ""
   "sjtuthesis-bachelor.sty" 1766093844 2379 54836db1c2aa13e326f52d686e824560 ""
   (generated)
