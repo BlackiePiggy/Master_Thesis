@@ -8,7 +8,7 @@ GNSS事件带来的无论是信号层面的质量波动，还是导航电文参�
 精密单点定位（Precise Point Positioning, PPP）是指利用全球分布的参考站网解算的精密卫星轨道和钟差产品，对单台GNSS接收机的非差观测值进行处理，以获得高精度位置坐标、接收机钟差及大气延迟参数的技术。构建严密的函数模型是实现PPP高精度解算的基础。
 
 \subsection{原始观测方程}
-GNSS的基本观测值包括伪距（Code Pseudorange）和载波相位（Carrier Phase）。假设接收机为 $r$，卫星为 $s$，在频率 $j$ ($j=1, 2, ...$) 上的原始观测方程可表示为：
+GNSS的基本观测值包括伪距和载波相位。假设接收机为 $r$，卫星为 $s$，在频率 $j$ ($j=1, 2, ...$) 上的原始观测方程可表示为：
 
 \begin{equation}
 \left\{
@@ -28,9 +28,9 @@ L_{r,j}^s &= \rho_r^s + c(dt_r - dt^s) + T_r^s - I_{r,j}^s + \lambda_j N_{r,j}^s
     \item $T_r^s$ 为对流层延迟（包含干分量和湿分量）；
     \item $I_{r,j}^s$ 为频率 $j$ 处的电离层延迟一阶项；
     \item $\lambda_j$ 为载波波长；
-    \item $N_{r,j}^s$ 为整周模糊度（Integer Ambiguity）；
-    \item $d_{r,j}$ 和 $d_{j}^s$ 分别为接收机端和卫星端的伪距硬件延迟（Code Bias）；
-    \item $b_{r,j}$ 和 $b_{j}^s$ 分别为接收机端和卫星端的相位硬件延迟（Phase Bias）；
+    \item $N_{r,j}^s$ 为整周模糊度；
+    \item $d_{r,j}$ 和 $d_{j}^s$ 分别为接收机端和卫星端的伪距硬件延迟；
+    \item $b_{r,j}$ 和 $b_{j}^s$ 分别为接收机端和卫星端的相位硬件延迟；
     \item $\epsilon_{P,j}$ 和 $\epsilon_{L,j}$ 分别包含了多路径效应及测量噪声。
 \end{itemize}
 
@@ -504,7 +504,7 @@ E/N/U 三个方向定位误差 \\
 
 \subsubsection{单站分析}
 
-为了评估弹性功率事件引起的卫星端硬件延迟变化对非差非组合精密单点定位（UC-PPP）性能的具体影响，本节选取2021年第029天弹性功率开启时段（Event-ON）的BDS观测数据进行解算。图 \ref{fig:uduc_ppp_result} 展示了在该时段内，分别采用IGS分析中心产品（DCB\_CAS(Rapid)、DCB\_DLR(Final)）、自解算单日恒定产品（DCB\_daily）以及分段估计产品（DCB\_FP-OFF、DCB\_FP-ON）作为修正项时，测站MAL2在东（E）、北（N）、天（U）三个方向上的定位误差时间序列。表 \ref{tab:uc_ppp_stats} 详细统计了各策略下的收敛时间（以连续20个历元三维定位误差小于0.1 m为判据）及定位精度指标。
+为了评估弹性功率事件引起的卫星端硬件延迟变化对非差非组合精密单点定位（UC-PPP）性能的具体影响，本节选取2021年第029天弹性功率开启时段的BDS观测数据进行解算。图 \ref{fig:uduc_ppp_result} 展示了在该时段内，分别采用IGS分析中心产品（DCB\_CAS(Rapid)、DCB\_DLR(Final)）、自解算单日恒定产品（DCB\_daily）以及分段估计产品（DCB\_FP-OFF、DCB\_FP-ON）作为修正项时，测站MAL2在东（E）、北（N）、天（U）三个方向上的定位误差时间序列。表 \ref{tab:uc_ppp_stats} 详细统计了各策略下的收敛时间（以连续20个历元三维定位误差小于0.1 m为判据）及定位精度指标。
 
 非差非组合PPP模型通过引入外部DCB产品来分离接收机钟差与电离层参数。从表 \ref{tab:uc_ppp_stats} 的统计数据可以发现，除了是否顾及分段特性外，快速和最终DCB产品的时效性与解算策略对收敛性能亦表现出显著影响。采用弹性功率开启后估计的真实DCB值（{DCB\_FP-ON}）进行修正时，滤波器仅需 {1440 s} 即可达到0.1 m的高精度收敛标准，在所有策略中表现最优。这表明，当先验信息准确描述了当前的物理信号特征时，非差非组合模型能够以最快速度完成参数去相关。
 
@@ -550,7 +550,7 @@ IGS分析中心产品中，CAS发布的快速DCB产品收敛时间为 {3900 s}�
 
 \begin{table}[htbp]
   \centering
-  \caption{不同策略下单频 PPP 综合性能对比}
+  \caption{不同策略下非差非组合 PPP 综合性能对比}
   \label{tab:uc_ppp_stats_all}
   \begin{tabular}{clccc}
     \toprule
@@ -587,7 +587,7 @@ IGS分析中心产品中，CAS发布的快速DCB产品收敛时间为 {3900 s}�
 
 \begin{table}[htbp]
   \centering
-  \caption{不同 DCB 产品下单频 PPP 定位性能统计（0.3 m 收敛阈值）}
+  \caption{不同 DCB 产品下单频 PPP 定位性能统计}
   \label{tab:sf_ppp_stats}
   \begin{tabular}{lccccc}
     \toprule
@@ -623,12 +623,12 @@ IGS分析中心产品中，CAS发布的快速DCB产品收敛时间为 {3900 s}�
 
 \subsubsection{多站分析}
 
-为全面评估弹性功率事件对单频精密单点定位（SF-PPP）用户端的广泛影响，实验进一步统计了全球 10 个典型测站在弹性功率开启时段的平均性能指标。表 \ref{tab:uc_ppp_stats_all} 展示了 SF-PPP 模式下全球测站的平均收敛时间、定位精度及稳定性统计结果。
+为全面评估弹性功率事件对单频精密单点定位（SF-PPP）用户端的广泛影响，实验进一步统计了全球 10 个典型测站在弹性功率开启时段的平均性能指标。表 \ref{tab:sf_ppp_stats_all} 展示了 SF-PPP 模式下全球测站的平均收敛时间、定位精度及稳定性统计结果。
 
 \begin{table}[htbp]
   \centering
-  \caption{不同策略下单频 PPP 综合性能对比（0.3 m 收敛阈值）}
-  \label{tab:uc_ppp_stats_all}
+  \caption{不同策略下单频 PPP 综合性能对比}
+  \label{tab:sf_ppp_stats_all}
   \begin{tabular}{clccc}
     \toprule
     排名 & 策略名称 & 平均 3D RMS & 平均收敛时间 & 稳定性 \\

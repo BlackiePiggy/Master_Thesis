@@ -1,24 +1,27 @@
 % !TEX root = ../main.tex
 
 \begin{abstract}[zh]
-  中文摘要应该将学位论文的内容要点简短明了地表达出来，应该包含论文中的基本信息，
-  体现科研工作的核心思想。摘要内容应涉及本项科研工作的目的和意义、研究方法、研究
-  成果、结论及意义。注意突出学位论文中具有创新性的成果和新见解的部分。摘要中不宜
-  使用公式、化学结构式、图表和非公知公用的符号和术语，不标注引用文献编号。硕士学
-  位论文中文摘要字数为 500 字左右，博士学位论文中文摘要字数为 800 字左右。英文摘
-  要内容应与中文摘要内容一致。
-
-  摘要页的下方注明本文的关键词（4 \textasciitilde{} 6 个）。
+  全球导航卫星系统（GNSS）的现代化进程中伴随着多种影响系统完好性的GNSS事件。其中两类卫星端极具代表性且影响深远的事件分别是增强抗干扰能力而主动实施的弹性功率操作，以及星载设备老化或空间环境引发的被动隐性异常。当前针对此类事件的监测手段在实时性与隐性特征识别上存在不足，且其对用户端精密定位的影响机制尚不明确，制约了高精度服务的可靠性。因此，本文利用多源时空信息，聚焦于这两类关键GNSS事件，从机理分析、异常检测到定位修正三个维度展开深入研究。本文的主要贡献和创新点包括：
+  
+  1）阐明了弹性功率的运行机理及其时空分布特征，揭示了其导致的载噪比阶跃与差分码偏差（DCB）日内漂移规律，证实了该类事件是引起观测值异常和硬件偏差不稳定的重要物理诱因。 
+  
+  2）面向信号域检测，提出了基于动态时间规整的差分检测方法与基于深度学习的端到端检测方法。前者解决了非阶跃型“整体抬升”事件难以识别的难题，后者实现了无需历史基准的单历元高精度绝对状态判读，显著提升了检测的泛化性与实时性。 
+  
+  3）面向遥测域监测，针对高维遥测数据噪声干扰及强周期信号掩盖微弱趋势的问题，构建了融合多窗口统计特征与时序分解技术的混合神经网络模型。该方法有效解耦了周期项与趋势项，实现了对星载设备老化等隐性故障的早期精准预警。 
+  
+  4）量化评估了弹性功率事件对精密单点定位（PPP）性能的影响，建立了分段DCB修正策略。实验证明，该策略能显著缩短双频及单频PPP的收敛时间并提升定位精度，有效解决了异常期间定位发散的问题。
 \end{abstract}
 
 \begin{abstract}[en]
-  Shanghai Jiao Tong University (SJTU) is a key university in China. SJTU was
-  founded in 1896. It is one of the oldest universities in China. The University
-  has nurtured large numbers of outstanding figures include JIANG Zemin, DING
-  Guangen, QIAN Xuesen, Wu Wenjun, WANG An, etc.
-
-  SJTU has beautiful campuses, Bao Zhaolong Library, Various laboratories. It
-  has been actively involved in international academic exchange programs. It is
-  the center of CERNet in east China region, through computer networks, SJTU has
-  faster and closer connection with the world.
+  The modernization of the Global Navigation Satellite System (GNSS) is accompanied by various GNSS events that affect system integrity. Among these, two representative and far-reaching satellite-side events are the Flex Power operations actively implemented to enhance anti-jamming capabilities, and the passive implicit anomalies induced by onboard equipment aging or the space environment. Current monitoring methods for such events are insufficient in terms of real-time performance and the identification of implicit features. Furthermore, the mechanism of their impact on user-side precise positioning remains unclear, limiting the reliability of high-precision services. Therefore, utilizing multi-source spatiotemporal information, this thesis focuses on these two critical GNSS events and conducts in-depth research across three dimensions: mechanism analysis, anomaly detection, and positioning correction. The main contributions and innovations of this thesis include:
+  \begin{enumerate}
+    \item The operating mechanism and spatiotemporal distribution characteristics of Flex Power are elucidated. The research reveals the laws of Carrier-to-Noise density ratio ($C/N_0$) steps and intra-day drifts of Differential Code Bias (DCB) caused by Flex Power, confirming that such events are significant physical inducements for observation anomalies and hardware bias instability.
+    
+    \item For signal domain detection, a differential detection method based on Dynamic Time Warping (DTW) and an end-to-end detection method based on deep learning are proposed. The former solves the difficulty in identifying non-step "overall lift" events, while the latter achieves high-precision absolute state interpretation at a single epoch without historical baselines, significantly improving detection generalization and real-time performance.
+    
+    \item For telemetry domain monitoring, addressing the issues of noise interference in high-dimensional telemetry data and strong periodic signals masking weak trends, a hybrid neural network model fusing multi-window statistical features and time-series decomposition techniques is constructed. This method effectively decouples periodic and trend components, achieving early and precise warning for implicit faults such as satellite equipment aging.
+    
+    \item The impact of Flex Power events on the performance of Precise Point Positioning (PPP) is quantitatively assessed, and a segmented DCB correction strategy is established. Experiments demonstrate that this strategy significantly shortens the convergence time of dual-frequency and single-frequency PPP and improves positioning accuracy, effectively resolving the issue of positioning divergence during anomaly periods.
+  \end{enumerate}
+  
 \end{abstract}

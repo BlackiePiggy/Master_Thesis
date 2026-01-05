@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.12.19)  4 JAN 2026 23:53
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.12.19)  5 JAN 2026 11:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1544,11 +1544,7 @@ Package translations Info: No language package found. I am going to use `english
 \c@problem=\count565
 \c@proposition=\count566
 \c@theorem=\count567
- (./main.aux
-
-LaTeX Warning: Label `tab:uc_ppp_stats_all' multiply defined.
-
-)
+ (./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 24.
@@ -1910,17 +1906,16 @@ Package fontspec Info:
 (fontspec)             is okay then ignore this warning. Otherwise a different
 (fontspec)             font should be chosen.
 
-)
+
 
 [3
 
-]
+])
 
-[4
-
-] (./main.toc
+[4] (./main.toc
 
 [5
+
 
 ]
 
@@ -1939,13 +1934,13 @@ Package fontspec Info:
 [9
 
 ]
-Overfull \hbox (4.10727pt too wide) in paragraph at lines 35--35
+
+[10]
+Overfull \hbox (4.10727pt too wide) in paragraph at lines 37--37
  []|[][]\TU/TeXGyreTermesX(0)/m/n/12.045 DLFPD \TU/SongtiSC(0)/m/n/12.045 实 验 中 来 自 全 球 分 布 的 \TU/TeXGyreTermesX(0)/m/n/12.045 30 \TU/SongtiSC(0)/m/n/12.045 个 \TU/TeXGyreTermesX(0)/m/n/12.045 IGS \TU/SongtiSC(0)/m/n/12.045 测 站，|  包 含 \TU/TeXGyreTermesX(0)/m/n/12.045 20 \TU/SongtiSC(0)/m/n/12.045 个 测 站 的 \TU/TeXGyreTermesX(0)/m/n/12.045 sta_list1 
  []
 
 
-
-[10]
 
 [11])
 \tf@lof=\write7
@@ -1964,24 +1959,7 @@ Overfull \hbox (4.10727pt too wide) in paragraph at lines 35--35
 
 
 
-[14] (./main.loa)
-\tf@loa=\write9
-\openout9 = `main.loa'.
-
- (./contents/nomenclature.tex
-
-[15
-
-
-]
-
-[16
-
-] [17
-
-])
-
-[18] (./contents/chapter1.tex
+[14] (./contents/chapter1.tex
 第 1 章
 Missing character: There is no – ("2013) in font ntx-Regular-tlf-ot1!
 
@@ -1990,6 +1968,9 @@ Missing character: There is no – ("2013) in font ntx-Regular-tlf-ot1!
 
 
 ]
+File: figures/c1/kuangjiatu.png Graphic file (type bmp)
+<figures/c1/kuangjiatu.png>
+
 
 [2]
 
@@ -1999,17 +1980,28 @@ Missing character: There is no – ("2013) in font ntx-Regular-tlf-ot1!
 
 [5]
 
-[6]) (./contents/chapter2.tex
+[6]
 
 [7]
 
-[8
+[8]
 
-]
+[9]
+
+[10]
+File: figures/c1/jiagoutu.png Graphic file (type bmp)
+<figures/c1/jiagoutu.png>
+) (./contents/chapter2.tex
+
+[11]
+
+[12]
 第 2 章
 
 
-[9]
+[13
+
+]
 File: figures/mode4track.png Graphic file (type bmp)
 <figures/mode4track.png>
 File: figures/3dtrack.png Graphic file (type bmp)
@@ -2020,31 +2012,23 @@ LaTeX Warning: Float too large for page by 88.90024pt on input line 79.
 
 
 
-[10]
+[14]
 
-[11]
+[15]
 
-[12]
+[16]
 File: figures/afpd/图片1.png Graphic file (type bmp)
 <figures/afpd/图片1.png>
 File: figures/afpd/图片2.png Graphic file (type bmp)
 <figures/afpd/图片2.png>
 
 
-[13]
-
-[14]
-File: figures/afpd/图片3.png Graphic file (type bmp)
-<figures/afpd/图片3.png>
-
-
-[15]
-
-[16]
-
 [17]
 
 [18]
+File: figures/afpd/图片3.png Graphic file (type bmp)
+<figures/afpd/图片3.png>
+
 
 [19]
 
@@ -2055,6 +2039,14 @@ File: figures/afpd/图片3.png Graphic file (type bmp)
 [22]
 
 [23]
+
+[24]
+
+[25]
+
+[26]
+
+[27]
 File: figures/dcb/fig1.png Graphic file (type bmp)
 <figures/dcb/fig1.png>
 File: figures/dcb/fig2.png Graphic file (type bmp)
@@ -2065,29 +2057,29 @@ LaTeX Warning: Float too large for page by 52.26869pt on input line 330.
 
 
 
-[24]
+[28]
 
-[25]
+[29]
 File: figures/dcb/fig3.png Graphic file (type bmp)
 <figures/dcb/fig3.png>
 File: figures/dcb/fig4.png Graphic file (type bmp)
 <figures/dcb/fig4.png>
 
 
-[26]
+[30]
 
-[27]
+[31]
 File: figures/dcb/fig5.png Graphic file (type bmp)
 <figures/dcb/fig5.png>
 File: figures/dcb/fig6.png Graphic file (type bmp)
 <figures/dcb/fig6.png>
 
 
-[28]
+[32]
 
-[29]
+[33]
 
-[30]
+[34]
 File: figures/dcb/fig10.png Graphic file (type bmp)
 <figures/dcb/fig10.png>
 File: figures/dcb/fig7.png Graphic file (type bmp)
@@ -2104,23 +2096,23 @@ File: figures/dcb/fig13.png Graphic file (type bmp)
 <figures/dcb/fig13.png>
 
 
-[31]
-
-[32]
-
-[33]
-
-[34]) (./contents/chapter3.tex
-
 [35]
 
-[36
+[36]
+
+[37]
+
+[38]) (./contents/chapter3.tex
+
+[39]
+
+[40
 
 ]
 第 3 章
 
 
-[37]
+[41]
 Underfull \hbox (badness 5802) in paragraph at lines 46--46
 []|\TU/SongtiSC(0)/m/n/10.53937 噪 声 可 能 导 致 误
  []
@@ -2136,51 +2128,56 @@ Underfull \hbox (badness 5802) in paragraph at lines 46--46
  []
 
 
-
-[38]
-
-[39]
-
-[40]
-File: figures/c3/fpd/flowchart.png Graphic file (type bmp)
-<figures/c3/fpd/flowchart.png>
+Underfull \hbox (badness 10000) in paragraph at lines 46--46
+[]|\TU/SongtiSC(0)/m/n/10.53937 基 于 \TU/TeXGyreTermesX(0)/m/n/10.53937 XG-
+ []
 
 
-[41]
 
 [42]
 
 [43]
+
+[44]
+File: figures/c3/fpd/flowchart.png Graphic file (type bmp)
+<figures/c3/fpd/flowchart.png>
+
+
+[45]
+
+[46]
+
+[47]
 File: figures/c3/fpd/result1.png Graphic file (type bmp)
 <figures/c3/fpd/result1.png>
 File: figures/c3/fpd/result2.png Graphic file (type bmp)
 <figures/c3/fpd/result2.png>
 
 
-[44]
+[48]
 
-[45]
+[49]
 File: figures/c3/fpd/fpd_elangle.png Graphic file (type bmp)
 <figures/c3/fpd/fpd_elangle.png>
 
 
-[46]
+[50]
 File: figures/afpd/图片4.png Graphic file (type bmp)
 <figures/afpd/图片4.png>
 
 
-[47]
+[51]
 
-[48]
+[52]
 
-[49]
+[53]
 File: figures/afpd/图片5.png Graphic file (type bmp)
 <figures/afpd/图片5.png>
 
 
-[50]
+[54]
 
-[51]
+[55]
 Underfull \hbox (badness 10000) in paragraph at lines 449--449
 []|\TU/TeXGyreTermesX(0)/b/n/10.53937 GNSS& \TU/SongtiSC(0)/b/n/10.53937 频
  []
@@ -2214,9 +2211,9 @@ File: figures/afpd/图片6.png Graphic file (type bmp)
 <figures/afpd/图片6.png>
 
 
-[52]
+[56]
 
-[53]
+[57]
 File: figures/afpd/图片7.png Graphic file (type bmp)
 <figures/afpd/图片7.png>
 File: figures/afpd/图片8.png Graphic file (type bmp)
@@ -2265,13 +2262,13 @@ File: figures/afpd/图片9.png Graphic file (type bmp)
 <figures/afpd/图片9.png>
 
 
-[54]
+[58]
 
-[55]
+[59]
 
-[56]
+[60]
 
-[57]
+[61]
 File: figures/afpd/图片10.png Graphic file (type bmp)
 <figures/afpd/图片10.png>
 File: figures/afpd/图片11.png Graphic file (type bmp)
@@ -2282,15 +2279,15 @@ File: figures/afpd/图片13.png Graphic file (type bmp)
 <figures/afpd/图片13.png>
 
 
-[58]
-
-[59]
-
-[60]
-
-[61]
-
 [62]
+
+[63]
+
+[64]
+
+[65]
+
+[66]
 File: figures/afpd/图片14.png Graphic file (type bmp)
 <figures/afpd/图片14.png>
 
@@ -2300,21 +2297,21 @@ Overfull \hbox (28.85835pt too wide) in paragraph at lines 793--808
 
 
 
-[63]
+[67]
 File: figures/c3/DLFPD/struct.png Graphic file (type bmp)
 <figures/c3/DLFPD/struct.png>
 
 
-[64]
+[68]
 
-[65]
+[69]
 Overfull \hbox (14.90398pt too wide) in paragraph at lines 874--876
 \TU/SongtiSC(0)/m/n/12.045 第 二 种 是 几 何 特 征 嵌 入，|  即 卫 星 的 高 度 角 $\OML/ntxmi/m/it/12.045 ^^R[]$ \TU/SongtiSC(0)/m/n/12.045 和 方 位 角 $\OML/ntxmi/m/it/12.045 ^^R[]$ \TU/SongtiSC(0)/m/n/12.045 通 过 三 角 函 数 变 换 $\LMS/ntxsy/m/n/12.045 ¹[] \OML/ntxmi/m/it/12.045 ^^R; [] ^^R\LMS/ntxsy/m/n/12.045 º$
  []
 
 
 
-[66]
+[70]
 File: figures/c3/DLFPD/staDist.png Graphic file (type bmp)
 <figures/c3/DLFPD/staDist.png>
 
@@ -2339,14 +2336,14 @@ Underfull \hbox (badness 2903) in paragraph at lines 992--992
 
 
 
-[67]
+[71]
 
-[68]
+[72]
 File: figures/c3/DLFPD/labelTool.png Graphic file (type bmp)
 <figures/c3/DLFPD/labelTool.png>
 
 
-[69]
+[73]
 Overfull \hbox (1.66718pt too wide) in paragraph at lines 1118--1118
 []|\TU/TeXGyreTermesX(0)/b/n/10.53937 S1C
  []
@@ -2438,27 +2435,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 1118--1118
 
 
 
-[70]
+[74]
 
-[71]
+[75]
 File: figures/c3/DLFPD/t1ROC.png Graphic file (type bmp)
 <figures/c3/DLFPD/t1ROC.png>
 File: figures/c3/DLFPD/t1Mat.png Graphic file (type bmp)
 <figures/c3/DLFPD/t1Mat.png>
 
 
-[72]
+[76]
 
-[73]
+[77]
 
-[74]
+[78]
 File: figures/c3/DLFPD/nnorG31.png Graphic file (type bmp)
 <figures/c3/DLFPD/nnorG31.png>
 File: figures/c3/DLFPD/nnorG32.png Graphic file (type bmp)
 <figures/c3/DLFPD/nnorG32.png>
 
 
-[75]
+[79]
 File: figures/c3/DLFPD/cusvG01.png Graphic file (type bmp)
 <figures/c3/DLFPD/cusvG01.png>
 File: figures/c3/DLFPD/nklgG17.png Graphic file (type bmp)
@@ -2471,27 +2468,27 @@ File: figures/c3/DLFPD/t2ROC.png Graphic file (type bmp)
 <figures/c3/DLFPD/t2ROC.png>
 
 
-[76]
+[80]
 
-[77]
+[81]
 
-[78]
+[82]
 File: figures/c3/DLFPD/t2Mat.png Graphic file (type bmp)
 <figures/c3/DLFPD/t2Mat.png>
 
 
-[79]
+[83]
 
-[80]
+[84]
 File: figures/c3/DLFPD/t3ROC.png Graphic file (type bmp)
 <figures/c3/DLFPD/t3ROC.png>
 File: figures/c3/DLFPD/t3Mat.png Graphic file (type bmp)
 <figures/c3/DLFPD/t3Mat.png>
 
 
-[81]
+[85]
 
-[82]
+[86]
 File: figures/c3/DLFPD/xiaorong.png Graphic file (type bmp)
 <figures/c3/DLFPD/xiaorong.png>
 
@@ -2601,9 +2598,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 1548--1548
 
 
 
-[83]
+[87]
 
-[84]
+[88]
 Underfull \hbox (badness 10000) in paragraph at lines 1626--1626
 []|\TU/TeXGyreTermesX(0)/m/n/10.53937 AFPD–
  []
@@ -2620,115 +2617,115 @@ Overfull \hbox (46.66974pt too wide) in alignment at lines 1645--1645
 
 ) (./contents/chapter4.tex
 
-[85]
-
-[86]
-
-[87]
-
-[88
-
-]
-第 4 章
-
-
 [89]
 
 [90]
 
 [91]
 
-[92]
-File: figures/patent1/pic1.png Graphic file (type bmp)
-<figures/patent1/pic1.png>
+[92
+
+]
+第 4 章
 
 
 [93]
 
 [94]
+
+[95]
+
+[96]
+File: figures/patent1/pic1.png Graphic file (type bmp)
+<figures/patent1/pic1.png>
+
+
+[97]
+
+[98]
 File: figures/patent1/pic2.png Graphic file (type bmp)
 <figures/patent1/pic2.png>
 File: figures/patent1/pic3.png Graphic file (type bmp)
 <figures/patent1/pic3.png>
 
 
-[95]
+[99]
 
-[96]
+[100]
 File: figures/patent1/pic4.png Graphic file (type bmp)
 <figures/patent1/pic4.png>
 File: figures/patent1/pic5.png Graphic file (type bmp)
 <figures/patent1/pic5.png>
 
 
-[97]
+[101]
 File: figures/patent1/pic6.png Graphic file (type bmp)
 <figures/patent1/pic6.png>
 
 
-[98]
+[102]
 File: figures/patent1/pic7.png Graphic file (type bmp)
 <figures/patent1/pic7.png>
-
-
-[99]
-
-[100]
-
-[101]
-File: figures/c4/Picture1.png Graphic file (type bmp)
-<figures/c4/Picture1.png>
-
-
-[102]
-File: figures/c4/Picture2.png Graphic file (type bmp)
-<figures/c4/Picture2.png>
 
 
 [103]
 
 [104]
+
+[105]
+File: figures/c4/Picture1.png Graphic file (type bmp)
+<figures/c4/Picture1.png>
+
+
+[106]
+File: figures/c4/Picture2.png Graphic file (type bmp)
+<figures/c4/Picture2.png>
+
+
+[107]
+
+[108]
 File: figures/c4/Picture3.png Graphic file (type bmp)
 <figures/c4/Picture3.png>
 
 
-[105]
+[109]
 File: figures/c4/pic5.png Graphic file (type bmp)
 <figures/c4/pic5.png>
 
 
-[106]
+[110]
 File: figures/c4/pic6.png Graphic file (type bmp)
 <figures/c4/pic6.png>
 
 
-[107]
+[111]
 File: figures/c4/pic7.png Graphic file (type bmp)
 <figures/c4/pic7.png>
 
 
-[108]
+[112]
 Overfull \hbox (1.36897pt too wide) in paragraph at lines 453--454
 []\TU/SongtiSC(0)/m/n/12.045 针 对 具 有 显 著 轨 道 周 期 特 性 的 混 合 信 号，|  提 出 了 一 种 基 于 \TU/TeXGyreTermesX(0)/m/n/12.045 STL \TU/SongtiSC(0)/m/n/12.045 时 序 分 解 的 \TU/TeXGyreTermesX(0)/m/n/12.045 LSTM-
  []
 
 ) (./contents/chapter5.tex
 
-[109]
+[113]
 
-[110
+[114
 
 ]
 第 5 章
 
 
-[111]
+[115]
 
-[112]
+[116]
 
-[113]
+[117]
 
-[114]
+[118]
 Overfull \hbox (4.36113pt too wide) in paragraph at lines 191--192
 []\TU/SongtiSC(0)/m/n/12.045 随 着 低 成 本 \TU/TeXGyreTermesX(0)/m/n/12.045 GNSS \TU/SongtiSC(0)/m/n/12.045 芯 片 与 物 联 网 技 术 的 发 展，|  单 频 精 密 单 点 定 位  |（\TU/TeXGyreTermesX(0)/m/n/12.045 Single-Frequency
  []
@@ -2740,24 +2737,24 @@ Overfull \hbox (0.48569pt too wide) in paragraph at lines 219--220
 
 
 
-[115]
+[119]
 
-[116]
+[120]
 File: figures/c5/DCB_15min_zeromean.png Graphic file (type bmp)
 <figures/c5/DCB_15min_zeromean.png>
 File: figures/c5/nonFP_DCB_15min_zeromean.png Graphic file (type bmp)
 <figures/c5/nonFP_DCB_15min_zeromean.png>
 
 
-[117]
-
-[118]
-
-[119]
-
-[120]
-
 [121]
+
+[122]
+
+[123]
+
+[124]
+
+[125]
 Overfull \hbox (8.70937pt too wide) in paragraph at lines 511--512
 []\TU/SongtiSC(0)/m/n/12.045 相 比 之 下，|  若 在 事 件 发 生 期 间 错 误 地 使 用 了 未 开 启 弹 性 功 率 时 的 \TU/TeXGyreTermesX(0)/m/n/12.045 DCB \TU/SongtiSC(0)/m/n/12.045 值  |（\TU/TeXGyreTermesX(0)/m/n/12.045 DCB_FP-
  []
@@ -2766,31 +2763,31 @@ File: figures/c5/UCUDPPP.png Graphic file (type bmp)
 <figures/c5/UCUDPPP.png>
 
 
-[122]
+[126]
 
-[123]
+[127]
 
-[124]
+[128]
 File: figures/c5/SFPPP.png Graphic file (type bmp)
 <figures/c5/SFPPP.png>
 
 
-[125]
+[129]
 
-[126]
+[130]
 Overfull \hbox (1.14912pt too wide) in paragraph at lines 614--615
 []\TU/SongtiSC(0)/m/n/12.045 与 非 差 非 组 合 模 型 类 似，| \TU/TeXGyreTermesX(0)/m/n/12.045 DCB_DLR \TU/SongtiSC(0)/m/n/12.045 在 单 频 模 式 下 依 然 保 持 了 较 好 的 鲁 棒 性  |（\TU/TeXGyreTermesX(0)/m/n/12.045 2820
  []
 
 
 
-[127]
+[131]
 
-[128])
+[132])
 
-[129]
+[133]
 
-[130
+[134
 
 ]
 
@@ -2828,59 +2825,58 @@ Package fontspec Info:
 
 
 
-[131]
-
-[132]
-Overfull \hbox (0.24313pt too wide) in paragraph at lines 70--70
-\TU/TeXGyreTermesX(0)/m/n/10.53937 combined model based on triple-frequency observation[]J\TU/texgyrecursor(0)/m/n/10.53937 /\TU/TeXGyreTermesX(0)/m/n/10.53937 OL[]. Journal of Geodesy, 2020, 94: 1-13.
- []
-
-
-
-[133]
-
-[134]
-
 [135]
 
-[136] (./contents/app_maxwell_equations.tex
+[136]
 
 [137]
 
-[138
-
-]
-附录 A
-)
+[138]
 
 [139]
 
-[140
+[140]
 
-] (./contents/acknowledgements.tex) (./contents/achievements.tex
+[141]
 
-[141
+[142]
 
+[143] (./contents/app_maxwell_equations.tex
 
-]
-
-[142
-
-]) (./contents/resume.tex
-
-[143
-
-]
-
-[144
-
-]) (./contents/digest.tex)
+[144]
+附录 A
+)
 
 [145
 
 ]
 
 [146
+
+] (./contents/acknowledgements.tex) (./contents/achievements.tex
+
+[147
+
+
+]
+
+[148
+
+]) (./contents/resume.tex
+
+[149
+
+]
+
+[150
+
+]) (./contents/digest.tex)
+
+[151
+
+]
+
+[152
 
 ]
 
@@ -2894,23 +2890,19 @@ Overfull \hbox (0.24313pt too wide) in paragraph at lines 70--70
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2022/08/05>
  ***********
-
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 77FA376388D1BB2BB48A7487E8984B33;11581.
+(rerunfilecheck)             Checksum: 0762CC54B61F7FA0EB3E5D56DB1433DB;11178.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 61818 strings out of 473832
- 1479351 string characters out of 5729480
- 2453588 words of memory out of 5000000
- 83856 multiletter control sequences out of 15000+600000
+ 61991 strings out of 473832
+ 1487257 string characters out of 5729480
+ 2456320 words of memory out of 5000000
+ 84031 multiletter control sequences out of 15000+600000
  637820 words of font info for 257 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  107i,18n,124p,1197b,7391s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (172 pages, 2629452 bytes).
+Output written on main.xdv (174 pages, 2824720 bytes).
