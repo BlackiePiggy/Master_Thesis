@@ -24,79 +24,79 @@
 \contentsline {subsubsection}{\numberline {2.3.2.7}实验结果与分析}{30}{subsubsection.2.3.2.7}%
 \contentsline {subsubsection}{\numberline {2.3.2.8}频内 DCB 变化}{34}{subsubsection.2.3.2.8}%
 \contentsline {subsubsection}{\numberline {2.3.2.9}频间 DCB 变化}{36}{subsubsection.2.3.2.9}%
-\contentsline {section}{\numberline {2.4}本章小结}{38}{section.2.4}%
-\contentsline {chapter}{\numberline {第 3 章}基于载噪比时序的弹性功率异常检测方法}{41}{chapter.3}%
-\contentsline {section}{\numberline {3.1}现有检测方法}{41}{section.3.1}%
-\contentsline {section}{\numberline {3.2}弹性功率检测问题定义}{42}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}检测场景}{42}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}观测与状态建模}{43}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}检测评估标准}{44}{subsection.3.2.3}%
-\contentsline {section}{\numberline {3.3}基于滑动窗口统计特征的检测方法（FPD）}{45}{section.3.3}%
-\contentsline {section}{\numberline {3.4}基于动态时间规划的差分检测方法（AFPD-DTW）}{50}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}AFPD-DTW处理流程}{51}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}AFPD-DTW检测方法}{51}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}阈值策略}{54}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}数据来源与预处理}{55}{subsection.3.4.4}%
-\contentsline {subsection}{\numberline {3.4.5}基于AFPD-DTW方法的检测结果}{57}{subsection.3.4.5}%
-\contentsline {subsubsection}{\numberline {3.4.5.1}后处理结果分析}{57}{subsubsection.3.4.5.1}%
-\contentsline {subsubsection}{\numberline {3.4.5.2}实时结果分析}{60}{subsubsection.3.4.5.2}%
-\contentsline {subsubsection}{\numberline {3.4.5.3}多星座与多频段检测}{66}{subsubsection.3.4.5.3}%
-\contentsline {subsubsection}{\numberline {3.4.5.4}比较与分析}{67}{subsubsection.3.4.5.4}%
-\contentsline {section}{\numberline {3.5}基于深度学习的检测方法（DLFPD）}{68}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}DLFPD方法}{69}{subsection.3.5.1}%
-\contentsline {subsubsection}{\numberline {3.5.1.1}数据预处理与特征工程}{69}{subsubsection.3.5.1.1}%
-\contentsline {subsubsection}{\numberline {3.5.1.2}混合神经网络架构}{70}{subsubsection.3.5.1.2}%
-\contentsline {subsubsection}{\numberline {3.5.1.3}损失函数与模型训练}{71}{subsubsection.3.5.1.3}%
-\contentsline {subsection}{\numberline {3.5.2}数据集与实验设计}{71}{subsection.3.5.2}%
-\contentsline {subsubsection}{\numberline {3.5.2.1}数据集}{71}{subsubsection.3.5.2.1}%
-\contentsline {subsubsection}{\numberline {3.5.2.2}实验设计与模型泛化性评估}{74}{subsubsection.3.5.2.2}%
-\contentsline {subsubsection}{\numberline {3.5.2.3}消融实验设计}{74}{subsubsection.3.5.2.3}%
-\contentsline {subsection}{\numberline {3.5.3}实验结果}{76}{subsection.3.5.3}%
-\contentsline {subsubsection}{\numberline {3.5.3.1}空间泛化实验}{76}{subsubsection.3.5.3.1}%
-\contentsline {subsubsection}{\numberline {3.5.3.2}时间泛化实验}{80}{subsubsection.3.5.3.2}%
-\contentsline {subsubsection}{\numberline {3.5.3.3}时空泛化实验}{83}{subsubsection.3.5.3.3}%
-\contentsline {subsection}{\numberline {3.5.4}消融实验结果}{87}{subsection.3.5.4}%
-\contentsline {section}{\numberline {3.6}本章小结}{88}{section.3.6}%
-\contentsline {chapter}{\numberline {第 4 章}GNSS星载产品多维时序异常检测方法}{93}{chapter.4}%
-\contentsline {section}{\numberline {4.1}星载设备异常定义}{93}{section.4.1}%
-\contentsline {section}{\numberline {4.2}现有星载设备异常检测方法与缺陷}{94}{section.4.2}%
-\contentsline {section}{\numberline {4.3}基于数据多维遥测时序信号的异常检测方法}{96}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}基于融合多窗口统计特征的LSTM自编码器遥测数据异常检测}{96}{subsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.1.1}算法流程设计}{97}{subsubsection.4.3.1.1}%
-\contentsline {subsubsection}{\numberline {4.3.1.2}数据集与实验设计}{100}{subsubsection.4.3.1.2}%
-\contentsline {subsubsection}{\numberline {4.3.1.3}实验结果与分析}{101}{subsubsection.4.3.1.3}%
-\contentsline {subsection}{\numberline {4.3.2}基于STL分解的LSTM-CNN混合自编码器异常检测}{104}{subsection.4.3.2}%
-\contentsline {subsubsection}{\numberline {4.3.2.1}STL时序分解算法}{105}{subsubsection.4.3.2.1}%
-\contentsline {subsubsection}{\numberline {4.3.2.2}算法流程设计}{106}{subsubsection.4.3.2.2}%
-\contentsline {subsubsection}{\numberline {4.3.2.3}数据集与实验设计}{108}{subsubsection.4.3.2.3}%
-\contentsline {subsubsection}{\numberline {4.3.2.4}实验结果与分析}{110}{subsubsection.4.3.2.4}%
-\contentsline {section}{\numberline {4.4}本章小结}{113}{section.4.4}%
-\contentsline {chapter}{\numberline {第 5 章}GNSS事件对定位性能影响评估}{115}{chapter.5}%
-\contentsline {section}{\numberline {5.1}PPP原始观测方程及函数模型}{115}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}原始观测方程}{115}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}双频IF组合模型}{116}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}非差非组合模型}{117}{subsection.5.1.3}%
-\contentsline {subsection}{\numberline {5.1.4}单频模型}{119}{subsection.5.1.4}%
-\contentsline {section}{\numberline {5.2}数据集与实验设计}{120}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}实验数据选取与事件描述}{121}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}DCB修正策略设计}{122}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}PPP解算配置与实验分组}{123}{subsection.5.2.3}%
-\contentsline {subsection}{\numberline {5.2.4}性能评价指标}{123}{subsection.5.2.4}%
-\contentsline {section}{\numberline {5.3}实验结果分析}{123}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}非差非组合 PPP 使用不同DCB策略实验结果}{123}{subsection.5.3.1}%
-\contentsline {subsubsection}{\numberline {5.3.1.1}单站分析}{123}{subsubsection.5.3.1.1}%
-\contentsline {subsubsection}{\numberline {5.3.1.2}多站分析}{128}{subsubsection.5.3.1.2}%
-\contentsline {subsection}{\numberline {5.3.2}单频 PPP 使用不同 DCB 策略实验结果}{129}{subsection.5.3.2}%
-\contentsline {subsubsection}{\numberline {5.3.2.1}单站结果分析}{129}{subsubsection.5.3.2.1}%
-\contentsline {subsubsection}{\numberline {5.3.2.2}多站分析}{131}{subsubsection.5.3.2.2}%
-\contentsline {section}{\numberline {5.4}本章小节}{133}{section.5.4}%
-\contentsline {chapter}{\numberline {第 6 章}总结与展望}{135}{chapter.6}%
-\contentsline {section}{\numberline {6.1}全文总结}{135}{section.6.1}%
-\contentsline {section}{\numberline {6.2}研究展望}{137}{section.6.2}%
-\contentsline {chapter}{参考文献}{139}{chapter*.116}%
-\contentsline {chapter}{\numberline {附录 A}}{149}{appendix.A}%
-\contentsline {chapter}{致\quad 谢}{151}{section*.117}%
-\contentsline {chapter}{学术论文和科研成果目录}{153}{section*.119}%
-\contentsline {chapter}{个人简历}{155}{section*.123}%
+\contentsline {section}{\numberline {2.4}本章小结}{36}{section.2.4}%
+\contentsline {chapter}{\numberline {第 3 章}基于载噪比时序的弹性功率异常检测方法}{43}{chapter.3}%
+\contentsline {section}{\numberline {3.1}现有检测方法}{43}{section.3.1}%
+\contentsline {section}{\numberline {3.2}弹性功率检测问题定义}{44}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}检测场景}{44}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}观测与状态建模}{45}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}检测评估标准}{46}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}基于滑动窗口统计特征的检测方法（FPD）}{47}{section.3.3}%
+\contentsline {section}{\numberline {3.4}基于动态时间规划的差分检测方法（AFPD-DTW）}{52}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}AFPD-DTW处理流程}{53}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}AFPD-DTW检测方法}{55}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}阈值策略}{57}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}数据来源与预处理}{58}{subsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.4.5}基于AFPD-DTW方法的检测结果}{60}{subsection.3.4.5}%
+\contentsline {subsubsection}{\numberline {3.4.5.1}后处理结果分析}{60}{subsubsection.3.4.5.1}%
+\contentsline {subsubsection}{\numberline {3.4.5.2}实时结果分析}{63}{subsubsection.3.4.5.2}%
+\contentsline {subsubsection}{\numberline {3.4.5.3}多星座与多频段检测}{69}{subsubsection.3.4.5.3}%
+\contentsline {subsubsection}{\numberline {3.4.5.4}比较与分析}{70}{subsubsection.3.4.5.4}%
+\contentsline {section}{\numberline {3.5}基于深度学习的检测方法（DLFPD）}{71}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}DLFPD方法}{72}{subsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.1.1}数据预处理与特征工程}{72}{subsubsection.3.5.1.1}%
+\contentsline {subsubsection}{\numberline {3.5.1.2}混合神经网络架构}{73}{subsubsection.3.5.1.2}%
+\contentsline {subsubsection}{\numberline {3.5.1.3}损失函数与模型训练}{74}{subsubsection.3.5.1.3}%
+\contentsline {subsection}{\numberline {3.5.2}数据集与实验设计}{75}{subsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.2.1}数据集}{75}{subsubsection.3.5.2.1}%
+\contentsline {subsubsection}{\numberline {3.5.2.2}实验设计与模型泛化性评估}{76}{subsubsection.3.5.2.2}%
+\contentsline {subsubsection}{\numberline {3.5.2.3}消融实验设计}{77}{subsubsection.3.5.2.3}%
+\contentsline {subsection}{\numberline {3.5.3}实验结果}{79}{subsection.3.5.3}%
+\contentsline {subsubsection}{\numberline {3.5.3.1}空间泛化实验}{79}{subsubsection.3.5.3.1}%
+\contentsline {subsubsection}{\numberline {3.5.3.2}时间泛化实验}{86}{subsubsection.3.5.3.2}%
+\contentsline {subsubsection}{\numberline {3.5.3.3}时空泛化实验}{89}{subsubsection.3.5.3.3}%
+\contentsline {subsection}{\numberline {3.5.4}消融实验结果}{91}{subsection.3.5.4}%
+\contentsline {section}{\numberline {3.6}本章小结}{93}{section.3.6}%
+\contentsline {chapter}{\numberline {第 4 章}GNSS星载产品多维时序异常检测方法}{97}{chapter.4}%
+\contentsline {section}{\numberline {4.1}星载设备异常定义}{97}{section.4.1}%
+\contentsline {section}{\numberline {4.2}现有星载设备异常检测方法与缺陷}{98}{section.4.2}%
+\contentsline {section}{\numberline {4.3}基于数据多维遥测时序信号的异常检测方法}{101}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}基于融合多窗口统计特征的LSTM自编码器遥测数据异常检测}{101}{subsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.1.1}算法流程设计}{101}{subsubsection.4.3.1.1}%
+\contentsline {subsubsection}{\numberline {4.3.1.2}数据集与实验设计}{104}{subsubsection.4.3.1.2}%
+\contentsline {subsubsection}{\numberline {4.3.1.3}实验结果与分析}{106}{subsubsection.4.3.1.3}%
+\contentsline {subsection}{\numberline {4.3.2}基于STL分解的LSTM-CNN混合自编码器异常检测}{109}{subsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.1}STL时序分解算法}{109}{subsubsection.4.3.2.1}%
+\contentsline {subsubsection}{\numberline {4.3.2.2}算法流程设计}{110}{subsubsection.4.3.2.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.3}数据集与实验设计}{113}{subsubsection.4.3.2.3}%
+\contentsline {subsubsection}{\numberline {4.3.2.4}实验结果与分析}{114}{subsubsection.4.3.2.4}%
+\contentsline {section}{\numberline {4.4}本章小结}{116}{section.4.4}%
+\contentsline {chapter}{\numberline {第 5 章}GNSS事件对定位性能影响评估}{121}{chapter.5}%
+\contentsline {section}{\numberline {5.1}PPP原始观测方程及函数模型}{121}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}原始观测方程}{121}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}双频IF组合模型}{122}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}非差非组合模型}{123}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}单频模型}{125}{subsection.5.1.4}%
+\contentsline {section}{\numberline {5.2}数据集与实验设计}{126}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}实验数据选取与事件描述}{127}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}DCB修正策略设计}{128}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}PPP解算配置与实验分组}{129}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}性能评价指标}{129}{subsection.5.2.4}%
+\contentsline {section}{\numberline {5.3}实验结果分析}{129}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}非差非组合 PPP 使用不同DCB策略实验结果}{129}{subsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.1.1}单站分析}{129}{subsubsection.5.3.1.1}%
+\contentsline {subsubsection}{\numberline {5.3.1.2}多站分析}{134}{subsubsection.5.3.1.2}%
+\contentsline {subsection}{\numberline {5.3.2}单频 PPP 使用不同 DCB 策略实验结果}{136}{subsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.2.1}单站结果分析}{136}{subsubsection.5.3.2.1}%
+\contentsline {subsubsection}{\numberline {5.3.2.2}多站分析}{138}{subsubsection.5.3.2.2}%
+\contentsline {section}{\numberline {5.4}本章小节}{140}{section.5.4}%
+\contentsline {chapter}{\numberline {第 6 章}总结与展望}{141}{chapter.6}%
+\contentsline {section}{\numberline {6.1}全文总结}{141}{section.6.1}%
+\contentsline {section}{\numberline {6.2}研究展望}{143}{section.6.2}%
+\contentsline {chapter}{参考文献}{145}{chapter*.116}%
+\contentsline {chapter}{\numberline {附录 A}}{155}{appendix.A}%
+\contentsline {chapter}{致\quad 谢}{157}{section*.117}%
+\contentsline {chapter}{学术论文和科研成果目录}{159}{section*.119}%
+\contentsline {chapter}{个人简历}{161}{section*.123}%
 \contentsfinish 
 \contentsfinish 

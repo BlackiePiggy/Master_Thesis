@@ -11,7 +11,7 @@
 
 \begin{table*}[htbp]
 \centering
-\caption{不同弹性功率检测方法的比较}
+\bicaption{不同弹性功率检测方法的比较}{Comparison of different elastic power detection methods.}
 \renewcommand{\arraystretch}{1.3}
 \begin{tabularx}{\textwidth}{p{2.7cm} p{4.7cm} X p{3cm}}
 \toprule
@@ -128,7 +128,7 @@ FPD 方法的核心思想是：当卫星在非弹性功率与弹性功率模式�
 \begin{figure}
     \centering
     \includegraphics[width=0.8\linewidth]{figures/c3/fpd/flowchart.png}
-    \caption{FPD算法整体流程图}
+    \bicaption{FPD算法整体流程图}{Flowchart of the FPD algorithm.}
     \label{fig:fpd_flowchart}
 \end{figure}
 
@@ -157,7 +157,7 @@ $ C(t) \ge 30~\mathrm{dB\!-\!Hz}$
 
 \begin{table*}[htbp]
 \centering
-\caption{FPD 算法对 BAIE 等 20 个 IGS 测站在 2020 年期间接收的 GPS 卫星S2W频点载噪比数据进行了弹性功率的事后处理检测结果}
+\bicaption{FPD 算法对 BAIE 等 20 个 IGS 测站在 2020 年期间接收的 GPS 卫星S2W频点载噪比数据进行了弹性功率的事后处理检测结果}{Post-processed flex power detection results of GPS S2W carrier-to-noise ratio data received by station BAIE and 20 other IGS stations in 2020 using the FPD algorithm}
 \renewcommand{\arraystretch}{1.3}
 \begin{tabularx}{\textwidth}{p{3cm} p{3cm} p{4cm} X}
 \toprule
@@ -210,14 +210,14 @@ Mode 切换点 17 & 2020/11/21 & Mode9 $\rightarrow$ Mode7 & 9.36 dB \\
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{figures/c3/fpd/result1.png}
-    \caption{2020 年 BAIE 测站接收的 G03 卫星 S2W 频点的原始 C/N\textsubscript{0} 时间序列及对应的 FPD 检测结果}
+    \bicaption{2020 年 BAIE 测站接收的 G03 卫星 S2W 频点的原始 C/N0 时间序列（上图）及对应的 FPD 检测结果（下图）}{Raw C/N0 time series of the G03 satellite at the S2W frequency received by the BAIE station in 2020 (upper panel) and the corresponding FPD detection results (lower panel)}
     \label{fig:fpd_result1}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{figures/c3/fpd/result2.png}
-    \caption{2020 年 BAIE 测站接收的 G05 卫星 S2W 频点的原始 C/N\textsubscript{0} 时间序列及对应的 FPD 检测结果}
+    \bicaption{2020 年 BAIE 测站接收的 G05 卫星 S2W 频点的原始 C/N\textsubscript{0} 时间序列（上图）及对应的 FPD 检测结果（下图）}{Raw C/N0 time series of the G05 satellite at the S2W frequency received by the BAIE station in 2020 (upper panel) and the corresponding FPD detection results (lower panel)}
     \label{fig:fpd_result2}
 \end{figure}
 
@@ -228,7 +228,7 @@ Mode 切换点 17 & 2020/11/21 & Mode9 $\rightarrow$ Mode7 & 9.36 dB \\
 \begin{figure}
     \centering
     \includegraphics[width=0.8\linewidth]{figures/c3/fpd/fpd_elangle.png}
-    \caption{FPD高度角截止滤除数据示意图}
+    \bicaption{FPD高度角截止滤除数据示意图。绿色和红色的散点表示高于和低于30°高度角的载噪比数据。下方虚线表示高度角随时间的变化情况}{Schematic illustration of data filtering using an elevation angle cutoff in the FPD algorithm. Green and red scatter points indicate carrier-to-noise ratio data above and below an elevation angle of 30°, respectively. The dashed line in the lower panel represents the variation of elevation angle over time.}
     \label{fig:fpd_deAngle}
 \end{figure}
 
@@ -243,7 +243,7 @@ AFPD-DTW 的处理流程包括三个主要步骤，如图\ref{fig:afpd_4}所示�
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{figures/c3/afpd/图片4.png}
-    \caption{AFPD-DTW流程图}
+    \bicaption{AFPD-DTW流程图}{Pipeline of the AFPD-DTW.}
     \label{fig:afpd_4}
 \end{figure}
 
@@ -349,7 +349,7 @@ d_t \le \mathrm{thre}_{\mathrm{rt}}, & \text{非事件}.
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{figures/c3/afpd/图片5.png}
-    \caption{在不同场景下，DTW 方法与差分方法的异常评分结果对比}
+    \bicaption{在不同场景下，DTW 方法与差分方法的异常评分结果对比}{Anomaly scoring results of the DTW method and differential approach in different scenarios.}
     \label{fig:afpd_5}
 \end{figure}
 
@@ -388,7 +388,7 @@ Q_1 - k\cdot\mathrm{IQR} \le \mathrm{DTW}_S \le Q_3 + k\cdot\mathrm{IQR}, & \tex
 
 \begin{table}[htbp]
 \centering
-\caption{AFPD-DTW实验的数据集}
+\bicaption{AFPD-DTW实验的数据集}{Datasets of AFPD-DTW experiments.}
 \label{tab:afpd_tab_1}
 
 \renewcommand{\arraystretch}{1.2}
@@ -454,7 +454,7 @@ Q_1 - k\cdot\mathrm{IQR} \le \mathrm{DTW}_S \le Q_3 + k\cdot\mathrm{IQR}, & \tex
 \begin{figure}
     \centering
     \includegraphics[width=0.5\linewidth]{figures/c3/afpd/图片6.png}
-    \caption{用于 AFPD-DTW 检测中事后处理与实时处理实验的站点全球分布}
+    \bicaption{用于 AFPD-DTW 检测中事后处理与实时处理实验的站点全球分布}{Global distribution of stations used for post-processing and real-time processing experiments in the AFPD-DTW detection.}
     \label{fig:afpd_6}
 \end{figure}
 
@@ -469,14 +469,14 @@ Q_1 - k\cdot\mathrm{IQR} \le \mathrm{DTW}_S \le Q_3 + k\cdot\mathrm{IQR}, & \tex
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{figures/c3/afpd/图片7.png}
-    \caption{2020 年不同 GPS 卫星 S2W 信号的 DTW 异常得分时间序列。彩色圆点表示不同的 GPS 卫星。较高的 DTW 异常得分表示发生弹性功率变化事件的可能性更大}
+    \bicaption{2020 年不同 GPS 卫星 S2W 信号的 DTW 异常得分时间序列。彩色圆点表示不同的 GPS 卫星。较高的 DTW 异常得分表示发生弹性功率变化事件的可能性更大}{Time series of DTW anomaly scores for S2W signals from different GPS satellites in 2020. Colored circular markers represent different GPS satellites. Higher DTW anomaly scores indicate a higher likelihood of flex power change events.}
     \label{fig:afpd_7}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{figures/c3/afpd/图片8.png}
-    \caption{2021 年不同 GPS 卫星 S2W 信号的 DTW 异常得分时间序列}
+    \bicaption{2021 年不同 GPS 卫星 S2W 信号的 DTW 异常得分时间序列}{Time series of DTW anomaly scores for S2W signals from different GPS satellites in 2021.}
     \label{fig:afpd_8}
 \end{figure}
 
@@ -488,7 +488,7 @@ Q_1 - k\cdot\mathrm{IQR} \le \mathrm{DTW}_S \le Q_3 + k\cdot\mathrm{IQR}, & \tex
 
 \begin{table*}[htbp]
 \centering
-\caption{2020--2021 年检测到的 GPS S2W 弹性功率变化事件（标注 * 的事件为以往方法未检测到）}
+\bicaption{2020--2021 年检测到的 GPS S2W 弹性功率变化事件（标注 * 的事件为以往方法未检测到）}{Detected GPS S2W flex power changes in 2020-2021. Events marked with * were missed by previous detection methods.}
 \label{tab:afpd_tab_2}
 % 如果你的模板支持 booktabs，建议添加 \usepackage{booktabs}
 \begin{tabular}{cccccccc}
@@ -514,7 +514,7 @@ Q_1 - k\cdot\mathrm{IQR} \le \mathrm{DTW}_S \le Q_3 + k\cdot\mathrm{IQR}, & \tex
 
 \begin{table*}[htbp]
 \centering
-\caption{2022 年 1 月至 2025 年 7 月期间检测到的 GPS S2W 弹性功率变化事件}
+\bicaption{2022 年 1 月至 2025 年 7 月期间检测到的 GPS S2W 弹性功率变化事件}{Detected GPS S2W flex power changes from Jan 2022 to July 2025.}
 \begin{tabularx}{\textwidth}{YYYYYYYY}
 \hline
 \textbf{Event} & \textbf{Date} & \textbf{Event} & \textbf{Date} &
@@ -561,7 +561,7 @@ Q_1 - k\cdot\mathrm{IQR} \le \mathrm{DTW}_S \le Q_3 + k\cdot\mathrm{IQR}, & \tex
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{figures/c3/afpd/图片9.png}
-    \caption{基于动态 IQR 阈值的方法用于区分多站点–多卫星组合的 S2W 信号中的弹性功率事件（红色）与非事件（蓝色）}
+    \bicaption{基于动态 IQR 阈值的方法用于区分多站点–多卫星组合的 S2W 信号中的弹性功率事件（红色）与非事件（蓝色）}{Dynamic IQR threshold method applied to distinguish flex power events (red) and non-events (blue) in S2W signals across various station-satellite combinations.}
     \label{fig:afpd_9}
 \end{figure}
 
@@ -575,7 +575,7 @@ Q_1 - k\cdot\mathrm{IQR} \le \mathrm{DTW}_S \le Q_3 + k\cdot\mathrm{IQR}, & \tex
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{figures/c3/afpd/图片10.png}
-    \caption{2020–2021 年期间多站 S2W C/N₀ 时间序列中由 FPD 漏检的三次弹性功率模式转换}
+    \bicaption{2020–2021 年期间多站 S2W C/N₀ 时间序列中由 FPD 漏检的三次弹性功率模式转换}{Multi-station S2W C/N0 time series depicting three flex power mode transitions overlooked by FPD during 2020-2021.}
     \label{fig:afpd_10}
 \end{figure}
 
@@ -584,13 +584,13 @@ Q_1 - k\cdot\mathrm{IQR} \le \mathrm{DTW}_S \le Q_3 + k\cdot\mathrm{IQR}, & \tex
 \begin{figure}
     \centering
     \includegraphics[width=0.5\linewidth]{figures/c3/afpd/图片11.png}
-    \caption{2024 年 6 月 1 日至 8 日期间 GPS 卫星的 AFPD-DTW 实时检测结果}
+    \bicaption{2024 年 6 月 1 日至 8 日期间 GPS 卫星的 AFPD-DTW 实时检测结果}{Results of AFPD-DTW real-time detection for GPS satellites from June 1 to 8, 2024.}
     \label{fig:afpd_11}
 \end{figure}
 
 \begin{table*}[htbp]
 \centering
-\caption{2024 年 6 月 1--7 日期间基于 S2W 信号的 IIR-M 与 IIF 卫星实时检测性能（\%）}
+\bicaption{2024 年 6 月 1--7 日期间基于 S2W 信号的 IIR-M 与 IIF 卫星实时检测性能（\%）}{Real-time detection performance (\%) on IIR-M and IIF satellites in the S2W signal from June 1–7, 2024.}
 \begin{tabular}{lcccc @{\quad} lcccc}
 \hline
 \textbf{PRN} & \textbf{TPR} & \textbf{FPR} & \textbf{Accuracy} & \textbf{Precision} &
@@ -633,7 +633,7 @@ Q_1 - k\cdot\mathrm{IQR} \le \mathrm{DTW}_S \le Q_3 + k\cdot\mathrm{IQR}, & \tex
 
 \begin{table}[htbp]
 \centering
-\caption{2024 年 6 月 2 日 GPS S2W 弹性功率激活时间段}
+\bicaption{2024 年 6 月 2 日 GPS S2W 弹性功率激活时间段}{Activation periods of GPS flex power in S2W on June 2, 2024.}
 \label{tab:afpd_tab_5}
 \begin{tabularx}{\textwidth}{YYYYYYYY}
 \hline
@@ -664,14 +664,14 @@ Q_1 - k\cdot\mathrm{IQR} \le \mathrm{DTW}_S \le Q_3 + k\cdot\mathrm{IQR}, & \tex
 \begin{figure}
     \centering
     \includegraphics[width=0.85\linewidth]{figures/c3/afpd/图片12.png}
-    \caption{2024 年 6 月 2 日期间具有弹性功率激活的 GPS 卫星轨迹}
+    \bicaption{2024 年 6 月 2 日期间具有弹性功率激活的 GPS 卫星轨迹}{GPS satellite trajectory with flex power activation on June 2, 2024.}
     \label{fig:afpd_12}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=0.85\linewidth]{figures/c3/afpd/图片13.png}
-    \caption{2024 年 6 月 4 日期间具有弹性功率激活的 GPS 卫星轨迹}
+    \bicaption{2024 年 6 月 4 日期间具有弹性功率激活的 GPS 卫星轨迹}{GPS satellite trajectories with flex power activation on June 4, 2024.}
     \label{fig:afpd_13}
 \end{figure}
 
@@ -680,7 +680,8 @@ Q_1 - k\cdot\mathrm{IQR} \le \mathrm{DTW}_S \le Q_3 + k\cdot\mathrm{IQR}, & \tex
 
 \begin{table*}[htbp]
 \centering
-\caption{多星座与多频点弹性功率事件检测结果：BDS（2023 年 1 月--2025 年 7 月）与 GPS（2024 年 1 月--2025 年 7 月）}
+\bicaption{多星座与多频点弹性功率事件检测结果：BDS（2023 年 1 月--2025 年 7 月）与 GPS（2024 年 1 月--2025 年 7 月）}{Multi-constellation and multi-frequency flex-power events detected from BDS (January 2023 – July 2025) and GPS (January 2024 – July 2025).}
+\label{tab:afpd_tab_6}
 \begin{tabular}{lcccc}
 \hline
 \textbf{星座} & \textbf{事件编号} & \textbf{日期} & \textbf{频点} & \textbf{PRNs} \\
@@ -766,7 +767,7 @@ Q_1 - k\cdot\mathrm{IQR} \le \mathrm{DTW}_S \le Q_3 + k\cdot\mathrm{IQR}, & \tex
 
 \hline
 \end{tabular}
-\label{tab:afpd_tab_6}
+
 \end{table*}
 
 结果汇总于表\ref{tab:afpd_tab_6}。未在 BDS 的 S2I 与 S7I 信号，以及 GPS 的 S1C 信号中检测到弹性功率事件。对于 GPS S1W，所有检测到的事件均与 S2W 信号上观测到的事件完全一致。此外，我们观察到自 2025 年之后，卫星 G01 不再参与任何事件。经官方记录验证得知，2025 年 1 月 22 日，G01 从 SVN63（Block IIR-M）切换至 SVN80（Block III）（USCG Navigation Center 2025），进一步说明目前具备弹性功率能力的主要为 GPS Block IIR-M 与 IIF 卫星。
@@ -778,7 +779,7 @@ Q_1 - k\cdot\mathrm{IQR} \le \mathrm{DTW}_S \le Q_3 + k\cdot\mathrm{IQR}, & \tex
 \begin{figure}
     \centering
     \includegraphics[width=0.85\linewidth]{figures/c3/afpd/图片14.png}
-    \caption{2024 年 9 月 23 日和 2023 年 9 月 27 日 BDS 卫星在 S6I 信号上触发弹性功率（Flex Power）时的轨迹}
+    \bicaption{2024 年 9 月 23 日和 2023 年 9 月 27 日 BDS 卫星在 S6I 信号上触发弹性功率时的轨迹}{BDS satellite trajectories with flex power activation on 2024-09-23 and 2023-09-27 on S6I.}
     \label{fig:apfd_14}
 \end{figure}
 
@@ -789,7 +790,7 @@ AFPD-DTW 方法与以往方法（包括 FPD、基于随机森林的方法以及�
 
 \begin{table*}[htbp]
 \centering
-\caption{各类弹性功率（Flex Power）检测算法性能对比\cite{yang2022real,esenbuuga2023recent,meng2024real}}
+\bicaption{各类弹性功率检测算法性能对比\cite{yang2022real,esenbuuga2023recent,meng2024real}}{Comparison of detection performance(\%) of various flex power detection algorithms\cite{yang2022real,esenbuuga2023recent,meng2024real}}
 \begin{tabular}{lcccc}
 \hline
 \textbf{方法} & \textbf{年份} & \textbf{应用场景} & \textbf{数据需求} & \textbf{星座} \\
@@ -809,7 +810,7 @@ AFPD-DTW & 2025 & 事后处理 / 实时检测 & 仅需 8--10 个站点；无历�
 
 \begin{table*}[htbp]
 \centering
-\caption{AFPD-DTW 在多星座与多频点场景下的整体检测性能}
+\bicaption{AFPD-DTW 在多星座与多频点场景下的整体检测性能}{Overall detection performance of AFPD-DTW across multi-constellation and multi-frequency scenarios}
 \begin{tabular}{lcccccc}
 \hline
 \textbf{场景} & \textbf{星座/频率} & \textbf{时间} 
@@ -851,7 +852,7 @@ AFPD-DTW & 2025 & 事后处理 / 实时检测 & 仅需 8--10 个站点；无历�
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=1\linewidth]{figures/c3/DLFPD/struct2.png}
-\caption{DLFPD架构}
+\bicaption{DLFPD架构}{Structure of DLFPD.}
 \label{fig:c3_dl_strcut}
 \end{figure}
 
@@ -918,7 +919,7 @@ GNSS 信号强度受多径效应和卫星机动影响显著。为了解耦这些
 
 \begin{table*}[htbp]
 \centering
-\caption{实验阶段划分及数据集配置方案}
+\bicaption{DLFPD实验阶段及数据集划分配置方案}{Experimental phases and dataset partitioning configuration for DLFPD.}
 \renewcommand{\arraystretch}{1.3}
 \begin{tabularx}{\textwidth}{p{1.8cm} p{2cm} p{2.8cm} X p{1.7cm}}
 \toprule
@@ -963,13 +964,13 @@ GNSS 信号强度受多径效应和卫星机动影响显著。为了解耦这些
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.7\linewidth]{figures/c3/DLFPD/staDist2.png}
-\caption{DLFPD实验中来自全球分布的 30 个 IGS 测站，包含20个测站的sta\_list1和10个测站的sta\_list2}
+\bicaption{DLFPD实验中来自全球分布的 30 个 IGS 测站，包含20个测站的sta\_list1和10个测站的sta\_list2}{Thirty globally distributed IGS stations used in the DLFPD experiments, including 20 stations in sta\_list1 and 10 stations in sta\_list2.}
 \label{fig:dlfpd_staDist}
 \end{figure}
 
 \begin{table*}[htbp]
 \centering
-\caption{测站集合配置及组成}
+\bicaption{DLFPD实验测站集合组成}{Composition of station sets used in the DLFPD experiments.}
 \renewcommand{\arraystretch}{1.3}
 \begin{tabularx}{\textwidth}{p{3cm} p{2.5cm} p{2cm} X}
 \toprule
@@ -1000,7 +1001,7 @@ ABPO, FAA1, KOKV, KOS1, KOUR, MKEA, NKLG, NNOR, OUS1, CUSV \\
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=1\linewidth]{figures/c3/DLFPD/labelTool.png}
-\caption{基于 MATLAB 的DLFPD交互式数据标注工具操作界面}
+\bicaption{基于 MATLAB 的DLFPD交互式数据标注工具操作界面}{User interface of the MATLAB-based interactive data annotation tool for DLFPD.}
 \label{fig:dlfpd_labelTool}
 \end{figure}
 
@@ -1018,7 +1019,7 @@ ABPO, FAA1, KOKV, KOS1, KOUR, MKEA, NKLG, NNOR, OUS1, CUSV \\
 
 \begin{table*}[htbp]
 \centering
-\caption{模型消融实验设计与特征配置}
+\bicaption{DLFPD模型消融实验设计与特征配置}{Ablation experiment design and feature configuration of the DLFPD model.}
 \renewcommand{\arraystretch}{1.3}
 
 \begin{tabularx}{\textwidth}{
@@ -1135,7 +1136,7 @@ $\times$ &
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.5\linewidth]{figures/c3/DLFPD/t1ROC.png}
-\caption{DLFPD空间泛化性实验ROC曲线}
+\bicaption{DLFPD空间泛化性实验ROC曲线}{ROC curves of the spatial generalization experiment for DLFPD.}
 \label{fig:dlfpd_t1ROC}
 \end{figure}
 
@@ -1145,7 +1146,7 @@ $\times$ &
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.5\linewidth]{figures/c3/DLFPD/t1Mat.png}
-\caption{DLFPD空间泛化性实验混淆矩阵}
+\bicaption{DLFPD空间泛化性实验混淆矩阵}{Confusion matrix of the spatial generalization experiment for DLFPD.}
 \label{fig:dlfpd_t1Mat}
 \end{figure}
 
@@ -1153,7 +1154,7 @@ $\times$ &
 
 \begin{table*}[htbp]
 \centering
-\caption{不同卫星上的分类性能评估结果（测试集 I）}
+\bicaption{DLFPD空间泛化性实验不同卫星上的分类性能评估结果（测试集 I）}{Classification performance on different satellites in the spatial generalization experiment for DLFPD (testset I).}
 \renewcommand{\arraystretch}{1}
 \begin{tabularx}{\textwidth}{X X X X X X}
 \toprule
@@ -1197,7 +1198,7 @@ G32 & 0.9997 & 0.9996 & 0.9998 & 0.9997 & 0.9999 \\
 
 \begin{table}[htbp]
 \centering
-\caption{模型整体性能评估结果（测试集 I）}
+\bicaption{DLFPD模型空间泛化性整体性能评估结果（测试集 I）}{Overall performance evaluation of the DLFPD model in the spatial generalization experiment (testset I).}
 \renewcommand{\arraystretch}{1.3}
 \begin{tabularx}{0.7\textwidth}{p{6cm} X}
 \toprule
@@ -1220,14 +1221,14 @@ ROC AUC              & 0.9996 \\
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\linewidth]{figures/c3/DLFPD/nnorG31.png}
-\caption{使用DLFPD对2024年6月1日NNOR测站的G31数据检测的原始数据与检测结果}
+\bicaption{使用DLFPD对2024年6月1日NNOR测站的G31数据检测的S2W原始数据与检测结果}{Raw S2W data and corresponding detection results for G31 observed at the NNOR station on 1 June 2024 using DLFPD.}
 \label{fig:dlfpd_nnorG31}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\linewidth]{figures/c3/DLFPD/nnorG32.png}
-\caption{使用DLFPD对2024年6月1日NNOR测站的G32数据检测的原始数据与检测结果}
+\bicaption{使用DLFPD对2024年6月1日NNOR测站的G32数据检测的S2W原始数据与检测结果}{Raw S2W data and corresponding detection results for G32 observed at the NNOR station on 1 June 2024 using DLFPD.}
 \label{fig:dlfpd_nnorG32}
 \end{figure}
 
@@ -1240,28 +1241,28 @@ ROC AUC              & 0.9996 \\
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\linewidth]{figures/c3/DLFPD/cusvG01.png}
-\caption{使用DLFPD对2024年6月1日CUSV测站的G01数据检测的原始数据与检测结果}
+\bicaption{使用DLFPD对2024年6月1日CUSV测站的G01数据检测的原始数据与检测结果}{Raw S2W data and corresponding detection results for G01 observed at the CUSV station on 1 June 2024 using DLFPD.}
 \label{fig:dlfpd_cusvG01}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\linewidth]{figures/c3/DLFPD/nklgG17.png}
-\caption{使用DLFPD对2024年6月1日NKLG测站的G17数据检测的原始数据与检测结果}
+\bicaption{使用DLFPD对2024年6月1日NKLG测站的G17数据检测的原始数据与检测结果}{Raw S2W data and corresponding detection results for G17 observed at the NKLG station on 1 June 2024 using DLFPD.}
 \label{fig:dlfpd_nklgG17}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\linewidth]{figures/c3/DLFPD/cusvG12t20.png}
-\caption{使用DLFPD对2024年6月7日CUSV测站的G12数据检测的原始数据与检测结果(使用20测站训练数据模型)}
+\bicaption{使用DLFPD对2024年6月7日CUSV测站的G12数据检测的原始数据与检测结果(使用20测站训练数据模型)}{Raw S2W data and corresponding detection results for G12 observed at the CUSV station on 7 June 2024 using DLFPD.}
 \label{fig:dlfpd_cusvG12t20}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\linewidth]{figures/c3/DLFPD/cusvG12t30.png}
-\caption{使用DLFPD对2024年6月7日CUSV测站的G12数据检测的原始数据与检测结果(使用30测站训练数据模型)}
+\bicaption{使用DLFPD对2024年6月7日CUSV测站的G12数据检测的原始数据与检测结果(使用30测站训练数据模型)}{Raw data and corresponding detection results for G12 observed at the CUSV station on 7 June 2024 using DLFPD (model trained with data from 30 stations).}
 \label{fig:dlfpd_cusvG12t30}
 \end{figure}
 
@@ -1273,7 +1274,7 @@ ROC AUC              & 0.9996 \\
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.5\linewidth]{figures/c3/DLFPD/t2ROC.png}
-\caption{DLFPD时间泛化性实验ROC曲线}
+\bicaption{DLFPD时间泛化性实验ROC曲线}{ROC curves of the temporal generalization experiment for DLFPD.}
 \label{fig:dlfpd_t2ROC}
 \end{figure}
 
@@ -1282,7 +1283,7 @@ ROC AUC              & 0.9996 \\
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.5\linewidth]{figures/c3/DLFPD/t2Mat.png}
-\caption{DLFPD时间泛化性实验混淆矩阵}
+\bicaption{DLFPD时间泛化性实验混淆矩阵}{Confusion matrix of the temporal generalization experiment for DLFPD.}
 \label{fig:dlfpd_t2Mat}
 \end{figure}
 
@@ -1290,7 +1291,7 @@ ROC AUC              & 0.9996 \\
 
 \begin{table*}[htbp]
 \centering
-\caption{不同卫星上的分类性能评估结果（测试集 II）}
+\bicaption{DLFPD时间泛化性实验在不同卫星上的分类性能评估结果（测试集 II）}{Classification performance on different satellites in the temporal generalization experiment for DLFPD (testset II)}
 \renewcommand{\arraystretch}{1}
 \begin{tabularx}{\textwidth}{X X X X X X}
 \toprule
@@ -1331,7 +1332,7 @@ G32 & 0.9997 & 0.9996 & 0.9998 & 0.9997 & 0.9999 \\
 
 \begin{table}[htbp]
 \centering
-\caption{模型整体性能评估结果（测试集 II）}
+\bicaption{DLFPD模型在时间泛化性整体性能评估结果（测试集 II）}{Overall performance evaluation of the DLFPD model in the temporal generalization experiment (testset II).}
 \renewcommand{\arraystretch}{1.3}
 \begin{tabularx}{0.7\textwidth}{p{6cm} X}
 \toprule
@@ -1355,14 +1356,14 @@ ROC AUC              & 0.9996 \\
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.5\linewidth]{figures/c3/DLFPD/t3ROC.png}
-\caption{DLFPD时空泛化性实验ROC曲线}
+\bicaption{DLFPD时空泛化性实验ROC曲线}{ROC curves of the spatiotemporal generalization experiment for DLFPD.}
 \label{fig:dlfpd_t3ROC}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.5\linewidth]{figures/c3/DLFPD/t3Mat.png}
-\caption{DLFPD时空泛化性实验混淆矩阵}
+\bicaption{DLFPD时空泛化性实验混淆矩阵}{Confusion matrix of the spatiotemporal generalization experiment for DLFPD.}
 \label{fig:dlfpd_t3Mat}
 \end{figure}
 
@@ -1370,7 +1371,7 @@ ROC AUC              & 0.9996 \\
 
 \begin{table*}[htbp]
 \centering
-\caption{不同卫星上的分类性能评估结果（测试集 III）}
+\bicaption{DLFPD时空泛化性实验在不同卫星上的分类性能评估结果（测试集 III）}{Classification performance on different satellites in the spatiotemporal generalization experiment for DLFPD (testset III).}
 \renewcommand{\arraystretch}{1}
 \begin{tabularx}{\textwidth}{X X X X X X}
 \toprule
@@ -1409,7 +1410,7 @@ G32 & 0.9993 & 1.0000 & 0.9988 & 0.9994 & 0.9995 \\
 
 \begin{table}[htbp]
 \centering
-\caption{模型整体性能评估结果（测试集 III）}
+\bicaption{DLFPD模型在时空泛化性上整体性能评估结果（测试集 III）}{Overall performance evaluation of the DLFPD model in the spatiotemporal generalization experiment (testset III).}
 \renewcommand{\arraystretch}{1.3}
 \begin{tabularx}{0.7\textwidth}{p{6cm} X}
 \toprule
@@ -1437,13 +1438,13 @@ ROC AUC              & 0.9974 \\
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\linewidth]{figures/c3/DLFPD/xiaorong.png}
-\caption{DLFPD消融实验各实验组的精确率、召回率及 F1 值对比图}
+\bicaption{DLFPD消融实验各实验组的精确率、召回率及 F1 值对比图}{Comparison of precision, recall, and F1 score among different experimental groups in the DLFPD ablation study.}
 \label{fig:dlfpd_xiaorong}
 \end{figure}
 
 \begin{table*}[htbp]
 \centering
-\caption{消融实验结果及不同特征模块对性能的影响}
+\bicaption{DLFPD消融实验结果及不同特征模块对性能的影响}{Ablation experiment results and the impact of different feature modules on DLFPD performance.}
 \renewcommand{\arraystretch}{1.3}
 \begin{tabularx}{\textwidth}{p{0.3cm} p{2.5cm} p{0.6cm} p{0.6cm} p{0.6cm} p{0.6cm} p{0.6cm} p{0.6cm} X X X}
 \toprule
@@ -1566,7 +1567,7 @@ $\times$ &
 
 \begin{table*}[htbp]
 \centering
-\caption{不同弹性功率检测方法的机制与性能对比}
+\bicaption{不同弹性功率检测方法的机制与性能对比}{Comparison of mechanisms and performance of different elastic power detection methods.}
 \renewcommand{\arraystretch}{1.35}
 \begin{tabularx}{\textwidth}{p{1.5cm} p{2cm} X X}
 \toprule
@@ -1629,7 +1630,7 @@ DLFPD &
 
 \begin{table}[htbp]
 \centering
-\caption{AFPD-DTW 与 DLFPD 方法整体性能对比}
+\bicaption{AFPD-DTW 与 DLFPD 方法整体性能对比}{Overall performance comparison between AFPD-DTW and DLFPD methods.}
 \renewcommand{\arraystretch}{1.3}
 \begin{tabularx}{0.75\textwidth}{p{6cm} p{3cm} p{3cm}}
 \toprule

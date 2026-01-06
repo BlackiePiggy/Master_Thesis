@@ -24,7 +24,7 @@
 
 \begin{table*}[htbp]
 \centering
-\caption{异常检测方法的阶段划分、技术特点与局限性分析}
+\bicaption{星载设备异常检测方法的阶段划分、技术特点与局限性分析}{Phase classification, technical characteristics, and limitations of spacecraft onboard equipment anomaly detection methods.}
 \renewcommand{\arraystretch}{1.2}
 \begin{tabularx}{\textwidth}{p{2.2cm} p{2.6cm} X X}
 \toprule
@@ -101,8 +101,8 @@
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.3\linewidth]{figures/c4/patent1/pic1.png}
-\caption{基于深度学习的星载产品分段遥测时序异常检测方法流程图}
+\includegraphics[width=0.7\linewidth]{figures/c4/patent1/pic1.png}
+\bicaption{基于融合多窗口统计特征的 LSTM 自编码器遥测数据异常检测方法流程图}{Flowchart of the LSTM autoencoder–based telemetry anomaly detection method using fused multi-window statistical features。}
 \label{fig:pat1_pic1}
 \end{figure}
 
@@ -137,7 +137,7 @@ x_t^{(1)}, x_t^{(2)}, \ldots, x_t^{(N_c)}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=1\linewidth]{figures/c4/patent1/pic2.png}
-\caption{数据预处理与特征矩阵构建方法}
+\bicaption{基于融合多窗口统计特征的 LSTM 自编码器检测实验数据预处理与特征矩阵构建方法}{Data preprocessing and feature matrix construction for detection experiments using an LSTM autoencoder with fused multi-window statistical features.}
 \label{fig:pat1_pic2}
 \end{figure}
 
@@ -165,7 +165,7 @@ x_t^{(1)}, x_t^{(2)}, \ldots, x_t^{(N_c)}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=1\linewidth]{figures/c4/patent1/pic3.png}
-\caption{时序自编码器模型设计与LSTM单元结构}
+\bicaption{时序自编码器模型设计与LSTM单元结构}{Design of the temporal autoencoder model and LSTM unit structure.}
 \label{fig:pat1_pic3}
 \end{figure}
 
@@ -201,7 +201,7 @@ x_t^{(1)}, x_t^{(2)}, \ldots, x_t^{(N_c)}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=1\linewidth]{figures/c4/patent1/pic4.png}
-\caption{训练数据、测试数据。其中训练数据为模拟星载产品遥测时序数据（左上），测试数据包含正常数据（左中）、斜率漂移异常数据（左下）、离群点异常数据（右上）、整体漂移异常数据（右中）、混合异常数据（右下）}
+\bicaption{基于融合多窗口统计特征的 LSTM 自编码器实验的训练数据与测试数据。其中训练数据为模拟星载产品遥测时序数据（左上），测试数据包含正常数据（左中）、斜率漂移异常数据（左下）、离群点异常数据（右上）、整体漂移异常数据（右中）、混合异常数据（右下）}{Training and test data used in the LSTM autoencoder experiment based on fused multi-window statistical features. The training data consist of simulated spacecraft onboard product telemetry time-series data (upper left), while the test data include normal data (middle left), slope drift anomaly data (lower left), outlier anomaly data (upper right), overall drift anomaly data (middle right), and mixed anomaly data (lower right)..}
 \label{fig:pat1_pic4}
 \end{figure}
 
@@ -214,7 +214,7 @@ x_t^{(1)}, x_t^{(2)}, \ldots, x_t^{(N_c)}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=1\linewidth]{figures/c4/patent1/pic5.png}
-\caption{正常数据（左）与斜率漂移异常数据（右）的原始遥测时序、平滑后时序与异常得分时序}
+\bicaption{基于融合多窗口统计特征的 LSTM 自编码器实验的正常数据（左）与斜率漂移异常数据（右）的原始遥测时序、平滑后时序与异常得分时序}{Raw telemetry time series, smoothed time series, and anomaly score time series for normal data (left) and slope drift anomaly data (right) in the LSTM autoencoder experiment based on fused multi-window statistical features.}
 \label{fig:pat1_pic5}
 \end{figure}
 
@@ -227,7 +227,7 @@ x_t^{(1)}, x_t^{(2)}, \ldots, x_t^{(N_c)}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=1\linewidth]{figures/c4/patent1/pic6.png}
-\caption{离群点异常数据（左）与整体漂移异常数据（右）的原始遥测时序、平滑后时序与异常得分时序}
+\bicaption{基于融合多窗口统计特征的 LSTM 自编码器实验的离群点异常数据（左）与整体漂移异常数据（右）的原始遥测时序、平滑后时序与异常得分时序}{Raw telemetry time series, smoothed time series, and anomaly score time series for outlier anomaly data (left) and overall drift anomaly data (right) in the LSTM autoencoder experiment based on fused multi-window statistical features.}
 \label{fig:pat1_pic6}
 \end{figure}
 
@@ -238,7 +238,7 @@ x_t^{(1)}, x_t^{(2)}, \ldots, x_t^{(N_c)}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.5\linewidth]{figures/c4/patent1/pic7.png}
-\caption{混合异常数据的原始遥测时序、平滑后时序与异常得分时序}
+\bicaption{基于融合多窗口统计特征的 LSTM 自编码器实验的混合异常数据的原始遥测时序、平滑后时序与异常得分时序}{Raw telemetry time series, smoothed time series, and anomaly score time series for mixed anomaly data in the LSTM autoencoder experiment based on fused multi-window statistical features.}
 \label{fig:pat1_pic7}
 \end{figure}
 
@@ -248,7 +248,7 @@ x_t^{(1)}, x_t^{(2)}, \ldots, x_t^{(N_c)}
 
 \begin{table}[htbp]
 \centering
-\caption{异常检测模型的混淆矩阵统计结果}
+\bicaption{基于融合多窗口统计特征的 LSTM 自编码器异常检测模型的混淆矩阵统计结果}{Confusion matrix statistics of the LSTM autoencoder–based anomaly detection model using fused multi-window statistical features.}
 \renewcommand{\arraystretch}{1.5}
 \begin{tabularx}{0.9\textwidth}{p{3.2cm} X X X}
 \toprule
@@ -281,7 +281,7 @@ x_t^{(1)}, x_t^{(2)}, \ldots, x_t^{(N_c)}
 
 \begin{table}[htbp]
 \centering
-\caption{异常检测模型的主要性能指标及计算结果}
+\bicaption{基于融合多窗口统计特征的 LSTM 自编码器异常检测模型的主要性能指标及计算结果}{Main performance metrics and calculation results of the LSTM autoencoder–based anomaly detection model using fused multi-window statistical features.}
 \renewcommand{\arraystretch}{1.2}
 \begin{tabularx}{0.9\textwidth}{p{4.2cm} X p{3cm}}
 \toprule
@@ -348,7 +348,7 @@ STL 的核心思想是通过嵌套的内循环和外循环迭代计算各分量�
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=1\linewidth]{figures/c4/Picture1.png}
-\caption{基于多维遥测时序STL分解的深度学习重构误差融合异常检测方法流程图}
+\bicaption{基于STL分解的混合神经网络异常检测方法流程图}{Flowchart of the hybrid neural network–based anomaly detection method using STL decomposition.}
 \label{fig:Picture1}
 \end{figure}
 
@@ -367,7 +367,7 @@ STL 的核心思想是通过嵌套的内循环和外循环迭代计算各分量�
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=1\linewidth]{figures/c4/Picture2.png}
-\caption{多维时序时间窗口降采样示意图}
+\bicaption{多维时序时间窗口降采样示意图}{Schematic illustration of time-window downsampling for multivariate time series.}
 \label{fig:Picture2}
 \end{figure}
 
@@ -404,7 +404,7 @@ STL 的核心思想是通过嵌套的内循环和外循环迭代计算各分量�
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=1\linewidth]{figures/c4/Picture3.png}
-\caption{时序STL分解示意图}
+\bicaption{时序STL分解示意图}{Schematic illustration of STL decomposition for time series.}
 \label{fig:Picture3}
 \end{figure}
 
@@ -416,7 +416,7 @@ STL 的核心思想是通过嵌套的内循环和外循环迭代计算各分量�
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=1\linewidth]{figures/c4/pic5.png}
-\caption{正常数据（左列）与离群点异常数据（右列）的原始遥测时序、降采样时序、分解后趋势项时序、周期项时序、残差项时序、异常分数时序与检测结果时序示意图}
+\bicaption{基于STL分解的混合神经网络异常检测实验的正常数据（左列）与离群点异常数据（右列）的原始遥测时序、降采样时序、分解后趋势项时序、周期项时序、残差项时序、异常分数时序与检测结果时序示意图}{Schematic illustration of the raw telemetry time series, downsampled time series, decomposed trend component, seasonal component, residual component, anomaly score time series, and detection result time series for normal data (left column) and outlier anomaly data (right column) in the STL decomposition–based hybrid neural network anomaly detection experiment.}
 \label{fig:pic5}
 \end{figure}
 
@@ -429,7 +429,7 @@ STL 的核心思想是通过嵌套的内循环和外循环迭代计算各分量�
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=1\linewidth]{figures/c4/pic6.png}
-\caption{整体漂移数据（左列）与斜率变化数据（右列）的原始遥测时序、降采样时序、分解后趋势项时序、周期项时序、残差项时序、异常分数时序与检测结果时序示意图}
+\bicaption{基于STL分解的混合神经网络异常检测实验的整体漂移数据（左列）与斜率变化数据（右列）的原始遥测时序、降采样时序、分解后趋势项时序、周期项时序、残差项时序、异常分数时序与检测结果时序示意图}{Schematic illustration of the raw telemetry time series, downsampled time series, decomposed trend component, seasonal component, residual component, anomaly score time series, and detection result time series for overall drift data (left column) and slope change data (right column) in the STL decomposition–based hybrid neural network anomaly detection experiment.}
 \label{fig:pic6}
 \end{figure}
 
@@ -438,7 +438,7 @@ STL 的核心思想是通过嵌套的内循环和外循环迭代计算各分量�
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.6\linewidth]{figures/c4/pic7.png}
-\caption{混合异常数据的原始遥测时序、降采样时序、分解后趋势项时序、周期项时序、残差项时序、异常分数时序与检测结果时序示意图}
+\bicaption{基于STL分解的混合神经网络异常检测实验的混合异常数据的原始遥测时序、降采样时序、分解后趋势项时序、周期项时序、残差项时序、异常分数时序与检测结果时序示意图}{Schematic illustration of the raw telemetry time series, downsampled time series, decomposed trend component, seasonal component, residual component, anomaly score time series, and detection result time series for mixed anomaly data in the STL decomposition–based hybrid neural network anomaly detection experiment.}
 \label{fig:pic7}
 \end{figure}
 
