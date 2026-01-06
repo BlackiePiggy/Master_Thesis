@@ -1,17 +1,17 @@
 # Fdb version 4
-["biber main"] 1767709741.25582 "main.bcf" "main.bbl" "main" 1767710324.19093 0
-  "main.bcf" 1767710279.40501 157091 5df2c1c183671933eee2c0c4ab7f65f1 "xelatex"
+["biber main"] 1767709741.25582 "main.bcf" "main.bbl" "main" 1767711680.7098 0
+  "main.bcf" 1767711638.78202 157091 5df2c1c183671933eee2c0c4ab7f65f1 "xelatex"
   "refs.bib" 1767582415.36035 59324 eba16804082accd814ddd5e254ba516d ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["xdvipdfmx"] 1767710279.55348 "main.xdv" "main.pdf" "main" 1767710324.19484 0
-  "main.xdv" 1767710279.4061 3073604 f18c1eef779c3bb26b733d15974b0791 "xelatex"
+["xdvipdfmx"] 1767711638.88462 "main.xdv" "main.pdf" "main" 1767711680.71231 0
+  "main.xdv" 1767711638.78277 3073276 235c176466b19c0db709f25fd60f2cbe "xelatex"
   (generated)
   "main.pdf"
   (rewritten before read)
-["xelatex"] 1767710270.08053 "main.tex" "main.xdv" "main" 1767710324.19097 0
+["xelatex"] 1767711633.35435 "main.tex" "main.xdv" "main" 1767711680.70985 0
   "/System/Library/Fonts/Menlo.ttc" 1763819368 2156036 ec05dfca6821d85440da0899493002c3 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -315,12 +315,12 @@
   "contents/achievements.tex" 1766093844 824 092834c1f268e2e44388abd980863460 ""
   "contents/acknowledgements.tex" 1766093844 691 0060f16d4f407ca74fb44bd848c1b7b3 ""
   "contents/app_maxwell_equations.tex" 1766093844 39 69b5d62fb6a445c9ef0576a1e6423199 ""
-  "contents/chapter1.tex" 1767706261.66924 31640 14ae66003d0962273e07c59f2bcff056 ""
-  "contents/chapter2.tex" 1767706555.89507 56836 6e423524380b08ca71af1fcaaae5f2d5 ""
-  "contents/chapter3.tex" 1767708718.52466 111673 636eb9834410e93b8410839c55a1aa6f ""
-  "contents/chapter4.tex" 1767709539.99621 49165 94bd60461cc588b4eaa06e88060e7534 ""
+  "contents/chapter1.tex" 1767711425.90554 31628 4f3a822327bef45adc936233131732e9 ""
+  "contents/chapter2.tex" 1767711493.29894 56792 5c072894e68a9cb4786a4debe1e1972e ""
+  "contents/chapter3.tex" 1767711592.13559 111305 3154d7cf91bee54052f4c895ea3365cb ""
+  "contents/chapter4.tex" 1767710498.97919 49163 04305bdc38ded945643c586230fc7201 ""
   "contents/chapter5.tex" 1767710251.23727 49387 48b54a56cecadc4fe74ca4ef5c94708f ""
-  "contents/chapter6.tex" 1767705021.15026 9594 856c81699150e550d7551a335032e55b ""
+  "contents/chapter6.tex" 1767711624.23769 9585 d883ab97083ae6c278889c6b6a2bcdd6 ""
   "contents/digest.tex" 1766093844 2819 2a74d209bd26ff0ddf9680dd6913962d ""
   "contents/resume.tex" 1766093844 766 d727db4898daf45212dc6e57dc2a716e ""
   "figures/c1/jiagoutu.png" 1767578672.58373 8752307 736bb6d6b2e1cf2462da0e7bbaa80e6f ""
@@ -391,14 +391,14 @@
   "figures/c5/SFPPP.png" 1766717556.07921 492696 cb78c02136d9d138827386cdf81f8ee3 ""
   "figures/c5/UCUDPPP.png" 1766717557.35689 546964 b1453c171a7f745297037cd9eef35844 ""
   "figures/c5/nonFP_DCB_15min_zeromean.png" 1767541471.75311 384226 13f8d7b56d6b0c22247ebe6f1ba2b418 ""
-  "main.aux" 1767710279.33316 85292 839159b18da973afa57c37e3032b1b1d "xelatex"
+  "main.aux" 1767711638.73968 85233 89da61316122f97bda87f092c65f25af "xelatex"
   "main.bbl" 1767709743.54015 421146 5f4c63e875142f060ec603d04238570d "biber main"
-  "main.lof" 1767710279.40603 13281 d85b8976d66fd25144c3da6aa7caaf13 "xelatex"
-  "main.lot" 1767710279.40606 5356 a428286bbb83261fcc78b81bd1e79bcf "xelatex"
-  "main.out" 1767710279.40042 11566 d76dd85682d4b943c416ab741d1827d5 "xelatex"
-  "main.run.xml" 1767710279.40584 2445 6ef12acf25d97fd9cd3b37c0f0fcfd56 "xelatex"
+  "main.lof" 1767711638.78269 13252 8228d26970b6a6d894be47cb7fd1a561 "xelatex"
+  "main.lot" 1767711638.78273 5356 a428286bbb83261fcc78b81bd1e79bcf "xelatex"
+  "main.out" 1767711638.77991 11566 d76dd85682d4b943c416ab741d1827d5 "xelatex"
+  "main.run.xml" 1767711638.78254 2445 6ef12acf25d97fd9cd3b37c0f0fcfd56 "xelatex"
   "main.tex" 1767700254.16686 2469 7ca1ec9b7506945a1ec75fa69406214a ""
-  "main.toc" 1767710279.406 9603 2bbb14170102cb6fb8887d93e5f76805 "xelatex"
+  "main.toc" 1767711638.78265 9603 2bbb14170102cb6fb8887d93e5f76805 "xelatex"
   "setup.tex" 1767661548.40146 6678 6dcf7fcc513e996fd1ef041964db0283 ""
   "sjtuthesis-bachelor.sty" 1766093844 2379 54836db1c2aa13e326f52d686e824560 ""
   (generated)

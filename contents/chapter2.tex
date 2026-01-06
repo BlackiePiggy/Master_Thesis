@@ -76,12 +76,12 @@ Mode 10 & IIR-M/IIF & 127--131, 2023 & 120$^\circ$W / 36$^\circ$N; 5$^\circ$W / 
 \end{table}
 
 \section{GNSS弹性功率对定位数据的影响}
-美国空军太空司令部（AFSPC）最初认为弹性功率对全球绝大多数用户无明显影响，只有少数老旧接收机可能受不利影响。然而，现有研究表明，这种发射端的操作在增强特定信号抗压制能力的同时，也会对 GNSS 的精密数据处理产生影响。从物理层面上看，弹性功率的激活直接引发生信号载噪比（C/N₀）出现 2–11 dB 量级的阶跃式变化，并导致卫星通道硬件延迟发生漂移，进而引起差分码偏差（DCB）和相位偏差出现纳秒级甚至周级的系统性不连续\cite{liu2024characteristics}。这些未被模型化的偏差若不经特殊处理，将向用户端传播，导致精密单点定位（PPP）收敛时间延长、模糊度固定（PPP-AR）残差恶化，并限制 GNSS-R 反演及精密定轨等衍生应用的精度\cite{du2024effects,liu2024characteristics,wu2024effects,Wang2022Dynamic}。对于高精度定位用户而言，C/N₀ 的波动直接表征了信号的跟踪质量与功率模式，而 DCB 的稳定性则决定了伪距校正与电离层建模的精度\cite{Steigenberger2018GNSS}。因此，本节将重点对弹性功率在 C/N₀ 及 DCB 上的具体影响进行分析。
+美国空军太空司令部（AFSPC）最初认为弹性功率对全球绝大多数用户无明显影响，只有少数老旧接收机可能受不利影响。然而，现有研究表明，这种发射端的操作在增强特定信号抗压制能力的同时，也会对 GNSS 的精密数据处理产生影响。从物理层面上看，弹性功率的激活直接引发生信号载噪比（C/N0）出现 2–11 dB 量级的阶跃式变化，并导致卫星通道硬件延迟发生漂移，进而引起差分码偏差（DCB）和相位偏差出现纳秒级甚至周级的系统性不连续\cite{liu2024characteristics}。这些未被模型化的偏差若不经特殊处理，将向用户端传播，导致精密单点定位（PPP）收敛时间延长、模糊度固定（PPP-AR）残差恶化，并限制 GNSS-R 反演及精密定轨等衍生应用的精度\cite{du2024effects,liu2024characteristics,wu2024effects,Wang2022Dynamic}。对于高精度定位用户而言，C/N0 的波动直接表征了信号的跟踪质量与功率模式，而 DCB 的稳定性则决定了伪距校正与电离层建模的精度\cite{Steigenberger2018GNSS}。因此，本节将重点对弹性功率在 C/N0 及 DCB 上的具体影响进行分析。
 
 \subsection{GNSS弹性功率对载噪比（C/N0）的影响}
 本节介绍了阶跃提升和整体提升模式，并分析了不同接收器-天线组合的影响。我们强调了传统方法的缺点，这些方法仅限于设备差异和广泛的数据。
 
-基于单站 C/N₀ 时间序列分析，可以观察到弹性功率的两种典型模式：阶跃式提升（step lift） 和 整体提升（overall lift）。图\ref{fig:afpd_1}采用 2024 年 6 月 3 日（蓝色）和 6 月 4 日（红色）的 S2W 观测数据对这两种模式进行了展示。当卫星进入或离开弹性功率激活区域时，会产生 C/N₀ 的突然上升或下降，即阶跃式提升，如图\ref{fig:afpd_1}第一行所示。这些上升和下降分别出现在第一行的第一个和最后一个子图中。当卫星在整个通过弧段期间始终处于激活区域内时，则会出现整体提升模式，使得整个轨迹的 C/N₀ 持续高于未激活时的水平，这在 6 月 4 日相较于 6 月 3 日的观测中清晰体现出来。
+基于单站 C/N0 时间序列分析，可以观察到弹性功率的两种典型模式：阶跃式提升（step lift） 和 整体提升（overall lift）。图\ref{fig:afpd_1}采用 2024 年 6 月 3 日（蓝色）和 6 月 4 日（红色）的 S2W 观测数据对这两种模式进行了展示。当卫星进入或离开弹性功率激活区域时，会产生 C/N0 的突然上升或下降，即阶跃式提升，如图\ref{fig:afpd_1}第一行所示。这些上升和下降分别出现在第一行的第一个和最后一个子图中。当卫星在整个通过弧段期间始终处于激活区域内时，则会出现整体提升模式，使得整个轨迹的 C/N0 持续高于未激活时的水平，这在 6 月 4 日相较于 6 月 3 日的观测中清晰体现出来。
 
 \begin{figure}
     \centering
@@ -90,7 +90,7 @@ Mode 10 & IIR-M/IIF & 127--131, 2023 & 120$^\circ$W / 36$^\circ$N; 5$^\circ$W / 
     \label{fig:afpd_1}
 \end{figure}
     
-为了展示弹性功率（flex power）对 C/N₀ 的提升模式，我们提出了一种将 二维卫星地面轨迹 与 C/N₀ 时间序列 相结合的可视化方法。图 \ref{fig:afpd_2} 给出了 2020 年 2 月 14 日的两个示例：站点 BAIE 上的卫星 G05 显示阶跃式提升（step lift），站点 BIK0 上的卫星 G03 显示整体提升（overall lift）。在两个子图中，深色阴影区域表示弹性功率的激活区域，深蓝色区域表示站点的视场范围（FoV）。粉色虚线表示卫星轨迹，黄色叉号标记激活中心；粉色三角形与矩形分别表示轨迹的起点和终点。右侧图中，黑色点为 2 月 13 日（弹性功率未激活）得到的基线 C/N₀ 值；而 2 月 14 日的彩色点为实际接收的 C/N₀，其中绿色表示无提升，红色表示有提升。
+为了展示弹性功率（flex power）对 C/N0 的提升模式，我们提出了一种将 二维卫星地面轨迹 与 C/N0 时间序列 相结合的可视化方法。图 \ref{fig:afpd_2} 给出了 2020 年 2 月 14 日的两个示例：站点 BAIE 上的卫星 G05 显示阶跃式提升（step lift），站点 BIK0 上的卫星 G03 显示整体提升（overall lift）。在两个子图中，深色阴影区域表示弹性功率的激活区域，深蓝色区域表示站点的视场范围（FoV）。粉色虚线表示卫星轨迹，黄色叉号标记激活中心；粉色三角形与矩形分别表示轨迹的起点和终点。右侧图中，黑色点为 2 月 13 日（弹性功率未激活）得到的基线 C/N0 值；而 2 月 14 日的彩色点为实际接收的 C/N0，其中绿色表示无提升，红色表示有提升。
 
 \begin{figure}
     \centering
@@ -99,11 +99,11 @@ Mode 10 & IIR-M/IIF & 127--131, 2023 & 120$^\circ$W / 36$^\circ$N; 5$^\circ$W / 
     \label{fig:afpd_2}
 \end{figure}
 
-在图\ref{fig:afpd_2}(a)中，卫星 G05 于 04:39:00 进入 BAIE 的视场。起初它位于激活区域之外（绿色轨迹），因此未观察到 C/N₀ 提升。当其进入激活区域（轨迹由绿变红）时，出现了阶跃提升。在图\ref{fig:afpd_2}(b)中，卫星 G03 一开始就位于激活区域内，因此在整个视场时间内均表现出 C/N₀ 的整体提升。只要卫星在整个观测视场期间始终处于激活区域内，就会出现这种整体提升模式。
+在图\ref{fig:afpd_2}(a)中，卫星 G05 于 04:39:00 进入 BAIE 的视场。起初它位于激活区域之外（绿色轨迹），因此未观察到 C/N0 提升。当其进入激活区域（轨迹由绿变红）时，出现了阶跃提升。在图\ref{fig:afpd_2}(b)中，卫星 G03 一开始就位于激活区域内，因此在整个视场时间内均表现出 C/N0 的整体提升。只要卫星在整个观测视场期间始终处于激活区域内，就会出现这种整体提升模式。
 
 如果所选站点呈现整体提升模式，由于缺乏过渡边界（transition edges），滑动窗口方法将无法检测到弹性功率。因此，FPD（Flex Power Detection）需要大量站点才能获得准确检测，这导致过程耗时。因此，为实时应用尽可能减少站点数量的同时保证稳健检测变得至关重要。而我们的方法正是专为解决这一挑战而设计的。
 
-为了分析不同接收机—天线组合导致的 C/N₀ 提升幅度差异，我们选取了六组具有相同接收机类型但天线不同的站点组合。以 2020 年第 45 天（DOY 45）期间的一次弹性功率事件为例，选取卫星 G07 的 S2W 时间序列进行分析。我们计算了每组在所有 IIR-M 和 IIF 卫星上的平均 C/N₀ 提升值，结果如图\ref{fig:afpd_3}所示。
+为了分析不同接收机—天线组合导致的 C/N0 提升幅度差异，我们选取了六组具有相同接收机类型但天线不同的站点组合。以 2020 年第 45 天（DOY 45）期间的一次弹性功率事件为例，选取卫星 G07 的 S2W 时间序列进行分析。我们计算了每组在所有 IIR-M 和 IIF 卫星上的平均 C/N0 提升值，结果如图\ref{fig:afpd_3}所示。
 
 \begin{figure}
     \centering
@@ -112,7 +112,7 @@ Mode 10 & IIR-M/IIF & 127--131, 2023 & 120$^\circ$W / 36$^\circ$N; 5$^\circ$W / 
     \label{fig:afpd_3}
 \end{figure}
 
-结果表明，不同组之间的平均 C/N₀ 提升值存在显著差异，平均差值达到 1.53 dB-Hz，最大差值为 2.56 dB-Hz，而组内平均标准差（STD）仅为 0.37 dB-Hz。这表明这些差异具有系统性，而非随机异常。该发现凸显了依赖基线建模与阈值检测方法的关键局限性，因为每种接收机—天线组合都需要分别进行建模与阈值设定。这也解释了Meng等人\cite{meng2024real}提出的基于模型的方法为什么需要对每个站点进行独立建模。相比之下，我们的方法 不需要历史数据建模，并且在 多频点、多 GNSS 场景中表现优异，相关结果将在下一节展示。
+结果表明，不同组之间的平均 C/N0 提升值存在显著差异，平均差值达到 1.53 dB-Hz，最大差值为 2.56 dB-Hz，而组内平均标准差（STD）仅为 0.37 dB-Hz。这表明这些差异具有系统性，而非随机异常。该发现凸显了依赖基线建模与阈值检测方法的关键局限性，因为每种接收机—天线组合都需要分别进行建模与阈值设定。这也解释了Meng等人\cite{meng2024real}提出的基于模型的方法为什么需要对每个站点进行独立建模。相比之下，我们的方法 不需要历史数据建模，并且在 多频点、多 GNSS 场景中表现优异，相关结果将在下一节展示。
 
 \subsection{GNSS弹性功率对DCB的影响}
 弹性功率的激活对GNSS观测值和产品（如DCB）以及最终的定位精度产生深远影响，是高精度用户必须关注的问题。弹性功率是导致卫星差分码偏差（DCB）产生显著变化和不确定性的主要因素之一\cite{zhang2025analysis,xiang2020understanding,liu2024characteristics,abraha2024gnss,esenbuga2020impact,liu2025effects,esenbuuga2020impact}。DCB的精确估计对于精密电离层建模、定位和授时至关重要\cite{esenbuga2020impact,esenbuuga2020impact}。
@@ -341,7 +341,7 @@ $\text{DCB}_{\text{ref}, i}$ 为对应日期 IGS 分析中心发布的参考产�
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{figures/c2/dcb/fig3.png}
-    \bicaption{2024 年 6 月 3–4 日期间，MGEX 多站监测的 S2W C/N₀ 信号时间序列（PRN：G03、G24、G32）。不同颜色的空心圆点表示来自不同 MGEX 站点的 C/N₀ 观测序列；红色与绿色半透明区域分别表示弹性功率的开启与关闭时间段}{Time series of S2W C/N0 signal monitoring by multiple MGEX stations on June 3–4, 2024 for satellites with PRNs G03, G24, and G32. The colored hollow circle dots indicate the time series of different MGEX station received C/N0 signals; red and green translucent coverage areas indicate flex power on/off event time points, respectively.}
+    \bicaption{2024 年 6 月 3–4 日期间，MGEX 多站监测的 S2W C/N0 信号时间序列（PRN：G03、G24、G32）。不同颜色的空心圆点表示来自不同 MGEX 站点的 C/N0 观测序列；红色与绿色半透明区域分别表示弹性功率的开启与关闭时间段}{Time series of S2W C/N0 signal monitoring by multiple MGEX stations on June 3–4, 2024 for satellites with PRNs G03, G24, and G32. The colored hollow circle dots indicate the time series of different MGEX station received C/N0 signals; red and green translucent coverage areas indicate flex power on/off event time points, respectively.}
     \label{fig:dcb_fig3}
 \end{figure}
 
@@ -447,7 +447,7 @@ G32 & & 2:48 & 13:00 & & & 7:12 & 19:12 & 0:00 & & 0:00 & 5:36 & 17:36 & 22:00 &
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{figures/c2/dcb/fig10.png}
-    \bicaption{2024 年弹性功率事件 3 期间，G32 卫星的多站 S2W C/N₀ 与 C1C–C1W DCB 估计结果对比。紫色点划线表示 C1C–C1W DCB 的时间序列，彩色圆点表示来自多个 MGEX 站的 S2W C/N₀ 观测值。红色与绿色半透明矩形分别表示弹性功率的开启与关闭时间。可以观察到，C1C–C1W DCB 的跃变与 C/N₀ 的变化相一致，而在非跃变时段内保持在 0.2 ns 范围内的稳定性，说明 DCB 的变化确实受到弹性功率切换的影响}{Comparison of multi-station S2W C/N0 and C1C–C1W DCB estimation for G32 satellite during flex power event 3 in 2024. The purple dash-dot line represents the C1C–C1W DCB estimation time series, colored circular markers show S2W C/N0 values from multiple MGEX stations. Red and green translucent rectangles indicate flex power on/ off transition timestamps. The shift changes in C1C–C1W DCB coincide with C/N0's shift changes, while maintaining stability within 0.2 ns during other periods, demonstrating that DCB shifts are indeed influenced by flex power changes.}
+    \bicaption{2024 年弹性功率事件 3 期间，G32 卫星的多站 S2W C/N0 与 C1C–C1W DCB 估计结果对比。紫色点划线表示 C1C–C1W DCB 的时间序列，彩色圆点表示来自多个 MGEX 站的 S2W C/N0 观测值。红色与绿色半透明矩形分别表示弹性功率的开启与关闭时间。可以观察到，C1C–C1W DCB 的跃变与 C/N0 的变化相一致，而在非跃变时段内保持在 0.2 ns 范围内的稳定性，说明 DCB 的变化确实受到弹性功率切换的影响}{Comparison of multi-station S2W C/N0 and C1C–C1W DCB estimation for G32 satellite during flex power event 3 in 2024. The purple dash-dot line represents the C1C–C1W DCB estimation time series, colored circular markers show S2W C/N0 values from multiple MGEX stations. Red and green translucent rectangles indicate flex power on/ off transition timestamps. The shift changes in C1C–C1W DCB coincide with C/N0's shift changes, while maintaining stability within 0.2 ns during other periods, demonstrating that DCB shifts are indeed influenced by flex power changes.}
     \label{fig:dcb_fig10}
 \end{figure}
 
@@ -495,6 +495,6 @@ G32 & & 2:48 & 13:00 & & & 7:12 & 19:12 & 0:00 & & 0:00 & 5:36 & 17:36 & 22:00 &
 \end{figure}
 
 \section{本章小结}
-弹性功率是GNSS现代化进程中一项关键的抗干扰技术，通过在不同信号分量间重分配发射功率，直接改变了信号的物理特性。本章首先梳理了弹性功率的定义与发展历程，详细分析了从区域性增强到全球模式演变的十种运行模式，并通过二维轨迹与三维投影的可视化手段展示了其覆盖特征。针对载噪比（C/N₀）受到的影响，识别出“阶跃提升”和“整体提升”两种典型模式，并结合卫星轨迹提出了无需依赖特定阈值的可视化方法。实验表明，不同接收机-天线组合对弹性功率的响应存在显著的系统性差异，最大偏差可达 2.56 dB-Hz，这说明依赖单一基线模型的检测方法存在局限性，需建立更具普适性的检测策略。
+弹性功率是GNSS现代化进程中一项关键的抗干扰技术，通过在不同信号分量间重分配发射功率，直接改变了信号的物理特性。本章首先梳理了弹性功率的定义与发展历程，详细分析了从区域性增强到全球模式演变的十种运行模式，并通过二维轨迹与三维投影的可视化手段展示了其覆盖特征。针对载噪比（C/N0）受到的影响，识别出“阶跃提升”和“整体提升”两种典型模式，并结合卫星轨迹提出了无需依赖特定阈值的可视化方法。实验表明，不同接收机-天线组合对弹性功率的响应存在显著的系统性差异，最大偏差可达 2.56 dB-Hz，这说明依赖单一基线模型的检测方法存在局限性，需建立更具普适性的检测策略。
 
-弹性功率的激活会导致卫星通道硬件延迟在日内发生显著跳变，传统的单日均值估计策略已不再适用。在本章中，为了捕捉这一短时变化特征，提出了基于 15 分钟滑动窗口的短期 DCB 估计算法。该方法联合估计电离层球谐系数与硬件偏差，并采用内符合精度作为质量控制指标。最终，利用 2024 年三次典型的弹性功率事件，量化评估了弹性功率对 GPS 卫星频内与频间 DCB 的具体影响。实验结果显示，频内 DCB（C1C-C1W）呈现出约 0.4 ns 的系统性偏移，且该偏移与 C/N₀ 的阶跃变化具有严格的时间同步性，估计结果的 RMS 优于 0.0075 ns；而频间 DCB（C1W-C2W）在现有估计精度下未表现出明显的阶跃特征，主要受电离层活动影响呈现周日周期性波动。上述结论证实了弹性功率是引起观测值异常和硬件偏差不稳定的重要物理诱因，若在高精度数据处理中不予修正，将直接制约定位性能。
+弹性功率的激活会导致卫星通道硬件延迟在日内发生显著跳变，传统的单日均值估计策略已不再适用。在本章中，为了捕捉这一短时变化特征，提出了基于 15 分钟滑动窗口的短期 DCB 估计算法。该方法联合估计电离层球谐系数与硬件偏差，并采用内符合精度作为质量控制指标。最终，利用 2024 年三次典型的弹性功率事件，量化评估了弹性功率对 GPS 卫星频内与频间 DCB 的具体影响。实验结果显示，频内 DCB（C1C-C1W）呈现出约 0.4 ns 的系统性偏移，且该偏移与 C/N0 的阶跃变化具有严格的时间同步性，估计结果的 RMS 优于 0.0075 ns；而频间 DCB（C1W-C2W）在现有估计精度下未表现出明显的阶跃特征，主要受电离层活动影响呈现周日周期性波动。上述结论证实了弹性功率是引起观测值异常和硬件偏差不稳定的重要物理诱因，若在高精度数据处理中不予修正，将直接制约定位性能。

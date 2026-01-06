@@ -7,11 +7,11 @@
 \contentsline {figure}{\numberline {2.5}{\ignorespaces 比较在不同接收机-天线组合条件下，2020 年第 45 天 G07 卫星柔性功率事件导致的 S2W C/N0 增益变化}}{20}{figure.caption.21}%
 \contentsline {figure}{\numberline {2.6}{\ignorespaces 用于 DCB 估计的 MGEX 站点分布（2024 年 1 月）}}{28}{figure.caption.22}%
 \contentsline {figure}{\numberline {2.7}{\ignorespaces 15分钟DCB短期估计方法的流程图}}{29}{figure.caption.23}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces 2024 年 6 月 3–4 日期间，MGEX 多站监测的 S2W C/N₀ 信号时间序列（PRN：G03、G24、G32）。不同颜色的空心圆点表示来自不同 MGEX 站点的 C/N₀ 观测序列；红色与绿色半透明区域分别表示弹性功率的开启与关闭时间段}}{31}{figure.caption.24}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces 2024 年 6 月 3–4 日期间，MGEX 多站监测的 S2W C/N0 信号时间序列（PRN：G03、G24、G32）。不同颜色的空心圆点表示来自不同 MGEX 站点的 C/N0 观测序列；红色与绿色半透明区域分别表示弹性功率的开启与关闭时间段}}{31}{figure.caption.24}%
 \contentsline {figure}{\numberline {2.9}{\ignorespaces 2024 年第 45、155 与 178 日（DOY）期间，GPS IIR-M 与 IIF 卫星在弹性功率激活阶段的地面轨迹投影。三个事件中，弹性功率激活区域均位于 30°W 至 150°W 之间}}{33}{figure.caption.26}%
 \contentsline {figure}{\numberline {2.10}{\ignorespaces 2024 年三个弹性功率事件中，一日内 96 个 15 分钟时间窗估计所得残差的平均分布。横轴表示残差值，纵轴表示出现频率；蓝色柱状条展示残差直方图，橙色曲线表示拟合的正态分布。}}{34}{figure.caption.27}%
 \contentsline {figure}{\numberline {2.11}{\ignorespaces 2024 年三个弹性功率事件期间，GPS IIR-M 与 IIF 卫星的 C1C–C1W 和 C1W–C2W DCB 估计时间序列。不同颜色的点划线表示不同卫星的 DCB 时间序列，每个点对应一次基于 15 分钟时间窗的估计结果}}{35}{figure.caption.29}%
-\contentsline {figure}{\numberline {2.12}{\ignorespaces 2024 年弹性功率事件 3 期间，G32 卫星的多站 S2W C/N₀ 与 C1C–C1W DCB 估计结果对比。紫色点划线表示 C1C–C1W DCB 的时间序列，彩色圆点表示来自多个 MGEX 站的 S2W C/N₀ 观测值。红色与绿色半透明矩形分别表示弹性功率的开启与关闭时间。可以观察到，C1C–C1W DCB 的跃变与 C/N₀ 的变化相一致，而在非跃变时段内保持在 0.2 ns 范围内的稳定性，说明 DCB 的变化确实受到弹性功率切换的影响}}{37}{figure.caption.30}%
+\contentsline {figure}{\numberline {2.12}{\ignorespaces 2024 年弹性功率事件 3 期间，G32 卫星的多站 S2W C/N0 与 C1C–C1W DCB 估计结果对比。紫色点划线表示 C1C–C1W DCB 的时间序列，彩色圆点表示来自多个 MGEX 站的 S2W C/N0 观测值。红色与绿色半透明矩形分别表示弹性功率的开启与关闭时间。可以观察到，C1C–C1W DCB 的跃变与 C/N0 的变化相一致，而在非跃变时段内保持在 0.2 ns 范围内的稳定性，说明 DCB 的变化确实受到弹性功率切换的影响}}{37}{figure.caption.30}%
 \contentsline {figure}{\numberline {2.13}{\ignorespaces 弹性功率事件 1 期间所有 GPS 卫星的 C1C–C1W DCB 估计时间序列}}{38}{figure.caption.31}%
 \contentsline {figure}{\numberline {2.14}{\ignorespaces 弹性功率事件 2 期间所有 GPS 卫星的 C1C–C1W DCB 估计时间序列}}{38}{figure.caption.32}%
 \contentsline {figure}{\numberline {2.15}{\ignorespaces 弹性功率事件 3 期间所有 GPS 卫星的 C1C–C1W DCB 估计时间序列}}{39}{figure.caption.33}%
@@ -20,7 +20,7 @@
 \contentsline {figure}{\numberline {2.18}{\ignorespaces 弹性功率事件3期间所有GPS卫星的C1W–C2W DCB估计时间序列}}{40}{figure.caption.36}%
 \contentsline {figure}{\numberline {3.1}{\ignorespaces FPD算法整体流程图}}{48}{figure.caption.38}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces 2020 年 BAIE 测站接收的 G03 卫星 S2W 频点的原始 C/N0 时间序列（上图）及对应的 FPD 检测结果（下图）}}{51}{figure.caption.40}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces 2020 年 BAIE 测站接收的 G05 卫星 S2W 频点的原始 C/N\textsubscript {0} 时间序列（上图）及对应的 FPD 检测结果（下图）}}{52}{figure.caption.41}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces 2020 年 BAIE 测站接收的 G05 卫星 S2W 频点的原始 C/N0 时间序列（上图）及对应的 FPD 检测结果（下图）}}{52}{figure.caption.41}%
 \contentsline {figure}{\numberline {3.4}{\ignorespaces FPD高度角截止滤除数据示意图。绿色和红色的散点表示高于和低于30°高度角的载噪比数据。下方虚线表示高度角随时间的变化情况}}{53}{figure.caption.42}%
 \contentsline {figure}{\numberline {3.5}{\ignorespaces AFPD-DTW流程图}}{54}{figure.caption.43}%
 \contentsline {figure}{\numberline {3.6}{\ignorespaces 在不同场景下，DTW 方法与差分方法的异常评分结果对比}}{57}{figure.caption.44}%
@@ -28,7 +28,7 @@
 \contentsline {figure}{\numberline {3.8}{\ignorespaces 2020 年不同 GPS 卫星 S2W 信号的 DTW 异常得分时间序列。彩色圆点表示不同的 GPS 卫星。较高的 DTW 异常得分表示发生弹性功率变化事件的可能性更大}}{61}{figure.caption.47}%
 \contentsline {figure}{\numberline {3.9}{\ignorespaces 2021 年不同 GPS 卫星 S2W 信号的 DTW 异常得分时间序列}}{62}{figure.caption.48}%
 \contentsline {figure}{\numberline {3.10}{\ignorespaces 基于动态 IQR 阈值的方法用于区分多站点–多卫星组合的 S2W 信号中的弹性功率事件（红色）与非事件（蓝色）}}{65}{figure.caption.51}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces 2020–2021 年期间多站 S2W C/N₀ 时间序列中由 FPD 漏检的三次弹性功率模式转换}}{66}{figure.caption.52}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces 2020–2021 年期间多站 S2W C/N0 时间序列中由 FPD 漏检的三次弹性功率模式转换}}{66}{figure.caption.52}%
 \contentsline {figure}{\numberline {3.12}{\ignorespaces 2024 年 6 月 1 日至 8 日期间 GPS 卫星的 AFPD-DTW 实时检测结果}}{67}{figure.caption.53}%
 \contentsline {figure}{\numberline {3.13}{\ignorespaces 2024 年 6 月 2 日期间具有弹性功率激活的 GPS 卫星轨迹}}{67}{figure.caption.56}%
 \contentsline {figure}{\numberline {3.14}{\ignorespaces 2024 年 6 月 4 日期间具有弹性功率激活的 GPS 卫星轨迹}}{68}{figure.caption.57}%
