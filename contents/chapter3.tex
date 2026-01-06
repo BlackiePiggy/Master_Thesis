@@ -242,17 +242,17 @@ AFPD-DTW 的处理流程包括三个主要步骤，如图\ref{fig:afpd_4}所示�
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\linewidth]{figures/afpd/图片4.png}
+    \includegraphics[width=1\linewidth]{figures/c3/afpd/图片4.png}
     \caption{AFPD-DTW流程图}
     \label{fig:afpd_4}
 \end{figure}
 
 第二步是将预处理后的数据输入 AFPD-DTW 检测模块。具体而言，当 AFPD-DTW 接收到新的数据时，若为事后处理（post-processing），系统会首先检查当日序列是否完整；若不完整，则重置模型。而在实时检测中，则直接使用当前窗口的数据。随后流程会验证当前是否存在有效模型：若不存在，则将当前数据作为新模型，将该日标记为检测起始日（day 1），并等待下一批观测数据；若存在有效模型，则使用重叠序列计算 DTW 异常得分。当该得分超过由四分位距（IQR）方法确定的阈值时，即判定存在弹性功率事件；反之，则将当前数据纳入模型以进一步更新，从而增强模型的稳健性。
 
-第三步是数据融合模块，用于对同一卫星的多站结果进行整合。具体而言，每颗卫星会对应多个 DTW 异常得分，这些得分通过加权投票方案（weighted voting）进行融合，得到最终的异常得分。当该得分超过阈值时，即检测到弹性功率事件。为验证检测事件的空间一致性，还利用卫星地面轨迹检查激活区域及激活中心。最终输出内容包括检测到的弹性功率事件列表及对应的检测时间线。
+第三步是数据融合模块，用于对同一卫星的多站结果进行整合。具体而言，每颗卫星会对应多个 DTW 异常得分，这些得分通过加权投票方案进行融合，得到最终的异常得分。当该得分超过阈值时，即检测到弹性功率事件。为验证检测事件的空间一致性，还利用卫星地面轨迹检查激活区域及激活中心。最终输出内容包括检测到的弹性功率事件列表及对应的检测时间线。
 
 \subsection{AFPD-DTW检测方法}
-AFPD-DTW 的核心假设是：在非弹性功率（non-flex-power）条件下，GNSS 信号的 C/N\textsubscript{0} 时间序列呈现高度可重复的日周期模式。当目标日的序列模式与前几天存在显著偏离时，即表明发生了弹性功率变化。与基线建模方法相比，AFPD-DTW 使用前几天的稳定序列作为动态参考模型，并利用 DTW 计算当前序列与该模型之间的异常得分。
+AFPD-DTW 的核心假设是：在非弹性功率条件下，GNSS 信号的 C/N\textsubscript{0} 时间序列呈现高度可重复的日周期模式。当目标日的序列模式与前几天存在显著偏离时，即表明发生了弹性功率变化。与基线建模方法相比，AFPD-DTW 使用前几天的稳定序列作为动态参考模型，并利用 DTW 计算当前序列与该模型之间的异常得分。
 
 在事后处理模式下，设
 \begin{equation}
@@ -348,13 +348,13 @@ d_t \le \mathrm{thre}_{\mathrm{rt}}, & \text{非事件}.
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\linewidth]{figures/afpd/图片5.png}
+    \includegraphics[width=1\linewidth]{figures/c3/afpd/图片5.png}
     \caption{在不同场景下，DTW 方法与差分方法的异常评分结果对比}
     \label{fig:afpd_5}
 \end{figure}
 
 \subsection{阈值策略}
-有效的阈值确定对于将 DTW 距离度量正确转化为弹性功率检测结果至关重要。阈值过小会导致误报（false alarms），而阈值过大则会造成漏检（missed detections）。本文采用 IQR（Interquartile Range）方法，其自适应阈值特性在实际应用中效果良好。相比之下，静态阈值无法在不同卫星与站点之间通用，而机器学习方法则需要标注数据与频繁更新模型，因此均不适用于本场景。
+有效的阈值确定对于将 DTW 距离度量正确转化为弹性功率检测结果至关重要。阈值过小会导致误报，而阈值过大则会造成漏检。本文采用 IQR 方法，其自适应阈值特性在实际应用中效果良好。相比之下，静态阈值无法在不同卫星与站点之间通用，而机器学习方法则需要标注数据与频繁更新模型，因此均不适用于本场景。
 
 首先从 DTW 序列 \( \mathrm{DTW}_S \) 中计算四分位数，即第 25 百分位数 \(Q_1\) 和第 75 百分位数 \(Q_3\)。随后计算 IQR：
 \begin{equation}
@@ -453,7 +453,7 @@ Q_1 - k\cdot\mathrm{IQR} \le \mathrm{DTW}_S \le Q_3 + k\cdot\mathrm{IQR}, & \tex
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.5\linewidth]{figures/afpd/图片6.png}
+    \includegraphics[width=0.5\linewidth]{figures/c3/afpd/图片6.png}
     \caption{用于 AFPD-DTW 检测中事后处理与实时处理实验的站点全球分布}
     \label{fig:afpd_6}
 \end{figure}
@@ -468,14 +468,14 @@ Q_1 - k\cdot\mathrm{IQR} \le \mathrm{DTW}_S \le Q_3 + k\cdot\mathrm{IQR}, & \tex
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\linewidth]{figures/afpd/图片7.png}
+    \includegraphics[width=1\linewidth]{figures/c3/afpd/图片7.png}
     \caption{2020 年不同 GPS 卫星 S2W 信号的 DTW 异常得分时间序列。彩色圆点表示不同的 GPS 卫星。较高的 DTW 异常得分表示发生弹性功率变化事件的可能性更大}
     \label{fig:afpd_7}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\linewidth]{figures/afpd/图片8.png}
+    \includegraphics[width=1\linewidth]{figures/c3/afpd/图片8.png}
     \caption{2021 年不同 GPS 卫星 S2W 信号的 DTW 异常得分时间序列}
     \label{fig:afpd_8}
 \end{figure}
@@ -560,7 +560,7 @@ Q_1 - k\cdot\mathrm{IQR} \le \mathrm{DTW}_S \le Q_3 + k\cdot\mathrm{IQR}, & \tex
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\linewidth]{figures/afpd/图片9.png}
+    \includegraphics[width=1\linewidth]{figures/c3/afpd/图片9.png}
     \caption{基于动态 IQR 阈值的方法用于区分多站点–多卫星组合的 S2W 信号中的弹性功率事件（红色）与非事件（蓝色）}
     \label{fig:afpd_9}
 \end{figure}
@@ -574,7 +574,7 @@ Q_1 - k\cdot\mathrm{IQR} \le \mathrm{DTW}_S \le Q_3 + k\cdot\mathrm{IQR}, & \tex
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\linewidth]{figures/afpd/图片10.png}
+    \includegraphics[width=1\linewidth]{figures/c3/afpd/图片10.png}
     \caption{2020–2021 年期间多站 S2W C/N₀ 时间序列中由 FPD 漏检的三次弹性功率模式转换}
     \label{fig:afpd_10}
 \end{figure}
@@ -583,7 +583,7 @@ Q_1 - k\cdot\mathrm{IQR} \le \mathrm{DTW}_S \le Q_3 + k\cdot\mathrm{IQR}, & \tex
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.5\linewidth]{figures/afpd/图片11.png}
+    \includegraphics[width=0.5\linewidth]{figures/c3/afpd/图片11.png}
     \caption{2024 年 6 月 1 日至 8 日期间 GPS 卫星的 AFPD-DTW 实时检测结果}
     \label{fig:afpd_11}
 \end{figure}
@@ -663,20 +663,20 @@ Q_1 - k\cdot\mathrm{IQR} \le \mathrm{DTW}_S \le Q_3 + k\cdot\mathrm{IQR}, & \tex
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.85\linewidth]{figures/afpd/图片12.png}
+    \includegraphics[width=0.85\linewidth]{figures/c3/afpd/图片12.png}
     \caption{2024 年 6 月 2 日期间具有弹性功率激活的 GPS 卫星轨迹}
     \label{fig:afpd_12}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.85\linewidth]{figures/afpd/图片13.png}
+    \includegraphics[width=0.85\linewidth]{figures/c3/afpd/图片13.png}
     \caption{2024 年 6 月 4 日期间具有弹性功率激活的 GPS 卫星轨迹}
     \label{fig:afpd_13}
 \end{figure}
 
 \subsubsection{多星座与多频段检测}
-为了评估 AFPD-DTW 在多星座与多频点场景中的适用性，我们采用了表\ref{tab:afpd_tab_1}中事后处理实验使用的同一组站点。对于北斗（BDS），对 2023 年 1 月至 2025 年 7 月期间的 S2I、S6I 和 S7I 信号进行了分析；对于 GPS，则分析了 2024 年 1 月至 2025 年 7 月期间的 S1C 与 S1W 信号。
+为了评估 AFPD-DTW 在多星座与多频点场景中的适用性，我们采用了表\ref{tab:afpd_tab_1}中事后处理实验使用的同一组站点。对于BDS，对 2023 年 1 月至 2025 年 7 月期间的 S2I、S6I 和 S7I 信号进行了分析；对于 GPS，则分析了 2024 年 1 月至 2025 年 7 月期间的 S1C 与 S1W 信号。
 
 \begin{table*}[htbp]
 \centering
@@ -777,7 +777,7 @@ Q_1 - k\cdot\mathrm{IQR} \le \mathrm{DTW}_S \le Q_3 + k\cdot\mathrm{IQR}, & \tex
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.85\linewidth]{figures/afpd/图片14.png}
+    \includegraphics[width=0.85\linewidth]{figures/c3/afpd/图片14.png}
     \caption{2024 年 9 月 23 日和 2023 年 9 月 27 日 BDS 卫星在 S6I 信号上触发弹性功率（Flex Power）时的轨迹}
     \label{fig:apfd_14}
 \end{figure}
@@ -850,7 +850,7 @@ AFPD-DTW & 2025 & 事后处理 / 实时检测 & 仅需 8--10 个站点；无历�
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=1\linewidth]{figures/c3/DLFPD/struct.png}
+\includegraphics[width=1\linewidth]{figures/c3/DLFPD/struct2.png}
 \caption{DLFPD架构}
 \label{fig:c3_dl_strcut}
 \end{figure}
@@ -962,7 +962,7 @@ GNSS 信号强度受多径效应和卫星机动影响显著。为了解耦这些
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.7\linewidth]{figures/c3/DLFPD/staDist.png}
+\includegraphics[width=0.7\linewidth]{figures/c3/DLFPD/staDist2.png}
 \caption{DLFPD实验中来自全球分布的 30 个 IGS 测站，包含20个测站的sta\_list1和10个测站的sta\_list2}
 \label{fig:dlfpd_staDist}
 \end{figure}
@@ -993,7 +993,7 @@ ABPO, FAA1, KOKV, KOS1, KOUR, MKEA, NKLG, NNOR, OUS1, CUSV \\
 \label{tab:station_sets}
 \end{table*}
 
-原始数据源包括 RINEX 格式的观测文件（OBS）、SP3 精密星历文件以及 SINEX 测站坐标文件。OBS 文件提供了作为核心特征的载噪比（C/N\textsubscript{0}）观测值、时间戳及卫星编号信息；SP3 文件与 SINEX 文件则分别用于计算卫星与测站的空间位置，进而解算出高度角、方位角等关键几何特征。考虑到 L2 频段上的 S2W码是已证实的承载弹性功率变化的主要载体，本实验选取 S2W 作为目标检测频段，同时引入已知无弹性功率特性的 S1C 频段作为基准辅助信息，以帮助模型区分电离层闪烁或接收机增益变化等共模干扰。
+原始数据源包括 RINEX 格式的观测文件（OBS文件）、SP3 精密星历文件以及 SINEX 测站坐标文件。OBS 文件提供了作为核心特征的载噪比（C/N\textsubscript{0}）观测值、时间戳及卫星编号信息；SP3 文件与 SINEX 文件则分别用于计算卫星与测站的空间位置，进而解算出高度角、方位角等关键几何特征。考虑到 L2 频段上的 S2W码是已证实的承载弹性功率变化的主要载体，本实验选取 S2W 作为目标检测频段，同时引入已知无弹性功率特性的 S1C 频段作为基准辅助信息，以帮助模型区分电离层闪烁或接收机增益变化等共模干扰。
 
 为了获得高质量的标签数据以进行监督学习，本研究开发了基于 MATLAB 的交互式数据标注工具，用于生成“卫星-测站-历元”级别的状态真值。如图\ref{fig:dlfpd_labelTool}所示，该工具集成了多维度可视化模块，允许用户同时查看多站 S2W 原始序列。通过人工判读，识别并标记出弹性功率开启与关闭的确切时间边界，从而生成精细的时间序列标签（0 表示正常状态，1 表示弹性功率激活）。为确保标注的一致性与准确性，所有标注结果均经过了双重交叉验证。这一过程构建了高置信度的 Ground Truth 数据集，为后续的模型训练与评估提供了可靠的监督信号。
 
@@ -1215,7 +1215,7 @@ ROC AUC              & 0.9996 \\
 \label{tab:overall_performance_test1}
 \end{table}
 
-实验对部分较为典型的具体卫星和测站的时序结果图进行分析。图\ref{fig:dlfpd_nnorG31},图\ref{fig:dlfpd_nnorG32}展示了两个完美正确检测的时段数据，分别来自NNOR测站在2024年6月1日观测到的G31和G32卫星的载噪比其中浅绿色覆盖区域表示真阳性（TP），灰色区域表示真阴性（TN），黑色、蓝色、橙色的曲线分别表示S2W、S1C以及二者差分的时序线。分析两图可以发现，在G32的后半段，S2W的曲线出现了不连续性，在相同的时刻检测结果状态发生了转换，表示正确检测出了弹性功率的阶跃抬升特征。其中S1C的曲线并没有出现相同的阶跃的特征，验证了此前的S1C频段上并没有设计弹性功率功能。同时可以发现，二者的差分时序在绝对值上与当天10AM-12AM期间的幅值在相同的区间，证明了模型并不是简单学到了通过差分时序的绝对值进行状态的判断，而是结合了多方的时空特性信息综合得到结果。图\ref{fig:dlfpd_nnorG31}的G31时序则展示了两段分离但都没有发生不连续性的时序的完美判断结果。如果放在传统方法中，仅通过观察S2W时序特征是非常困难区分开启特征的。同样的，使用FPD也无法正确检测这种情景，因为能拿到的时序并没有发生不连续性。这样的情况证明了该模型具备了识别第二章提到的“整体抬升”的特征。
+实验对部分较为典型的具体卫星和测站的时序结果图进行分析。图\ref{fig:dlfpd_nnorG31},图\ref{fig:dlfpd_nnorG32}展示了两个完美正确检测的时段数据，分别来自NNOR测站在2024年6月1日观测到的G31和G32卫星的载噪比其中浅绿色覆盖区域表示真阳性（TP），灰色区域表示真阴性（TN），黑色、蓝色、橙色的曲线分别表示S2W、S1C以及二者差分的时序线。分析两图可以发现，在G32的后半段，S2W的曲线出现了不连续性，在相同的时刻检测结果状态发生了转换，表示正确检测出了弹性功率的阶跃抬升特征。其中S1C的曲线并没有出现相同的阶跃的特征，验证了此前的S1C频段上并没有设计弹性功率功能。同时可以发现，二者的差分时序在绝对值上与当天10至12时期间的幅值在相同的区间，证明了模型并不是简单学到了通过差分时序的绝对值进行状态的判断，而是结合了多方的时空特性信息综合得到结果。图\ref{fig:dlfpd_nnorG31}的G31时序则展示了两段分离但都没有发生不连续性的时序的完美判断结果。如果放在传统方法中，仅通过观察S2W时序特征是非常困难区分开启特征的。同样的，使用FPD也无法正确检测这种情景，因为能拿到的时序并没有发生不连续性。这样的情况证明了该模型具备了识别第二章提到的“整体抬升”的特征。
 
 \begin{figure}[htbp]
 \centering

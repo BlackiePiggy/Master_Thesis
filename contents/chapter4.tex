@@ -1,6 +1,6 @@
 % !TEX root = ../main.tex
 
-\chapter{星载产品多维时序异常检测方法}
+\chapter{GNSS星载产品多维时序异常检测方法}
 
 星载设备作为导航信号的物理源头，其运行状态直接决定了定位服务的精度与可靠性。设备的老化或故障将导致信号畸变，进而影响用户端定位。星载设备的健康状态主要由下行的多维遥测数据表征。鉴于故障模式具有渐进性、隐蔽性及强耦合性，传统的阈值监测方法难以满足早期预警需求。如何在故障显性化导致信号质量下降之前，利用遥测数据精准识别隐性异常，是提升系统完好性的关键。
 基于此，本章将研究拓展至遥测数据域，聚焦于老化突发失效与未知硬件故障。针对遥测数据的高维非线性及周期性特征，分别提出了两种基于深度学习的检测方法，并利用基于仿真遥测数据进行了实验验证模型有效性。
@@ -101,7 +101,7 @@
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.3\linewidth]{figures/patent1/pic1.png}
+\includegraphics[width=0.3\linewidth]{figures/c4/patent1/pic1.png}
 \caption{基于深度学习的星载产品分段遥测时序异常检测方法流程图}
 \label{fig:pat1_pic1}
 \end{figure}
@@ -136,7 +136,7 @@ x_t^{(1)}, x_t^{(2)}, \ldots, x_t^{(N_c)}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=1\linewidth]{figures/patent1/pic2.png}
+\includegraphics[width=1\linewidth]{figures/c4/patent1/pic2.png}
 \caption{数据预处理与特征矩阵构建方法}
 \label{fig:pat1_pic2}
 \end{figure}
@@ -164,7 +164,7 @@ x_t^{(1)}, x_t^{(2)}, \ldots, x_t^{(N_c)}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=1\linewidth]{figures/patent1/pic3.png}
+\includegraphics[width=1\linewidth]{figures/c4/patent1/pic3.png}
 \caption{时序自编码器模型设计与LSTM单元结构}
 \label{fig:pat1_pic3}
 \end{figure}
@@ -200,7 +200,7 @@ x_t^{(1)}, x_t^{(2)}, \ldots, x_t^{(N_c)}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=1\linewidth]{figures/patent1/pic4.png}
+\includegraphics[width=1\linewidth]{figures/c4/patent1/pic4.png}
 \caption{训练数据、测试数据。其中训练数据为模拟星载产品遥测时序数据（左上），测试数据包含正常数据（左中）、斜率漂移异常数据（左下）、离群点异常数据（右上）、整体漂移异常数据（右中）、混合异常数据（右下）}
 \label{fig:pat1_pic4}
 \end{figure}
@@ -213,7 +213,7 @@ x_t^{(1)}, x_t^{(2)}, \ldots, x_t^{(N_c)}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=1\linewidth]{figures/patent1/pic5.png}
+\includegraphics[width=1\linewidth]{figures/c4/patent1/pic5.png}
 \caption{正常数据（左）与斜率漂移异常数据（右）的原始遥测时序、平滑后时序与异常得分时序}
 \label{fig:pat1_pic5}
 \end{figure}
@@ -226,7 +226,7 @@ x_t^{(1)}, x_t^{(2)}, \ldots, x_t^{(N_c)}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=1\linewidth]{figures/patent1/pic6.png}
+\includegraphics[width=1\linewidth]{figures/c4/patent1/pic6.png}
 \caption{离群点异常数据（左）与整体漂移异常数据（右）的原始遥测时序、平滑后时序与异常得分时序}
 \label{fig:pat1_pic6}
 \end{figure}
@@ -237,7 +237,7 @@ x_t^{(1)}, x_t^{(2)}, \ldots, x_t^{(N_c)}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.5\linewidth]{figures/patent1/pic7.png}
+\includegraphics[width=0.5\linewidth]{figures/c4/patent1/pic7.png}
 \caption{混合异常数据的原始遥测时序、平滑后时序与异常得分时序}
 \label{fig:pat1_pic7}
 \end{figure}
@@ -316,7 +316,7 @@ F1 分数（F1-Score）
 为了解决上述问题，本节提出一种解耦并分治的基于STL分解的LSTM-CNN混合自编码器结构。其核心思想是利用STL时序分解算法将复杂的混合遥测信号分离为趋势分量、季节分量和残差分量。在此基础上，分别利用LSTM网络来建模趋势项，利用CNN网络来建模周期项。
 
 \subsubsection{STL时序分解算法}
-STL (Seasonal-Trend decomposition using Loess) 是一种由Cleveland等人提出的、基于局部加权回归 (Locally Weighted Scatterplot Smoothing, LOESS) 的时间序列分解方法\cite{cleveland1990stl}。与传统的基于移动平均或参数模型（如 X-11、SEATS）的分解技术不同，STL 方法具有高度的灵活性和鲁棒性，能够有效应对非线性趋势和复杂的季节性变化。
+STL (Seasonal-Trend decomposition using Loess) 是一种由Cleveland等人提出的、基于局部加权回归 (Locally Weighted Scatterplot Smoothing, LOESS) 的时间序列分解方法\cite{cleveland1990stl}。与传统的基于移动平均或参数模型的分解技术不同，STL 方法具有高度的灵活性和鲁棒性，能够有效应对非线性趋势和复杂的季节性变化。
 
 理论上，任一时间序列 $Y_t$ 都可以通过STL加性分解为三个分量：趋势分量 (Trend)、季节分量 (Seasonal) 和残差分量 (Residual)\cite{peixeiro2022time}。其数学表达如下：
 
