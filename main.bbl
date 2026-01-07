@@ -100,8 +100,8 @@
       \strng{nameafullhash}{39f4fbe36dd7f62fe6e6ff2883ec1a99}
       \strng{nameafullhashraw}{39f4fbe36dd7f62fe6e6ff2883ec1a99}
       \field{extraname}{1}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Scientific Reports}
@@ -171,8 +171,8 @@
       \strng{nameafullhash}{c0898bded0c4d67c9720897820635c43}
       \strng{nameafullhashraw}{c0898bded0c4d67c9720897820635c43}
       \field{extraname}{1}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Remote. Sens.}
@@ -273,8 +273,8 @@
       \strng{nameanamehash}{eb8de5276a9c004773b322904a7e2b34}
       \strng{nameafullhash}{2c48cb75b7c129eea76fc0f5d177758f}
       \strng{nameafullhashraw}{2c48cb75b7c129eea76fc0f5d177758f}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the 24th International Technical Meeting of the Satellite Division of The Institute of Navigation (ION GNSS 2011)}
@@ -421,8 +421,8 @@
       \strng{nameanamehash}{c6ae183bb9bf31ca3a398caa5f5483da}
       \strng{nameafullhash}{0ef8bed25736d57d3134ef6b78325b50}
       \strng{nameafullhashraw}{0ef8bed25736d57d3134ef6b78325b50}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{GPS solutions}
@@ -492,8 +492,8 @@
       \strng{nameafullhash}{66c1481f942801a2141f907dbe4f637b}
       \strng{nameafullhashraw}{66c1481f942801a2141f907dbe4f637b}
       \field{extraname}{1}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Satellite Navigation}
@@ -565,8 +565,8 @@
       \strng{nameafullhash}{744eaf0e12232d9127112c0d0d08d268}
       \strng{nameafullhashraw}{744eaf0e12232d9127112c0d0d08d268}
       \field{extraname}{1}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Satellite Navigation}
@@ -688,8 +688,8 @@
       \strng{nameafullhash}{bf76a7fae3838de56a990c1075fd525f}
       \strng{nameafullhashraw}{bf76a7fae3838de56a990c1075fd525f}
       \field{extraname}{2}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Science bulletin}
@@ -791,8 +791,8 @@
       \strng{nameafullhash}{a06d35566017b55dc01fc46b36d4eceb}
       \strng{nameafullhashraw}{a06d35566017b55dc01fc46b36d4eceb}
       \field{extraname}{3}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Satellite Navigation}
@@ -1169,6 +1169,115 @@
       \endverb
       \keyw{Geng2011Towards}
     \endentry
+    \entry{谢钢2017gps}{book}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=48f2f56da835d08609385216e3de0ff0}{%
+           family={谢钢},
+           familyi={谢\bibinitperiod}}}%
+      }
+      \true{morenamea}
+      \name{namea}{1}{}{%
+        {{hash=48f2f56da835d08609385216e3de0ff0}{%
+           family={谢钢},
+           familyi={谢\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {chinese}%
+      }
+      \list{publisher}{1}{%
+        {电子工业出版社}%
+      }
+      \strng{namehash}{94c5f8f52ef0db5b7fd08200e32b92d9}
+      \strng{fullhash}{94c5f8f52ef0db5b7fd08200e32b92d9}
+      \strng{fullhashraw}{94c5f8f52ef0db5b7fd08200e32b92d9}
+      \strng{bibnamehash}{94c5f8f52ef0db5b7fd08200e32b92d9}
+      \strng{authorbibnamehash}{94c5f8f52ef0db5b7fd08200e32b92d9}
+      \strng{authornamehash}{94c5f8f52ef0db5b7fd08200e32b92d9}
+      \strng{authorfullhash}{94c5f8f52ef0db5b7fd08200e32b92d9}
+      \strng{authorfullhashraw}{94c5f8f52ef0db5b7fd08200e32b92d9}
+      \strng{nameabibnamehash}{94c5f8f52ef0db5b7fd08200e32b92d9}
+      \strng{nameanamehash}{94c5f8f52ef0db5b7fd08200e32b92d9}
+      \strng{nameafullhash}{94c5f8f52ef0db5b7fd08200e32b92d9}
+      \strng{nameafullhashraw}{94c5f8f52ef0db5b7fd08200e32b92d9}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{languageid}{chinese}
+      \field{lansortorder}{1}
+      \field{title}{GPS 原理与接收机设计}
+      \field{usera}{M}
+      \field{userd}{chinese}
+      \field{userf}{chinese}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \keyw{谢钢2017gps}
+    \endentry
+    \entry{Gedik2008Protecting}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=974a0effda269e3268f48eed3497932a}{%
+           family={Gedik},
+           familyi={G\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=1c17a20c4acfa6f32b73321fc505433b}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Ling},
+           giveni={L\bibinitperiod}}}%
+      }
+      \name{namea}{2}{}{%
+        {{hash=974a0effda269e3268f48eed3497932a}{%
+           family={Gedik},
+           familyi={G\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=1c17a20c4acfa6f32b73321fc505433b}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Ling},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{bf8f2f3a8829009e2dc30dcbe59dd7b8}
+      \strng{fullhash}{c8fc63a7f6259519986337cb73ce7fab}
+      \strng{fullhashraw}{c8fc63a7f6259519986337cb73ce7fab}
+      \strng{bibnamehash}{c8fc63a7f6259519986337cb73ce7fab}
+      \strng{authorbibnamehash}{c8fc63a7f6259519986337cb73ce7fab}
+      \strng{authornamehash}{bf8f2f3a8829009e2dc30dcbe59dd7b8}
+      \strng{authorfullhash}{c8fc63a7f6259519986337cb73ce7fab}
+      \strng{authorfullhashraw}{c8fc63a7f6259519986337cb73ce7fab}
+      \strng{nameabibnamehash}{c8fc63a7f6259519986337cb73ce7fab}
+      \strng{nameanamehash}{bf8f2f3a8829009e2dc30dcbe59dd7b8}
+      \strng{nameafullhash}{c8fc63a7f6259519986337cb73ce7fab}
+      \strng{nameafullhashraw}{c8fc63a7f6259519986337cb73ce7fab}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Mobile Computing}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{Protecting Location Privacy with Personalized k-Anonymity: Architecture and Algorithms}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{7}
+      \field{year}{2008}
+      \field{dateera}{ce}
+      \field{pages}{1\bibrangedash 18}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1109/tmc.2007.1062
+      \endverb
+      \keyw{Gedik2008Protecting}
+    \endentry
     \entry{Banville2020On}{article}{}{}
       \name{author}{6}{}{%
         {{hash=a694303db01254dfac0144d0e793e477}{%
@@ -1249,8 +1358,8 @@
       \strng{nameanamehash}{1aa1f48c314684be8a8e5308cb009f72}
       \strng{nameafullhash}{4696bd97200bc9388f2d09de8460dfa9}
       \strng{nameafullhashraw}{4696bd97200bc9388f2d09de8460dfa9}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Geodesy}
@@ -1311,8 +1420,8 @@
       \strng{nameanamehash}{fee7ed5cd5db92462bbcf6ff329b3f2d}
       \strng{nameafullhash}{53683b4d51174277e2b798e22485f741}
       \strng{nameafullhashraw}{53683b4d51174277e2b798e22485f741}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{GPS Solutions}
@@ -1402,8 +1511,8 @@
       \strng{nameafullhash}{131cbfa01279fb07489e9b587d31b513}
       \strng{nameafullhashraw}{131cbfa01279fb07489e9b587d31b513}
       \field{extraname}{2}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Satellite Navigation}
@@ -1494,8 +1603,8 @@
       \strng{nameanamehash}{24a6c685620bc73fa24d7d2fee6bf46d}
       \strng{nameafullhash}{f80de184462c273dfe49bc2b9399a280}
       \strng{nameafullhashraw}{f80de184462c273dfe49bc2b9399a280}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Geodesy}
@@ -1574,8 +1683,8 @@
       \strng{nameanamehash}{80fe3c52a92ffc1ae497acd3a011a206}
       \strng{nameafullhash}{e8cdeef7a66320b05cee5375a9908ede}
       \strng{nameafullhashraw}{e8cdeef7a66320b05cee5375a9908ede}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{GPS Solutions}
@@ -2376,8 +2485,8 @@
       \strng{nameanamehash}{acc487e2d8644ed0bbc904c44cdc7406}
       \strng{nameafullhash}{97fc193f23892102b6827f87cc790c35}
       \strng{nameafullhashraw}{97fc193f23892102b6827f87cc790c35}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{GPS Solutions}
@@ -2448,8 +2557,8 @@
       \strng{nameanamehash}{5d7f2bc11404151e5f077ec85aeaf319}
       \strng{nameafullhash}{1e5dbb3748545431187d21a0dbc8136c}
       \strng{nameafullhashraw}{1e5dbb3748545431187d21a0dbc8136c}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Proceedings of the IEEE}
@@ -2500,8 +2609,8 @@
       \strng{nameanamehash}{aba12a826bb6996c070ce0fcb26534b3}
       \strng{nameafullhash}{aba12a826bb6996c070ce0fcb26534b3}
       \strng{nameafullhashraw}{aba12a826bb6996c070ce0fcb26534b3}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Living Reviews in Relativity}
@@ -2600,8 +2709,8 @@
       \strng{nameanamehash}{ab72f54a33f90ca8ac29489faf181e6d}
       \strng{nameafullhash}{dd73674defd64210378f49e1b0ef80ea}
       \strng{nameafullhashraw}{dd73674defd64210378f49e1b0ef80ea}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Access}
@@ -2621,6 +2730,49 @@
       \verb 10.1109/access.2020.2973759
       \endverb
       \keyw{Zidan2020GNSS}
+    \endentry
+    \entry{OfficeSpaceCommerce2019GPS}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=34092e57774aa71d991d939729ff4bd1}{%
+           family={{Office of Space Commerce, U.S. Department of Commerce}},
+           familyi={O\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=34092e57774aa71d991d939729ff4bd1}{%
+           family={{Office of Space Commerce, U.S. Department of Commerce}},
+           familyi={O\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{34092e57774aa71d991d939729ff4bd1}
+      \strng{fullhash}{34092e57774aa71d991d939729ff4bd1}
+      \strng{fullhashraw}{34092e57774aa71d991d939729ff4bd1}
+      \strng{bibnamehash}{34092e57774aa71d991d939729ff4bd1}
+      \strng{authorbibnamehash}{34092e57774aa71d991d939729ff4bd1}
+      \strng{authornamehash}{34092e57774aa71d991d939729ff4bd1}
+      \strng{authorfullhash}{34092e57774aa71d991d939729ff4bd1}
+      \strng{authorfullhashraw}{34092e57774aa71d991d939729ff4bd1}
+      \strng{nameabibnamehash}{34092e57774aa71d991d939729ff4bd1}
+      \strng{nameanamehash}{34092e57774aa71d991d939729ff4bd1}
+      \strng{nameafullhash}{34092e57774aa71d991d939729ff4bd1}
+      \strng{nameafullhashraw}{34092e57774aa71d991d939729ff4bd1}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.space.commerce.gov/impact-of-gps/}}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{note}{Accessed: 2026-01-07}
+      \field{title}{Economic Benefits of the Global Positioning System (GPS)}
+      \field{usera}{Z}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \keyw{OfficeSpaceCommerce2019GPS}
     \endentry
     \entry{noauthor__2025}{online}{}{}
       \list{language}{1}{%
@@ -3078,6 +3230,75 @@
       \range{pages}{27}
       \keyw{montenbruck2017multi}
     \endentry
+    \entry{Perfetti2025Monitoring}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=61ee412fb07d981ea0eb369761feddbe}{%
+           family={Perfetti},
+           familyi={P\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+        {{hash=2ee7ccb64f6e92708c2a8ca1d9b2f30a}{%
+           family={Taddia},
+           familyi={T\bibinitperiod},
+           given={Yuri},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=992237618b7e07414a3e470278470eeb}{%
+           family={Pellegrinelli},
+           familyi={P\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \name{namea}{3}{}{%
+        {{hash=61ee412fb07d981ea0eb369761feddbe}{%
+           family={Perfetti},
+           familyi={P\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+        {{hash=2ee7ccb64f6e92708c2a8ca1d9b2f30a}{%
+           family={Taddia},
+           familyi={T\bibinitperiod},
+           given={Yuri},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=992237618b7e07414a3e470278470eeb}{%
+           family={Pellegrinelli},
+           familyi={P\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{29f6ca189d208e1edd397183b8122222}
+      \strng{fullhash}{4d3ebd010dd48e0c925bdf11e730bc10}
+      \strng{fullhashraw}{4d3ebd010dd48e0c925bdf11e730bc10}
+      \strng{bibnamehash}{4d3ebd010dd48e0c925bdf11e730bc10}
+      \strng{authorbibnamehash}{4d3ebd010dd48e0c925bdf11e730bc10}
+      \strng{authornamehash}{29f6ca189d208e1edd397183b8122222}
+      \strng{authorfullhash}{4d3ebd010dd48e0c925bdf11e730bc10}
+      \strng{authorfullhashraw}{4d3ebd010dd48e0c925bdf11e730bc10}
+      \strng{nameabibnamehash}{4d3ebd010dd48e0c925bdf11e730bc10}
+      \strng{nameanamehash}{29f6ca189d208e1edd397183b8122222}
+      \strng{nameafullhash}{4d3ebd010dd48e0c925bdf11e730bc10}
+      \strng{nameafullhashraw}{4d3ebd010dd48e0c925bdf11e730bc10}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Remote Sensing}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{Monitoring of Ionospheric Anomalies Using GNSS Observations to Detect Earthquake Precursors}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \verb{doi}
+      \verb 10.3390/rs17020338
+      \endverb
+      \keyw{Perfetti2025Monitoring}
+    \endentry
     \entry{Moon2017Monitoring}{article}{}{}
       \name{author}{2}{}{%
         {{hash=c64e1e592c6f429a1986866e0e44593f}{%
@@ -3118,8 +3339,8 @@
       \strng{nameanamehash}{5aec08b104b3ddaf346e71dd6e8623ed}
       \strng{nameafullhash}{586df73b9cebb04843e01ea2e2dbd806}
       \strng{nameafullhashraw}{586df73b9cebb04843e01ea2e2dbd806}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Signal Processing Magazine}
@@ -3230,8 +3451,8 @@
       \strng{nameanamehash}{cca2bbf5d0ffe86ea2e6b68bca94ffd7}
       \strng{nameafullhash}{1392a7518966c5772b75447293ed8229}
       \strng{nameafullhashraw}{1392a7518966c5772b75447293ed8229}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{langid}{english}
@@ -3323,8 +3544,8 @@
       \strng{nameafullhash}{d10b3d87fd03d56a5863db198f08e1fb}
       \strng{nameafullhashraw}{d10b3d87fd03d56a5863db198f08e1fb}
       \field{extraname}{1}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{GPS Solutions}
@@ -3396,9 +3617,8 @@
       \strng{nameanamehash}{26f41f73afc537000feee072f23ccf48}
       \strng{nameafullhash}{d588dd93a979dcfb29109610f7d24d67}
       \strng{nameafullhashraw}{d588dd93a979dcfb29109610f7d24d67}
-      \field{extraname}{1}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{GPS solutions}
@@ -3470,8 +3690,8 @@
       \strng{nameanamehash}{feb5f7254686747e074957c0a0475b42}
       \strng{nameafullhash}{d71ef31d0fda06b00e5ce9f874640764}
       \strng{nameafullhashraw}{d71ef31d0fda06b00e5ce9f874640764}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{GPS Solutions}
@@ -3862,100 +4082,6 @@
       \endverb
       \keyw{Ammar2018Estimation}
     \endentry
-    \entry{liu2025effects}{article}{}{}
-      \name{author}{5}{}{%
-        {{hash=ecffc54349b0e61eced03b09142c5ff6}{%
-           family={Liu},
-           familyi={L\bibinitperiod},
-           given={Tiancheng},
-           giveni={T\bibinitperiod}}}%
-        {{hash=9da216c39162dcd2e620f7d22b9e3a34}{%
-           family={Zhang},
-           familyi={Z\bibinitperiod},
-           given={Aochuan},
-           giveni={A\bibinitperiod}}}%
-        {{hash=5c8073b5a415b7a7ef013e81c9f49a2f}{%
-           family={Lu},
-           familyi={L\bibinitperiod},
-           given={Shun},
-           giveni={S\bibinitperiod}}}%
-        {{hash=5af48dbe5bf1b594ed3c643bbc867204}{%
-           family={Li},
-           familyi={L\bibinitperiod},
-           given={Shuhui},
-           giveni={S\bibinitperiod}}}%
-        {{hash=2cc58433d28ca8f81d3bbacd9c3d62b1}{%
-           family={Wu},
-           familyi={W\bibinitperiod},
-           given={Zhou},
-           giveni={Z\bibinitperiod}}}%
-      }
-      \name{namea}{5}{}{%
-        {{hash=ecffc54349b0e61eced03b09142c5ff6}{%
-           family={Liu},
-           familyi={L\bibinitperiod},
-           given={Tiancheng},
-           giveni={T\bibinitperiod}}}%
-        {{hash=9da216c39162dcd2e620f7d22b9e3a34}{%
-           family={Zhang},
-           familyi={Z\bibinitperiod},
-           given={Aochuan},
-           giveni={A\bibinitperiod}}}%
-        {{hash=5c8073b5a415b7a7ef013e81c9f49a2f}{%
-           family={Lu},
-           familyi={L\bibinitperiod},
-           given={Shun},
-           giveni={S\bibinitperiod}}}%
-        {{hash=5af48dbe5bf1b594ed3c643bbc867204}{%
-           family={Li},
-           familyi={L\bibinitperiod},
-           given={Shuhui},
-           giveni={S\bibinitperiod}}}%
-        {{hash=2cc58433d28ca8f81d3bbacd9c3d62b1}{%
-           family={Wu},
-           familyi={W\bibinitperiod},
-           given={Zhou},
-           giveni={Z\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {english}%
-      }
-      \list{publisher}{1}{%
-        {Elsevier}%
-      }
-      \strng{namehash}{5f57621ac2d58093c97a8081a60ecaea}
-      \strng{fullhash}{0a02e6fba742ec74e977ae6277fcc07a}
-      \strng{fullhashraw}{0a02e6fba742ec74e977ae6277fcc07a}
-      \strng{bibnamehash}{54194757f50dcd41f138a0e87fca5fe2}
-      \strng{authorbibnamehash}{54194757f50dcd41f138a0e87fca5fe2}
-      \strng{authornamehash}{5f57621ac2d58093c97a8081a60ecaea}
-      \strng{authorfullhash}{0a02e6fba742ec74e977ae6277fcc07a}
-      \strng{authorfullhashraw}{0a02e6fba742ec74e977ae6277fcc07a}
-      \strng{nameabibnamehash}{54194757f50dcd41f138a0e87fca5fe2}
-      \strng{nameanamehash}{5f57621ac2d58093c97a8081a60ecaea}
-      \strng{nameafullhash}{0a02e6fba742ec74e977ae6277fcc07a}
-      \strng{nameafullhashraw}{0a02e6fba742ec74e977ae6277fcc07a}
-      \field{extraname}{2}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Advances in Space Research}
-      \field{langid}{english}
-      \field{languageid}{english}
-      \field{lansortorder}{4}
-      \field{number}{10}
-      \field{title}{Effects of BDS-2 satellite flex power on daily DCB estimation}
-      \field{usera}{J}
-      \field{userd}{english}
-      \field{userf}{english}
-      \field{volume}{75}
-      \field{year}{2025}
-      \field{dateera}{ce}
-      \field{pages}{7565\bibrangedash 7575}
-      \range{pages}{11}
-      \keyw{liu2025effects}
-    \endentry
     \entry{thoelert2018gps}{article}{}{}
       \name{author}{5}{}{%
         {{hash=1dcfc4c02fe7b9c488b4f34a1408082a}{%
@@ -4029,8 +4155,8 @@
       \strng{nameanamehash}{bdf8b86b4ec762c92e5771a0df8bf085}
       \strng{nameafullhash}{aa6b8004feca83d116f9505a834f0dc4}
       \strng{nameafullhashraw}{aa6b8004feca83d116f9505a834f0dc4}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{NAVIGATION: Journal of the Institute of Navigation}
@@ -4102,8 +4228,8 @@
       \strng{nameanamehash}{d3c7e077e1d3eef4cf256713e541a74e}
       \strng{nameafullhash}{c2623f29948a31f3e6cbd6f817cf9fab}
       \strng{nameafullhashraw}{c2623f29948a31f3e6cbd6f817cf9fab}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Satellite Navigation}
@@ -4196,8 +4322,8 @@
       \strng{nameafullhash}{24bcec9912406f949f52225c88e20c9e}
       \strng{nameafullhashraw}{24bcec9912406f949f52225c88e20c9e}
       \field{extraname}{4}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{GPS Solutions}
@@ -4400,8 +4526,8 @@
       \strng{nameanamehash}{32a5756aa0f736b552aa3c059379fbc2}
       \strng{nameafullhash}{cdea72496ad8e5871f83ff62339d4d77}
       \strng{nameafullhashraw}{cdea72496ad8e5871f83ff62339d4d77}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{2021 3rd International Academic Exchange Conference on Science and Technology Innovation (IAECST)}
@@ -4481,8 +4607,8 @@
       \strng{nameanamehash}{722828402b341db2003215b1956c30e4}
       \strng{nameafullhash}{fa106a3f6caa892848df1f2e24a72d27}
       \strng{nameafullhashraw}{fa106a3f6caa892848df1f2e24a72d27}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{ISA transactions}
@@ -4570,8 +4696,8 @@
       \strng{nameanamehash}{51f16719d77ab7a9d50a320c1d7dff6a}
       \strng{nameafullhash}{4e0501fbae3d42068e3dfdff80472bfb}
       \strng{nameafullhashraw}{4e0501fbae3d42068e3dfdff80472bfb}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Proceedings of the 24th ACM SIGKDD International Conference on Knowledge Discovery \& Data Mining}
@@ -4652,8 +4778,8 @@
       \strng{nameanamehash}{1f16ddde9e0f15bbe48b503b8e188ee4}
       \strng{nameafullhash}{a2e74c68b6242771bec4b8c82af96bf1}
       \strng{nameafullhashraw}{a2e74c68b6242771bec4b8c82af96bf1}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Sensors}
@@ -4725,8 +4851,8 @@
       \strng{nameanamehash}{6f8be8e0c041bffb45b6dc337d71e5f9}
       \strng{nameafullhash}{d0fd47b610403ae525dd332574da3728}
       \strng{nameafullhashraw}{d0fd47b610403ae525dd332574da3728}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{2023 European Data Handling \& Data Processing Conference (EDHPC)}
@@ -4786,8 +4912,8 @@
       \strng{nameanamehash}{fbfb505f4772786a49ec6dd537229abc}
       \strng{nameafullhash}{7c18870a1f6a29250a6d3a82051f28ea}
       \strng{nameafullhashraw}{7c18870a1f6a29250a6d3a82051f28ea}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Access}
@@ -5217,6 +5343,72 @@
       \range{pages}{1}
       \keyw{yu2024amad}
     \endentry
+    \entry{tuli2022tranad}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=a9f80684cd8ca2d88be59301babd9cd5}{%
+           family={Tuli},
+           familyi={T\bibinitperiod},
+           given={Shreshth},
+           giveni={S\bibinitperiod}}}%
+        {{hash=36b4162cb273f0b41786f75de6c01d8a}{%
+           family={Casale},
+           familyi={C\bibinitperiod},
+           given={Giuliano},
+           giveni={G\bibinitperiod}}}%
+        {{hash=1fb1b859fa7fe89eeae563907c07b4e4}{%
+           family={Jennings},
+           familyi={J\bibinitperiod},
+           given={Nicholas\bibnamedelima R},
+           giveni={N\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \name{namea}{3}{}{%
+        {{hash=a9f80684cd8ca2d88be59301babd9cd5}{%
+           family={Tuli},
+           familyi={T\bibinitperiod},
+           given={Shreshth},
+           giveni={S\bibinitperiod}}}%
+        {{hash=36b4162cb273f0b41786f75de6c01d8a}{%
+           family={Casale},
+           familyi={C\bibinitperiod},
+           given={Giuliano},
+           giveni={G\bibinitperiod}}}%
+        {{hash=1fb1b859fa7fe89eeae563907c07b4e4}{%
+           family={Jennings},
+           familyi={J\bibinitperiod},
+           given={Nicholas\bibnamedelima R},
+           giveni={N\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{6ca7b4c6e705e4311ba9cdee7b69646e}
+      \strng{fullhash}{0a2629ecd3a05e62bcea867d48b6193f}
+      \strng{fullhashraw}{0a2629ecd3a05e62bcea867d48b6193f}
+      \strng{bibnamehash}{0a2629ecd3a05e62bcea867d48b6193f}
+      \strng{authorbibnamehash}{0a2629ecd3a05e62bcea867d48b6193f}
+      \strng{authornamehash}{6ca7b4c6e705e4311ba9cdee7b69646e}
+      \strng{authorfullhash}{0a2629ecd3a05e62bcea867d48b6193f}
+      \strng{authorfullhashraw}{0a2629ecd3a05e62bcea867d48b6193f}
+      \strng{nameabibnamehash}{0a2629ecd3a05e62bcea867d48b6193f}
+      \strng{nameanamehash}{6ca7b4c6e705e4311ba9cdee7b69646e}
+      \strng{nameafullhash}{0a2629ecd3a05e62bcea867d48b6193f}
+      \strng{nameafullhashraw}{0a2629ecd3a05e62bcea867d48b6193f}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2201.07284}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{Tranad: Deep transformer networks for anomaly detection in multivariate time series data}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \keyw{tuli2022tranad}
+    \endentry
     \entry{esenbuuga2020impact}{article}{}{}
       \name{author}{2}{}{%
         {{hash=044a7f8374a6cff23c643f1d9955507a}{%
@@ -5261,8 +5453,8 @@
       \strng{nameafullhash}{7dadc724d4367a17e055abce6bee5ee9}
       \strng{nameafullhashraw}{7dadc724d4367a17e055abce6bee5ee9}
       \field{extraname}{2}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{GPS Solutions}
@@ -5345,8 +5537,8 @@
       \strng{nameafullhash}{f6084874a4e2b1c5ee587318b43a4d94}
       \strng{nameafullhashraw}{f6084874a4e2b1c5ee587318b43a4d94}
       \field{extraname}{1}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{GPS Solutions}
@@ -5364,6 +5556,56 @@
       \field{pages}{118}
       \range{pages}{1}
       \keyw{xiang2020understanding}
+    \endentry
+    \entry{ISGPS200M2021}{report}{}{}
+      \name{author}{1}{}{%
+        {{hash=c276e5e25dabfcb5829609b82a1e01ca}{%
+           family={{U.S. Department of Defense}},
+           familyi={U\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=c276e5e25dabfcb5829609b82a1e01ca}{%
+           family={{U.S. Department of Defense}},
+           familyi={U\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {U.S. Department of Defense}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{publisher}{1}{%
+        {U.S. Department of Defense}%
+      }
+      \strng{namehash}{c276e5e25dabfcb5829609b82a1e01ca}
+      \strng{fullhash}{c276e5e25dabfcb5829609b82a1e01ca}
+      \strng{fullhashraw}{c276e5e25dabfcb5829609b82a1e01ca}
+      \strng{bibnamehash}{c276e5e25dabfcb5829609b82a1e01ca}
+      \strng{authorbibnamehash}{c276e5e25dabfcb5829609b82a1e01ca}
+      \strng{authornamehash}{c276e5e25dabfcb5829609b82a1e01ca}
+      \strng{authorfullhash}{c276e5e25dabfcb5829609b82a1e01ca}
+      \strng{authorfullhashraw}{c276e5e25dabfcb5829609b82a1e01ca}
+      \strng{nameabibnamehash}{c276e5e25dabfcb5829609b82a1e01ca}
+      \strng{nameanamehash}{c276e5e25dabfcb5829609b82a1e01ca}
+      \strng{nameafullhash}{c276e5e25dabfcb5829609b82a1e01ca}
+      \strng{nameafullhashraw}{c276e5e25dabfcb5829609b82a1e01ca}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{month}{4}
+      \field{note}{Section 6.3.1, Received Signals}
+      \field{number}{IS-GPS-200M}
+      \field{title}{NAVSTAR GPS Space Segment/Navigation User Interfaces}
+      \field{usera}{R}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \keyw{ISGPS200M2021}
     \endentry
     \entry{lu2025new}{article}{}{}
       \name{author}{7}{}{%
@@ -5459,8 +5701,8 @@
       \strng{nameafullhash}{a183400d3a064612679f68b836faff6a}
       \strng{nameafullhashraw}{a183400d3a064612679f68b836faff6a}
       \field{extraname}{3}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Advances in Space Research}
@@ -5474,6 +5716,100 @@
       \field{year}{2025}
       \field{dateera}{ce}
       \keyw{lu2025new}
+    \endentry
+    \entry{liu2025effects}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=ecffc54349b0e61eced03b09142c5ff6}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Tiancheng},
+           giveni={T\bibinitperiod}}}%
+        {{hash=9da216c39162dcd2e620f7d22b9e3a34}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Aochuan},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5c8073b5a415b7a7ef013e81c9f49a2f}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Shun},
+           giveni={S\bibinitperiod}}}%
+        {{hash=5af48dbe5bf1b594ed3c643bbc867204}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Shuhui},
+           giveni={S\bibinitperiod}}}%
+        {{hash=2cc58433d28ca8f81d3bbacd9c3d62b1}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Zhou},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \name{namea}{5}{}{%
+        {{hash=ecffc54349b0e61eced03b09142c5ff6}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Tiancheng},
+           giveni={T\bibinitperiod}}}%
+        {{hash=9da216c39162dcd2e620f7d22b9e3a34}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Aochuan},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5c8073b5a415b7a7ef013e81c9f49a2f}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Shun},
+           giveni={S\bibinitperiod}}}%
+        {{hash=5af48dbe5bf1b594ed3c643bbc867204}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Shuhui},
+           giveni={S\bibinitperiod}}}%
+        {{hash=2cc58433d28ca8f81d3bbacd9c3d62b1}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Zhou},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{5f57621ac2d58093c97a8081a60ecaea}
+      \strng{fullhash}{0a02e6fba742ec74e977ae6277fcc07a}
+      \strng{fullhashraw}{0a02e6fba742ec74e977ae6277fcc07a}
+      \strng{bibnamehash}{54194757f50dcd41f138a0e87fca5fe2}
+      \strng{authorbibnamehash}{54194757f50dcd41f138a0e87fca5fe2}
+      \strng{authornamehash}{5f57621ac2d58093c97a8081a60ecaea}
+      \strng{authorfullhash}{0a02e6fba742ec74e977ae6277fcc07a}
+      \strng{authorfullhashraw}{0a02e6fba742ec74e977ae6277fcc07a}
+      \strng{nameabibnamehash}{54194757f50dcd41f138a0e87fca5fe2}
+      \strng{nameanamehash}{5f57621ac2d58093c97a8081a60ecaea}
+      \strng{nameafullhash}{0a02e6fba742ec74e977ae6277fcc07a}
+      \strng{nameafullhashraw}{0a02e6fba742ec74e977ae6277fcc07a}
+      \field{extraname}{2}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Advances in Space Research}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{number}{10}
+      \field{title}{Effects of BDS-2 satellite flex power on daily DCB estimation}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{75}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{pages}{7565\bibrangedash 7575}
+      \range{pages}{11}
+      \keyw{liu2025effects}
     \endentry
     \entry{zhang2024improved}{article}{}{}
       \name{author}{4}{}{%
@@ -5653,8 +5989,8 @@
       \strng{nameafullhash}{2d5d6065b059eb19764209a40e96db76}
       \strng{nameafullhashraw}{2d5d6065b059eb19764209a40e96db76}
       \field{extraname}{1}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Advances in Space Research}
@@ -5756,9 +6092,8 @@
       \strng{nameanamehash}{e8f9fa12e01ee8a21ba679ecd21beeba}
       \strng{nameafullhash}{eb60cd4b5008eaf0730f4cb30410863c}
       \strng{nameafullhashraw}{eb60cd4b5008eaf0730f4cb30410863c}
-      \field{extraname}{1}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{GPS Solutions}
@@ -5777,191 +6112,78 @@
       \range{pages}{1}
       \keyw{wu2024effects}
     \endentry
-    \entry{Wang2022Dynamic}{article}{}{}
-      \name{author}{7}{}{%
-        {{hash=ff8b0f51fb3ed49b9132a53ba50c98c9}{%
-           family={Wang},
-           familyi={W\bibinitperiod},
-           given={Tianlin},
-           giveni={T\bibinitperiod}}}%
-        {{hash=60a91ed18b1a09faf219d3082317ba9a}{%
-           family={Ruf},
-           familyi={R\bibinitperiod},
-           given={C.},
-           giveni={C\bibinitperiod}}}%
-        {{hash=ba72e71e7f3533df391c5d5c0bf6eeb0}{%
-           family={Gleason},
-           familyi={G\bibinitperiod},
-           given={S.},
-           giveni={S\bibinitperiod}}}%
-        {{hash=ed3868ec0a98a43879ccdd85fe735289}{%
-           family={O'Brien},
-           familyi={O\bibinitperiod},
-           given={A.},
-           giveni={A\bibinitperiod}}}%
-        {{hash=feb53545c57083a0bb4d6b8b9e138a3e}{%
-           family={McKague},
-           familyi={M\bibinitperiod},
-           given={D.},
-           giveni={D\bibinitperiod}}}%
-        {{hash=fffd9d6554ab3927795985539cd916ce}{%
-           family={Block},
-           familyi={B\bibinitperiod},
-           given={B.},
-           giveni={B\bibinitperiod}}}%
-        {{hash=6f2d285c028424f880da3799578001f0}{%
-           family={Russel},
-           familyi={R\bibinitperiod},
-           given={A.},
-           giveni={A\bibinitperiod}}}%
-      }
-      \name{namea}{7}{}{%
-        {{hash=ff8b0f51fb3ed49b9132a53ba50c98c9}{%
-           family={Wang},
-           familyi={W\bibinitperiod},
-           given={Tianlin},
-           giveni={T\bibinitperiod}}}%
-        {{hash=60a91ed18b1a09faf219d3082317ba9a}{%
-           family={Ruf},
-           familyi={R\bibinitperiod},
-           given={C.},
-           giveni={C\bibinitperiod}}}%
-        {{hash=ba72e71e7f3533df391c5d5c0bf6eeb0}{%
-           family={Gleason},
-           familyi={G\bibinitperiod},
-           given={S.},
-           giveni={S\bibinitperiod}}}%
-        {{hash=ed3868ec0a98a43879ccdd85fe735289}{%
-           family={O'Brien},
-           familyi={O\bibinitperiod},
-           given={A.},
-           giveni={A\bibinitperiod}}}%
-        {{hash=feb53545c57083a0bb4d6b8b9e138a3e}{%
-           family={McKague},
-           familyi={M\bibinitperiod},
-           given={D.},
-           giveni={D\bibinitperiod}}}%
-        {{hash=fffd9d6554ab3927795985539cd916ce}{%
-           family={Block},
-           familyi={B\bibinitperiod},
-           given={B.},
-           giveni={B\bibinitperiod}}}%
-        {{hash=6f2d285c028424f880da3799578001f0}{%
-           family={Russel},
-           familyi={R\bibinitperiod},
-           given={A.},
-           giveni={A\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {english}%
-      }
-      \strng{namehash}{42068efbe48851076092859d0c5f9e42}
-      \strng{fullhash}{794b0c589e4a9b9c7a01d968155a7879}
-      \strng{fullhashraw}{794b0c589e4a9b9c7a01d968155a7879}
-      \strng{bibnamehash}{d7964d513e852f683e50f5b50e3f5bf8}
-      \strng{authorbibnamehash}{d7964d513e852f683e50f5b50e3f5bf8}
-      \strng{authornamehash}{42068efbe48851076092859d0c5f9e42}
-      \strng{authorfullhash}{794b0c589e4a9b9c7a01d968155a7879}
-      \strng{authorfullhashraw}{794b0c589e4a9b9c7a01d968155a7879}
-      \strng{nameabibnamehash}{d7964d513e852f683e50f5b50e3f5bf8}
-      \strng{nameanamehash}{42068efbe48851076092859d0c5f9e42}
-      \strng{nameafullhash}{794b0c589e4a9b9c7a01d968155a7879}
-      \strng{nameafullhashraw}{794b0c589e4a9b9c7a01d968155a7879}
-      \field{extraname}{1}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{IEEE Transactions on Geoscience and Remote Sensing}
-      \field{langid}{english}
-      \field{languageid}{english}
-      \field{lansortorder}{4}
-      \field{title}{Dynamic Calibration of GPS Effective Isotropic Radiated Power for GNSS-Reflectometry Earth Remote Sensing}
-      \field{usera}{J}
-      \field{userd}{english}
-      \field{userf}{english}
-      \field{volume}{60}
-      \field{year}{2022}
-      \field{dateera}{ce}
-      \field{pages}{1\bibrangedash 12}
-      \range{pages}{12}
-      \verb{doi}
-      \verb 10.1109/tgrs.2021.3070238
-      \endverb
-      \keyw{Wang2022Dynamic}
-    \endentry
-    \entry{Steigenberger2018GNSS}{article}{}{}
+    \entry{Wang2022A}{article}{}{}
       \name{author}{3}{}{%
-        {{hash=d22b8879cacc966e82c7ad0995401416}{%
-           family={Steigenberger},
-           familyi={S\bibinitperiod},
-           given={P.},
-           giveni={P\bibinitperiod}}}%
-        {{hash=59899959ccfbae24869f58297ce930ab}{%
-           family={Thoelert},
-           familyi={T\bibinitperiod},
-           given={S.},
+        {{hash=41dace6ae7b5131f0609d10605ff5c32}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Qisheng},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=d4ab8131189e387efe50d25c18bf7d91}{%
+           family={Jin},
+           familyi={J\bibinitperiod},
+           given={Shuanggen},
            giveni={S\bibinitperiod}}}%
-        {{hash=7b2860cad0944fd99cdbd545c723679c}{%
-           family={Montenbruck},
-           familyi={M\bibinitperiod},
-           given={O.},
-           giveni={O\bibinitperiod}}}%
+        {{hash=c8d6f7af98cece35f4191211b9b9e7ef}{%
+           family={Ye},
+           familyi={Y\bibinitperiod},
+           given={Xianfeng},
+           giveni={X\bibinitperiod}}}%
       }
       \name{namea}{3}{}{%
-        {{hash=d22b8879cacc966e82c7ad0995401416}{%
-           family={Steigenberger},
-           familyi={S\bibinitperiod},
-           given={P.},
-           giveni={P\bibinitperiod}}}%
-        {{hash=59899959ccfbae24869f58297ce930ab}{%
-           family={Thoelert},
-           familyi={T\bibinitperiod},
-           given={S.},
+        {{hash=41dace6ae7b5131f0609d10605ff5c32}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Qisheng},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=d4ab8131189e387efe50d25c18bf7d91}{%
+           family={Jin},
+           familyi={J\bibinitperiod},
+           given={Shuanggen},
            giveni={S\bibinitperiod}}}%
-        {{hash=7b2860cad0944fd99cdbd545c723679c}{%
-           family={Montenbruck},
-           familyi={M\bibinitperiod},
-           given={O.},
-           giveni={O\bibinitperiod}}}%
+        {{hash=c8d6f7af98cece35f4191211b9b9e7ef}{%
+           family={Ye},
+           familyi={Y\bibinitperiod},
+           given={Xianfeng},
+           giveni={X\bibinitperiod}}}%
       }
       \list{language}{1}{%
         {english}%
       }
-      \strng{namehash}{8e9cbf577b8f5c892e2ea44904d831c5}
-      \strng{fullhash}{c44aba22b5f96cf90fe461d87b688104}
-      \strng{fullhashraw}{c44aba22b5f96cf90fe461d87b688104}
-      \strng{bibnamehash}{c44aba22b5f96cf90fe461d87b688104}
-      \strng{authorbibnamehash}{c44aba22b5f96cf90fe461d87b688104}
-      \strng{authornamehash}{8e9cbf577b8f5c892e2ea44904d831c5}
-      \strng{authorfullhash}{c44aba22b5f96cf90fe461d87b688104}
-      \strng{authorfullhashraw}{c44aba22b5f96cf90fe461d87b688104}
-      \strng{nameabibnamehash}{c44aba22b5f96cf90fe461d87b688104}
-      \strng{nameanamehash}{8e9cbf577b8f5c892e2ea44904d831c5}
-      \strng{nameafullhash}{c44aba22b5f96cf90fe461d87b688104}
-      \strng{nameafullhashraw}{c44aba22b5f96cf90fe461d87b688104}
-      \field{extraname}{2}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \strng{namehash}{1b1e449dd678cbaac47efcee9ad4b596}
+      \strng{fullhash}{4b021a39c4d8a8e2d665fb32bee34dcf}
+      \strng{fullhashraw}{4b021a39c4d8a8e2d665fb32bee34dcf}
+      \strng{bibnamehash}{4b021a39c4d8a8e2d665fb32bee34dcf}
+      \strng{authorbibnamehash}{4b021a39c4d8a8e2d665fb32bee34dcf}
+      \strng{authornamehash}{1b1e449dd678cbaac47efcee9ad4b596}
+      \strng{authorfullhash}{4b021a39c4d8a8e2d665fb32bee34dcf}
+      \strng{authorfullhashraw}{4b021a39c4d8a8e2d665fb32bee34dcf}
+      \strng{nameabibnamehash}{4b021a39c4d8a8e2d665fb32bee34dcf}
+      \strng{nameanamehash}{1b1e449dd678cbaac47efcee9ad4b596}
+      \strng{nameafullhash}{4b021a39c4d8a8e2d665fb32bee34dcf}
+      \strng{nameafullhashraw}{4b021a39c4d8a8e2d665fb32bee34dcf}
+      \field{extraname}{1}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of Geodesy}
+      \field{journaltitle}{Remote. Sens.}
       \field{langid}{english}
       \field{languageid}{english}
       \field{lansortorder}{4}
-      \field{title}{GNSS satellite transmit power and its impact on orbit determination}
+      \field{title}{A Novel Method to Estimate Multi-GNSS Differential Code Bias without Using Ionospheric Function Model and Global Ionosphere Map}
       \field{usera}{J}
       \field{userd}{english}
       \field{userf}{english}
-      \field{volume}{92}
-      \field{year}{2018}
+      \field{volume}{14}
+      \field{year}{2022}
       \field{dateera}{ce}
-      \field{pages}{609\bibrangedash 624}
-      \range{pages}{16}
+      \field{pages}{2002}
+      \range{pages}{1}
       \verb{doi}
-      \verb 10.1007/s00190-017-1082-2
+      \verb 10.3390/rs14092002
       \endverb
-      \keyw{Steigenberger2018GNSS}
+      \keyw{Wang2022A}
     \endentry
     \entry{abraha2024gnss}{article}{}{}
       \name{author}{3}{}{%
@@ -6016,8 +6238,8 @@
       \strng{nameanamehash}{892f1434e0131a753cd914e27d23d42a}
       \strng{nameafullhash}{3b8d84df31f54a20f85cfc09ace2bf7b}
       \strng{nameafullhashraw}{3b8d84df31f54a20f85cfc09ace2bf7b}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Geodetic Science}
@@ -6035,86 +6257,6 @@
       \field{pages}{20220157}
       \range{pages}{1}
       \keyw{abraha2024gnss}
-    \endentry
-    \entry{li2025impact}{article}{}{}
-      \name{author}{4}{}{%
-        {{hash=94429369244dcd7d9736926b146677d3}{%
-           family={Li},
-           familyi={L\bibinitperiod},
-           given={Jiayu},
-           giveni={J\bibinitperiod}}}%
-        {{hash=84eda709f5b70c387f1d112403a63519}{%
-           family={Xiang},
-           familyi={X\bibinitperiod},
-           given={Yan},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=9cce7af02c88e42bdbdb86633f7a9f46}{%
-           family={Su},
-           familyi={S\bibinitperiod},
-           given={Chengeng},
-           giveni={C\bibinitperiod}}}%
-        {{hash=32284309a008d0f808adc4464db3e4a8}{%
-           family={Jia},
-           familyi={J\bibinitperiod},
-           given={Xiaolin},
-           giveni={X\bibinitperiod}}}%
-      }
-      \name{namea}{4}{}{%
-        {{hash=94429369244dcd7d9736926b146677d3}{%
-           family={Li},
-           familyi={L\bibinitperiod},
-           given={Jiayu},
-           giveni={J\bibinitperiod}}}%
-        {{hash=84eda709f5b70c387f1d112403a63519}{%
-           family={Xiang},
-           familyi={X\bibinitperiod},
-           given={Yan},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=9cce7af02c88e42bdbdb86633f7a9f46}{%
-           family={Su},
-           familyi={S\bibinitperiod},
-           given={Chengeng},
-           giveni={C\bibinitperiod}}}%
-        {{hash=32284309a008d0f808adc4464db3e4a8}{%
-           family={Jia},
-           familyi={J\bibinitperiod},
-           given={Xiaolin},
-           giveni={X\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {english}%
-      }
-      \list{publisher}{1}{%
-        {Elsevier}%
-      }
-      \strng{namehash}{f7ed9d03f58e99ed357d041717bf5bcf}
-      \strng{fullhash}{289d152417755f23368c913d2c7f3130}
-      \strng{fullhashraw}{289d152417755f23368c913d2c7f3130}
-      \strng{bibnamehash}{265f657429335d77feb917c0777c661a}
-      \strng{authorbibnamehash}{265f657429335d77feb917c0777c661a}
-      \strng{authornamehash}{f7ed9d03f58e99ed357d041717bf5bcf}
-      \strng{authorfullhash}{289d152417755f23368c913d2c7f3130}
-      \strng{authorfullhashraw}{289d152417755f23368c913d2c7f3130}
-      \strng{nameabibnamehash}{265f657429335d77feb917c0777c661a}
-      \strng{nameanamehash}{f7ed9d03f58e99ed357d041717bf5bcf}
-      \strng{nameafullhash}{289d152417755f23368c913d2c7f3130}
-      \strng{nameafullhashraw}{289d152417755f23368c913d2c7f3130}
-      \field{extraname}{4}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Geodesy and Geodynamics}
-      \field{langid}{english}
-      \field{languageid}{english}
-      \field{lansortorder}{4}
-      \field{title}{Impact of flex power on inter-and intra-Differential Code Bias variation}
-      \field{usera}{J}
-      \field{userd}{english}
-      \field{userf}{english}
-      \field{year}{2025}
-      \field{dateera}{ce}
-      \keyw{li2025impact}
     \endentry
     \entry{Blanchard1993GPS–Theory}{article}{}{}
       \name{author}{1}{}{%
@@ -6397,7 +6539,7 @@
       \strng{nameanamehash}{537f91e3b06b769c2dfd9724c4fd989e}
       \strng{nameafullhash}{da613da27701114f83f6860d861252c4}
       \strng{nameafullhashraw}{da613da27701114f83f6860d861252c4}
-      \field{extraname}{5}
+      \field{extraname}{4}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
@@ -6863,79 +7005,6 @@
       \range{pages}{20}
       \keyw{wang2016determination}
     \endentry
-    \entry{Wang2022A}{article}{}{}
-      \name{author}{3}{}{%
-        {{hash=41dace6ae7b5131f0609d10605ff5c32}{%
-           family={Wang},
-           familyi={W\bibinitperiod},
-           given={Qisheng},
-           giveni={Q\bibinitperiod}}}%
-        {{hash=d4ab8131189e387efe50d25c18bf7d91}{%
-           family={Jin},
-           familyi={J\bibinitperiod},
-           given={Shuanggen},
-           giveni={S\bibinitperiod}}}%
-        {{hash=c8d6f7af98cece35f4191211b9b9e7ef}{%
-           family={Ye},
-           familyi={Y\bibinitperiod},
-           given={Xianfeng},
-           giveni={X\bibinitperiod}}}%
-      }
-      \name{namea}{3}{}{%
-        {{hash=41dace6ae7b5131f0609d10605ff5c32}{%
-           family={Wang},
-           familyi={W\bibinitperiod},
-           given={Qisheng},
-           giveni={Q\bibinitperiod}}}%
-        {{hash=d4ab8131189e387efe50d25c18bf7d91}{%
-           family={Jin},
-           familyi={J\bibinitperiod},
-           given={Shuanggen},
-           giveni={S\bibinitperiod}}}%
-        {{hash=c8d6f7af98cece35f4191211b9b9e7ef}{%
-           family={Ye},
-           familyi={Y\bibinitperiod},
-           given={Xianfeng},
-           giveni={X\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {english}%
-      }
-      \strng{namehash}{1b1e449dd678cbaac47efcee9ad4b596}
-      \strng{fullhash}{4b021a39c4d8a8e2d665fb32bee34dcf}
-      \strng{fullhashraw}{4b021a39c4d8a8e2d665fb32bee34dcf}
-      \strng{bibnamehash}{4b021a39c4d8a8e2d665fb32bee34dcf}
-      \strng{authorbibnamehash}{4b021a39c4d8a8e2d665fb32bee34dcf}
-      \strng{authornamehash}{1b1e449dd678cbaac47efcee9ad4b596}
-      \strng{authorfullhash}{4b021a39c4d8a8e2d665fb32bee34dcf}
-      \strng{authorfullhashraw}{4b021a39c4d8a8e2d665fb32bee34dcf}
-      \strng{nameabibnamehash}{4b021a39c4d8a8e2d665fb32bee34dcf}
-      \strng{nameanamehash}{1b1e449dd678cbaac47efcee9ad4b596}
-      \strng{nameafullhash}{4b021a39c4d8a8e2d665fb32bee34dcf}
-      \strng{nameafullhashraw}{4b021a39c4d8a8e2d665fb32bee34dcf}
-      \field{extraname}{3}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Remote. Sens.}
-      \field{langid}{english}
-      \field{languageid}{english}
-      \field{lansortorder}{4}
-      \field{title}{A Novel Method to Estimate Multi-GNSS Differential Code Bias without Using Ionospheric Function Model and Global Ionosphere Map}
-      \field{usera}{J}
-      \field{userd}{english}
-      \field{userf}{english}
-      \field{volume}{14}
-      \field{year}{2022}
-      \field{dateera}{ce}
-      \field{pages}{2002}
-      \range{pages}{1}
-      \verb{doi}
-      \verb 10.3390/rs14092002
-      \endverb
-      \keyw{Wang2022A}
-    \endentry
     \entry{Li2017GPS}{article}{}{}
       \name{author}{8}{}{%
         {{hash=cb0e4a77960cfd534d3270833682dd5d}{%
@@ -7036,7 +7105,7 @@
       \strng{nameanamehash}{4dcd0763d70d2e8cece8890e1ae8a855}
       \strng{nameafullhash}{4c7667388dcf0fc2895184efcf9ae0b1}
       \strng{nameafullhashraw}{4c7667388dcf0fc2895184efcf9ae0b1}
-      \field{extraname}{6}
+      \field{extraname}{5}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
@@ -7201,7 +7270,7 @@
       \strng{nameanamehash}{1b1e449dd678cbaac47efcee9ad4b596}
       \strng{nameafullhash}{ccad4969e23ddcd43d45a538b4370dc1}
       \strng{nameafullhashraw}{ccad4969e23ddcd43d45a538b4370dc1}
-      \field{extraname}{4}
+      \field{extraname}{3}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
@@ -7523,79 +7592,6 @@
       \endverb
       \keyw{Sanz2017GPS}
     \endentry
-    \entry{Montenbruck2014Differential}{article}{}{}
-      \name{author}{3}{}{%
-        {{hash=7b2860cad0944fd99cdbd545c723679c}{%
-           family={Montenbruck},
-           familyi={M\bibinitperiod},
-           given={O.},
-           giveni={O\bibinitperiod}}}%
-        {{hash=f33c914b0352aa3db7fb81759bfda212}{%
-           family={Hauschild},
-           familyi={H\bibinitperiod},
-           given={A.},
-           giveni={A\bibinitperiod}}}%
-        {{hash=d22b8879cacc966e82c7ad0995401416}{%
-           family={Steigenberger},
-           familyi={S\bibinitperiod},
-           given={P.},
-           giveni={P\bibinitperiod}}}%
-      }
-      \name{namea}{3}{}{%
-        {{hash=7b2860cad0944fd99cdbd545c723679c}{%
-           family={Montenbruck},
-           familyi={M\bibinitperiod},
-           given={O.},
-           giveni={O\bibinitperiod}}}%
-        {{hash=f33c914b0352aa3db7fb81759bfda212}{%
-           family={Hauschild},
-           familyi={H\bibinitperiod},
-           given={A.},
-           giveni={A\bibinitperiod}}}%
-        {{hash=d22b8879cacc966e82c7ad0995401416}{%
-           family={Steigenberger},
-           familyi={S\bibinitperiod},
-           given={P.},
-           giveni={P\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {english}%
-      }
-      \strng{namehash}{d1e9d91644b2db3b16a9a58bf0d66b91}
-      \strng{fullhash}{e40bdb854560508662a2ce93cee73f12}
-      \strng{fullhashraw}{e40bdb854560508662a2ce93cee73f12}
-      \strng{bibnamehash}{e40bdb854560508662a2ce93cee73f12}
-      \strng{authorbibnamehash}{e40bdb854560508662a2ce93cee73f12}
-      \strng{authornamehash}{d1e9d91644b2db3b16a9a58bf0d66b91}
-      \strng{authorfullhash}{e40bdb854560508662a2ce93cee73f12}
-      \strng{authorfullhashraw}{e40bdb854560508662a2ce93cee73f12}
-      \strng{nameabibnamehash}{e40bdb854560508662a2ce93cee73f12}
-      \strng{nameanamehash}{d1e9d91644b2db3b16a9a58bf0d66b91}
-      \strng{nameafullhash}{e40bdb854560508662a2ce93cee73f12}
-      \strng{nameafullhashraw}{e40bdb854560508662a2ce93cee73f12}
-      \field{extraname}{3}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Annual of Navigation}
-      \field{langid}{english}
-      \field{languageid}{english}
-      \field{lansortorder}{4}
-      \field{title}{Differential Code Bias Estimation using Multi‐GNSS Observations and Global Ionosphere Maps}
-      \field{usera}{J}
-      \field{userd}{english}
-      \field{userf}{english}
-      \field{volume}{61}
-      \field{year}{2014}
-      \field{dateera}{ce}
-      \field{pages}{191\bibrangedash 201}
-      \range{pages}{11}
-      \verb{doi}
-      \verb 10.1002/navi.64
-      \endverb
-      \keyw{Montenbruck2014Differential}
-    \endentry
     \entry{Li2021Estimation}{article}{}{}
       \name{author}{2}{}{%
         {{hash=dd037b3b861a870d96b7329da5d30d28}{%
@@ -7636,7 +7632,7 @@
       \strng{nameanamehash}{537f91e3b06b769c2dfd9724c4fd989e}
       \strng{nameafullhash}{eefcaeb80a0e4a805e60fdbba3651e76}
       \strng{nameafullhashraw}{eefcaeb80a0e4a805e60fdbba3651e76}
-      \field{extraname}{7}
+      \field{extraname}{6}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
@@ -7830,7 +7826,7 @@
       \strng{nameanamehash}{e88bdba75907c5cb1759f12ac2e2ce74}
       \strng{nameafullhash}{1f602984de08779ca5c285b626abca55}
       \strng{nameafullhashraw}{1f602984de08779ca5c285b626abca55}
-      \field{extraname}{5}
+      \field{extraname}{4}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
@@ -8095,6 +8091,51 @@
       \range{pages}{7}
       \keyw{zhong2016long}
     \endentry
+    \entry{kalman1960new}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=45f5df5515dbc3f650fa4dd7ab4fc93e}{%
+           family={Kalman},
+           familyi={K\bibinitperiod},
+           given={Rudolph\bibnamedelima Emil},
+           giveni={R\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=45f5df5515dbc3f650fa4dd7ab4fc93e}{%
+           family={Kalman},
+           familyi={K\bibinitperiod},
+           given={Rudolph\bibnamedelima Emil},
+           giveni={R\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{45f5df5515dbc3f650fa4dd7ab4fc93e}
+      \strng{fullhash}{45f5df5515dbc3f650fa4dd7ab4fc93e}
+      \strng{fullhashraw}{45f5df5515dbc3f650fa4dd7ab4fc93e}
+      \strng{bibnamehash}{45f5df5515dbc3f650fa4dd7ab4fc93e}
+      \strng{authorbibnamehash}{45f5df5515dbc3f650fa4dd7ab4fc93e}
+      \strng{authornamehash}{45f5df5515dbc3f650fa4dd7ab4fc93e}
+      \strng{authorfullhash}{45f5df5515dbc3f650fa4dd7ab4fc93e}
+      \strng{authorfullhashraw}{45f5df5515dbc3f650fa4dd7ab4fc93e}
+      \strng{nameabibnamehash}{45f5df5515dbc3f650fa4dd7ab4fc93e}
+      \strng{nameanamehash}{45f5df5515dbc3f650fa4dd7ab4fc93e}
+      \strng{nameafullhash}{45f5df5515dbc3f650fa4dd7ab4fc93e}
+      \strng{nameafullhashraw}{45f5df5515dbc3f650fa4dd7ab4fc93e}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{A new approach to linear filtering and prediction problems}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{1960}
+      \field{dateera}{ce}
+      \keyw{kalman1960new}
+    \endentry
     \entry{maybeck1982stochastic}{book}{}{}
       \name{author}{1}{}{%
         {{hash=4d4500bb1f6739393af04389e92a1935}{%
@@ -8262,194 +8303,6 @@
       \field{year}{2010}
       \field{dateera}{ce}
       \keyw{ya2010gps}
-    \endentry
-    \entry{wu2025novel}{article}{}{}
-      \name{author}{5}{}{%
-        {{hash=2cc58433d28ca8f81d3bbacd9c3d62b1}{%
-           family={Wu},
-           familyi={W\bibinitperiod},
-           given={Zhou},
-           giveni={Z\bibinitperiod}}}%
-        {{hash=5e1c09128814ea5491e65e5230815f44}{%
-           family={Yao},
-           familyi={Y\bibinitperiod},
-           given={Yibin},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=5af48dbe5bf1b594ed3c643bbc867204}{%
-           family={Li},
-           familyi={L\bibinitperiod},
-           given={Shuhui},
-           giveni={S\bibinitperiod}}}%
-        {{hash=ecd90898faf1789923c68bd99736cb2e}{%
-           family={Zhang},
-           familyi={Z\bibinitperiod},
-           given={Wenjie},
-           giveni={W\bibinitperiod}}}%
-        {{hash=263c40637aad6797ca8d52b4bcf2751d}{%
-           family={Yu},
-           familyi={Y\bibinitperiod},
-           given={Kehao},
-           giveni={K\bibinitperiod}}}%
-      }
-      \name{namea}{5}{}{%
-        {{hash=2cc58433d28ca8f81d3bbacd9c3d62b1}{%
-           family={Wu},
-           familyi={W\bibinitperiod},
-           given={Zhou},
-           giveni={Z\bibinitperiod}}}%
-        {{hash=5e1c09128814ea5491e65e5230815f44}{%
-           family={Yao},
-           familyi={Y\bibinitperiod},
-           given={Yibin},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=5af48dbe5bf1b594ed3c643bbc867204}{%
-           family={Li},
-           familyi={L\bibinitperiod},
-           given={Shuhui},
-           giveni={S\bibinitperiod}}}%
-        {{hash=ecd90898faf1789923c68bd99736cb2e}{%
-           family={Zhang},
-           familyi={Z\bibinitperiod},
-           given={Wenjie},
-           giveni={W\bibinitperiod}}}%
-        {{hash=263c40637aad6797ca8d52b4bcf2751d}{%
-           family={Yu},
-           familyi={Y\bibinitperiod},
-           given={Kehao},
-           giveni={K\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {english}%
-      }
-      \list{publisher}{1}{%
-        {Springer}%
-      }
-      \strng{namehash}{e8f9fa12e01ee8a21ba679ecd21beeba}
-      \strng{fullhash}{5a4ab42872a4ec2c63630f39b7ed75d7}
-      \strng{fullhashraw}{5a4ab42872a4ec2c63630f39b7ed75d7}
-      \strng{bibnamehash}{618c34ea44d5fbcc604bb1a19a453e1d}
-      \strng{authorbibnamehash}{618c34ea44d5fbcc604bb1a19a453e1d}
-      \strng{authornamehash}{e8f9fa12e01ee8a21ba679ecd21beeba}
-      \strng{authorfullhash}{5a4ab42872a4ec2c63630f39b7ed75d7}
-      \strng{authorfullhashraw}{5a4ab42872a4ec2c63630f39b7ed75d7}
-      \strng{nameabibnamehash}{618c34ea44d5fbcc604bb1a19a453e1d}
-      \strng{nameanamehash}{e8f9fa12e01ee8a21ba679ecd21beeba}
-      \strng{nameafullhash}{5a4ab42872a4ec2c63630f39b7ed75d7}
-      \strng{nameafullhashraw}{5a4ab42872a4ec2c63630f39b7ed75d7}
-      \field{extraname}{2}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{GPS Solutions}
-      \field{langid}{english}
-      \field{languageid}{english}
-      \field{lansortorder}{4}
-      \field{number}{4}
-      \field{title}{A novel real-time GPS flex power detection method based on the linear relationship between carrier-to-noise ratios}
-      \field{usera}{J}
-      \field{userd}{english}
-      \field{userf}{english}
-      \field{volume}{29}
-      \field{year}{2025}
-      \field{dateera}{ce}
-      \field{pages}{165}
-      \range{pages}{1}
-      \keyw{wu2025novel}
-    \endentry
-    \entry{du2025gps}{article}{}{}
-      \name{author}{5}{}{%
-        {{hash=a6978623a170257e7fa619de22853c43}{%
-           family={Du},
-           familyi={D\bibinitperiod},
-           given={Yanjun},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=637493718d4b5c4756f07914c837dd3f}{%
-           family={Yang},
-           familyi={Y\bibinitperiod},
-           given={Yuanxi},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=32284309a008d0f808adc4464db3e4a8}{%
-           family={Jia},
-           familyi={J\bibinitperiod},
-           given={Xiaolin},
-           giveni={X\bibinitperiod}}}%
-        {{hash=b27074fc6f84e8d32cc6da978188edb3}{%
-           family={Yao},
-           familyi={Y\bibinitperiod},
-           given={Wanqiang},
-           giveni={W\bibinitperiod}}}%
-        {{hash=882b7b138fab8123f850b27379fe1551}{%
-           family={Li},
-           familyi={L\bibinitperiod},
-           given={Qin},
-           giveni={Q\bibinitperiod}}}%
-      }
-      \name{namea}{5}{}{%
-        {{hash=a6978623a170257e7fa619de22853c43}{%
-           family={Du},
-           familyi={D\bibinitperiod},
-           given={Yanjun},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=637493718d4b5c4756f07914c837dd3f}{%
-           family={Yang},
-           familyi={Y\bibinitperiod},
-           given={Yuanxi},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=32284309a008d0f808adc4464db3e4a8}{%
-           family={Jia},
-           familyi={J\bibinitperiod},
-           given={Xiaolin},
-           giveni={X\bibinitperiod}}}%
-        {{hash=b27074fc6f84e8d32cc6da978188edb3}{%
-           family={Yao},
-           familyi={Y\bibinitperiod},
-           given={Wanqiang},
-           giveni={W\bibinitperiod}}}%
-        {{hash=882b7b138fab8123f850b27379fe1551}{%
-           family={Li},
-           familyi={L\bibinitperiod},
-           given={Qin},
-           giveni={Q\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {english}%
-      }
-      \list{publisher}{1}{%
-        {Springer}%
-      }
-      \strng{namehash}{7de200a3b15d0fd3384f49ba695b268a}
-      \strng{fullhash}{c26e9918e0b839a98c7fd622c7430005}
-      \strng{fullhashraw}{c26e9918e0b839a98c7fd622c7430005}
-      \strng{bibnamehash}{e2419ead6bbd915c226e07618ef63544}
-      \strng{authorbibnamehash}{e2419ead6bbd915c226e07618ef63544}
-      \strng{authornamehash}{7de200a3b15d0fd3384f49ba695b268a}
-      \strng{authorfullhash}{c26e9918e0b839a98c7fd622c7430005}
-      \strng{authorfullhashraw}{c26e9918e0b839a98c7fd622c7430005}
-      \strng{nameabibnamehash}{e2419ead6bbd915c226e07618ef63544}
-      \strng{nameanamehash}{7de200a3b15d0fd3384f49ba695b268a}
-      \strng{nameafullhash}{c26e9918e0b839a98c7fd622c7430005}
-      \strng{nameafullhashraw}{c26e9918e0b839a98c7fd622c7430005}
-      \field{extraname}{3}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{GPS Solutions}
-      \field{langid}{english}
-      \field{languageid}{english}
-      \field{lansortorder}{4}
-      \field{number}{3}
-      \field{title}{GPS flex power detection leveraging XGBoost machine learning based on LEO satellites}
-      \field{usera}{J}
-      \field{userd}{english}
-      \field{userf}{english}
-      \field{volume}{29}
-      \field{year}{2025}
-      \field{dateera}{ce}
-      \field{pages}{1\bibrangedash 15}
-      \range{pages}{15}
-      \keyw{du2025gps}
     \endentry
     \entry{Zhang2019Spectrum}{article}{}{}
       \name{author}{6}{}{%
@@ -8702,6 +8555,348 @@
       \field{pages}{359\bibrangedash 370}
       \range{pages}{12}
       \keyw{berndt1994using}
+    \endentry
+    \entry{vaswani2017attention}{article}{}{}
+      \name{author}{8}{}{%
+        {{hash=7f28e84700536646dd6620a0db07ad09}{%
+           family={Vaswani},
+           familyi={V\bibinitperiod},
+           given={Ashish},
+           giveni={A\bibinitperiod}}}%
+        {{hash=62efade83d70f0323fe248755e6c90c5}{%
+           family={Shazeer},
+           familyi={S\bibinitperiod},
+           given={Noam},
+           giveni={N\bibinitperiod}}}%
+        {{hash=06649ebab1ea5cac0250746a19764975}{%
+           family={Parmar},
+           familyi={P\bibinitperiod},
+           given={Niki},
+           giveni={N\bibinitperiod}}}%
+        {{hash=831027ee0ebf22375e2a86afc1881909}{%
+           family={Uszkoreit},
+           familyi={U\bibinitperiod},
+           given={Jakob},
+           giveni={J\bibinitperiod}}}%
+        {{hash=2fd2982e30ebcec93ec1cf76e0d797fd}{%
+           family={Jones},
+           familyi={J\bibinitperiod},
+           given={Llion},
+           giveni={L\bibinitperiod}}}%
+        {{hash=27b07e4eacbf4ef7a1438e3badb7dd8d}{%
+           family={Gomez},
+           familyi={G\bibinitperiod},
+           given={Aidan\bibnamedelima N},
+           giveni={A\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=540fcd72e1fa4bbed46604f4e6cff817}{%
+           family={Kaiser},
+           familyi={K\bibinitperiod},
+           given={{Ł}ukasz},
+           giveni={Ł\bibinitperiod}}}%
+        {{hash=95595a0fefb86187cbc36e551017d332}{%
+           family={Polosukhin},
+           familyi={P\bibinitperiod},
+           given={Illia},
+           giveni={I\bibinitperiod}}}%
+      }
+      \name{namea}{8}{}{%
+        {{hash=7f28e84700536646dd6620a0db07ad09}{%
+           family={Vaswani},
+           familyi={V\bibinitperiod},
+           given={Ashish},
+           giveni={A\bibinitperiod}}}%
+        {{hash=62efade83d70f0323fe248755e6c90c5}{%
+           family={Shazeer},
+           familyi={S\bibinitperiod},
+           given={Noam},
+           giveni={N\bibinitperiod}}}%
+        {{hash=06649ebab1ea5cac0250746a19764975}{%
+           family={Parmar},
+           familyi={P\bibinitperiod},
+           given={Niki},
+           giveni={N\bibinitperiod}}}%
+        {{hash=831027ee0ebf22375e2a86afc1881909}{%
+           family={Uszkoreit},
+           familyi={U\bibinitperiod},
+           given={Jakob},
+           giveni={J\bibinitperiod}}}%
+        {{hash=2fd2982e30ebcec93ec1cf76e0d797fd}{%
+           family={Jones},
+           familyi={J\bibinitperiod},
+           given={Llion},
+           giveni={L\bibinitperiod}}}%
+        {{hash=27b07e4eacbf4ef7a1438e3badb7dd8d}{%
+           family={Gomez},
+           familyi={G\bibinitperiod},
+           given={Aidan\bibnamedelima N},
+           giveni={A\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=540fcd72e1fa4bbed46604f4e6cff817}{%
+           family={Kaiser},
+           familyi={K\bibinitperiod},
+           given={{Ł}ukasz},
+           giveni={Ł\bibinitperiod}}}%
+        {{hash=95595a0fefb86187cbc36e551017d332}{%
+           family={Polosukhin},
+           familyi={P\bibinitperiod},
+           given={Illia},
+           giveni={I\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{ee273ab30cfb889666f8c4d806eb9ce7}
+      \strng{fullhash}{cb26e47f6b8133865271fc8483132297}
+      \strng{fullhashraw}{cb26e47f6b8133865271fc8483132297}
+      \strng{bibnamehash}{7cc810834e9ba19dd5f8b0a37be3172d}
+      \strng{authorbibnamehash}{7cc810834e9ba19dd5f8b0a37be3172d}
+      \strng{authornamehash}{ee273ab30cfb889666f8c4d806eb9ce7}
+      \strng{authorfullhash}{cb26e47f6b8133865271fc8483132297}
+      \strng{authorfullhashraw}{cb26e47f6b8133865271fc8483132297}
+      \strng{nameabibnamehash}{7cc810834e9ba19dd5f8b0a37be3172d}
+      \strng{nameanamehash}{ee273ab30cfb889666f8c4d806eb9ce7}
+      \strng{nameafullhash}{cb26e47f6b8133865271fc8483132297}
+      \strng{nameafullhashraw}{cb26e47f6b8133865271fc8483132297}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Advances in neural information processing systems}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{Attention is all you need}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{french}
+      \field{volume}{30}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \keyw{vaswani2017attention}
+    \endentry
+    \entry{mao2023cross}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=2876e562d6f876f6d3b26ab981cd24a5}{%
+           family={Mao},
+           familyi={M\bibinitperiod},
+           given={Anqi},
+           giveni={A\bibinitperiod}}}%
+        {{hash=8298c87c77cd46a5b2b7e799ba087945}{%
+           family={Mohri},
+           familyi={M\bibinitperiod},
+           given={Mehryar},
+           giveni={M\bibinitperiod}}}%
+        {{hash=a2628ba323f4509b2d8e4b2ebb6a104c}{%
+           family={Zhong},
+           familyi={Z\bibinitperiod},
+           given={Yutao},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \name{namea}{3}{}{%
+        {{hash=2876e562d6f876f6d3b26ab981cd24a5}{%
+           family={Mao},
+           familyi={M\bibinitperiod},
+           given={Anqi},
+           giveni={A\bibinitperiod}}}%
+        {{hash=8298c87c77cd46a5b2b7e799ba087945}{%
+           family={Mohri},
+           familyi={M\bibinitperiod},
+           given={Mehryar},
+           giveni={M\bibinitperiod}}}%
+        {{hash=a2628ba323f4509b2d8e4b2ebb6a104c}{%
+           family={Zhong},
+           familyi={Z\bibinitperiod},
+           given={Yutao},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{organization}{1}{%
+        {pmlr}%
+      }
+      \strng{namehash}{e9568a85fc651a267e5c4ad957517781}
+      \strng{fullhash}{3cbd5268400a37871621c4f140b0462a}
+      \strng{fullhashraw}{3cbd5268400a37871621c4f140b0462a}
+      \strng{bibnamehash}{3cbd5268400a37871621c4f140b0462a}
+      \strng{authorbibnamehash}{3cbd5268400a37871621c4f140b0462a}
+      \strng{authornamehash}{e9568a85fc651a267e5c4ad957517781}
+      \strng{authorfullhash}{3cbd5268400a37871621c4f140b0462a}
+      \strng{authorfullhashraw}{3cbd5268400a37871621c4f140b0462a}
+      \strng{nameabibnamehash}{3cbd5268400a37871621c4f140b0462a}
+      \strng{nameanamehash}{e9568a85fc651a267e5c4ad957517781}
+      \strng{nameafullhash}{3cbd5268400a37871621c4f140b0462a}
+      \strng{nameafullhashraw}{3cbd5268400a37871621c4f140b0462a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{International conference on Machine learning}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{Cross-entropy loss functions: Theoretical analysis and applications}
+      \field{usera}{C}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{pages}{23803\bibrangedash 23828}
+      \range{pages}{26}
+      \keyw{mao2023cross}
+    \endentry
+    \entry{lin2017focal}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=08f925fe4692d130a1d7cb7d94483351}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Tsung-Yi},
+           giveni={T\bibinithyphendelim Y\bibinitperiod}}}%
+        {{hash=d87be7c19fa16049347907c9820816c6}{%
+           family={Goyal},
+           familyi={G\bibinitperiod},
+           given={Priya},
+           giveni={P\bibinitperiod}}}%
+        {{hash=bd5dadbe57bedc5957c19a3154c4d424}{%
+           family={Girshick},
+           familyi={G\bibinitperiod},
+           given={Ross},
+           giveni={R\bibinitperiod}}}%
+        {{hash=6b4b60e909e78633945f3f9c9dc83e01}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Kaiming},
+           giveni={K\bibinitperiod}}}%
+        {{hash=ecd149fdcb3e0503881d49e545744c3d}{%
+           family={Dollár},
+           familyi={D\bibinitperiod},
+           given={Piotr},
+           giveni={P\bibinitperiod}}}%
+      }
+      \name{namea}{5}{}{%
+        {{hash=08f925fe4692d130a1d7cb7d94483351}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Tsung-Yi},
+           giveni={T\bibinithyphendelim Y\bibinitperiod}}}%
+        {{hash=d87be7c19fa16049347907c9820816c6}{%
+           family={Goyal},
+           familyi={G\bibinitperiod},
+           given={Priya},
+           giveni={P\bibinitperiod}}}%
+        {{hash=bd5dadbe57bedc5957c19a3154c4d424}{%
+           family={Girshick},
+           familyi={G\bibinitperiod},
+           given={Ross},
+           giveni={R\bibinitperiod}}}%
+        {{hash=6b4b60e909e78633945f3f9c9dc83e01}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Kaiming},
+           giveni={K\bibinitperiod}}}%
+        {{hash=ecd149fdcb3e0503881d49e545744c3d}{%
+           family={Dollár},
+           familyi={D\bibinitperiod},
+           given={Piotr},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{3b7e00bc88d7aca4d4d5ddb8c252e36c}
+      \strng{fullhash}{4ccabcfdf9c34f3d9a88fdca5bb95dd5}
+      \strng{fullhashraw}{4ccabcfdf9c34f3d9a88fdca5bb95dd5}
+      \strng{bibnamehash}{5dfe27d1029735fc218d60ace71cfb1d}
+      \strng{authorbibnamehash}{5dfe27d1029735fc218d60ace71cfb1d}
+      \strng{authornamehash}{3b7e00bc88d7aca4d4d5ddb8c252e36c}
+      \strng{authorfullhash}{4ccabcfdf9c34f3d9a88fdca5bb95dd5}
+      \strng{authorfullhashraw}{4ccabcfdf9c34f3d9a88fdca5bb95dd5}
+      \strng{nameabibnamehash}{5dfe27d1029735fc218d60ace71cfb1d}
+      \strng{nameanamehash}{3b7e00bc88d7aca4d4d5ddb8c252e36c}
+      \strng{nameafullhash}{4ccabcfdf9c34f3d9a88fdca5bb95dd5}
+      \strng{nameafullhashraw}{4ccabcfdf9c34f3d9a88fdca5bb95dd5}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1708.02002}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{Focal Loss for Dense Object Detection}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/1708.02002
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/1708.02002
+      \endverb
+      \keyw{lin2017focal}
+    \endentry
+    \entry{loshchilov2019decoupled}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=1241b8181104f1917578d4c7f9b323b6}{%
+           family={Loshchilov},
+           familyi={L\bibinitperiod},
+           given={Ilya},
+           giveni={I\bibinitperiod}}}%
+        {{hash=528d4af87fd2ecf5fb8a22db913ce088}{%
+           family={Hutter},
+           familyi={H\bibinitperiod},
+           given={Frank},
+           giveni={F\bibinitperiod}}}%
+      }
+      \name{namea}{2}{}{%
+        {{hash=1241b8181104f1917578d4c7f9b323b6}{%
+           family={Loshchilov},
+           familyi={L\bibinitperiod},
+           given={Ilya},
+           giveni={I\bibinitperiod}}}%
+        {{hash=528d4af87fd2ecf5fb8a22db913ce088}{%
+           family={Hutter},
+           familyi={H\bibinitperiod},
+           given={Frank},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{12dea43a15b25e019407cd7074c864d6}
+      \strng{fullhash}{b308ccb07134a06ec3735828ac4f15e2}
+      \strng{fullhashraw}{b308ccb07134a06ec3735828ac4f15e2}
+      \strng{bibnamehash}{b308ccb07134a06ec3735828ac4f15e2}
+      \strng{authorbibnamehash}{b308ccb07134a06ec3735828ac4f15e2}
+      \strng{authornamehash}{12dea43a15b25e019407cd7074c864d6}
+      \strng{authorfullhash}{b308ccb07134a06ec3735828ac4f15e2}
+      \strng{authorfullhashraw}{b308ccb07134a06ec3735828ac4f15e2}
+      \strng{nameabibnamehash}{b308ccb07134a06ec3735828ac4f15e2}
+      \strng{nameanamehash}{12dea43a15b25e019407cd7074c864d6}
+      \strng{nameafullhash}{b308ccb07134a06ec3735828ac4f15e2}
+      \strng{nameafullhashraw}{b308ccb07134a06ec3735828ac4f15e2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1711.05101}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{Decoupled Weight Decay Regularization}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/1711.05101
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/1711.05101
+      \endverb
+      \keyw{loshchilov2019decoupled}
     \endentry
     \entry{singh2021astrosat}{article}{}{}
       \name{author}{4}{}{%
@@ -10512,7 +10707,7 @@
       \strng{nameanamehash}{de7e0b3ed711e9ec41c5977bcdc6fd38}
       \strng{nameafullhash}{38f5bc1ae40646adf96eab2931661213}
       \strng{nameafullhashraw}{38f5bc1ae40646adf96eab2931661213}
-      \field{extraname}{6}
+      \field{extraname}{5}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
@@ -10992,6 +11187,7 @@
       \keyw{peixeiro2022time}
     \endentry
   \enddatalist
+  \missing{IS}
 \endrefsection
 \endinput
 
