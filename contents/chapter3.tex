@@ -106,7 +106,7 @@ FPD\cite{esenbuuga2023recent} &
 其中，
 \begin{itemize}
     \item $c_t^s$ 表示接收机在历元 $t$ 实际测得的载噪比 C/N0，是检测问题中的核心观测量；
-    \item $\mathbf{g}_t^s$ 表示与卫星—接收机几何关系相关的上下文信息，通常包括卫星方位角和高度角；
+    \item $\mathbf{g}_t^s$ 表示与卫星--接收机几何关系相关的上下文信息，通常包括卫星方位角和高度角；
     \item $\mathbf{k}_t^s$ 表示与观测链路相关的辅助先验信息，例如接收机类型、信号频段或其他系统参数。
 \end{itemize}
 相应地，定义历元级真实状态标签 $y_t^s$，用于表征弹性功率的工作状态，其取值为
@@ -256,7 +256,7 @@ Mode 切换点 17 & 2020/11/21 & Mode9 $\rightarrow$ Mode7 & 9.36 dB-Hz \\
 在计算效率方面，大量实验表明 FPD 算法的整体耗时较长。在一台配置为 Intel(R) Core(TM) i7-9750H CPU @ 2.60\,GHz、内存 32.0\,GB 的计算机上，采用 C 语言实现的 FPD 算法对单一频点一整年的数据进行处理约需 20\,min，使用 Python 实现耗时约 21\,min，而 MATLAB 实现的处理时间则高达约 90\,min。考虑到实际应用中需要同时处理数百个 IGS 测站、多个卫星以及多频点数据，FPD 算法在整体计算量和时间消耗较大，这使其在实时弹性功率监测场景中的适用性受到明显限制。
 
 \section{基于动态时间规划的差分检测方法（AFPD-DTW）}
-虽然FPD检测算法通过多测站联合统计实现了弹性功率的自动化识别，但其核心机制仍存在两点显著局限。首先，FPD本质上是一种基于瞬时梯度特征的检测器，它高度依赖于观测序列中出现的显著阶跃信号。然而，实验表明，当卫星在测站视场外发生整体提升或处于低仰角区域时，这种阶跃特征往往无法被检测，导致召回率较低。其次，FPD需要使用大量测站来进行投票，无论是在后处理还是实时检测方面都对检测速度都不是最优方案。针对上述不足，本节提出了一种基于全序列模式匹配的新型检测方法——AFPD-DTW（Adaptive Flex Power Detector based on Dynamic Time Warping）。
+虽然FPD检测算法通过多测站联合统计实现了弹性功率的自动化识别，但其核心机制仍存在两点显著局限。首先，FPD本质上是一种基于瞬时梯度特征的检测器，它高度依赖于观测序列中出现的显著阶跃信号。然而，实验表明，当卫星在测站视场外发生整体提升或处于低仰角区域时，这种阶跃特征往往无法被检测，导致召回率较低。其次，FPD需要使用大量测站来进行投票，无论是在后处理还是实时检测方面都对检测速度都不是最优方案。针对上述不足，本节提出了一种基于全序列模式匹配的新型检测方法--AFPD-DTW（Adaptive Flex Power Detector based on Dynamic Time Warping）。
 
 \subsection{AFPD-DTW处理流程}
 AFPD-DTW 的处理流程包括三个主要步骤，如图\ref{fig:afpd_4}所示。第一步是数据处理模块，它收集多站观测数据，包括观测文件、导航星历以及提供站坐标的 SINEX 文件。随后提取 C/N0 观测值，并与计算得到的卫星高度角进行结合。参考 FPD 方法\cite{esenbuuga2023recent}中的实际策略，为减轻多路径与噪声影响，剔除高度角低于 30° 的数据。
@@ -326,7 +326,7 @@ M_t = \{ m_\tau \mid \tau \in \mathcal{W}_t \}.
 
 其中 \(s_{i,\tau}\) 为第 \(i\) 天第 \(\tau\) 历元的 C/N0，\(m_\tau\) 为模型序列对齐至对应历元的值。
 
-实时 DTW 使用 Sakoe–Chiba 带约束（半宽 \(r \le 3\)）：
+实时 DTW 使用 Sakoe--Chiba 带约束（半宽 \(r \le 3\)）：
 \begin{equation}
     \lvert p - q \rvert \le r.
 \end{equation}
@@ -583,7 +583,7 @@ Q_1 - k\cdot\mathrm{IQR} \le \mathrm{DTW}_S \le Q_3 + k\cdot\mathrm{IQR}, & \tex
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{figures/c3/afpd/图片9.png}
-    \bicaption{基于动态 IQR 阈值的方法用于区分多站点–多卫星组合的 S2W 信号中的弹性功率事件（红色）与非事件（蓝色）}{Dynamic IQR threshold method applied to distinguish flex power events (red) and non-events (blue) in S2W signals across various station-satellite combinations.}
+    \bicaption{基于动态 IQR 阈值的方法用于区分多站点--多卫星组合的 S2W 信号中的弹性功率事件（红色）与非事件（蓝色）}{Dynamic IQR threshold method applied to distinguish flex power events (red) and non-events (blue) in S2W signals across various station-satellite combinations.}
     \label{fig:afpd_9}
 \end{figure}
 
@@ -597,7 +597,7 @@ Q_1 - k\cdot\mathrm{IQR} \le \mathrm{DTW}_S \le Q_3 + k\cdot\mathrm{IQR}, & \tex
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{figures/c3/afpd/图片10.png}
-    \bicaption{2020–2021 年期间多站 S2W C/N0 时间序列中由 FPD 漏检的三次弹性功率模式转换}{Multi-station S2W C/N0 time series depicting three flex power mode transitions overlooked by FPD during 2020-2021.}
+    \bicaption{2020--2021 年期间多站 S2W C/N0 时间序列中由 FPD 漏检的三次弹性功率模式转换}{Multi-station S2W C/N0 time series depicting three flex power mode transitions overlooked by FPD during 2020-2021.}
     \label{fig:afpd_10}
 \end{figure}
 
@@ -612,7 +612,7 @@ Q_1 - k\cdot\mathrm{IQR} \le \mathrm{DTW}_S \le Q_3 + k\cdot\mathrm{IQR}, & \tex
 
 \begin{table*}[htbp]
 \centering
-\bicaption{2024 年 6 月 1--7 日期间基于 S2W 信号的 IIR-M 与 IIF 卫星实时检测性能（\%）}{Real-time detection performance (\%) on IIR-M and IIF satellites in the S2W signal from June 1–7, 2024.}
+\bicaption{2024 年 6 月 1--7 日期间基于 S2W 信号的 IIR-M 与 IIF 卫星实时检测性能（\%）}{Real-time detection performance (\%) on IIR-M and IIF satellites in the S2W signal from June 1--7, 2024.}
 \begin{tabular}{lcccc @{\quad} lcccc}
 \hline
 \textbf{PRN} & \textbf{TPR} & \textbf{FPR} & \textbf{Accuracy} & \textbf{Precision} &
@@ -702,7 +702,7 @@ Q_1 - k\cdot\mathrm{IQR} \le \mathrm{DTW}_S \le Q_3 + k\cdot\mathrm{IQR}, & \tex
 
 \begin{table*}[htbp]
 \centering
-\bicaption{多星座与多频点弹性功率事件检测结果：BDS（2023 年 1 月--2025 年 7 月）与 GPS（2024 年 1 月--2025 年 7 月）}{Multi-constellation and multi-frequency flex-power events detected from BDS (January 2023 – July 2025) and GPS (January 2024 – July 2025).}
+\bicaption{多星座与多频点弹性功率事件检测结果：BDS（2023 年 1 月--2025 年 7 月）与 GPS（2024 年 1 月--2025 年 7 月）}{Multi-constellation and multi-frequency flex-power events detected from BDS (January 2023 -- July 2025) and GPS (January 2024 -- July 2025).}
 \label{tab:afpd_tab_6}
 \begin{tabular}{lcccc}
 \hline
@@ -863,12 +863,12 @@ AFPD-DTW & 2025 & 事后处理 / 实时检测 & 仅需 8--10 个站点；无历�
 总之，AFPD-DTW 通过利用卫星日周期 C/N0 差分特性，并采用 DTW 校正周期不匹配问题，实现了高效且可靠的弹性功率检测。在实时与事后处理两种模式下，它在保持高精度的同时显著提升了检测速度，且对数据需求极低，无需任何预训练的基线模型。
 
 
-\section{DLFPD 网络架构设计}
+\section{基于深度学习的检测方法（DLFPD）}
 尽管 AFPD-DTW 在处理时间错位和噪声方面表现出色，但其本质上属于一种相对检测策略。它依赖于将当前观测值与历史基准进行差分比较。这种机制存在两个固有的局限性。首先，它对初始状态敏感，需要人为确认基准日处于非弹性功率状态；其次，当弹性功率事件基准模型不稳定时，差分方法可能失效，从而难以判断当前的绝对功率状态。
 
-为了克服上述缺陷，本节提出一种基于深度学习的端到端检测框架（DLFPD, Deep Leaening-Based Flex Power Detector）。该方法的核心目标是构建一个具有高泛化能力的通用模型，旨在通过单一模型实现对不同测站、不同卫星对的实时状态判读，而无需针对特定链路进行独立建模。本质上，该方法将弹性功率检测建模为一个多变量时间序列分类问题，即以归一化的信号强度序列及空间几何特征为输入，通过混合神经网络架构提取深层特征，最终输出当前时刻发生弹性功率事件的绝对概率。
+为了克服上述缺陷，本节提出一种基于深度学习的端到端检测框架DLFPD（Deep Leaening-Based Flex Power Detector）。该方法的核心目标是构建一个具有高泛化能力的通用模型，旨在通过单一模型实现对不同测站、不同卫星对的实时状态判读，而无需针对特定链路进行独立建模。本质上，该方法将弹性功率检测建模为一个多变量时间序列分类问题，即以归一化的信号强度序列及空间几何特征为输入，通过混合神经网络架构提取深层特征，最终输出当前时刻发生弹性功率事件的绝对概率。
 
-\subsection{DLFPD方法}
+\subsection{DLFPD 网络架构设计}
 图\ref{fig:c3_dl_strcut}展示了用于弹性功率检测的DLFPD架构。
 
 \begin{figure}[htbp]
@@ -1283,7 +1283,7 @@ ROC AUC              & 0.9996 \\
 \end{figure}
 
 \subsubsection{时间泛化实验}
-为了验证模型在时间维度上的泛化性能，实验基于测试集 II进行了定量评估。测试集 II 使用了与训练集相同的 20 个测站，但时间跨度为 2025 年的事件 3（2025 年积日 101–110）与事件 4 （2025 年积日 121–134），旨在检验模型应对电离层环境变化及星座构型演变的稳定性。
+为了验证模型在时间维度上的泛化性能，实验基于测试集 II进行了定量评估。测试集 II 使用了与训练集相同的 20 个测站，但时间跨度为 2025 年的事件 3（2025 年积日 101--110）与事件 4 （2025 年积日 121--134），旨在检验模型应对电离层环境变化及星座构型演变的稳定性。
 
 如图 \ref{fig:dlfpd_t2ROC} 所示，模型在测试集 II 上的ROC曲线下的AUC维持在 0.9993 的极高水平，与测试集 I（AUC=0.9996）相比仅有极其微小的波动。这一结果有力地证明了模型成功提取了不随时间漂移的本质特征，未出现显著的性能漂移现象。
 
@@ -1368,7 +1368,7 @@ ROC AUC              & 0.9996 \\
 \end{table}
 
 \subsubsection{时空泛化实验}
-为了验证深度学习模型在最严苛的时空双重陌生环境下的泛化能力，本研究在测试集 III上进行了性能评估。该测试集不仅使用了从未参与训练的sta\_list2中的 10 个独立测站，还采用了2025 年的事件 3（2025 年积日 101–110）与事件 4 （2025 年积日 121–134），模拟了完全陌生的端到端真实监测场景。
+为了验证深度学习模型在最严苛的时空双重陌生环境下的泛化能力，本研究在测试集 III上进行了性能评估。该测试集不仅使用了从未参与训练的sta\_list2中的 10 个独立测站，还采用了2025 年的事件 3（2025 年积日 101--110）与事件 4 （2025 年积日 121--134），模拟了完全陌生的端到端真实监测场景。
 
 \begin{figure}[htbp]
 \centering
@@ -1655,7 +1655,7 @@ DLFPD &
 \midrule
 
 准确率（Accuracy）   & 99.88\% & \textbf{99.96\%} \\
-精确率（Precision）  & 99.98\% & 99.94\% \\
+精确率（Precision）  & \textbf{99.98\%} & 99.94\% \\
 召回率（Recall）     & 99.86\% & \textbf{99.97\%} \\
 F1 分数（F1-Score）  & 99.92\% & \textbf{99.96\%} \\
 

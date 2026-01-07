@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.12.19)  8 JAN 2026 00:35
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.12.19)  8 JAN 2026 01:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1532,7 +1532,7 @@ LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
 )
 \@quotelevel=\count555
 \@quotereset=\count556
-Package translations Info: No language package found. I am going to use `english' as default language. on input line 25.
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 27.
 \c@assumption=\count557
 \c@axiom=\count558
 \c@conjecture=\count559
@@ -1547,48 +1547,48 @@ Package translations Info: No language package found. I am going to use `english
  (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 25.
-LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 25.
+LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 27.
+LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 27.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/newtx/omlntxmi.fd
 File: omlntxmi.fd 2015/08/25 Fontinst v1.933 font definitions for OML/ntxmi.
 )
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 25.
-LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 25.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 27.
+LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 27.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/newtx/untxexa.fd
 File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
 )
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 25.
-LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 25.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 27.
+LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 27.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/newtx/lmsntxsy.fd
 File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
 )
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 25.
-LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input line 25.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 27.
+LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input line 27.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/newtx/lmxntxexx.fd
 File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
 )
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Info: Command `\dddot' is already robust on input line 25.
-LaTeX Info: Command `\ddddot' is already robust on input line 25.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Info: Command `\dddot' is already robust on input line 27.
+LaTeX Info: Command `\ddddot' is already robust on input line 27.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1635,7 +1635,7 @@ Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 Package caption Info: threeparttable package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package bicaption Info: Main language is not set on input line 25.
+Package bicaption Info: Main language is not set on input line 27.
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/english.lbx
@@ -1653,19 +1653,26 @@ Package biblatex Info: ... file 'main.bbl' found.
 
 Package biblatex Warning: The following entry could not be found
 (biblatex)                in the database:
+(biblatex)                Blanchard1993GPS--Theory
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
 (biblatex)                IS
 (biblatex)                Please verify the spelling and rerun
 (biblatex)                LaTeX afterwards.
 
 )
-Package biblatex Info: Reference section=0 on input line 25.
-Package biblatex Info: Reference segment=0 on input line 25.
+Package biblatex Info: Reference section=0 on input line 27.
+Package biblatex Info: Reference segment=0 on input line 27.
 \c@lstlisting=\count568
-Package translations Info: no dictionary file `translations-basic-dictionary-chinese.trsl' found. on input line 25.
+Package translations Info: no dictionary file `translations-basic-dictionary-chinese.trsl' found. on input line 27.
 
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
-Package hyperref Info: Link coloring OFF on input line 25.
+Package hyperref Info: Link coloring OFF on input line 27.
 (./main.out) (./main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
@@ -1677,39 +1684,8 @@ Package fontspec Info:
 (fontspec)             is okay then ignore this warning. Otherwise a different
 (fontspec)             font should be chosen.
 
-
-Package fontspec Info: 
-(fontspec)             Script 'CJK' not explicitly supported within font
-(fontspec)             'STFangsong'. Check the typeset output, and if it is
-(fontspec)             okay then ignore this warning. Otherwise a different
-(fontspec)             font should be chosen.
-
-
-Package fontspec Info: 
-(fontspec)             Could not resolve font "STFangsong/BI" (it probably
-(fontspec)             doesn't exist).
-
-
-Package fontspec Info: 
-(fontspec)             Could not resolve font "STFangsong/B" (it probably
-(fontspec)             doesn't exist).
-
-
-Package fontspec Info: 
-(fontspec)             Could not resolve font "STFangsong/I" (it probably
-(fontspec)             doesn't exist).
-
-
-Package fontspec Info: 
-(fontspec)             Font family 'STFangsong(0)' created for font
-(fontspec)             'STFangsong' with options [Script={CJK}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"STFangsong/OT:script=hani;language=dflt;"
-
+File: sjtu-vi-badge-reg-red.pdf Graphic file (type pdf)
+<use sjtu-vi-badge-reg-red.pdf>
 
 Package fontspec Info: 
 (fontspec)             Script 'CJK' not explicitly supported within font
@@ -1746,82 +1722,82 @@ Package fontspec Info:
 (fontspec)             - 'bold' (b/n) with NFSS spec.: <->"Heiti SC
 (fontspec)             Medium/OT:script=hani;language=dflt;embolden=3;"
 
-LaTeX Font Info:    Trying to load font information for OT1+ntxtlf on input line 32.
+LaTeX Font Info:    Trying to load font information for OT1+ntxtlf on input line 34.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/newtx/ot1ntxtlf.fd
 File: ot1ntxtlf.fd 2021/05/24 v1.0 font definition file for OT1/ntx/tlf
 )
 LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 14.05249pt on input line 32.
+(Font)              scaled to size 14.05249pt on input line 34.
 LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 10.53937pt on input line 32.
+(Font)              scaled to size 10.53937pt on input line 34.
 LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 7.52812pt on input line 32.
+(Font)              scaled to size 7.52812pt on input line 34.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 14.05249pt on input line 32.
+(Font)              scaled to size 14.05249pt on input line 34.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 10.53937pt on input line 32.
+(Font)              scaled to size 10.53937pt on input line 34.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 7.52812pt on input line 32.
+(Font)              scaled to size 7.52812pt on input line 34.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 14.05249pt on input line 32.
+(Font)              scaled to size 14.05249pt on input line 34.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 10.53937pt on input line 32.
+(Font)              scaled to size 10.53937pt on input line 34.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 7.52812pt on input line 32.
-LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 32.
+(Font)              scaled to size 7.52812pt on input line 34.
+LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 34.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/newtx/untxmia.fd
 File: untxmia.fd 2024/04/09 Fontinst v1.933 font definitions for U/ntxmia.
 )
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 14.05249pt on input line 32.
+(Font)              scaled to size 14.05249pt on input line 34.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 10.53937pt on input line 32.
+(Font)              scaled to size 10.53937pt on input line 34.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 7.52812pt on input line 32.
-LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 32.
+(Font)              scaled to size 7.52812pt on input line 34.
+LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 34.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/newtx/untxsym.fd
 File: untxsym.fd 2023/08/16 Fontinst v1.933 font definitions for U/ntxsym.
 )
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 14.05249pt on input line 32.
+(Font)              scaled to size 14.05249pt on input line 34.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 10.53937pt on input line 32.
+(Font)              scaled to size 10.53937pt on input line 34.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 7.52812pt on input line 32.
-LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 32.
+(Font)              scaled to size 7.52812pt on input line 34.
+LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 34.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/newtx/untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 )
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 14.05249pt on input line 32.
+(Font)              scaled to size 14.05249pt on input line 34.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 10.53937pt on input line 32.
+(Font)              scaled to size 10.53937pt on input line 34.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 7.52812pt on input line 32.
+(Font)              scaled to size 7.52812pt on input line 34.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 14.05249pt on input line 32.
+(Font)              scaled to size 14.05249pt on input line 34.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 10.53937pt on input line 32.
+(Font)              scaled to size 10.53937pt on input line 34.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 7.52812pt on input line 32.
+(Font)              scaled to size 7.52812pt on input line 34.
 LaTeX Font Info:    Font shape `OML/ntxmi/b/it' will be
-(Font)              scaled to size 14.05249pt on input line 32.
+(Font)              scaled to size 14.05249pt on input line 34.
 LaTeX Font Info:    Font shape `OML/ntxmi/b/it' will be
-(Font)              scaled to size 10.53937pt on input line 32.
+(Font)              scaled to size 10.53937pt on input line 34.
 LaTeX Font Info:    Font shape `OML/ntxmi/b/it' will be
-(Font)              scaled to size 7.52812pt on input line 32.
+(Font)              scaled to size 7.52812pt on input line 34.
 LaTeX Font Info:    Font shape `LMS/ntxsy/b/n' will be
-(Font)              scaled to size 14.05249pt on input line 32.
+(Font)              scaled to size 14.05249pt on input line 34.
 LaTeX Font Info:    Font shape `LMS/ntxsy/b/n' will be
-(Font)              scaled to size 10.53937pt on input line 32.
+(Font)              scaled to size 10.53937pt on input line 34.
 LaTeX Font Info:    Font shape `LMS/ntxsy/b/n' will be
-(Font)              scaled to size 7.52812pt on input line 32.
+(Font)              scaled to size 7.52812pt on input line 34.
 LaTeX Font Info:    Font shape `LMX/ntxexx/b/n' will be
-(Font)              scaled to size 14.05249pt on input line 32.
+(Font)              scaled to size 14.05249pt on input line 34.
 LaTeX Font Info:    Font shape `LMX/ntxexx/b/n' will be
-(Font)              scaled to size 10.53937pt on input line 32.
+(Font)              scaled to size 10.53937pt on input line 34.
 LaTeX Font Info:    Font shape `LMX/ntxexx/b/n' will be
-(Font)              scaled to size 7.52812pt on input line 32.
+(Font)              scaled to size 7.52812pt on input line 34.
 
 
 [1
@@ -1834,98 +1810,30 @@ LaTeX Font Info:    Font shape `LMX/ntxexx/b/n' will be
 
 ]
 LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 16.06pt on input line 32.
+(Font)              scaled to size 16.06pt on input line 34.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 16.06pt on input line 32.
+(Font)              scaled to size 16.06pt on input line 34.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 16.06pt on input line 32.
+(Font)              scaled to size 16.06pt on input line 34.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 16.06pt on input line 32.
+(Font)              scaled to size 16.06pt on input line 34.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 16.06pt on input line 32.
+(Font)              scaled to size 16.06pt on input line 34.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 16.06pt on input line 32.
+(Font)              scaled to size 16.06pt on input line 34.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 16.06pt on input line 32.
+(Font)              scaled to size 16.06pt on input line 34.
 LaTeX Font Info:    Font shape `OML/ntxmi/b/it' will be
-(Font)              scaled to size 16.06pt on input line 32.
+(Font)              scaled to size 16.06pt on input line 34.
 LaTeX Font Info:    Font shape `LMS/ntxsy/b/n' will be
-(Font)              scaled to size 16.06pt on input line 32.
+(Font)              scaled to size 16.06pt on input line 34.
 LaTeX Font Info:    Font shape `LMX/ntxexx/b/n' will be
-(Font)              scaled to size 16.06pt on input line 32.
+(Font)              scaled to size 16.06pt on input line 34.
 
 
 [3]
 
 [4
-
-
-]
-LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 12.045pt on input line 38.
-LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 8.0pt on input line 38.
-LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 6.0pt on input line 38.
-LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 12.045pt on input line 38.
-LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 8.0pt on input line 38.
-LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 6.0pt on input line 38.
-LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 12.045pt on input line 38.
-LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 8.0pt on input line 38.
-LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 6.0pt on input line 38.
-LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 12.045pt on input line 38.
-LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 8.0pt on input line 38.
-LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 6.0pt on input line 38.
-LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 12.045pt on input line 38.
-LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 8.0pt on input line 38.
-LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 6.0pt on input line 38.
-LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 12.045pt on input line 38.
-LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 8.0pt on input line 38.
-LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 6.0pt on input line 38.
-LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 12.045pt on input line 38.
-LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 8.0pt on input line 38.
-LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 6.0pt on input line 38.
-LaTeX Font Info:    Font shape `OML/ntxmi/b/it' will be
-(Font)              scaled to size 12.045pt on input line 38.
-LaTeX Font Info:    Font shape `OML/ntxmi/b/it' will be
-(Font)              scaled to size 8.0pt on input line 38.
-LaTeX Font Info:    Font shape `OML/ntxmi/b/it' will be
-(Font)              scaled to size 6.0pt on input line 38.
-LaTeX Font Info:    Font shape `LMS/ntxsy/b/n' will be
-(Font)              scaled to size 12.045pt on input line 38.
-LaTeX Font Info:    Font shape `LMS/ntxsy/b/n' will be
-(Font)              scaled to size 8.0pt on input line 38.
-LaTeX Font Info:    Font shape `LMS/ntxsy/b/n' will be
-(Font)              scaled to size 6.0pt on input line 38.
-LaTeX Font Info:    Font shape `LMX/ntxexx/b/n' will be
-(Font)              scaled to size 12.045pt on input line 38.
-LaTeX Font Info:    Font shape `LMX/ntxexx/b/n' will be
-(Font)              scaled to size 8.0pt on input line 38.
-LaTeX Font Info:    Font shape `LMX/ntxexx/b/n' will be
-(Font)              scaled to size 6.0pt on input line 38.
-
-
-[5]
-
-[6
 
 
 ] (./contents/abstract.tex
@@ -1945,6 +1853,66 @@ Package fontspec Info:
 (fontspec)             is okay then ignore this warning. Otherwise a different
 (fontspec)             font should be chosen.
 
+LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
+(Font)              scaled to size 12.045pt on input line 18.
+LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
+(Font)              scaled to size 8.0pt on input line 18.
+LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
+(Font)              scaled to size 6.0pt on input line 18.
+LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
+(Font)              scaled to size 12.045pt on input line 18.
+LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
+(Font)              scaled to size 8.0pt on input line 18.
+LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
+(Font)              scaled to size 6.0pt on input line 18.
+LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
+(Font)              scaled to size 12.045pt on input line 18.
+LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
+(Font)              scaled to size 8.0pt on input line 18.
+LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
+(Font)              scaled to size 6.0pt on input line 18.
+LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
+(Font)              scaled to size 12.045pt on input line 18.
+LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
+(Font)              scaled to size 8.0pt on input line 18.
+LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
+(Font)              scaled to size 6.0pt on input line 18.
+LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
+(Font)              scaled to size 12.045pt on input line 18.
+LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
+(Font)              scaled to size 8.0pt on input line 18.
+LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
+(Font)              scaled to size 6.0pt on input line 18.
+LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
+(Font)              scaled to size 12.045pt on input line 18.
+LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
+(Font)              scaled to size 8.0pt on input line 18.
+LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
+(Font)              scaled to size 6.0pt on input line 18.
+LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
+(Font)              scaled to size 12.045pt on input line 18.
+LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
+(Font)              scaled to size 8.0pt on input line 18.
+LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
+(Font)              scaled to size 6.0pt on input line 18.
+LaTeX Font Info:    Font shape `OML/ntxmi/b/it' will be
+(Font)              scaled to size 12.045pt on input line 18.
+LaTeX Font Info:    Font shape `OML/ntxmi/b/it' will be
+(Font)              scaled to size 8.0pt on input line 18.
+LaTeX Font Info:    Font shape `OML/ntxmi/b/it' will be
+(Font)              scaled to size 6.0pt on input line 18.
+LaTeX Font Info:    Font shape `LMS/ntxsy/b/n' will be
+(Font)              scaled to size 12.045pt on input line 18.
+LaTeX Font Info:    Font shape `LMS/ntxsy/b/n' will be
+(Font)              scaled to size 8.0pt on input line 18.
+LaTeX Font Info:    Font shape `LMS/ntxsy/b/n' will be
+(Font)              scaled to size 6.0pt on input line 18.
+LaTeX Font Info:    Font shape `LMX/ntxexx/b/n' will be
+(Font)              scaled to size 12.045pt on input line 18.
+LaTeX Font Info:    Font shape `LMX/ntxexx/b/n' will be
+(Font)              scaled to size 8.0pt on input line 18.
+LaTeX Font Info:    Font shape `LMX/ntxexx/b/n' will be
+(Font)              scaled to size 6.0pt on input line 18.
 
 
 [3
@@ -2039,13 +2007,8 @@ Missing character: There is no – ("2013) in font ntx-Regular-tlf-ot1!
 [1
 
 ]
-
-Package fontspec Info: 
-(fontspec)             Script 'CJK' not explicitly supported within font
-(fontspec)             'STFangsong'. Check the typeset output, and if it is
-(fontspec)             okay then ignore this warning. Otherwise a different
-(fontspec)             font should be chosen.
-
+File: figures/c1/kuangjiatu2.png Graphic file (type bmp)
+<figures/c1/kuangjiatu2.png>
 
 
 [2]
@@ -2064,7 +2027,10 @@ Package fontspec Info:
 
 [9]
 
-[10]) (./contents/chapter2.tex
+[10]
+File: figures/c1/jiagoutu.png Graphic file (type bmp)
+<figures/c1/jiagoutu.png>
+) (./contents/chapter2.tex
 
 [11]
 
@@ -2075,6 +2041,10 @@ Package fontspec Info:
 [13
 
 ]
+File: figures/c2/mode4track.png Graphic file (type bmp)
+<figures/c2/mode4track.png>
+File: figures/c2/3dtrack.png Graphic file (type bmp)
+<figures/c2/3dtrack.png>
 LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
 (Font)              scaled to size 7.0pt on input line 46.
 LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
@@ -2290,14 +2260,26 @@ LaTeX Warning: Float too large for page by 10.80858pt on input line 72.
 [15]
 
 [16]
+File: figures/c2/impact/图片1.png Graphic file (type bmp)
+<figures/c2/impact/图片1.png>
+
 
 [17]
+File: figures/c2/impact/图片2.png Graphic file (type bmp)
+<figures/c2/impact/图片2.png>
+File: figures/c2/impact/图片3.png Graphic file (type bmp)
+<figures/c2/impact/图片3.png>
+
 
 [18]
 
 [19]
 
 [20]
+
+LaTeX Warning: Citation 'Blanchard1993GPS--Theory' on page 21 undefined on input line 117.
+
+
 
 [21]
 
@@ -2315,26 +2297,59 @@ Overfull \hbox (0.27281pt too wide) in paragraph at lines 192--193
 [25]
 
 [26]
+File: figures/c2/dcb/fig1.png Graphic file (type bmp)
+<figures/c2/dcb/fig1.png>
+
 
 [27]
+File: figures/c2/dcb/fig2.png Graphic file (type bmp)
+<figures/c2/dcb/fig2.png>
+
 
 [28]
 
 [29]
+File: figures/c2/dcb/fig3.png Graphic file (type bmp)
+<figures/c2/dcb/fig3.png>
+
 
 [30]
+File: figures/c2/dcb/fig4.png Graphic file (type bmp)
+<figures/c2/dcb/fig4.png>
+File: figures/c2/dcb/fig5.png Graphic file (type bmp)
+<figures/c2/dcb/fig5.png>
+
 
 [31]
 
 [32]
+File: figures/c2/dcb/fig6.png Graphic file (type bmp)
+<figures/c2/dcb/fig6.png>
+File: figures/c2/dcb/fig10.png Graphic file (type bmp)
+<figures/c2/dcb/fig10.png>
+
 
 [33]
 
 [34]
+File: figures/c2/dcb/fig7.png Graphic file (type bmp)
+<figures/c2/dcb/fig7.png>
+File: figures/c2/dcb/fig8.png Graphic file (type bmp)
+<figures/c2/dcb/fig8.png>
+File: figures/c2/dcb/fig9.png Graphic file (type bmp)
+<figures/c2/dcb/fig9.png>
+
 
 [35]
 
-[36]) (./contents/chapter3.tex
+[36]
+File: figures/c2/dcb/fig11.png Graphic file (type bmp)
+<figures/c2/dcb/fig11.png>
+File: figures/c2/dcb/fig12.png Graphic file (type bmp)
+<figures/c2/dcb/fig12.png>
+File: figures/c2/dcb/fig13.png Graphic file (type bmp)
+<figures/c2/dcb/fig13.png>
+) (./contents/chapter3.tex
 
 [37]
 
@@ -2360,6 +2375,9 @@ Underfull \hbox (badness 2096) in paragraph at lines 67--67
 [43]
 
 [44]
+File: figures/c3/fpd/flowchart.png Graphic file (type bmp)
+<figures/c3/fpd/flowchart.png>
+
 
 [45]
 
@@ -2368,10 +2386,21 @@ Underfull \hbox (badness 2096) in paragraph at lines 67--67
 [47]
 
 [48]
+File: figures/c3/fpd/result1.png Graphic file (type bmp)
+<figures/c3/fpd/result1.png>
+File: figures/c3/fpd/result2.png Graphic file (type bmp)
+<figures/c3/fpd/result2.png>
+
 
 [49]
+File: figures/c3/fpd/fpd_elangle.png Graphic file (type bmp)
+<figures/c3/fpd/fpd_elangle.png>
+
 
 [50]
+File: figures/c3/afpd/图片4.png Graphic file (type bmp)
+<figures/c3/afpd/图片4.png>
+
 
 [51]
 
@@ -2380,6 +2409,9 @@ Underfull \hbox (badness 2096) in paragraph at lines 67--67
 [53]
 
 [54]
+File: figures/c3/afpd/图片5.png Graphic file (type bmp)
+<figures/c3/afpd/图片5.png>
+
 
 [55]
 Underfull \hbox (badness 10000) in paragraph at lines 471--471
@@ -2411,11 +2443,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 471--471
 []|\TU/TeXGyreTermesX(0)/m/n/10.53937 GPS–S1C,
  []
 
+File: figures/c3/afpd/图片6.png Graphic file (type bmp)
+<figures/c3/afpd/图片6.png>
 
 
 [56]
 
 [57]
+File: figures/c3/afpd/图片7.png Graphic file (type bmp)
+<figures/c3/afpd/图片7.png>
+File: figures/c3/afpd/图片8.png Graphic file (type bmp)
+<figures/c3/afpd/图片8.png>
+
 
 [58]
 
@@ -2461,6 +2500,8 @@ Overfull \hbox (4.89014pt too wide) in paragraph at lines 577--577
  []|\TU/TeXGyreTermesX(0)/m/n/10.53937 2023/10/26| 
  []
 
+File: figures/c3/afpd/图片9.png Graphic file (type bmp)
+<figures/c3/afpd/图片9.png>
 
 
 [61]
@@ -2468,8 +2509,18 @@ Overfull \hbox (4.89014pt too wide) in paragraph at lines 577--577
 [62]
 
 [63]
+File: figures/c3/afpd/图片10.png Graphic file (type bmp)
+<figures/c3/afpd/图片10.png>
+
 
 [64]
+File: figures/c3/afpd/图片11.png Graphic file (type bmp)
+<figures/c3/afpd/图片11.png>
+File: figures/c3/afpd/图片12.png Graphic file (type bmp)
+<figures/c3/afpd/图片12.png>
+File: figures/c3/afpd/图片13.png Graphic file (type bmp)
+<figures/c3/afpd/图片13.png>
+
 
 LaTeX Warning: Citation 'IS' on page 65 undefined on input line 795.
 
@@ -2480,6 +2531,9 @@ LaTeX Warning: Citation 'IS' on page 65 undefined on input line 795.
 [66]
 
 [67]
+File: figures/c3/afpd/图片14.png Graphic file (type bmp)
+<figures/c3/afpd/图片14.png>
+
 Underfull \hbox (badness 2310) in paragraph at lines 815--815
 []\TU/TeXGyreTermesX(0)/b/n/10.53937 Table 3.9 |Comparison of detection performance(%) of various flex power detection algo-
  []
@@ -2494,12 +2548,18 @@ Overfull \hbox (28.85835pt too wide) in paragraph at lines 816--831
 [68]
 
 [69]
+File: figures/c3/DLFPD/struct2.png Graphic file (type bmp)
+<figures/c3/DLFPD/struct2.png>
+
 
 [70]
 
 [71]
 
 [72]
+File: figures/c3/DLFPD/staDist2.png Graphic file (type bmp)
+<figures/c3/DLFPD/staDist2.png>
+
 Underfull \hbox (badness 1210) in paragraph at lines 1009--1009
 []|\TU/TeXGyreTermesX(0)/m/n/10.53937 WUHN, SIN1, COCO, DARW, MAR6,
  []
@@ -2524,6 +2584,9 @@ Underfull \hbox (badness 2903) in paragraph at lines 1009--1009
 [73]
 
 [74]
+File: figures/c3/DLFPD/labelTool.png Graphic file (type bmp)
+<figures/c3/DLFPD/labelTool.png>
+
 
 [75]
 Overfull \hbox (1.66718pt too wide) in paragraph at lines 1135--1135
@@ -2620,20 +2683,44 @@ Underfull \hbox (badness 10000) in paragraph at lines 1135--1135
 [76]
 
 [77]
+File: figures/c3/DLFPD/t1ROC.png Graphic file (type bmp)
+<figures/c3/DLFPD/t1ROC.png>
+File: figures/c3/DLFPD/t1Mat.png Graphic file (type bmp)
+<figures/c3/DLFPD/t1Mat.png>
+
 
 [78]
 
 [79]
 
 [80]
+File: figures/c3/DLFPD/nnorG31.png Graphic file (type bmp)
+<figures/c3/DLFPD/nnorG31.png>
+File: figures/c3/DLFPD/nnorG32.png Graphic file (type bmp)
+<figures/c3/DLFPD/nnorG32.png>
+
 
 [81]
+File: figures/c3/DLFPD/cusvG01.png Graphic file (type bmp)
+<figures/c3/DLFPD/cusvG01.png>
+File: figures/c3/DLFPD/nklgG17.png Graphic file (type bmp)
+<figures/c3/DLFPD/nklgG17.png>
+File: figures/c3/DLFPD/cusvG12t20.png Graphic file (type bmp)
+<figures/c3/DLFPD/cusvG12t20.png>
+File: figures/c3/DLFPD/cusvG12t30.png Graphic file (type bmp)
+<figures/c3/DLFPD/cusvG12t30.png>
+
 
 [82]
 
 [83]
 
 [84]
+File: figures/c3/DLFPD/t2ROC.png Graphic file (type bmp)
+<figures/c3/DLFPD/t2ROC.png>
+File: figures/c3/DLFPD/t2Mat.png Graphic file (type bmp)
+<figures/c3/DLFPD/t2Mat.png>
+
 
 [85]
 Underfull \hbox (badness 4621) in paragraph at lines 1344--1344
@@ -2648,8 +2735,16 @@ Underfull \hbox (badness 4366) in paragraph at lines 1344--1344
 
 
 [86]
+File: figures/c3/DLFPD/t3ROC.png Graphic file (type bmp)
+<figures/c3/DLFPD/t3ROC.png>
+File: figures/c3/DLFPD/t3Mat.png Graphic file (type bmp)
+<figures/c3/DLFPD/t3Mat.png>
+
 
 [87]
+File: figures/c3/DLFPD/xiaorong.png Graphic file (type bmp)
+<figures/c3/DLFPD/xiaorong.png>
+
 Overfull \hbox (3.17334pt too wide) in paragraph at lines 1566--1566
 []|\TU/TeXGyreTermesX(0)/b/n/10.53937 ID| 
  []
@@ -2796,67 +2891,108 @@ Overfull \hbox (46.66974pt too wide) in alignment at lines 1663--1663
 [97]
 
 [98]
+File: figures/c4/patent1/pic1.png Graphic file (type bmp)
+<figures/c4/patent1/pic1.png>
+
 
 [99]
 
 [100]
+File: figures/c4/patent1/pic2.png Graphic file (type bmp)
+<figures/c4/patent1/pic2.png>
+File: figures/c4/patent1/pic3.png Graphic file (type bmp)
+<figures/c4/patent1/pic3.png>
+
 
 [101]
 
 [102]
+File: figures/c4/patent1/pic4r.png Graphic file (type bmp)
+<figures/c4/patent1/pic4r.png>
+File: figures/c4/patent1/pic5r.png Graphic file (type bmp)
+<figures/c4/patent1/pic5r.png>
+
 
 [103]
 
 [104]
+File: figures/c4/patent1/pic6r.png Graphic file (type bmp)
+<figures/c4/patent1/pic6r.png>
+File: figures/c4/patent1/pic7r.png Graphic file (type bmp)
+<figures/c4/patent1/pic7r.png>
+
 
 [105]
 
 [106]
 
 [107]
+File: figures/c4/Picture1.png Graphic file (type bmp)
+<figures/c4/Picture1.png>
+
 
 [108]
 
 [109]
+File: figures/c4/Picture2.png Graphic file (type bmp)
+<figures/c4/Picture2.png>
+
 
 [110]
 
 [111]
+File: figures/c4/Picture3.png Graphic file (type bmp)
+<figures/c4/Picture3.png>
+
 
 [112]
+File: figures/c4/pic5.png Graphic file (type bmp)
+<figures/c4/pic5.png>
+
 
 [113]
+File: figures/c4/pic6.png Graphic file (type bmp)
+<figures/c4/pic6.png>
+
 
 [114]
+File: figures/c4/pic7.png Graphic file (type bmp)
+<figures/c4/pic7.png>
+
 
 [115]
-
-[116]
-Overfull \hbox (1.36897pt too wide) in paragraph at lines 450--451
+Overfull \hbox (1.36897pt too wide) in paragraph at lines 454--455
 []\TU/SongtiSC(0)/m/n/12.045 针 对 具 有 显 著 轨 道 周 期 特 性 的 混 合 信 号，|  提 出 了 一 种 基 于 \TU/TeXGyreTermesX(0)/m/n/12.045 STL \TU/SongtiSC(0)/m/n/12.045 时 序 分 解 的 \TU/TeXGyreTermesX(0)/m/n/12.045 LSTM-
  []
 
 ) (./contents/chapter5.tex
 
-[117]
-
-[118
-
-]
+[116]
 第 5 章
 
+
+[117
+
+]
+
+[118]
 
 [119]
 
 [120]
-
-[121]
-
-[122]
 Overfull \hbox (4.36113pt too wide) in paragraph at lines 188--189
 []\TU/SongtiSC(0)/m/n/12.045 随 着 低 成 本 \TU/TeXGyreTermesX(0)/m/n/12.045 GNSS \TU/SongtiSC(0)/m/n/12.045 芯 片 与 物 联 网 技 术 的 发 展，|  单 频 精 密 单 点 定 位  |（\TU/TeXGyreTermesX(0)/m/n/12.045 Single-Frequency
  []
 
+
+
+[121]
+
+[122]
+File: figures/c5/DCB_15min_zeromean.png Graphic file (type bmp)
+<figures/c5/DCB_15min_zeromean.png>
+File: figures/c5/nonFP_DCB_15min_zeromean.png Graphic file (type bmp)
+<figures/c5/nonFP_DCB_15min_zeromean.png>
 
 
 [123]
@@ -2868,54 +3004,95 @@ Overfull \hbox (4.36113pt too wide) in paragraph at lines 188--189
 [126]
 
 [127]
-
-[128]
-
-[129]
 Overfull \hbox (8.70937pt too wide) in paragraph at lines 502--503
 []\TU/SongtiSC(0)/m/n/12.045 相 比 之 下，|  若 在 事 件 发 生 期 间 错 误 地 使 用 了 未 开 启 弹 性 功 率 时 的 \TU/TeXGyreTermesX(0)/m/n/12.045 DCB \TU/SongtiSC(0)/m/n/12.045 值  |（\TU/TeXGyreTermesX(0)/m/n/12.045 DCB_FP-
  []
 
+File: figures/c5/MAL2_visibility.png Graphic file (type bmp)
+<figures/c5/MAL2_visibility.png>
+File: figures/c5/UCUDPPP.png Graphic file (type bmp)
+<figures/c5/UCUDPPP.png>
 
+
+[128]
+
+[129]
 
 [130]
 
 [131]
+File: figures/c5/SFPPP.png Graphic file (type bmp)
+<figures/c5/SFPPP.png>
+
 
 [132]
 
 [133]
-
-[134]
-
-[135]
 Overfull \hbox (1.14912pt too wide) in paragraph at lines 612--613
 []\TU/SongtiSC(0)/m/n/12.045 与 非 差 非 组 合 模 型 类 似，| \TU/TeXGyreTermesX(0)/m/n/12.045 DCB_DLR \TU/SongtiSC(0)/m/n/12.045 在 单 频 模 式 下 依 然 保 持 了 较 好 的 鲁 棒 性  |（\TU/TeXGyreTermesX(0)/m/n/12.045 2820
  []
 
 
 
+[134]
+
+[135]) (./contents/chapter6.tex
+
 [136]
-
-[137]) (./contents/chapter6.tex
-
-[138]
 第 6 章
 
 
-[139
+[137
 
 ]
+
+[138]
+
+[139])
 
 [140]
 
-[141])
+Package fontspec Info: 
+(fontspec)             Script 'CJK' not explicitly supported within font
+(fontspec)             'STFangsong'. Check the typeset output, and if it is
+(fontspec)             okay then ignore this warning. Otherwise a different
+(fontspec)             font should be chosen.
+
+
+Package fontspec Info: 
+(fontspec)             Could not resolve font "STFangsong/BI" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: 
+(fontspec)             Could not resolve font "STFangsong/B" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: 
+(fontspec)             Could not resolve font "STFangsong/I" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: 
+(fontspec)             Font family 'STFangsong(0)' created for font
+(fontspec)             'STFangsong' with options [Script={CJK}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"STFangsong/OT:script=hani;language=dflt;"
+
+
+
+[141
+
+]
 
 [142]
 
-[143
-
-]
+[143]
 
 [144]
 
@@ -2929,44 +3106,15 @@ Overfull \hbox (1.14912pt too wide) in paragraph at lines 612--613
 
 [149]
 
-[150]
+[150] (./contents/acknowledgements.tex) (./contents/achievements.tex) (./contents/resume.tex) (./contents/digest.tex)
 
-[151] (./contents/app_maxwell_equations.tex
+[151
 
-[152]
-附录 A
-)
-
-[153
-
-]
-
-[154
-
-] (./contents/acknowledgements.tex) (./contents/achievements.tex
-
-[155
 
 
 ]
 
-[156
-
-]) (./contents/resume.tex
-
-[157
-
-]
-
-[158
-
-]) (./contents/digest.tex)
-
-[159
-
-]
-
-[160
+[152
 
 ]
 
@@ -2981,18 +3129,18 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2022/08/05>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D3D0D4E701E552B668343CBBC29F0FA0;11081.
+(rerunfilecheck)             Checksum: D9B03CCD0EDDE83A987E2EFB91FC0112;10825.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 61909 strings out of 473832
- 1482732 string characters out of 5729480
- 2441212 words of memory out of 5000000
- 83934 multiletter control sequences out of 15000+600000
- 637852 words of font info for 261 fonts, out of 8000000 for 9000
+ 61904 strings out of 473832
+ 1480814 string characters out of 5729480
+ 2441233 words of memory out of 5000000
+ 83935 multiletter control sequences out of 15000+600000
+ 631562 words of font info for 246 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 107i,18n,124p,1197b,7392s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 107i,18n,124p,1197b,7391s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (188 pages, 3080628 bytes).
+Output written on main.xdv (178 pages, 3015720 bytes).

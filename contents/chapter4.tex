@@ -2,7 +2,7 @@
 
 \chapter{GNSS星载产品多维时序异常检测方法}
 
-星载设备作为导航信号的物理源头，其运行状态直接决定了定位服务的精度与可靠性。设备的老化或故障将导致信号畸变，进而影响用户端定位。星载设备的健康状态主要由下行的多维遥测数据表征。鉴于故障模式具有渐进性、隐蔽性及强耦合性，传统的阈值监测方法难以满足早期预警需求。如何在故障显性化导致信号质量下降之前，利用遥测数据精准识别隐性异常，是提升系统完好性的关键。
+星载设备作为导航信号的物理源头，其运行状态直接决定了定位服务的精度与可靠性。设备的老化或故障将导致信号畸变，进而影响用户端定位。星载设备的健康状态主要由下行的多维遥测数据表征。鉴于故障模式具有渐进性、隐蔽性及强耦合性，传统的阈值监测方法难以满足早期预警需求。如何在故障显性化导致信号质量下降甚至设备故障之前，利用多维遥测数据精准识别隐性异常，是提升系统完好性的关键。
 基于此，本章将研究拓展至遥测数据域，聚焦于老化突发失效与未知硬件故障。针对遥测数据的高维非线性及周期性特征，分别提出了两种基于深度学习的检测方法，并利用基于仿真遥测数据进行了实验验证模型有效性。
 
 \section{星载设备异常定义}
@@ -81,7 +81,7 @@
 \end{table*}
 
 
-早期的异常检测技术主要依赖于统计学理论与物理模型，侧重于检测数据对预设分布或规则的偏离。基于阈值的方法 (Threshold-based Techniques) 是工程应用中最直观的手段，通过设定参数的上下限（如3-sigma准则）来识别越界异常，已在北斗导航卫星系统的星历数据一致性检查中得到应用 \cite{cai2024evaluation, murphy2023overview}。为捕捉变量间的相关性，马氏距离 (Mahalanobis Distance) 被广泛引入，它通过计算数据点到分布中心的协方差加权距离来度量异常程度，因计算代价低而适用于星载实时诊断 \cite{katsube2025towards}。此外，自回归积分滑动平均模型 (ARIMA) 等时间序列模型通过预测未来值并将预测残差作为判据，而基于物理机理的方法则试图建立设备的理想“健康基线” \cite{li2019research}。尽管这些方法具有可解释性强、计算量小的优势，但其极度依赖专家先验知识，且难以适应多变量耦合的非线性系统，在面对未知故障模式时往往力不从心。
+早期的异常检测技术主要依赖于统计学理论与物理模型，侧重于检测数据对预设分布或规则的偏离。基于阈值的方法是工程应用中最直观的手段，通过设定参数的上下限（如3-sigma准则）来识别越界异常，已在北斗导航卫星系统的星历数据一致性检查中得到应用 \cite{cai2024evaluation, murphy2023overview}。为捕捉变量间的相关性，马氏距离被广泛引入，它通过计算数据点到分布中心的协方差加权距离来度量异常程度，因计算代价低而适用于星载实时诊断 \cite{katsube2025towards}。此外，自回归积分滑动平均模型 (ARIMA) 等时间序列模型通过预测未来值并将预测残差作为判据，而基于物理机理的方法则试图建立设备的理想“健康基线” \cite{li2019research}。尽管这些方法具有可解释性强、计算量小的优势，但其极度依赖专家先验知识，且难以适应多变量耦合的非线性系统，在面对未知故障模式时往往力不从心。
 
 为了减少对人工规则的依赖，经典机器学习算法被引入以挖掘数据中的潜在模式，主要分为基于距离/密度的方法和基于边界的方法。基于距离的方法如 k-近邻 (k-NN)，通过计算样本与其最近邻居的欧氏距离来识别离群点 \cite{bieber2023generic}。基于密度的算法如局部离群因子 (LOF) 和核密度估计 (KDE)，则侧重于识别处于低密度区域的样本，对于密度不均匀的数据集具有较好的适应性 \cite{yu2022edge, guo2023contrastive}。在无监督学习领域，主成分分析 (PCA) 利用降维重构误差来检测异常，而隔离森林 (Isolation Forest) 则利用异常点“稀少且不同”的特性，通过构建随机树将异常点快速剥离 \cite{bieber2023generic}。此外，单类支持向量机 (OC-SVM) 通过学习包围正常数据的最小超球面边界，有效地实现了半监督下的异常判别 \cite{yu2024amad}。然而，此类方法在特征工程方面仍需人工干预，且在处理具有长时序依赖的复杂遥测数据时，往往因无法捕捉时间特征而出现性能瓶颈。
 
@@ -97,12 +97,12 @@
 
 \subsubsection{算法流程设计}
 
-针对星载产品多通道遥测数据维度高、时间跨度长且异常样本稀缺的问题，本文提出一种基于时序自编码器的多维时序异常检测方法。该方法在保证时间连续性的前提下，对遥测数据进行分段建模与多尺度特征提取，并通过无监督时序自编码器学习正常行为模式，最终基于重构误差实现异常检测。方法整体流程如图\ref{fig:pat1_pic1}所示，主要包括数据预处理、时间分段、特征构建、时序建模以及异常判定五个步骤。
+针对星载产品多通道遥测数据维度高、时间跨度长且异常样本稀缺的问题，本节提出一种基于时序自编码器的多维时序异常检测方法。该方法在保证时间连续性的前提下，对遥测数据进行分段建模与多尺度特征提取，并通过无监督时序自编码器学习正常行为模式，最终基于重构误差实现异常检测。方法整体流程如图\ref{fig:pat1_pic1}所示，主要包括数据预处理、时间分段、特征构建、时序建模以及异常判定五个步骤。
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.45\linewidth]{figures/c4/patent1/pic1.png}
-\bicaption{基于融合多窗口统计特征的 LSTM 自编码器遥测数据异常检测方法流程图}{Flowchart of the LSTM autoencoder–based telemetry anomaly detection method using fused multi-window statistical features.}
+\bicaption{基于融合多窗口统计特征的 LSTM 自编码器遥测数据异常检测方法流程图}{Flowchart of the LSTM autoencoder--based telemetry anomaly detection method using fused multi-window statistical features.}
 \label{fig:pat1_pic1}
 \end{figure}
 
@@ -216,9 +216,9 @@ x_t^{(1)}, x_t^{(2)}, \ldots, x_t^{(N_c)}
 \label{fig:pat1_pic5}
 \end{figure}
 
-模型在正常状态下的稳定性是衡量其可用性的首要标准。如图 \ref{fig:pat1_pic5}（左侧）所示，当输入的模拟遥测数据处于符合预期的正常缓变趋势时（表现为按既定物理规律的缓慢下降或周期波动），模型输出的异常分数表现出极高的稳定性。具体而言，在无异常注入的时间段内，异常评分的均值维持在 0.5 左右，最大峰值严格控制在 1.5 以下，远低于预设的判定阈值（$\tau=4.0$）。这一结果表明，通过无监督学习，LSTM自编码器已成功捕获了多维遥测变量间的正常耦合关系与演化规律，能够有效抑制因环境噪声或正常工况波动引起的误报，确立了稳健的“健康基线”。
+模型在正常状态下的稳定性是衡量其可用性的首要标准。如图 \ref{fig:pat1_pic5}（左侧）所示，当输入的模拟遥测数据处于符合预期的正常缓变趋势时，模型输出的异常分数表现出极高的稳定性。具体而言，在无异常注入的时间段内，异常评分的均值维持在 0.5 左右，最大峰值严格控制在 1.5 以下，远低于预设的判定阈值（$\tau=4.0$）。这一结果表明，通过无监督学习，LSTM自编码器已成功捕获了多维遥测变量间的正常耦合关系与演化规律，能够有效抑制因环境噪声或正常工况波动引起的误报，确立了健康情况的基线。
 
-针对隐蔽性最强的设备老化征兆——斜率变化异常，本方法展现了有效的早期识别能力。如图 \ref{fig:pat1_pic5}（右侧）所示，在模拟退化开始的初始阶段，异常分数并未立即突变，而是随着观测窗口内“趋势偏离度”的累积，呈现出单调递增的态势。实验数据显示，在异常注入点之后的约 100 个时间步内，异常分数显著突破阈值并持续上升。虽然存在有限的检测延迟，但这种延迟是模型确认趋势改变统计显著性的必要过程。更重要的是，异常分数的增长幅度与故障持续时间呈正相关，这一特性与设备性能随时间累积退化的物理机理高度吻合，证明了该指标能够定量反映老化故障的严重程度，为地面实施早期预警提供了充足的时间窗口。
+针对隐蔽性最强的设备老化征兆--斜率变化异常，本方法展现了有效的早期识别能力。如图 \ref{fig:pat1_pic5}（右侧）所示，在模拟退化开始的初始阶段，异常分数并未立即突变，而是随着观测窗口内趋势偏离度的累积，呈现出单调递增的态势。实验数据显示，在异常注入点之后的约 100 个时间步内，异常分数显著突破阈值并持续上升。虽然存在有限的检测延迟，但这种延迟是模型确认趋势改变统计显著性的必要过程。更重要的是，异常分数的增长幅度与故障持续时间呈正相关，这一特性与设备性能随时间累积退化的物理机理高度吻合，证明了该指标能够定量反映老化故障的严重程度，为地面实施早期预警提供了充足的时间窗口。
 
 针对离群点与整体漂移两类显著异常，模型表现出不同的响应机制。对于瞬时大幅度离群点，如图\ref{fig:pat1_pic6} 左侧所示，模型实现了即时响应，异常分数在故障时刻形成尖锐的脉冲峰值，精准定位了干扰发生的时间点。值得注意的是，在长持续时间的离群段中部，异常分数出现了回落现象。这揭示了LSTM网络特有的记忆适应机制，随着异常状态的持续，模型逐渐将这种新的稳态理解为一种发生了局部漂移的准正常模式。这种机制证明模型具备深层的时序语义理解能力，而非简单的阈值比较。
 
@@ -229,7 +229,7 @@ x_t^{(1)}, x_t^{(2)}, \ldots, x_t^{(N_c)}
 \label{fig:pat1_pic6}
 \end{figure}
 
-对于系统性偏差，模型表现出极高的灵敏度。如图\ref{fig:pat1_pic6} 右侧所示，异常分数在漂移发生的跳变沿处达到峰值（Score $\approx$ 160），并在随后的持续漂移阶段稳定维持在 10-20 的高位区间。这种显著的台阶式响应清晰地将异常状态与正常背景分离开来，验证了方法在应对因元器件老化或环境突变导致的系统性偏差时具有极强的鲁棒性。
+对于系统性偏差，模型表现出极高的灵敏度。如图\ref{fig:pat1_pic6} 右侧所示，异常分数在漂移发生的跳变沿处达到峰值（Anomaly score $\approx$ 160），并在随后的持续漂移阶段稳定维持在 10-20 的高位区间。这种显著的台阶式响应清晰地将异常状态与正常背景分离开来，验证了方法在应对因元器件老化或环境突变导致的系统性偏差时具有极强的鲁棒性。
 
 在多故障耦合的混合场景下，本方法体现了优异的综合检测性能。如图 \ref{fig:pat1_pic7} 所示，测试序列包含 5 处离散离群点与 1 段叠加的斜率变化。实验结果表明，除斜率变化起始阶段极其微弱的信号外，方法对其余所有异常均实现了 100\% 的检出。特别是在离群点与斜率变化发生重叠的时间区域，异常分数呈现出明显的协同增强效应，即复合故障产生的重构误差显著高于单一故障之和。这一结果证明，本方法生成的异常分数不仅可用于定性判别，还能有效表征复合故障场景下的综合健康风险。
 
@@ -246,7 +246,7 @@ x_t^{(1)}, x_t^{(2)}, \ldots, x_t^{(N_c)}
 
 \begin{table}[htbp]
 \centering
-\bicaption{基于融合多窗口统计特征的 LSTM 自编码器异常检测模型的混淆矩阵统计结果}{Confusion matrix statistics of the LSTM autoencoder–based anomaly detection model using fused multi-window statistical features.}
+\bicaption{基于融合多窗口统计特征的 LSTM 自编码器异常检测模型的混淆矩阵统计结果}{Confusion matrix statistics of the LSTM autoencoder--based anomaly detection model using fused multi-window statistical features.}
 \renewcommand{\arraystretch}{1.5}
 \begin{tabularx}{0.9\textwidth}{p{3.2cm} X X X}
 \toprule
@@ -279,7 +279,7 @@ x_t^{(1)}, x_t^{(2)}, \ldots, x_t^{(N_c)}
 
 \begin{table}[htbp]
 \centering
-\bicaption{基于融合多窗口统计特征的 LSTM 自编码器异常检测模型的主要性能指标及计算结果}{Main performance metrics and calculation results of the LSTM autoencoder–based anomaly detection model using fused multi-window statistical features.}
+\bicaption{基于融合多窗口统计特征的 LSTM 自编码器异常检测模型的主要性能指标及计算结果}{Main performance metrics and calculation results of the LSTM autoencoder--based anomaly detection model using fused multi-window statistical features.}
 \renewcommand{\arraystretch}{1.2}
 \begin{tabularx}{0.9\textwidth}{p{4.2cm} X p{3cm}}
 \toprule
@@ -331,21 +331,22 @@ STL (Seasonal-Trend decomposition using Loess) 是一种由Cleveland等人提出
 STL 的核心思想是通过嵌套的内循环和外循环迭代计算各分量。内循环主要负责趋势项和季节项的拟合。在每一次迭代中，算法首先对季节子序列进行 LOESS 平滑以估计季节分量 $S_t$；随后，通过对去季节后的序列 $Y_t - S_t$ 应用 LOESS 平滑来估计趋势分量 $T_t$。外循环主要用于增强算法对异常值的鲁棒性。算法根据内循环产生的残差项 $R_t$ 计算鲁棒性权重 $\rho_t$。对于残差较大的观测点，赋予较小的权重，从而在下一轮内循环的平滑过程中降低其对趋势和季节估计的影响。这种双循环机制使得 STL 不仅能够捕捉随时间动态变化的季节性模式，还能有效抵抗极端值的干扰。
 
 在本研究中采用 STL 方法主要基于以下优势：
-\begin{itemize}
-    \item 动态季节性处理能力：STL 允许季节分量随时间发生缓慢演变，而非强制假设季节性是固定不变的周期函数，这对于长跨度的时间序列分析尤为重要。
-    \item 鲁棒性：通过外循环的抗差权重机制，STL 能够有效防止数据中的瞬时突变或测量误差扭曲趋势项的估计。
-    \item 参数灵活性：研究者可以根据数据的具体特性，通过调整季节窗口和趋势窗口的平滑参数，精准控制各分量的平滑程度。
-\end{itemize}
+
+1）动态季节性处理能力：STL 允许季节分量随时间发生缓慢演变，而非强制假设季节性是固定不变的周期函数，这对于长跨度的时间序列分析尤为重要。
+
+2）鲁棒性：通过外循环的抗差权重机制，STL 能够有效防止数据中的瞬时突变或测量误差扭曲趋势项的估计。
+
+3）参数灵活性：研究者可以根据数据的具体特性，通过调整季节窗口和趋势窗口的平滑参数，精准控制各分量的平滑程度。
 
 \subsubsection{算法流程设计}
-针对星载产品遥测数据维度高、时间跨度长、异常样本极度稀缺等特点，传统依赖固定阈值或单变量统计特征的方法往往只能识别幅度显著的显性异常，难以及时发现隐性的、早期的性能退化问题。为此，提出了一种基于深度学习的星载产品分段多维遥测时序异常检测方法。该方法通过引入分段管理、多尺度去噪、趋势–周期–残差解耦建模以及多模型异常分数融合机制，在无监督或弱监督条件下实现对多维遥测异常的高灵敏度检测。
+针对星载产品遥测数据维度高、时间跨度长、异常样本极度稀缺等特点，传统依赖固定阈值或单变量统计特征的方法往往只能识别幅度显著的显性异常，难以及时发现隐性的、早期的性能退化问题。为此，提出了一种基于深度学习的星载产品分段多维遥测时序异常检测方法。该方法通过引入分段管理、多尺度去噪、趋势--周期--残差解耦建模以及多模型异常分数融合机制，在无监督或弱监督条件下实现对多维遥测异常的高灵敏度检测。
 
 该方法的整体流程如图\ref{fig:Picture1}所示，主要包括多通道数据结构化、异步对齐与降采样、STL 时序分解、三类子模型独立训练以及异常分数融合与阈值判定五个阶段。
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=1\linewidth]{figures/c4/Picture1.png}
-\bicaption{基于STL分解的混合神经网络异常检测方法流程图}{Flowchart of the hybrid neural network–based anomaly detection method using STL decomposition.}
+\bicaption{基于STL分解的混合神经网络异常检测方法流程图}{Flowchart of the hybrid neural network--based anomaly detection method using STL decomposition.}
 \label{fig:Picture1}
 \end{figure}
 
@@ -368,7 +369,7 @@ STL 的核心思想是通过嵌套的内循环和外循环迭代计算各分量�
 \label{fig:Picture2}
 \end{figure}
 
-在此基础上，对对齐后的多通道时序引入 STL（Seasonal-Trend decomposition using Loess）分解方法，将每个通道的时间序列拆分为趋势、周期和残差三部分：
+在此基础上，对对齐后的多通道时序引入 STL 分解方法，将每个通道的时间序列拆分为趋势、周期和残差三部分：
 \begin{equation}
     x_k^{(c)} = T_k^{(c)} + S_k^{(c)} + R_k^{(c)}
 \end{equation}
@@ -384,7 +385,7 @@ STL 的核心思想是通过嵌套的内循环和外循环迭代计算各分量�
 
 最后，基于训练阶段正常数据的异常分数分布构建自适应阈值（如基于百分位数的方法），实现逐点异常判定。当$s(k)>\tau$ 时，判定该时间点为异常；否则视为正常。同时，通过对数据段边界附近样本进行排除，避免由于窗口不完整引入的误判。
 
-综上，该方法通过“分解—建模—融合”的多层结构设计，在异常样本稀缺的条件下，能够从多维遥测时序中有效识别隐性、早期的星载产品性能异常，相较于传统阈值型方法，在检测灵敏度、稳定性与可解释性方面均具有显著优势。
+综上，该方法通过“分解--建模--融合”的多层结构设计，在异常样本稀缺的条件下，能够从多维遥测时序中有效识别隐性、早期的星载产品性能异常，相较于传统阈值型方法，在检测灵敏度、稳定性与可解释性方面均具有显著优势。
 
 \subsubsection{数据集与实验设计}
 与前述实验中使用的通用遥测时序数据不同，本实施例构建的数据集旨在专门模拟中地球轨道卫星在复杂空间环境下的准周期性运行特征。虽然同样包含斜率变化、离群点、整体漂移及组合异常四种典型故障模式，但本数据集在基础信号仿真上不再是单一的随机过程，而是由主周期为 13 小时的复合正弦波叠加而成，并混入了线性和对数形式的长期趋势项以及信噪比约为 30\% 的高斯白噪声。
@@ -392,10 +393,13 @@ STL 的核心思想是通过嵌套的内循环和外循环迭代计算各分量�
 在数据预处理层面，本实验采用了与前一节完全不同的异步对齐与时频分解策略。前一节实验侧重于多窗口统计特征的提取，而本实验首先引入基于绝对中位差算法的初级离群点剔除，随后以 30 分钟为固定窗口对 16 秒采样率的原始数据进行降采样对齐。这一步骤不仅实现了多通道数据的时序同步，更重要的是为 STL 分解提供了稳定的时间基准。基于此，STL 分解的关键参数季节周期窗口长度被精确设定为 $P=26$，从而确保算法能够从物理层面精准剥离出轨道周期分量，而非单纯依赖数据驱动的特征拟合。
 
 本实验根据 STL 分解后的分量特性（如图\ref{fig:Picture3}所示）构建了三个独立的子模型： 
-\begin{itemize} 
-\item 趋势模型：沿用 LSTM 自编码器架构，但仅专注于低频趋势分量，旨在捕捉长达一年的缓慢老化特征。 
-\item 周期模型：引入 1D-CNN自编码器 ，利用卷积核的局部感知能力提取 13 小时轨道周期内的波形形态特征，这是 LSTM 难以高效处理的。 
-\item 残差模型：摒弃深度神经网络，转而采用基于高斯分布的统计模型，专门处理去相关后的随机噪声分量。 \end{itemize} 
+
+1）趋势模型：沿用 LSTM 自编码器架构，但仅专注于低频趋势分量，旨在捕捉长达一年的缓慢老化特征。 
+
+2）周期模型：引入 1D-CNN自编码器 ，利用卷积核的局部感知能力提取 13 小时轨道周期内的波形形态特征，这是 LSTM 难以高效处理的。 
+
+3）残差模型：摒弃深度神经网络，转而采用基于高斯分布的统计模型，专门处理去相关后的随机噪声分量。 
+
 所有深度学习子模型的输入序列长度均设为 26，隐藏层维度统一为 64，使用 Adam 优化器迭代训练 30 轮。
 
 \begin{figure}[htbp]
@@ -413,7 +417,7 @@ STL 的核心思想是通过嵌套的内循环和外循环迭代计算各分量�
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=1\linewidth]{figures/c4/pic5.png}
-\bicaption{基于STL分解的混合神经网络异常检测实验的正常数据（左列）与离群点异常数据（右列）的原始遥测时序、降采样时序、分解后趋势项时序、周期项时序、残差项时序、异常分数时序与检测结果时序示意图}{Schematic illustration of the raw telemetry time series, downsampled time series, decomposed trend component, seasonal component, residual component, anomaly score time series, and detection result time series for normal data (left column) and outlier anomaly data (right column) in the STL decomposition–based hybrid neural network anomaly detection experiment.}
+\bicaption{基于STL分解的混合神经网络异常检测实验的正常数据（左列）与离群点异常数据（右列）的原始遥测时序、降采样时序、分解后趋势项时序、周期项时序、残差项时序、异常分数时序与检测结果时序示意图}{Schematic illustration of the raw telemetry time series, downsampled time series, decomposed trend component, seasonal component, residual component, anomaly score time series, and detection result time series for normal data (left column) and outlier anomaly data (right column) in the STL decomposition--based hybrid neural network anomaly detection experiment.}
 \label{fig:pic5}
 \end{figure}
 
@@ -426,7 +430,7 @@ STL 的核心思想是通过嵌套的内循环和外循环迭代计算各分量�
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=1\linewidth]{figures/c4/pic6.png}
-\bicaption{基于STL分解的混合神经网络异常检测实验的整体漂移数据（左列）与斜率变化数据（右列）的原始遥测时序、降采样时序、分解后趋势项时序、周期项时序、残差项时序、异常分数时序与检测结果时序示意图}{Schematic illustration of the raw telemetry time series, downsampled time series, decomposed trend component, seasonal component, residual component, anomaly score time series, and detection result time series for overall drift data (left column) and slope change data (right column) in the STL decomposition–based hybrid neural network anomaly detection experiment.}
+\bicaption{基于STL分解的混合神经网络异常检测实验的整体漂移数据（左列）与斜率变化数据（右列）的原始遥测时序、降采样时序、分解后趋势项时序、周期项时序、残差项时序、异常分数时序与检测结果时序示意图}{Schematic illustration of the raw telemetry time series, downsampled time series, decomposed trend component, seasonal component, residual component, anomaly score time series, and detection result time series for overall drift data (left column) and slope change data (right column) in the STL decomposition--based hybrid neural network anomaly detection experiment.}
 \label{fig:pic6}
 \end{figure}
 
@@ -435,7 +439,7 @@ STL 的核心思想是通过嵌套的内循环和外循环迭代计算各分量�
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.6\linewidth]{figures/c4/pic7.png}
-\bicaption{基于STL分解的混合神经网络异常检测实验的混合异常数据的原始遥测时序、降采样时序、分解后趋势项时序、周期项时序、残差项时序、异常分数时序与检测结果时序示意图}{Schematic illustration of the raw telemetry time series, downsampled time series, decomposed trend component, seasonal component, residual component, anomaly score time series, and detection result time series for mixed anomaly data in the STL decomposition–based hybrid neural network anomaly detection experiment.}
+\bicaption{基于STL分解的混合神经网络异常检测实验的混合异常数据的原始遥测时序、降采样时序、分解后趋势项时序、周期项时序、残差项时序、异常分数时序与检测结果时序示意图}{Schematic illustration of the raw telemetry time series, downsampled time series, decomposed trend component, seasonal component, residual component, anomaly score time series, and detection result time series for mixed anomaly data in the STL decomposition--based hybrid neural network anomaly detection experiment.}
 \label{fig:pic7}
 \end{figure}
 
@@ -443,11 +447,11 @@ STL 的核心思想是通过嵌套的内循环和外循环迭代计算各分量�
 
 \section{本章小结}
 
-本章围绕星载设备高维遥测数据的异常检测与健康监测问题展开了系统研究。首先，阐述了星载设备在航天任务中的关键地位，将异常类型划分为设计缺陷、环境诱发、老化退化、随机故障及软件失误五大类，并重点聚焦于危害性大且隐蔽性强的“老化突发失效”与“未知硬件故障”。通过对现有基于统计学、机器学习及深度学习方法的梳理，指出了当前技术在应对高维、非线性、强噪声及多模式耦合数据时存在的局限性，特别是难以在故障早期实现有效预警的痛点。
+本章围绕星载设备高维遥测数据的异常检测与健康监测问题展开了系统研究。首先，阐述了星载设备在航天任务中的关键地位，将异常类型划分为设计缺陷、环境诱发、老化退化、随机故障及软件失误五大类，并重点聚焦于危害性大且隐蔽性强的老化突发失效与未知硬件故障。通过对现有基于统计学、机器学习及深度学习方法的梳理，指出了当前技术在应对高维、非线性、强噪声及多模式耦合数据时存在的局限性，特别是难以在故障早期实现有效预警的痛点。
 
 针对上述挑战，本章提出了两类互补的无监督异常检测方法，并通过高保真仿真实验验证了其有效性。针对一般性高维遥测数据，提出了一种基于融合多窗口统计特征的LSTM自编码器检测方法。该方法通过引入多尺度滑动窗口提取统计特征，有效抑制了原始数据中的高频噪声；利用LSTM自编码器对特征序列进行时序建模，实现了对正常行为模式的无监督学习。实验结果表明，该方法在混合故障场景下表现出优异的抗噪性与鲁棒性，能够精准识别离群点、漂移及早期斜率变化，精确率高达99.81\%。
 
-针对具有显著轨道周期特性的混合信号，提出了一种基于STL时序分解的LSTM-CNN混合自编码器检测架构。针对单一模型难以从强周期波动中剥离微弱趋势的难题，该方法利用STL算法将信号解耦为趋势、周期和残差分量，并分别采用LSTM、1D-CNN及统计模型进行“分而治之”的独立建模与加权融合。实验证实，该策略成功克服了周期信号的掩盖效应，显著提升了对隐性渐进式退化的检测灵敏度，在复杂复合故障检测中实现了超过98.6\%的召回率。
+针对具有显著轨道周期特性的混合信号，提出了一种基于STL时序分解的LSTM-CNN混合自编码器检测架构。针对单一模型难以从强周期波动中剥离微弱趋势的难题，该方法利用STL算法将信号解耦为趋势、周期和残差分量，并分别采用LSTM、1D-CNN及统计模型进行分治的独立建模与加权融合。实验证实，该策略成功克服了周期信号的掩盖效应，显著提升了对隐性渐进式退化的检测灵敏度，在复杂复合故障检测中实现了超过98.6\%的召回率。
 
 综上所述，本章所提出的方法体系有效解决了星载设备异常检测中面临的噪声干扰、时序依赖及特征耦合等核心问题，为实现卫星在轨的高可靠性自主健康管理提供了重要的理论依据与技术支撑。
 

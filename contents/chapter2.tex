@@ -11,7 +11,7 @@
 弹性功率通过调整信号的调制方式，将功率从一个信号分量转移到另一个分量。例如，GPS卫星可以在L1/L2频段上，将M码的功率转移到P(Y)码上，从而增加P(Y)码的功率\cite{zhang2025analysis}。然而，这种功率重新分配并不能同时增加所有信号分量的发射功率\cite{esenbuuga2020impact,esenbuga2020impact}。根据2021年发布的GPS 接口规范 IS-GPS-200M，Block IIR-M和IIF卫星的单个信号分量在开启弹性功率后，其功率输出可能超过预设的最大值，但预计不会超过-150 dBW\cite{zhang2025analysis,esenbuuga2020impact,esenbuga2020impact,ISGPS200M2021}。
 
 \subsection{发展历程}
-GNSS系统中，GPS和BDS均配备了弹性功率功能。GPS方面，Block IIR-M(7颗)、 Block IIF(12 颗)具备弹性功率能力。BDS则是在BDS-2卫星配备了弹性功率功能，其机制与GPS类似，能够调整发射功率以提升抗干扰能力\cite{liu2024characteristics,lu2025new,liu2025effects}。GPS的首次弹性功率演示发生在2010年9月7日至12日，当时提高了L1和L2信号的P(Y)码功率，并被认为是成功的\cite{jimenez2010measured,zhang2025analysis}。自2017年1月起，GPS在大部分Block IIF卫星上启动了区域性弹性功率增强\cite{esenbuga2020impact,zhang2025analysis}。在2018年4月，GPS还进行了全球性的弹性功率开启（4月13日至17日，为期四天）和另一次区域性事件（4月底，为期三天）\cite{xiang2020understanding,zhang2025analysis}。2020年2月14日之后，GPS实施了新的弹性功率模式（模式4-9），其对L1和L2 P(Y)码信号同时产生影响，并表现出不同的地面覆盖范围。这些后期模式对Hatch–Melbourne–Wübbena（HMW）组合和轨道确定的影响更为显著\cite{zhang2024improved}。BDS--2卫星在2020-2023年期间共发生了九次弹性功率事件，其中倾斜地球同步轨道（Inclined Geosynchronous Orbit，IGSO）卫星最为频繁开启\cite{liu2025effects}。
+GNSS系统中，GPS和BDS均配备了弹性功率功能。GPS方面，Block IIR-M(7颗)、 Block IIF(12 颗)具备弹性功率能力。BDS则是在BDS-2卫星配备了弹性功率功能，其机制与GPS类似，能够调整发射功率以提升抗干扰能力\cite{liu2024characteristics,lu2025new,liu2025effects}。GPS的首次弹性功率演示发生在2010年9月7日至12日，当时提高了L1和L2信号的P(Y)码功率，并被认为是成功的\cite{jimenez2010measured,zhang2025analysis}。自2017年1月起，GPS在大部分Block IIF卫星上启动了区域性弹性功率增强\cite{esenbuga2020impact,zhang2025analysis}。在2018年4月，GPS还进行了全球性的弹性功率开启（4月13日至17日，为期四天）和另一次区域性事件（4月底，为期三天）\cite{xiang2020understanding,zhang2025analysis}。2020年2月14日之后，GPS实施了新的弹性功率模式（模式4-9），其对L1和L2 P(Y)码信号同时产生影响，并表现出不同的地面覆盖范围。这些后期模式对Hatch--Melbourne--Wübbena（HMW）组合和轨道确定的影响更为显著\cite{zhang2024improved}。BDS--2卫星在2020-2023年期间共发生了九次弹性功率事件，其中倾斜地球同步轨道（Inclined Geosynchronous Orbit，IGSO）卫星最为频繁开启\cite{liu2025effects}。
 \section{弹性功率的模式特征与可视化}
 截至目前，GPS 卫星的弹性功率共有 10 种模式（Mode 1 至 Mode 10），覆盖了从 2017 年到 2023 年的多个时间段，每种模式对应不同的激活时间段、卫星、区域和信号强度变化，如表 \ref{tab:flex_power_modes} 所示。
 
@@ -72,10 +72,10 @@ Mode 10 & IIR-M/IIF & 127--131, 2023 & 120$^\circ$W / 36$^\circ$N; 5$^\circ$W / 
 \end{table}
 
 \section{GNSS弹性功率对观测信号特性的影响}
-美国空军太空司令部（Air Force Space Command，AFSPC）最初认为弹性功率对全球绝大多数用户无明显影响，只有少数老旧接收机可能受不利影响\cite{yang2022real}。然而，现有研究表明，这种发射端的操作在增强特定信号抗压制能力的同时，也会对 GNSS 的精密数据处理产生影响。从物理层面上看，弹性功率的激活直接引发生信号出现 2–11 dB 量级的阶跃式变化，并导致卫星通道硬件延迟发生漂移，进而引起DCB和相位偏差出现纳秒级甚至周级的系统性不连续\cite{liu2024characteristics}。这些未被模型化的偏差若不经特殊处理，将向用户端传播，导致 PPP 收敛时间延长、PPP-AR 残差恶化，并限制 GNSS-R 反演及精密定轨等衍生应用的精度\cite{du2024effects,liu2024characteristics,wu2024effects,Wang2022A}。对于高精度定位用户而言，C/N0 的波动直接表征了信号的跟踪质量与功率模式，而 DCB 的稳定性则决定了伪距校正与电离层建模的精度\cite{steigenberger2019flex}。因此，本节将重点对弹性功率在 C/N0 及 DCB 上的具体影响进行分析。
+美国空军太空司令部（Air Force Space Command，AFSPC）最初认为弹性功率对全球绝大多数用户无明显影响，只有少数老旧接收机可能受不利影响\cite{yang2022real}。然而，现有研究表明，这种发射端的操作在增强特定信号抗压制能力的同时，也会对 GNSS 的精密数据处理产生影响。从物理层面上看，弹性功率的激活直接引发生信号出现 2--11 dB 量级的阶跃式变化，并导致卫星通道硬件延迟发生漂移，进而引起DCB和相位偏差出现纳秒级甚至周级的系统性不连续\cite{liu2024characteristics}。这些未被模型化的偏差若不经特殊处理，将向用户端传播，导致 PPP 收敛时间延长、PPP-AR 残差恶化，并限制 GNSS-R 反演及精密定轨等衍生应用的精度\cite{du2024effects,liu2024characteristics,wu2024effects,Wang2022A}。对于高精度定位用户而言，C/N0 的波动直接表征了信号的跟踪质量与功率模式，而 DCB 的稳定性则决定了伪距校正与电离层建模的精度\cite{steigenberger2019flex}。因此，本节将重点对弹性功率在 C/N0 及 DCB 上的具体影响进行分析。
 
 \subsection{GNSS弹性功率对C/N0的影响}
-本节介绍了阶跃提升和整体提升模式，并分析了不同接收器–天线组合的影响。同时，指出了传统方法的局限性，即其分析范围主要受限于设备差异和大规模数据。
+本节介绍了阶跃提升和整体提升模式，并分析了不同接收器--天线组合的影响。同时，指出了传统方法的局限性，即其分析范围主要受限于设备差异和大规模数据。
 
 基于单站 C/N0 时间序列分析，可以观察到弹性功率的两种典型模式：阶跃提升（step lift） 和 整体提升（overall lift）。图\ref{fig:afpd_1}采用 2024 年 6 月 3 日（蓝色）和 6 月 4 日（红色）的 S2W 观测数据对这两种模式进行了展示。当卫星进入或离开弹性功率激活区域时，会产生 C/N0 的突然上升或下降，即阶跃式提升，如图\ref{fig:afpd_1}第一行所示。这些上升和下降分别出现在第一行的第一个和最后一个子图中。当卫星在整个通过弧段期间始终处于激活区域内时，则会出现整体提升模式，使得整个轨迹的 C/N0 持续高于未激活时的水平，这在 6 月 4 日相较于 6 月 3 日的观测中清晰体现出来。
 
@@ -99,7 +99,7 @@ Mode 10 & IIR-M/IIF & 127--131, 2023 & 120$^\circ$W / 36$^\circ$N; 5$^\circ$W / 
 
 当所选站点呈现整体同步提升模式时，由于缺乏明显的不连续边界，基于滑动窗口的检测方法难以识别弹性功率事件。已有的 FPD 检测方法通常依赖于多站点联合分析以获得可靠结果，从而导致计算与通信开销显著增加，限制了其实时应用能力。因此，在保证检测稳健性的前提下尽可能减少所需站点数量，成为实现实时弹性功率监测的关键问题。本节提出的两种方法正是针对这一挑战而设计的。
 
-为了分析不同接收机—天线组合导致的 C/N0 提升幅度差异，选取了六组具有相同接收机类型但天线不同的站点组合。以 2020 年第 45 日（Doy of Year 45, DOY 45）期间的一次弹性功率事件为例，选取卫星 G07 的 S2W 时间序列进行分析。同时，计算了每组在所有 IIR-M 和 IIF 卫星上的平均 C/N0 提升值，结果如图\ref{fig:afpd_3}所示。
+为了分析不同接收机--天线组合导致的 C/N0 提升幅度差异，选取了六组具有相同接收机类型但天线不同的站点组合。以 2020 年第 45 日（Doy of Year 45, DOY 45）期间的一次弹性功率事件为例，选取卫星 G07 的 S2W 时间序列进行分析。同时，计算了每组在所有 IIR-M 和 IIF 卫星上的平均 C/N0 提升值，结果如图\ref{fig:afpd_3}所示。
 
 \begin{figure}
     \centering
@@ -108,13 +108,13 @@ Mode 10 & IIR-M/IIF & 127--131, 2023 & 120$^\circ$W / 36$^\circ$N; 5$^\circ$W / 
     \label{fig:afpd_3}
 \end{figure}
 
-结果表明，不同组之间的平均 C/N0 提升值存在显著差异，平均差值达到 1.53 dB-Hz，最大差值为 2.56 dB-Hz，而组内平均标准差（standard deviation，STD）仅为 0.37 dB-Hz。这表明这些差异具有系统性，而非随机异常。该发现凸显了依赖基线建模与阈值检测方法的关键局限性，因为每种接收机—天线组合都需要分别进行建模与阈值设定。这也解释了Meng等人\cite{meng2024real}提出的基于模型的方法为什么需要对每个站点进行独立建模。相比之下，AFPD-DTW不需要历史数据建模，并且在多频点、多 GNSS 场景中表现优异，相关结果将在下一节展示。
+结果表明，不同组之间的平均 C/N0 提升值存在显著差异，平均差值达到 1.53 dB-Hz，最大差值为 2.56 dB-Hz，而组内平均标准差（standard deviation，STD）仅为 0.37 dB-Hz。这表明这些差异具有系统性，而非随机异常。该发现凸显了依赖基线建模与阈值检测方法的关键局限性，因为每种接收机--天线组合都需要分别进行建模与阈值设定。这也解释了Meng等人\cite{meng2024real}提出的基于模型的方法为什么需要对每个站点进行独立建模。相比之下，AFPD-DTW不需要历史数据建模，并且在多频点、多 GNSS 场景中表现优异，相关结果将在下一节展示。
 
 \subsection{GNSS弹性功率对DCB的影响}
 弹性功率的激活会引起 GNSS 信号物理特性的变化，从而对观测值、相关产品以及最终的定位精度产生显著影响，是高精度用户必须关注的问题。已有研究表明，弹性功率是导致卫星DCB产生显著变化和不确定性的主要因素之一 \cite{zhang2025analysis,xiang2020understanding,liu2024characteristics,abraha2024gnss,esenbuga2020impact,liu2025effects,esenbuuga2020impact}。而 DCB 的精确估计对于精密电离层建模、高精度定位与授时至关重要 \cite{esenbuga2020impact,esenbuuga2020impact}。
 
 \subsubsection{DCB定义与影响}
-差分码偏差（Differential Code Bias，DCB）是指GNSS系统中卫星发射的信号之间或接收机接收到的信号之间的伪码测量误差\cite{Blanchard1993GPS–Theory,Håkansson2017Review}。这种误差来源于设备的硬件特性，如卫星发射天线的延迟差异或接收机信号处理过程中不同频率间的电子干扰\cite{montenbruck2014differential}。
+差分码偏差（Differential Code Bias，DCB）是指GNSS系统中卫星发射的信号之间或接收机接收到的信号之间的伪码测量误差\cite{Blanchard1993GPS--Theory,Håkansson2017Review}。这种误差来源于设备的硬件特性，如卫星发射天线的延迟差异或接收机信号处理过程中不同频率间的电子干扰\cite{montenbruck2014differential}。
 
 DCB分为卫星DCB和接收机DCB，分别反映了信号从卫星发射到天线相位中心、以及从接收机天线相位中心到信号捕获跟踪过程中的硬件延迟差异\cite{li2018estimation}。DCB通常以纳秒或米为单位测量，对GNSS信号的伪距测量和载波相位数据的处理有重要影响\cite{Zhang2023A}。
 
@@ -321,7 +321,7 @@ P_{\text{GF}} = \text{DCB}^i + \text{DCB}_j + \varepsilon_{P,\text{GF},j}^i
     \label{fig:dcb_fig2}
 \end{figure}
 
-其次，在估计阶段，使用球谐函数对电离层进行建模以构建估计矩阵。处理过程采用全天滑动窗口进行最小二乘估计。选择 15 分钟的窗口是为了平衡时间分辨率和估计稳定性——较长的窗口可能会遗漏快速的 DCB 变化，而较短的窗口则存在可观测性不足的风险。此时长确保了可靠的短期 DCB 估计。鉴于 GPS 卫星 DCB 的已知稳定性以及弹性功率能力仅限于 IIR-M 和 IIF 卫星，选择 G02 作为参考卫星\cite{wu2024effects}。
+其次，在估计阶段，使用球谐函数对电离层进行建模以构建估计矩阵。处理过程采用全天滑动窗口进行最小二乘估计。选择 15 分钟的窗口是为了平衡时间分辨率和估计稳定性--较长的窗口可能会遗漏快速的 DCB 变化，而较短的窗口则存在可观测性不足的风险。此时长确保了可靠的短期 DCB 估计。鉴于 GPS 卫星 DCB 的已知稳定性以及弹性功率能力仅限于 IIR-M 和 IIF 卫星，选择 G02 作为参考卫星\cite{wu2024effects}。
 
 第三，影响分析阶段检查估计出的卫星 DCB、接收机 DCB 和电离层系数。分析卫星 DCB 时间序列中与弹性功率状态变化相重合的偏移模式，表明弹性功率对 DCB 值的潜在影响。
 
@@ -331,7 +331,7 @@ P_{\text{GF}} = \text{DCB}^i + \text{DCB}_j + \varepsilon_{P,\text{GF},j}^i
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{figures/c2/dcb/fig3.png}
-    \bicaption{2024 年 6 月 3–4 日期间，MGEX 多站监测的 S2W C/N0 信号时间序列（PRN：G03、G24、G32）。不同颜色的空心圆点表示来自不同 MGEX 站点的 C/N0 观测序列；红色与绿色半透明区域分别表示弹性功率的开启与关闭时间段}{Time series of S2W C/N0 signal monitoring by multiple MGEX stations on June 3–4, 2024 for satellites with PRNs G03, G24, and G32. The colored hollow circle dots indicate the time series of different MGEX station received C/N0 signals; red and green translucent coverage areas indicate flex power on/off event time points, respectively.}
+    \bicaption{2024 年 6 月 3--4 日期间，MGEX 多站监测的 S2W C/N0 信号时间序列（PRN：G03、G24、G32）。不同颜色的空心圆点表示来自不同 MGEX 站点的 C/N0 观测序列；红色与绿色半透明区域分别表示弹性功率的开启与关闭时间段}{Time series of S2W C/N0 signal monitoring by multiple MGEX stations on June 3--4, 2024 for satellites with PRNs G03, G24, and G32. The colored hollow circle dots indicate the time series of different MGEX station received C/N0 signals; red and green translucent coverage areas indicate flex power on/off event time points, respectively.}
     \label{fig:dcb_fig3}
 \end{figure}
 
@@ -397,7 +397,7 @@ G32 & & 2:48 & 13:00 & & & 7:12 & 19:12 & 0:00 & & 0:00 & 5:36 & 17:36 & 22:00 &
 
 \begin{table}[htbp]
 \centering
-\bicaption{2024 年三个弹性功率事件中，各卫星基于 15 分钟短时窗估计得到的 C1W–C2W 与 C1C–C1W DCB 结果的均方根（单位：ns）}{The RMS of C1W-C2W and C1C-C1W 15-min short-term DCB estimation result for each satellite in three flex power events in 2024 (unit: ns).}
+\bicaption{2024 年三个弹性功率事件中，各卫星基于 15 分钟短时窗估计得到的 C1W--C2W 与 C1C--C1W DCB 结果的均方根（单位：ns）}{The RMS of C1W-C2W and C1C-C1W 15-min short-term DCB estimation result for each satellite in three flex power events in 2024 (unit: ns).}
 \label{tab:dcb_tab_2}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{lcc lcc lcc}
@@ -427,7 +427,7 @@ G32 & & 2:48 & 13:00 & & & 7:12 & 19:12 & 0:00 & & 0:00 & 5:36 & 17:36 & 22:00 &
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{figures/c2/dcb/fig6.png}
-    \bicaption{2024 年三个弹性功率事件期间，GPS IIR-M 与 IIF 卫星的 C1C–C1W 和 C1W–C2W DCB 估计时间序列。不同颜色的点划线表示不同卫星的 DCB 时间序列，每个点对应一次基于 15 分钟时间窗的估计结果}{Time series of C1C–C1W and C1W–C2W DCB estimates for GPS IIR-M and IIF satellites during three flex power events in 2024. Different colored dash-dot lines represent DCB time series for different satellites, with each point estimated using a 15-min window.}
+    \bicaption{2024 年三个弹性功率事件期间，GPS IIR-M 与 IIF 卫星的 C1C--C1W 和 C1W--C2W DCB 估计时间序列。不同颜色的点划线表示不同卫星的 DCB 时间序列，每个点对应一次基于 15 分钟时间窗的估计结果}{Time series of C1C--C1W and C1W--C2W DCB estimates for GPS IIR-M and IIF satellites during three flex power events in 2024. Different colored dash-dot lines represent DCB time series for different satellites, with each point estimated using a 15-min window.}
     \label{fig:dcb_fig6}
 \end{figure}
 
@@ -437,26 +437,26 @@ G32 & & 2:48 & 13:00 & & & 7:12 & 19:12 & 0:00 & & 0:00 & 5:36 & 17:36 & 22:00 &
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{figures/c2/dcb/fig10.png}
-    \bicaption{2024 年弹性功率事件 3 期间，G32 卫星的多站 S2W C/N0 与 C1C–C1W DCB 估计结果对比。紫色点划线表示 C1C–C1W DCB 的时间序列，彩色圆点表示来自多个 MGEX 站的 S2W C/N0 观测值。红色与绿色半透明矩形分别表示弹性功率的开启与关闭时间。可以观察到，C1C–C1W DCB 的跃变与 C/N0 的变化相一致，而在非跃变时段内保持在 0.2 ns 范围内的稳定性，说明 DCB 的变化确实受到弹性功率切换的影响}{Comparison of multi-station S2W C/N0 and C1C–C1W DCB estimation for G32 satellite during flex power event 3 in 2024. The purple dash-dot line represents the C1C–C1W DCB estimation time series, colored circular markers show S2W C/N0 values from multiple MGEX stations. Red and green translucent rectangles indicate flex power on/ off transition timestamps. The shift changes in C1C–C1W DCB coincide with C/N0's shift changes, while maintaining stability within 0.2 ns during other periods, demonstrating that DCB shifts are indeed influenced by flex power changes.}
+    \bicaption{2024 年弹性功率事件 3 期间，G32 卫星的多站 S2W C/N0 与 C1C--C1W DCB 估计结果对比。紫色点划线表示 C1C--C1W DCB 的时间序列，彩色圆点表示来自多个 MGEX 站的 S2W C/N0 观测值。红色与绿色半透明矩形分别表示弹性功率的开启与关闭时间。可以观察到，C1C--C1W DCB 的跃变与 C/N0 的变化相一致，而在非跃变时段内保持在 0.2 ns 范围内的稳定性，说明 DCB 的变化确实受到弹性功率切换的影响}{Comparison of multi-station S2W C/N0 and C1C--C1W DCB estimation for G32 satellite during flex power event 3 in 2024. The purple dash-dot line represents the C1C--C1W DCB estimation time series, colored circular markers show S2W C/N0 values from multiple MGEX stations. Red and green translucent rectangles indicate flex power on/ off transition timestamps. The shift changes in C1C--C1W DCB coincide with C/N0's shift changes, while maintaining stability within 0.2 ns during other periods, demonstrating that DCB shifts are indeed influenced by flex power changes.}
     \label{fig:dcb_fig10}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=0.85\linewidth]{figures/c2/dcb/fig7.png}
-    \bicaption{弹性功率事件 1 期间所有 GPS 卫星的 C1C–C1W DCB 估计时间序列}{Time series of C1C–C1W DCB estimates for all GPS satellites during flex power event 1.}
+    \bicaption{弹性功率事件 1 期间所有 GPS 卫星的 C1C--C1W DCB 估计时间序列}{Time series of C1C--C1W DCB estimates for all GPS satellites during flex power event 1.}
     \label{fig:dcb_fig7}
 \end{figure}
 \begin{figure}
     \centering
     \includegraphics[width=0.85\linewidth]{figures/c2/dcb/fig8.png}
-    \bicaption{弹性功率事件 2 期间所有 GPS 卫星的 C1C–C1W DCB 估计时间序列}{Time series of C1C–C1W DCB estimates for all GPS satellites during flex power event 2.}
+    \bicaption{弹性功率事件 2 期间所有 GPS 卫星的 C1C--C1W DCB 估计时间序列}{Time series of C1C--C1W DCB estimates for all GPS satellites during flex power event 2.}
     \label{fig:dcb_fig8}
 \end{figure}
 \begin{figure}
     \centering
     \includegraphics[width=0.85\linewidth]{figures/c2/dcb/fig9.png}
-    \bicaption{弹性功率事件 3 期间所有 GPS 卫星的 C1C–C1W DCB 估计时间序列}{Time series of C1C–C1W DCB estimates for all GPS satellites during flex power event 3.}
+    \bicaption{弹性功率事件 3 期间所有 GPS 卫星的 C1C--C1W DCB 估计时间序列}{Time series of C1C--C1W DCB estimates for all GPS satellites during flex power event 3.}
     \label{fig:dcb_fig9}
 \end{figure}
 \subsubsection{频间 DCB 变化}
@@ -466,21 +466,21 @@ G32 & & 2:48 & 13:00 & & & 7:12 & 19:12 & 0:00 & & 0:00 & 5:36 & 17:36 & 22:00 &
 \begin{figure}
     \centering
     \includegraphics[width=0.85\linewidth]{figures/c2/dcb/fig11.png}
-    \bicaption{弹性功率事件1期间所有GPS卫星的C1W–C2W DCB估计时间序列}{Time series of C1W–C2W DCB estimates for all GPS satellites during flex power event 1.}
+    \bicaption{弹性功率事件1期间所有GPS卫星的C1W--C2W DCB估计时间序列}{Time series of C1W--C2W DCB estimates for all GPS satellites during flex power event 1.}
     \label{fig:dcb_fig11}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=0.85\linewidth]{figures/c2/dcb/fig12.png}
-    \bicaption{弹性功率事件2期间所有GPS卫星的C1W–C2W DCB估计时间序列}{Time series of C1W–C2W DCB estimates for all GPS satellites during flex power event 2.}
+    \bicaption{弹性功率事件2期间所有GPS卫星的C1W--C2W DCB估计时间序列}{Time series of C1W--C2W DCB estimates for all GPS satellites during flex power event 2.}
     \label{fig:dcb_fig12}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=0.85\linewidth]{figures/c2/dcb/fig13.png}
-    \bicaption{弹性功率事件3期间所有GPS卫星的C1W–C2W DCB估计时间序列}{Time series of C1W–C2W DCB estimates for all GPS satellites during flex power event 3.}
+    \bicaption{弹性功率事件3期间所有GPS卫星的C1W--C2W DCB估计时间序列}{Time series of C1W--C2W DCB estimates for all GPS satellites during flex power event 3.}
     \label{fig:dcb_fig13}
 \end{figure}
 

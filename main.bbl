@@ -6258,58 +6258,6 @@
       \range{pages}{1}
       \keyw{abraha2024gnss}
     \endentry
-    \entry{Blanchard1993GPS–Theory}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=0e96ed7a4d7e6bfab750e3aaa4a377d4}{%
-           family={Blanchard},
-           familyi={B\bibinitperiod},
-           given={W.},
-           giveni={W\bibinitperiod}}}%
-      }
-      \name{namea}{1}{}{%
-        {{hash=0e96ed7a4d7e6bfab750e3aaa4a377d4}{%
-           family={Blanchard},
-           familyi={B\bibinitperiod},
-           given={W.},
-           giveni={W\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {english}%
-      }
-      \strng{namehash}{0e96ed7a4d7e6bfab750e3aaa4a377d4}
-      \strng{fullhash}{0e96ed7a4d7e6bfab750e3aaa4a377d4}
-      \strng{fullhashraw}{0e96ed7a4d7e6bfab750e3aaa4a377d4}
-      \strng{bibnamehash}{0e96ed7a4d7e6bfab750e3aaa4a377d4}
-      \strng{authorbibnamehash}{0e96ed7a4d7e6bfab750e3aaa4a377d4}
-      \strng{authornamehash}{0e96ed7a4d7e6bfab750e3aaa4a377d4}
-      \strng{authorfullhash}{0e96ed7a4d7e6bfab750e3aaa4a377d4}
-      \strng{authorfullhashraw}{0e96ed7a4d7e6bfab750e3aaa4a377d4}
-      \strng{nameabibnamehash}{0e96ed7a4d7e6bfab750e3aaa4a377d4}
-      \strng{nameanamehash}{0e96ed7a4d7e6bfab750e3aaa4a377d4}
-      \strng{nameafullhash}{0e96ed7a4d7e6bfab750e3aaa4a377d4}
-      \strng{nameafullhashraw}{0e96ed7a4d7e6bfab750e3aaa4a377d4}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of Navigation}
-      \field{langid}{english}
-      \field{languageid}{english}
-      \field{lansortorder}{4}
-      \field{title}{GPS–Theory and Practice . B. Hofmann-Wellenhof H. Lichtenegger and J. Collins. 16·5 × 24 cm. Springer-Verlag, Vienna. 326 pp. DM 79.}
-      \field{usera}{J}
-      \field{userd}{english}
-      \field{userf}{english}
-      \field{volume}{46}
-      \field{year}{1993}
-      \field{dateera}{ce}
-      \field{pages}{457\bibrangedash 457}
-      \range{pages}{1}
-      \verb{doi}
-      \verb 10.1017/s0373463300011966
-      \endverb
-      \keyw{Blanchard1993GPS–Theory}
-    \endentry
     \entry{Håkansson2017Review}{article}{}{}
       \name{author}{4}{}{%
         {{hash=9aa2ed714f8ff7ed3d1ff07a5228415e}{%
@@ -11186,7 +11134,71 @@
       \field{dateera}{ce}
       \keyw{peixeiro2022time}
     \endentry
+    \entry{kouba2001precise}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=988e6fc4f7e105dfe3767e1935bcd467}{%
+           family={Kouba},
+           familyi={K\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=860b45d756c08293b48a116318fef0d6}{%
+           family={Héroux},
+           familyi={H\bibinitperiod},
+           given={Pierre},
+           giveni={P\bibinitperiod}}}%
+      }
+      \name{namea}{2}{}{%
+        {{hash=988e6fc4f7e105dfe3767e1935bcd467}{%
+           family={Kouba},
+           familyi={K\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=860b45d756c08293b48a116318fef0d6}{%
+           family={Héroux},
+           familyi={H\bibinitperiod},
+           given={Pierre},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{1701f366a4ff0a2a39ee59f4d22de9c2}
+      \strng{fullhash}{28acdc89ff310473173776845dacc267}
+      \strng{fullhashraw}{28acdc89ff310473173776845dacc267}
+      \strng{bibnamehash}{28acdc89ff310473173776845dacc267}
+      \strng{authorbibnamehash}{28acdc89ff310473173776845dacc267}
+      \strng{authornamehash}{1701f366a4ff0a2a39ee59f4d22de9c2}
+      \strng{authorfullhash}{28acdc89ff310473173776845dacc267}
+      \strng{authorfullhashraw}{28acdc89ff310473173776845dacc267}
+      \strng{nameabibnamehash}{28acdc89ff310473173776845dacc267}
+      \strng{nameanamehash}{1701f366a4ff0a2a39ee59f4d22de9c2}
+      \strng{nameafullhash}{28acdc89ff310473173776845dacc267}
+      \strng{nameafullhashraw}{28acdc89ff310473173776845dacc267}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{GPS Solutions}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{number}{2}
+      \field{title}{Precise Point Positioning Using IGS Orbit and Clock Products}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{5}
+      \field{year}{2001}
+      \field{dateera}{ce}
+      \field{pages}{12\bibrangedash 28}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1007/s102910010012
+      \endverb
+      \keyw{kouba2001precise}
+    \endentry
   \enddatalist
+  \missing{Blanchard1993GPS--Theory}
   \missing{IS}
 \endrefsection
 \endinput

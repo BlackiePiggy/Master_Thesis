@@ -1,17 +1,17 @@
 # Fdb version 4
-["biber main"] 1767803724.28007 "main.bcf" "main.bbl" "main" 1767803747.78327 0
-  "main.bcf" 1767803746.92705 156774 072aae137c0291b388d8295a77d5489e "xelatex"
-  "refs.bib" 1767802745.35904 52735 f1001146c69d6e8015e611abf4af18d8 ""
+["biber main"] 1767807312.21395 "main.bcf" "main.bbl" "main" 1767808214.49975 0
+  "main.bcf" 1767808167.10766 156846 d2b3af1c137c83ceafbd7800a09b763d "xelatex"
+  "refs.bib" 1767806716.0484 53072 2bc9edde2878475846f89208bb5b54f5 ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["xdvipdfmx"] 1767803747.10689 "main.xdv" "main.pdf" "main" 1767803747.78599 0
-  "main.xdv" 1767803746.92806 3080628 ba652d2ca663a797f2eeb449f44dbc28 "xelatex"
+["xdvipdfmx"] 1767808167.21293 "main.xdv" "main.pdf" "main" 1767808214.50415 0
+  "main.xdv" 1767808167.10876 3015720 f1f28efff0d3d279b850c1163d0b5bff "xelatex"
   (generated)
   "main.pdf"
   (rewritten before read)
-["xelatex"] 1767803737.00136 "main.tex" "main.xdv" "main" 1767803747.78332 0
+["xelatex"] 1767808161.38679 "main.tex" "main.xdv" "main" 1767808214.4998 0
   "/System/Library/Fonts/Menlo.ttc" 1763819368 2156036 ec05dfca6821d85440da0899493002c3 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -311,16 +311,15 @@
   "/usr/local/texlive/2025/texmf-var/web2c/xetex/xelatex.fmt" 1766121650 5639809 8006e048fad8c521bffe8b36a2f778ab ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
   "contents/abbr.tex" 1767714857.08919 7171 d3fb87c00b3c125984a6bdfce6524dba ""
-  "contents/abstract.tex" 1767788217.43479 4740 b14c4968ba871c0f8300747c5b2d13f2 ""
+  "contents/abstract.tex" 1767807533.82891 4746 89a9644f8f3f729e4dd783e1b3ad3001 ""
   "contents/achievements.tex" 1766093844 824 092834c1f268e2e44388abd980863460 ""
   "contents/acknowledgements.tex" 1766093844 691 0060f16d4f407ca74fb44bd848c1b7b3 ""
-  "contents/app_maxwell_equations.tex" 1766093844 39 69b5d62fb6a445c9ef0576a1e6423199 ""
-  "contents/chapter1.tex" 1767798768.27376 31835 8128acf10f7c1778bbde4b2ac9c23092 ""
-  "contents/chapter2.tex" 1767798872.65239 53345 257c5e43117c05d8258f06391748f3f8 ""
-  "contents/chapter3.tex" 1767803734.02745 111367 7526c271d01fce05dc7e5b5570d3f43a ""
-  "contents/chapter4.tex" 1767798550.16235 49105 ebf8f6c2c985b8926699f920fac5499d ""
-  "contents/chapter5.tex" 1767787802.93625 49037 bf56bcf767072abcad74b6248dd1449d ""
-  "contents/chapter6.tex" 1767748842.03741 9461 82e2d6c63e10a458d0904b139d3c47de ""
+  "contents/chapter1.tex" 1767807908.31834 31838 b32ae698d6c64acf6c5fc213ec47b62b ""
+  "contents/chapter2.tex" 1767805307.9899 53308 4591822924982b83616c84d5dcc14d31 ""
+  "contents/chapter3.tex" 1767808134.25879 111392 83f7793ed33e1178bd2f13dbd9d1ef5a ""
+  "contents/chapter4.tex" 1767807918.14401 48843 6ef06e014ccb6977f5e7a947a5df4164 ""
+  "contents/chapter5.tex" 1767807948.79944 48516 bf87cb125fe59bbb3c32cd601310e736 ""
+  "contents/chapter6.tex" 1767807302.09453 9429 e05df8e0926b6f6f2ef5ffd180f929f8 ""
   "contents/digest.tex" 1766093844 2819 2a74d209bd26ff0ddf9680dd6913962d ""
   "contents/resume.tex" 1766093844 766 d727db4898daf45212dc6e57dc2a716e ""
   "figures/c1/jiagoutu.png" 1767578672.58373 8752307 736bb6d6b2e1cf2462da0e7bbaa80e6f ""
@@ -392,15 +391,15 @@
   "figures/c5/SFPPP.png" 1766717556.07921 492696 cb78c02136d9d138827386cdf81f8ee3 ""
   "figures/c5/UCUDPPP.png" 1766717557.35689 546964 b1453c171a7f745297037cd9eef35844 ""
   "figures/c5/nonFP_DCB_15min_zeromean.png" 1767541471.75311 384226 13f8d7b56d6b0c22247ebe6f1ba2b418 ""
-  "main.aux" 1767803746.8393 85373 11bf4a1882f5a8ff98c51f539aaa9b17 "xelatex"
-  "main.bbl" 1767803726.73559 429662 9d9690abf9be7bc8f084e50dac3651b8 "biber main"
-  "main.lof" 1767803746.92798 13451 6f9a2abae9a3de1cc1a98aeeb96ef109 "xelatex"
-  "main.lot" 1767803746.92802 5323 39b647ab4df4ea82b6979893c3f2c9e7 "xelatex"
-  "main.out" 1767803746.92395 11081 d3d0d4e701e552b668343cbbc29f0fa0 "xelatex"
-  "main.run.xml" 1767803746.92775 2445 6ef12acf25d97fd9cd3b37c0f0fcfd56 "xelatex"
-  "main.tex" 1767798880.73501 2469 7ca1ec9b7506945a1ec75fa69406214a ""
-  "main.toc" 1767803746.92792 9392 9b6b95c5264e4e624445389582c37d87 "xelatex"
-  "setup.tex" 1767797777.41258 6787 548a515e2a4663ee9b441d18419e9ff2 ""
+  "main.aux" 1767808167.06149 85097 26547e0e056e34025cdd7b45dcb55f2a "xelatex"
+  "main.bbl" 1767807314.43556 429977 fb864e94d8034e61fdb7189fcba4e741 "biber main"
+  "main.lof" 1767808167.10869 13436 cca9dd3915c60c44fe629f1f927a6286 "xelatex"
+  "main.lot" 1767808167.10871 5321 1f7ebbe5f636363e7cb731d28bceac5d "xelatex"
+  "main.out" 1767808167.10534 10825 d9b03ccd0edde83a987e2efb91fc0112 "xelatex"
+  "main.run.xml" 1767808167.10849 2445 6ef12acf25d97fd9cd3b37c0f0fcfd56 "xelatex"
+  "main.tex" 1767807841.97544 2526 3ef9fd07d5780834913f9378078353b8 ""
+  "main.toc" 1767808167.1086 9246 bf9669e34b0f7bef3e0a1b174d516ba1 "xelatex"
+  "setup.tex" 1767807973.50427 6789 703a3f39ae169e39760182c5356b758c ""
   "sjtuthesis-bachelor.sty" 1766093844 2379 54836db1c2aa13e326f52d686e824560 ""
   (generated)
   "main.aux"

@@ -3089,7 +3089,7 @@
     <bcf:citekey order="98" intorder="7">esenbuuga2020impact</bcf:citekey>
     <bcf:citekey order="99" intorder="1">esenbuga2020impact</bcf:citekey>
     <bcf:citekey order="99" intorder="2">esenbuuga2020impact</bcf:citekey>
-    <bcf:citekey order="100" intorder="1">Blanchard1993GPS–Theory</bcf:citekey>
+    <bcf:citekey order="100" intorder="1">Blanchard1993GPS--Theory</bcf:citekey>
     <bcf:citekey order="100" intorder="2">Håkansson2017Review</bcf:citekey>
     <bcf:citekey order="101" intorder="1">montenbruck2014differential</bcf:citekey>
     <bcf:citekey order="102" intorder="1">li2018estimation</bcf:citekey>
@@ -3217,7 +3217,8 @@
     <bcf:citekey order="194" intorder="1">yu2024amad</bcf:citekey>
     <bcf:citekey order="195" intorder="1">cleveland1990stl</bcf:citekey>
     <bcf:citekey order="196" intorder="1">peixeiro2022time</bcf:citekey>
-    <bcf:citekey order="197" intorder="1">liu2024characteristics</bcf:citekey>
+    <bcf:citekey order="197" intorder="1">kouba2001precise</bcf:citekey>
+    <bcf:citekey order="198" intorder="1">liu2024characteristics</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

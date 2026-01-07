@@ -3,7 +3,9 @@
 % !TeX TXS-program:recompile-bibliography = txs:///latexmk/{} -v
 
 % 载入 SJTUThesis 模版
-\documentclass[type=master]{sjtuthesis}
+% \documentclass[type=master]{sjtuthesis}
+\documentclass[type=master, review]{sjtuthesis}
+
 % 选项
 %   type=[doctor|master|bachelor],     % 可选（默认：master），论文类型
 %   zihao=[-4|5],                      % 可选（默认：-4），正文字号大小
@@ -74,13 +76,13 @@
 \printbibliography[heading=bibintoc]
 
 % 附录
-\appendix
+% \appendix
 
 % 附录中图表不加入索引
-\captionsetup{list=no}
+% \captionsetup{list=no}
 
 % 附录内容
-\input{contents/app_maxwell_equations}
+% \input{contents/app_maxwell_equations}
 
 % 结尾部分
 \backmatter
