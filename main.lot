@@ -1,37 +1,37 @@
 \contentsline {table}{\numberline {2.1}{\ignorespaces 各类弹性功率模式及其特征}}{16}{table.caption.18}%
 \contentsline {table}{\numberline {2.2}{\ignorespaces 2024 年三次弹性功率事件期间 GPS 卫星的弹性功率开关时间}}{32}{table.caption.25}%
-\contentsline {table}{\numberline {2.3}{\ignorespaces 2024 年三个弹性功率事件中，各卫星基于 15 分钟短时窗估计得到的 C1W–C2W 与 C1C–C1W DCB 结果的均方根（单位：ns）}}{33}{table.caption.28}%
-\contentsline {table}{\numberline {3.1}{\ignorespaces 不同弹性功率检测方法的比较}}{44}{table.caption.37}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces FPD 算法对 BAIE 等 20 个 IGS 测站在 2020 年期间接收的 GPS 卫星S2W频点载噪比数据进行了弹性功率的事后处理检测结果}}{50}{table.caption.39}%
-\contentsline {table}{\numberline {3.3}{\ignorespaces AFPD-DTW实验的数据集}}{59}{table.caption.45}%
-\contentsline {table}{\numberline {3.4}{\ignorespaces 2020--2021 年检测到的 GPS S2W 弹性功率变化事件（标注 * 的事件为以往方法未检测到）}}{63}{table.caption.49}%
-\contentsline {table}{\numberline {3.5}{\ignorespaces 2022 年 1 月至 2025 年 7 月期间检测到的 GPS S2W 弹性功率变化事件}}{64}{table.caption.50}%
-\contentsline {table}{\numberline {3.6}{\ignorespaces 2024 年 6 月 1--7 日期间基于 S2W 信号的 IIR-M 与 IIF 卫星实时检测性能（\%）}}{67}{table.caption.54}%
-\contentsline {table}{\numberline {3.7}{\ignorespaces 2024 年 6 月 2 日 GPS S2W 弹性功率激活时间段}}{68}{table.caption.55}%
-\contentsline {table}{\numberline {3.8}{\ignorespaces 多星座与多频点弹性功率事件检测结果：BDS（2023 年 1 月--2025 年 7 月）与 GPS（2024 年 1 月--2025 年 7 月）}}{69}{table.caption.58}%
-\contentsline {table}{\numberline {3.9}{\ignorespaces 各类弹性功率检测算法性能对比\blx@tocontentsinit {0}\cite {yang2022real,esenbuuga2023recent,meng2024real}}}{71}{table.caption.60}%
-\contentsline {table}{\numberline {3.10}{\ignorespaces AFPD-DTW 在多星座与多频点场景下的整体检测性能}}{71}{table.caption.61}%
-\contentsline {table}{\numberline {3.11}{\ignorespaces DLFPD实验阶段及数据集划分配置方案}}{75}{table.caption.63}%
-\contentsline {table}{\numberline {3.12}{\ignorespaces DLFPD实验测站集合组成}}{76}{table.caption.65}%
-\contentsline {table}{\numberline {3.13}{\ignorespaces DLFPD模型消融实验设计与特征配置}}{78}{table.caption.67}%
-\contentsline {table}{\numberline {3.14}{\ignorespaces DLFPD空间泛化性实验不同卫星上的分类性能评估结果（测试集 I）}}{81}{table.caption.70}%
-\contentsline {table}{\numberline {3.15}{\ignorespaces DLFPD模型空间泛化性整体性能评估结果（测试集 I）}}{82}{table.caption.71}%
-\contentsline {table}{\numberline {3.16}{\ignorespaces DLFPD时间泛化性实验在不同卫星上的分类性能评估结果（测试集 II）}}{88}{table.caption.80}%
-\contentsline {table}{\numberline {3.17}{\ignorespaces DLFPD模型在时间泛化性整体性能评估结果（测试集 II）}}{88}{table.caption.81}%
-\contentsline {table}{\numberline {3.18}{\ignorespaces DLFPD时空泛化性实验在不同卫星上的分类性能评估结果（测试集 III）}}{90}{table.caption.84}%
-\contentsline {table}{\numberline {3.19}{\ignorespaces DLFPD模型在时空泛化性上整体性能评估结果（测试集 III）}}{91}{table.caption.85}%
-\contentsline {table}{\numberline {3.20}{\ignorespaces DLFPD消融实验结果及不同特征模块对性能的影响}}{92}{table.caption.87}%
-\contentsline {table}{\numberline {3.21}{\ignorespaces 不同弹性功率检测方法的机制与性能对比}}{94}{table.caption.88}%
-\contentsline {table}{\numberline {3.22}{\ignorespaces AFPD-DTW 与 DLFPD 方法整体性能对比}}{95}{table.caption.89}%
-\contentsline {table}{\numberline {4.1}{\ignorespaces 星载设备异常检测方法的阶段划分、技术特点与局限性分析}}{99}{table.caption.90}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces 基于融合多窗口统计特征的 LSTM 自编码器异常检测模型的混淆矩阵统计结果}}{108}{table.caption.98}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces 基于融合多窗口统计特征的 LSTM 自编码器异常检测模型的主要性能指标及计算结果}}{109}{table.caption.99}%
-\contentsline {table}{\numberline {5.1}{\ignorespaces 非差非组合PPP（UCUD-PPP）解算策略与参数配置}}{130}{table.caption.108}%
-\contentsline {table}{\numberline {5.2}{\ignorespaces 单频精密单点定位（SF-PPP）解算策略与参数配置}}{131}{table.caption.109}%
-\contentsline {table}{\numberline {5.3}{\ignorespaces 不同 DCB 产品下非差非组合 PPP 定位性能统计}}{132}{table.caption.111}%
-\contentsline {table}{\numberline {5.4}{\ignorespaces 不同策略下非差非组合 PPP 综合性能对比}}{135}{table.caption.112}%
-\contentsline {table}{\numberline {5.5}{\ignorespaces 不同 DCB 产品下单频 PPP 定位性能统计}}{136}{table.caption.114}%
-\contentsline {table}{\numberline {5.6}{\ignorespaces 不同策略下单频 PPP 综合性能对比}}{139}{table.caption.115}%
+\contentsline {table}{\numberline {2.3}{\ignorespaces 2024 年三个弹性功率事件中，各卫星基于 15 分钟短时窗估计得到的 C1W–C2W 与 C1C–C1W DCB 结果的均方根（单位：ns）}}{34}{table.caption.28}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces 不同弹性功率检测方法的比较}}{42}{table.caption.37}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces FPD 算法对 BAIE 等 20 个 IGS 测站在 2020 年期间接收的 GPS 卫星S2W频点载噪比数据进行了弹性功率的事后处理检测结果}}{48}{table.caption.39}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces AFPD-DTW实验的数据集}}{57}{table.caption.45}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces 2020--2021 年检测到的 GPS S2W 弹性功率变化事件（标注 * 的事件为以往方法未检测到）}}{61}{table.caption.49}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces 2022 年 1 月至 2025 年 7 月期间检测到的 GPS S2W 弹性功率变化事件}}{62}{table.caption.50}%
+\contentsline {table}{\numberline {3.6}{\ignorespaces 2024 年 6 月 1--7 日期间基于 S2W 信号的 IIR-M 与 IIF 卫星实时检测性能（\%）}}{65}{table.caption.54}%
+\contentsline {table}{\numberline {3.7}{\ignorespaces 2024 年 6 月 2 日 GPS S2W 弹性功率激活时间段}}{66}{table.caption.55}%
+\contentsline {table}{\numberline {3.8}{\ignorespaces 多星座与多频点弹性功率事件检测结果：BDS（2023 年 1 月--2025 年 7 月）与 GPS（2024 年 1 月--2025 年 7 月）}}{67}{table.caption.58}%
+\contentsline {table}{\numberline {3.9}{\ignorespaces 各类弹性功率检测算法性能对比\blx@tocontentsinit {0}\cite {yang2022real,esenbuuga2023recent,meng2024real}}}{69}{table.caption.60}%
+\contentsline {table}{\numberline {3.10}{\ignorespaces AFPD-DTW 在多星座与多频点场景下的整体检测性能}}{69}{table.caption.61}%
+\contentsline {table}{\numberline {3.11}{\ignorespaces DLFPD实验阶段及数据集划分配置方案}}{73}{table.caption.63}%
+\contentsline {table}{\numberline {3.12}{\ignorespaces DLFPD实验测站集合组成}}{73}{table.caption.65}%
+\contentsline {table}{\numberline {3.13}{\ignorespaces DLFPD模型消融实验设计与特征配置}}{76}{table.caption.67}%
+\contentsline {table}{\numberline {3.14}{\ignorespaces DLFPD空间泛化性实验不同卫星上的分类性能评估结果（测试集 I）}}{79}{table.caption.70}%
+\contentsline {table}{\numberline {3.15}{\ignorespaces DLFPD模型空间泛化性整体性能评估结果（测试集 I）}}{80}{table.caption.71}%
+\contentsline {table}{\numberline {3.16}{\ignorespaces DLFPD时间泛化性实验在不同卫星上的分类性能评估结果（测试集 II）}}{85}{table.caption.80}%
+\contentsline {table}{\numberline {3.17}{\ignorespaces DLFPD模型在时间泛化性整体性能评估结果（测试集 II）}}{86}{table.caption.81}%
+\contentsline {table}{\numberline {3.18}{\ignorespaces DLFPD时空泛化性实验在不同卫星上的分类性能评估结果（测试集 III）}}{88}{table.caption.84}%
+\contentsline {table}{\numberline {3.19}{\ignorespaces DLFPD模型在时空泛化性上整体性能评估结果（测试集 III）}}{88}{table.caption.85}%
+\contentsline {table}{\numberline {3.20}{\ignorespaces DLFPD消融实验结果及不同特征模块对性能的影响}}{89}{table.caption.87}%
+\contentsline {table}{\numberline {3.21}{\ignorespaces 不同弹性功率检测方法的机制与性能对比}}{91}{table.caption.88}%
+\contentsline {table}{\numberline {3.22}{\ignorespaces AFPD-DTW 与 DLFPD 方法整体性能对比}}{92}{table.caption.89}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces 星载设备异常检测方法的阶段划分、技术特点与局限性分析}}{95}{table.caption.90}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces 基于融合多窗口统计特征的 LSTM 自编码器异常检测模型的混淆矩阵统计结果}}{105}{table.caption.98}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces 基于融合多窗口统计特征的 LSTM 自编码器异常检测模型的主要性能指标及计算结果}}{105}{table.caption.99}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces UC-PPP 解算策略与参数配置}}{126}{table.caption.108}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces SF-PPP解算策略与参数配置}}{127}{table.caption.109}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces 不同 DCB 产品下 UC-PPP 定位性能统计}}{128}{table.caption.112}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces 不同策略下UC- PPP 综合性能对比}}{132}{table.caption.113}%
+\contentsline {table}{\numberline {5.5}{\ignorespaces 不同 DCB 产品下SF-PPP 定位性能统计}}{134}{table.caption.115}%
+\contentsline {table}{\numberline {5.6}{\ignorespaces 不同策略下SF-PPP 综合性能对比}}{135}{table.caption.116}%
 \contentsfinish 
 \contentsfinish 
 \contentsfinish 

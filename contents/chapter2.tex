@@ -4,7 +4,7 @@
 
 \section{GNSS弹性功率的定义}
 \subsection{定义}
-弹性功率（Flex Power）是全球导航卫星系统（GNSS）现代化进程中的一项重要能力，它允许卫星在不同信号分量之间重新分配其发射功率\cite{zhang2025analysis,xiang2020understanding}。这种可编程的功率输出能力旨在增强特定信号的强度，以更好地满足作战需求或提高抗干扰性能\cite{liu2024characteristics,esenbuga2020impact,esenbuuga2020impact,zhang2025analysis}。
+弹性功率是全球导航卫星系统（GNSS）现代化进程中的一项重要能力，它允许卫星在不同信号分量之间重新分配其发射功率\cite{zhang2025analysis,xiang2020understanding}。这种可编程的功率输出能力旨在增强特定信号的强度，以更好地满足作战需求或提高抗干扰性能\cite{liu2024characteristics,esenbuga2020impact,esenbuuga2020impact,zhang2025analysis}。
 
 弹性功率的核心在于在不增加卫星总发射功率的前提下，通过转移功率来提高某些信号的标称发射功率\cite{zhang2025analysis}。其主要目的是提升信号的抗干扰能力（anti-jamming performance），保护军事用户（如美国国防部及其盟友）在国家安全受威胁时仍能使用GPS，并通过增强军事P(Y)和M码信号的强度来实现这一目标\cite{jimenez2010measured,zhang2025analysis}。
 
@@ -76,10 +76,10 @@ Mode 10 & IIR-M/IIF & 127--131, 2023 & 120$^\circ$W / 36$^\circ$N; 5$^\circ$W / 
 \end{table}
 
 \section{GNSS弹性功率对定位数据的影响}
-美国空军太空司令部（AFSPC）最初认为弹性功率对全球绝大多数用户无明显影响，只有少数老旧接收机可能受不利影响。然而，现有研究表明，这种发射端的操作在增强特定信号抗压制能力的同时，也会对 GNSS 的精密数据处理产生影响。从物理层面上看，弹性功率的激活直接引发生信号载噪比（C/N0）出现 2–11 dB 量级的阶跃式变化，并导致卫星通道硬件延迟发生漂移，进而引起差分码偏差（DCB）和相位偏差出现纳秒级甚至周级的系统性不连续\cite{liu2024characteristics}。这些未被模型化的偏差若不经特殊处理，将向用户端传播，导致精密单点定位（PPP）收敛时间延长、模糊度固定（PPP-AR）残差恶化，并限制 GNSS-R 反演及精密定轨等衍生应用的精度\cite{du2024effects,liu2024characteristics,wu2024effects,Wang2022Dynamic}。对于高精度定位用户而言，C/N0 的波动直接表征了信号的跟踪质量与功率模式，而 DCB 的稳定性则决定了伪距校正与电离层建模的精度\cite{Steigenberger2018GNSS}。因此，本节将重点对弹性功率在 C/N0 及 DCB 上的具体影响进行分析。
+美国空军太空司令部（AFSPC）最初认为弹性功率对全球绝大多数用户无明显影响，只有少数老旧接收机可能受不利影响。然而，现有研究表明，这种发射端的操作在增强特定信号抗压制能力的同时，也会对 GNSS 的精密数据处理产生影响。从物理层面上看，弹性功率的激活直接引发生信号载噪比（C/N0）出现 2–11 dB 量级的阶跃式变化，并导致卫星通道硬件延迟发生漂移，进而引起DCB和相位偏差出现纳秒级甚至周级的系统性不连续\cite{liu2024characteristics}。这些未被模型化的偏差若不经特殊处理，将向用户端传播，导致 PPP 收敛时间延长、PPP-AR 残差恶化，并限制 GNSS-R 反演及精密定轨等衍生应用的精度\cite{du2024effects,liu2024characteristics,wu2024effects,Wang2022Dynamic}。对于高精度定位用户而言，C/N0 的波动直接表征了信号的跟踪质量与功率模式，而 DCB 的稳定性则决定了伪距校正与电离层建模的精度\cite{Steigenberger2018GNSS}。因此，本节将重点对弹性功率在 C/N0 及 DCB 上的具体影响进行分析。
 
 \subsection{GNSS弹性功率对载噪比（C/N0）的影响}
-本节介绍了阶跃提升和整体提升模式，并分析了不同接收器-天线组合的影响。我们强调了传统方法的缺点，这些方法仅限于设备差异和广泛的数据。
+本节介绍了阶跃提升和整体提升模式，并分析了不同接收器–天线组合的影响。同时，指出了传统方法的局限性，即其分析范围主要受限于设备差异和大规模数据。
 
 基于单站 C/N0 时间序列分析，可以观察到弹性功率的两种典型模式：阶跃式提升（step lift） 和 整体提升（overall lift）。图\ref{fig:afpd_1}采用 2024 年 6 月 3 日（蓝色）和 6 月 4 日（红色）的 S2W 观测数据对这两种模式进行了展示。当卫星进入或离开弹性功率激活区域时，会产生 C/N0 的突然上升或下降，即阶跃式提升，如图\ref{fig:afpd_1}第一行所示。这些上升和下降分别出现在第一行的第一个和最后一个子图中。当卫星在整个通过弧段期间始终处于激活区域内时，则会出现整体提升模式，使得整个轨迹的 C/N0 持续高于未激活时的水平，这在 6 月 4 日相较于 6 月 3 日的观测中清晰体现出来。
 
@@ -90,7 +90,7 @@ Mode 10 & IIR-M/IIF & 127--131, 2023 & 120$^\circ$W / 36$^\circ$N; 5$^\circ$W / 
     \label{fig:afpd_1}
 \end{figure}
     
-为了展示弹性功率（flex power）对 C/N0 的提升模式，我们提出了一种将 二维卫星地面轨迹 与 C/N0 时间序列 相结合的可视化方法。图 \ref{fig:afpd_2} 给出了 2020 年 2 月 14 日的两个示例：站点 BAIE 上的卫星 G05 显示阶跃式提升（step lift），站点 BIK0 上的卫星 G03 显示整体提升（overall lift）。在两个子图中，深色阴影区域表示弹性功率的激活区域，深蓝色区域表示站点的视场范围（FoV）。粉色虚线表示卫星轨迹，黄色叉号标记激活中心；粉色三角形与矩形分别表示轨迹的起点和终点。右侧图中，黑色点为 2 月 13 日（弹性功率未激活）得到的基线 C/N0 值；而 2 月 14 日的彩色点为实际接收的 C/N0，其中绿色表示无提升，红色表示有提升。
+为了展示弹性功率对 C/N0 的提升模式，提出了一种将 二维卫星地面轨迹 与 C/N0 时间序列 相结合的可视化方法。图 \ref{fig:afpd_2} 给出了 2020 年 2 月 14 日的两个示例：站点 BAIE 上的卫星 G05 显示阶跃式提升（step lift），站点 BIK0 上的卫星 G03 显示整体提升（overall lift）。在两个子图中，深色阴影区域表示弹性功率的激活区域，深蓝色区域表示站点的视场范围（FoV）。粉色虚线表示卫星轨迹，黄色叉号标记激活中心；粉色三角形与矩形分别表示轨迹的起点和终点。右侧图中，黑色点为 2 月 13 日（弹性功率未激活）得到的基线 C/N0 值；而 2 月 14 日的彩色点为实际接收的 C/N0，其中绿色表示无提升，红色表示有提升。
 
 \begin{figure}
     \centering
@@ -101,9 +101,9 @@ Mode 10 & IIR-M/IIF & 127--131, 2023 & 120$^\circ$W / 36$^\circ$N; 5$^\circ$W / 
 
 在图\ref{fig:afpd_2}(a)中，卫星 G05 于 04:39:00 进入 BAIE 的视场。起初它位于激活区域之外（绿色轨迹），因此未观察到 C/N0 提升。当其进入激活区域（轨迹由绿变红）时，出现了阶跃提升。在图\ref{fig:afpd_2}(b)中，卫星 G03 一开始就位于激活区域内，因此在整个视场时间内均表现出 C/N0 的整体提升。只要卫星在整个观测视场期间始终处于激活区域内，就会出现这种整体提升模式。
 
-如果所选站点呈现整体提升模式，由于缺乏过渡边界（transition edges），滑动窗口方法将无法检测到弹性功率。因此，FPD（Flex Power Detection）需要大量站点才能获得准确检测，这导致过程耗时。因此，为实时应用尽可能减少站点数量的同时保证稳健检测变得至关重要。而我们的方法正是专为解决这一挑战而设计的。
+如果所选站点呈现整体提升模式，由于缺乏不连续边界，滑动窗口方法将无法检测到弹性功率。因此，FPD 需要大量站点才能获得准确检测，这导致过程耗时。因此，为实时应用尽可能减少站点数量的同时保证稳健检测变得至关重要。本节提出的方法正是专为解决这一挑战而设计的。
 
-为了分析不同接收机—天线组合导致的 C/N0 提升幅度差异，我们选取了六组具有相同接收机类型但天线不同的站点组合。以 2020 年第 45 天（DOY 45）期间的一次弹性功率事件为例，选取卫星 G07 的 S2W 时间序列进行分析。我们计算了每组在所有 IIR-M 和 IIF 卫星上的平均 C/N0 提升值，结果如图\ref{fig:afpd_3}所示。
+为了分析不同接收机—天线组合导致的 C/N0 提升幅度差异，选取了六组具有相同接收机类型但天线不同的站点组合。以 2020 年第 45 天（Doy of Year 45, DOY 45）期间的一次弹性功率事件为例，选取卫星 G07 的 S2W 时间序列进行分析。同时，计算了每组在所有 IIR-M 和 IIF 卫星上的平均 C/N0 提升值，结果如图\ref{fig:afpd_3}所示。
 
 \begin{figure}
     \centering
@@ -112,16 +112,16 @@ Mode 10 & IIR-M/IIF & 127--131, 2023 & 120$^\circ$W / 36$^\circ$N; 5$^\circ$W / 
     \label{fig:afpd_3}
 \end{figure}
 
-结果表明，不同组之间的平均 C/N0 提升值存在显著差异，平均差值达到 1.53 dB-Hz，最大差值为 2.56 dB-Hz，而组内平均标准差（STD）仅为 0.37 dB-Hz。这表明这些差异具有系统性，而非随机异常。该发现凸显了依赖基线建模与阈值检测方法的关键局限性，因为每种接收机—天线组合都需要分别进行建模与阈值设定。这也解释了Meng等人\cite{meng2024real}提出的基于模型的方法为什么需要对每个站点进行独立建模。相比之下，我们的方法 不需要历史数据建模，并且在 多频点、多 GNSS 场景中表现优异，相关结果将在下一节展示。
+结果表明，不同组之间的平均 C/N0 提升值存在显著差异，平均差值达到 1.53 dB-Hz，最大差值为 2.56 dB-Hz，而组内平均标准差（STD）仅为 0.37 dB-Hz。这表明这些差异具有系统性，而非随机异常。该发现凸显了依赖基线建模与阈值检测方法的关键局限性，因为每种接收机—天线组合都需要分别进行建模与阈值设定。这也解释了Meng等人\cite{meng2024real}提出的基于模型的方法为什么需要对每个站点进行独立建模。相比之下，AFPD-DTW不需要历史数据建模，并且在多频点、多 GNSS 场景中表现优异，相关结果将在下一节展示。
 
 \subsection{GNSS弹性功率对DCB的影响}
-弹性功率的激活对GNSS观测值和产品（如DCB）以及最终的定位精度产生深远影响，是高精度用户必须关注的问题。弹性功率是导致卫星差分码偏差（DCB）产生显著变化和不确定性的主要因素之一\cite{zhang2025analysis,xiang2020understanding,liu2024characteristics,abraha2024gnss,esenbuga2020impact,liu2025effects,esenbuuga2020impact}。DCB的精确估计对于精密电离层建模、定位和授时至关重要\cite{esenbuga2020impact,esenbuuga2020impact}。
+弹性功率的激活对GNSS观测值和产品（如DCB）以及最终的定位精度产生深远影响，是高精度用户必须关注的问题。弹性功率是导致卫星DCB产生显著变化和不确定性的主要因素之一\cite{zhang2025analysis,xiang2020understanding,liu2024characteristics,abraha2024gnss,esenbuga2020impact,liu2025effects,esenbuuga2020impact}。DCB的精确估计对于精密电离层建模、定位和授时至关重要\cite{esenbuga2020impact,esenbuuga2020impact}。
 
 GPS系统方面，对于频内DCB，C1C-C1W平均变化约0.4 ns；C2C-C2W对G10卫星可变化约0.5 ns\cite{esenbuga2020impact,esenbuuga2020impact,zhang2010accuracy}。同频段DCB在状态切换时有明显偏移\cite{li2025impact}。对于频间DCB,C1C-C2W影响相对较小，约0.1 ns\cite{esenbuga2020impact,esenbuuga2020impact}。BDS系统方面，对于频内DCB，C2I-C6I DCB受弹性功率影响，但具体量化研究较少，更多关注其对宽巷模糊度的影响\cite{liu2024characteristics}。对于频间DCB，对C2I-C6I DCB估计的影响因卫星类型而异：GEO卫星为4.66 ns，IGSO卫星为12.43 ns，MEO卫星为15.76 ns\cite{liu2025effects}。
 
 弹性功率引入的偏差会直接影响伪距和载波相位观测值，进而降低模糊度固定性能和最终的定位精度。弹性功率会改变GNSS信号的调制方式，导致伪距和载波相位测量中出现修正的偏差，表现为未建模的系统误差，例如“修改后的硬件偏差”和“多路径误差”\cite{liu2024characteristics,esenbuga2020impact,esenbuuga2020impact,zhang2024improved}。对于GPS，早期弹性功率模式对HMW组合影响甚微，而2020年2月14日之后的“后期弹性功率”模式会导致HMW组合出现显著的系统性不连续性，即便在高仰角情况下也存在，其残差标准差可超过2个周波（正常情况下约为0.1个周波）。这会中断连续跟踪弧段，给循环滑移检测带来困难\cite{zhang2024improved}。对于BDS-2，弹性功率也会导致HMW组合出现明显的不连续性\cite{liu2024characteristics}。这些HMW组合中的系统性不连续性被认为是源于多路径误差，但具体来源尚不确定\cite{zhang2024improved}。
 
-后期弹性功率模式下，GPS宽巷模糊度残差的标准差会升高，宽巷模糊度固定率从正常的95\%下降到约80\%\cite{zhang2024improved}。BDS-2的弹性功率也会导致宽巷模糊度（WL）偏差变化高达约0.4个周波，影响WL模糊度固定残差，从而影响精密单点定位模糊度解算（PPP-AR）\cite{liu2024characteristics}。 
+后期弹性功率模式下，GPS宽巷模糊度残差的标准差会升高，宽巷模糊度固定率从正常的95\%下降到约80\%\cite{zhang2024improved}。BDS-2的弹性功率也会导致宽巷模糊度（WL）偏差变化高达约0.4个周波，影响WL模糊度固定残差，从而影响 PPP-AR \cite{liu2024characteristics}。 
 
 GPS后期弹性功率模式会导致GRACE-FO卫星的运动学轨道质量下降。对于浮点模糊度解算（FAR），三维方向上的轨道劣化约9毫米；对于整数模糊度解算（IAR），劣化约4毫米，主要影响沿轨和径向方向\cite{zhang2024improved}。BDS-2弹性功率会增加动态PPP-AR的定位偏差均方根值（RMS），例如东向从0.8增加到1.0厘米，北向从0.8增加到0.9厘米，向上从2.5增加到2.8厘米（若不仔细考虑弹性功率影响）\cite{liu2024characteristics}。将历元差分K波段测距数据引入GRACE-FO的运动学轨道确定中，可在后期弹性功率期间将FAR和IAR的绝对轨道精度分别提高15\%和11\%，相对轨道精度提高高达77\%和69\%\cite{zhang2024improved}。这表明将弹性功率纳入高精度GNSS数据处理，特别是对于PPP-AR的偏差产品，对于获得更可靠的定位结果至关重要\cite{liu2024characteristics}。 
 
@@ -130,11 +130,11 @@ Differential Code Bias(DCB)是指GNSS系统中卫星发射的信号之间或接�
 
 DCB分为卫星DCB和接收机DCB，分别反映了信号从卫星发射到天线相位中心、以及从接收机天线相位中心到信号捕获跟踪过程中的硬件延迟差异\cite{li2018estimation}。DCB通常以纳秒或米为单位测量，对GNSS信号的伪距测量和载波相位数据的处理有重要影响\cite{Zhang2023A}。
 
-在高精度定位解算过程中，DCB会从多个方面影响定位精度\cite{Zhang2023A,Du2023BDS-3}。电离层延迟校是高精度GNSS定位的核心，因为信号穿过电离层时会因电离层的电子密度（TEC, Total Electron Content）而受到不同偏折\cite{Elghazouly2019Estimating}。DCB误差不被正确处理时，会导致电离层TEC估算错误，进而降低定位精度。在使用单频接收机时，TEC准确性高度依赖于准确的卫星与接收机DCB值\cite{zhang2018joint}。同时，电离层建模和全球电离层图（GIM, Global Ionospheric Map）的精度也容易受DCB的影响\cite{Ammar2018Estimation,montenbruck2014differential}。因此，精确估计DCB参数对于消除观测值中的系统性硬件延迟、构建高精度的电离层模型以及实现可靠的精密定位与授时服务至关重要\cite{Xiang2020Reducing}。
+在高精度定位解算过程中，DCB会从多个方面影响定位精度\cite{Zhang2023A,Du2023BDS-3}。电离层延迟校是高精度GNSS定位的核心，因为信号穿过电离层时会因电离层的TEC而受到不同偏折\cite{Elghazouly2019Estimating}。DCB误差不被正确处理时，会导致电离层TEC估算错误，进而降低定位精度。在使用单频接收机时，TEC准确性高度依赖于准确的卫星与接收机DCB值\cite{zhang2018joint}。同时，电离层建模和全球电离层图（GIM, Global Ionospheric Map）的精度也容易受DCB的影响\cite{Ammar2018Estimation,montenbruck2014differential}。因此，精确估计DCB参数对于消除观测值中的系统性硬件延迟、构建高精度的电离层模型以及实现可靠的精密定位与授时服务至关重要\cite{Xiang2020Reducing}。
 
 \subsubsection{常用DCB的估计方法}
 
-目前，全球DCB产品主要由国际GNSS服务（IGS）旗下的多个分析中心（ACs）负责解算与维护\cite{wang2016determination}。其中，欧洲轨道确定中心（CODE）作为老牌机构，长期提供高质量的GPS和GLONASS双频DCB产品；德国宇航中心（DLR）和中国科学院（CAS）则是多系统实验项目（MGEX）的核心贡献者，其产品覆盖了包括北斗（BDS）、Galileo、QZSS及IRNSS在内的全星座、多频点信号\cite{Wang2022A,Li2017GPS,Gu2020BDS-3}。此外，德国地学研究中心（GFZ）和武汉大学（WHU）也定期发布相关偏置产品，为全球用户提供了多源参考。
+目前，全球DCB产品主要由 IGS 旗下的多个分析中心负责解算与维护\cite{wang2016determination}。其中，欧洲轨道确定中心（CODE）作为老牌机构，长期提供高质量的GPS和GLONASS双频DCB产品；德国宇航中心（DLR）和中国科学院（CAS）则是多系统实验项目（MGEX）的核心贡献者，其产品覆盖了包括BDS、Galileo、QZSS及IRNSS在内的全星座、多频点信号\cite{Wang2022A,Li2017GPS,Gu2020BDS-3}。此外，德国地学研究中心（GFZ）和武汉大学（WHU）也定期发布相关偏置产品，为全球用户提供了多源参考。
 
 在解算方法上，DCB的估计主要遵循两条技术路线。无论采用何种路线，其基础均为无几何（Geometry-Free, GF）组合观测方程\cite{Wang2022A,Wang2021Estimation,montenbruck2014differential}：
 \begin{equation}
@@ -144,7 +144,7 @@ DCB分为卫星DCB和接收机DCB，分别反映了信号从卫星发射到天�
 $P_{\text{GF}, r}^s$ 为频率 $i$ 与 $j$ 的伪距差值；
 $\alpha_{ij}$ 为频率相关的电离层转换因子；
 $\text{STEC}_r^s$ 为倾斜路径总电子含量；
-$\text{DCB}_{ij}^s$ 和 $\text{DCB}_{ij, r}$ 分别为卫星和接收机的差分码偏差；
+$\text{DCB}_{ij}^s$ 和 $\text{DCB}_{ij, r}$ 分别为卫星和接收机的DCB；
 $c$ 为光速。
 
 第一类是电离层建模与DCB同步估计算法，其核心思想是在提取电离层总电子含量（TEC）的同时，将卫星和接收机DCB作为未知参数纳入状态方程统一求解\cite{He2025An}。该方法将 $\text{STEC}$ 表达为投影函数（MF）与垂直总电子含量（VTEC）的乘积，并利用数学模型对 VTEC 进行参数化。此时观测方程转化为：
@@ -153,16 +153,16 @@ $c$ 为光速。
 \end{equation}
 在此框架下，CODE 采用基于球谐函数的全球建模法\cite{schaer1999mapping}，将 VTEC 展开为球谐系数求和的形式；而 CAS 则利用广义三角级数（Generalized Trigonometric Series）结合单站建模技术。在解算过程中，由于卫星与接收机 DCB 存在强相关性导致的秩亏问题，通常需引入“零均值基准”（Zero-mean Condition，即 $\sum \text{DCB}^s = 0$）或“参考卫星（Reference Satellite，即$DCB_{refsat} = 0$）”进行约束分离\cite{Jin2016Assessment,xiang2020understanding}。
 
-第二类是GIM预修正解算算法，即利用已知的高精度外部电离层图（GIM）作为先验信息，从几何无关组合观测量中扣除电离层延迟，进而通过最小二乘法提取DCB参数\cite{Sanz2017GPS,Montenbruck2014Differential,Li2021Estimation}。该方法假设外部 GIM 提供的 $\text{STEC}_{\text{GIM}}$ 足够精确，将其移至方程左侧作为已知量：
+第二类是GIM预修正解算算法，即利用已知的高精度外部电离层图作为先验信息，从几何无关组合观测量中扣除电离层延迟，进而通过最小二乘法提取DCB参数\cite{Sanz2017GPS,Montenbruck2014Differential,Li2021Estimation}。该方法假设外部 GIM 提供的 $\text{STEC}_{\text{GIM}}$ 足够精确，将其移至方程左侧作为已知量：
 \begin{equation}
     P_{\text{GF}, r}^s - \alpha_{ij} \cdot \text{STEC}_{\text{GIM}} = c \cdot \text{DCB}_{ij}^s + c \cdot \text{DCB}_{ij, r} + \varepsilon'
 \end{equation}
 通过消除电离层参数，待估量仅剩 DCB 参数，极大地降低了计算维度。DLR 即采用此类方法对多系统信号进行高效处理\cite{montenbruck2017multi,wang2016determination}。
 
-近年来，随着处理策略的演进，各机构正逐步将传统的 DCB 产品向更具物理普适性的特定观测值偏差（OSB）格式转化，即 $\text{DCB}_{ij} = \text{OSB}_i - \text{OSB}_j$，以满足精密单点定位（PPP）等应用对多频偏差修正的更高需求\cite{Villiger2019Determination,Wang2020GPS}。
+近年来，随着处理策略的演进，各机构正逐步将传统的 DCB 产品向更具物理普适性的特定观测值偏差（OSB）格式转化，即 $\text{DCB}_{ij} = \text{OSB}_i - \text{OSB}_j$，以满足 PPP 等应用对多频偏差修正的更高需求\cite{Villiger2019Determination,Wang2020GPS}。
 
 \subsubsection{短期 DCB 估计的方法}
-本节描述了进行短期 DCB 估计的方法，其方法与CODE采用的“电离层建模与DCB同步估计算法”\cite{schaer1999mapping}，下面将进行方法详细讲解。首先，我们建立基本的 GNSS 观测方程，并开发联合估计卫星 DCB、接收机 DCB 和电离层参数的方法。其次，我们提出了针对频内场景的具体修改，并详细介绍了解决秩亏问题的约束策略。
+本节描述了进行短期 DCB 估计的方法，其方法与CODE采用的“电离层建模与DCB同步估计算法”\cite{schaer1999mapping}相似，下面将进行方法详细讲解。首先，建立了基本的 GNSS 观测方程，并开发联合估计卫星 DCB、接收机 DCB 和电离层参数的方法。其次，提出了针对频内场景的具体修改，并详细介绍了解决秩亏问题的约束策略。
 
 本研究使用的 GNSS 观测数据包括伪距和载波相位观测值。这些数据存储在 IGS (\url{ftp://gdc.cddis.eosdis.nasa.gov/gps/data}) 发布的 RINEX 格式观测文件中。由伪距和载波相位组成的观测方程可表示为\cite{jin2008gps}：
 \begin{equation}
@@ -184,7 +184,7 @@ L_{k,j}^i &= \rho_{0,j}^i - d_{\text{ion},k,j}^i + d_{\text{trop},j}^i + c(\tau^
     \item $\varepsilon_{P,k,j}^i$ 和 $\varepsilon_{L,k,j}^i$ 是残差，均服从高斯分布；下标 $k$ 指示信号频率；上标 $i$ 代表卫星索引；下标 $j$ 指接收机序列号。后续部分中的所有下标和上标均适用相同的符号规则。
 \end{itemize}
 
-为了消除与频率无关的项，假设我们使用频率 $f_1$ 和 $f_2$ 的信号。通过使用双频数据，我们构建了无几何组合（Geometry-free, GF）观测方程 $P_{\text{GF}}$ 和 $L_{\text{GF}}$，可表示为：
+为了消除与频率无关的项，假设使用频率 $f_1$ 和 $f_2$ 的信号。通过使用双频数据，可以构建 GF 观测方程 $P_{\text{GF}}$ 和 $L_{\text{GF}}$，表示为：
 \begin{equation}
 \begin{split}
 P_{\text{GF}} &= P_{1,j}^i - P_{2,j}^i = (d_{\text{ion},1,j}^i - d_{\text{ion},2,j}^i) + \text{DCB}^i + \text{DCB}_j + \varepsilon_{P,\text{GF},j}^i \\
@@ -222,7 +222,7 @@ P_{\text{GF,sm}} = (d_{\text{ion},1,j}^i - d_{\text{ion},2,j}^i) + \text{DCB}^i 
 \begin{equation}
 d_{\text{ion}} = \frac{40.3}{f^2} \text{STEC} \nonumber
 \end{equation}
-其中 $d_{\text{ion}}$ 为倾斜电离层延迟，STEC 为倾斜总电子含量。结合该方程，我们推导出：
+其中 $d_{\text{ion}}$ 为倾斜电离层延迟，STEC 为倾斜总电子含量。结合该方程，可以推导出：
 \begin{equation}
 \text{STEC} = -\frac{f_1^2 f_2^2}{40.3(f_1^2 - f_2^2)} (P_{\text{GF,sm}} - c\text{DCB}_j - c\text{DCB}^i)
 \end{equation}
@@ -281,7 +281,7 @@ P_{\text{GF}} = \text{DCB}^i + \text{DCB}_j + \varepsilon_{P,\text{GF},j}^i
 \subsubsection{DCB估计评价指标}
 为了量化评估本文提出的短期 DCB 估计方法的性能，并准确分析弹性功率对 DCB 的具体影响程度，本研究主要采用内符合精度以及外部符合度两个指标进行评价。常见的评估指标还会通过估值序列的短期稳定性来评估在无外部干扰情况下，连续历元或连续滑动窗口估计出的 DCB 值是否能保持平稳。但考虑到弹性功率会导致卫星硬件延迟在日内发生显著跳变，传统的稳定性评价体系在此场景下需要进行针对性的修正，因此不再使用序列稳定性作为评估指标。
 
-内符合精度通过观测方程的验后残差来直接反映函数模型与观测数据的拟合程度，是评价估计质量的首要指标。残差的分布特性和均方根（RMS）值体现了估计策略对观测噪声、多路径效应以及非模型化误差的吸收能力。对于历元 $t$ 的观测值残差向量 $V_t$，其 RMS 计算公式为
+内符合精度通过观测方程的验后残差来直接反映函数模型与观测数据的拟合程度，是评价估计质量的首要指标。残差的分布特性和 RMS 值体现了估计策略对观测噪声、多路径效应以及非模型化误差的吸收能力。对于历元 $t$ 的观测值残差向量 $V_t$，其 RMS 计算公式为
 \begin{equation}
     \text{RMS}_{\text{res}} = \sqrt{V_t^T P V_t / (n - k)}
 \end{equation}
@@ -291,7 +291,7 @@ $P$ 为观测值的权矩阵，反映不同观测值的随机模型精度；
 $n$ 代表该历元的观测值总数量；
 $k$ 为待估参数的总个数。
 
-外部符合度评估旨在通过与国际权威机构发布的成熟产品进行比对，以验证本文所提 DCB 估计策略的正确性与可靠性。然而，鉴于目前国际 GNSS 服务（IGS）分析中心（如 CAS 或 DLR）发布的主流 DCB 产品均为单日解，缺乏与本文 15 分钟高频估计在时间分辨率上直接匹配的外部参考基准。针对这一问题，可采用一种等时间尺度验证策略，即将估计算法的滑动窗口长度从 15 分钟扩展至单日，利用全天观测数据解算生成与 IGS 产品定义一致的日解 DCB 估计值。通过对比同一时间跨度下的解算结果，可以有效剔除时间分辨率差异带来的干扰，从而专注于评估算法本身的数学模型与解算流程的准确性。在此基础上，采用均方根误差（RMSE）作为衡量本文日解结果与 IGS 参考产品一致性的统计量，计算公式如下：
+外部符合度评估旨在通过与国际权威机构发布的成熟产品进行比对，以验证本文所提 DCB 估计策略的正确性与可靠性。然而，鉴于目前 IGS 分析中心（如 CAS 或 DLR）发布的主流 DCB 产品均为单日解，缺乏与本文 15 分钟高频估计在时间分辨率上直接匹配的外部参考基准。针对这一问题，可采用一种等时间尺度验证策略，即将估计算法的滑动窗口长度从 15 分钟扩展至单日，利用全天观测数据解算生成与 IGS 产品定义一致的日解 DCB 估计值。通过对比同一时间跨度下的解算结果，可以有效剔除时间分辨率差异带来的干扰，从而专注于评估算法本身的数学模型与解算流程的准确性。在此基础上，采用均方根误差（RMSE）作为衡量本文日解结果与 IGS 参考产品一致性的统计量，计算公式如下：
 \begin{equation}
     \text{RMSE}_{\text{ext}} = \sqrt{\frac{\sum_{i=1}^{N_{\text{sat}}} (\text{DCB}_{\text{daily}, i} - \text{DCB}_{\text{ref}, i})^2}{N_{\text{sat}}}}
 \end{equation}
@@ -305,9 +305,9 @@ $\text{DCB}_{\text{ref}, i}$ 为对应日期 IGS 分析中心发布的参考产�
 
 \subsubsection{数据集与实验设计}
 
-本节概述了我们为研究弹性功率对 DCB 影响而进行的实验设置。首先，我们详细介绍了数据选择，包括 2024 年三个具有代表性的弹性功率事件以及 300 多个覆盖全球的 MGEX 测站。其次，我们介绍了三阶段的处理策略：涉及 RINEX 文件处理和 C/N0 分析的数据准备、使用 15 分钟滑动窗口的 DCB 估计，以及检查弹性功率转换期间 DCB 变化的影响分析。
+本节概述了为研究弹性功率对 DCB 影响而进行的实验设置。首先，详细介绍了数据选择，包括 2024 年三个具有代表性的弹性功率事件以及 300 多个覆盖全球的 MGEX 测站。其次，介绍了三阶段的处理策略：涉及 RINEX 文件处理和 C/N0 分析的数据准备、使用 15 分钟滑动窗口的 DCB 估计，以及检查弹性功率转换期间 DCB 变化的影响分析。
 
-为了研究弹性功率对 DCB 的影响，选择了 2024 年的三个弹性功率事件：DOY 45-46、DOY 155-156 和 DOY 177-179。由于弹性功率在 2024 年的大部分时间里以各种模式被激活，这些时段代表了不同弹性功率运行模式之间的转换。选择了来自 MGEX 网络\cite{montenbruck2017multi}(\url{https://network.igs.org/})的 300 多个测站以确保估计精度。这些测站提供 RINEX 3 观测文件。这些测站的全球分布如图\ref{fig:dcb_fig1}所示，其中红点表示 MGEX 测站。C/N0 的变化直接反映了弹性功率的激活状态\cite{steigenberger2019flex}。我们分析了 RINEX 3 观测文件中的 S2W C/N0 数据，以确定弹性功率开启或关闭的确切时间。
+为了研究弹性功率对 DCB 的影响，选择了 2024 年的三个弹性功率事件：DOY 45-46、DOY 155-156 和 DOY 177-179。由于弹性功率在 2024 年的大部分时间里以各种模式被激活，这些时段代表了不同弹性功率运行模式之间的转换。选择了来自 MGEX 网络\cite{montenbruck2017multi}(\url{https://network.igs.org/})的 300 多个测站以确保估计精度。这些测站提供 RINEX 3 观测文件。这些测站的全球分布如图\ref{fig:dcb_fig1}所示，其中红点表示 MGEX 测站。C/N0 的变化直接反映了弹性功率的激活状态\cite{steigenberger2019flex}。分析了 RINEX 3 观测文件中的 S2W C/N0 数据，以确定弹性功率开启或关闭的确切时间。
 
 \begin{figure}
     \centering
@@ -327,7 +327,7 @@ $\text{DCB}_{\text{ref}, i}$ 为对应日期 IGS 分析中心发布的参考产�
     \label{fig:dcb_fig2}
 \end{figure}
 
-首先，在数据准备阶段，从 CDDIS 等档案库下载目标日期的 RINEX、SP3 和 SINEX 文件。从 RINEX 文件中提取每个测站的伪距、载波相位和 C/N0 数据。通过偏移检测分析 C/N0 时间序列，以识别弹性功率激活/停用的时间。无几何（GF）组合产生 GF 伪距 $P_{\text{GF}}$ 和 GF 载波相位 $L_{\text{GF}}$。利用 SP3 文件中的卫星位置和 SINEX 文件中的接收机坐标，通过 MSLM 模型计算电离层穿刺点（IPP）位置。对于频内 DCB 估计，$P_{\text{GF}}$ 直接作为观测输入。对于频间 DCB 估计，应用 CCL 技术生成平滑伪距 $P_{\text{sm}}$ 作为观测输入。
+首先，在数据准备阶段，从 CDDIS 等档案库下载目标日期的 RINEX、SP3 和 SINEX 文件。从 RINEX 文件中提取每个测站的伪距、载波相位和 C/N0 数据。通过偏移检测分析 C/N0 时间序列，以识别弹性功率激活/停用的时间。 GF 组合产生 GF 伪距 $P_{\text{GF}}$ 和 GF 载波相位 $L_{\text{GF}}$。利用 SP3 文件中的卫星位置和 SINEX 文件中的接收机坐标，通过 MSLM 模型计算电离层穿刺点（IPP）位置。对于频内 DCB 估计，$P_{\text{GF}}$ 直接作为观测输入。对于频间 DCB 估计，应用 CCL 技术生成平滑伪距 $P_{\text{sm}}$ 作为观测输入。
 
 其次，在估计阶段，使用球谐函数对电离层进行建模以构建估计矩阵。处理过程采用全天滑动窗口进行最小二乘估计。选择 15 分钟的窗口是为了平衡时间分辨率和估计稳定性——较长的窗口可能会遗漏快速的 DCB 变化，而较短的窗口则存在可观测性不足的风险。此时长确保了可靠的短期 DCB 估计。鉴于 GPS 卫星 DCB 的已知稳定性以及弹性功率能力仅限于 IIR-M 和 IIF 卫星，选择 G02 作为参考卫星\cite{wu2024effects}。
 
@@ -443,7 +443,7 @@ G32 & & 2:48 & 13:00 & & & 7:12 & 19:12 & 0:00 & & 0:00 & 5:36 & 17:36 & 22:00 &
 
 频内 DCB 估计值在多颗卫星上表现出清晰的偏移偏差模式，其偏移持续时间与表 1 中所示的弹性功率激活/停用时间相对应。在这些偏移之外，变化保持稳定在 0.40 ns 以内，且无趋势性行为。相比之下，频间 DCB 估计值未显示出显著的偏移偏差，波动通常控制在 $\pm 6$ ns 以内。频间 DCB 变化在所有三次事件中均表现出 24 小时的周期性，这可能归因于使用 G02 作为参考卫星，其变化模式可能传递给了其他卫星的 DCB 趋势。在事件 2 的频间 DCB 中，两天凌晨 6 点左右出现了显著的数值波动，这可能是由于剧烈的电离层活动所致\cite{ya2010gps}。
 
-图\ref{fig:dcb_fig7}、图\ref{fig:dcb_fig8}以及图\ref{fig:dcb_fig9}说明了三次弹性功率事件期间所有 GPS 卫星的个体 C1C-C1W 频内 DCB 时间序列。在事件 1 期间，除 G05 外的所有 IIR-M 和 IIF 卫星均表现出 DCB 偏移偏差。在事件 2 和 3 期间，所有 IIR-M 和 IIF 卫星均表现出 DCB 偏移偏差。为了调查频内 DCB 偏移偏差是否确实受到弹性功率操作的影响，我们分析了 2024 年弹性功率事件 3 期间卫星 G32 的多站 S2W C/N0 与 C1C-C1W DCB 估计值之间的关系。图\ref{fig:dcb_fig10}展示了对比时间序列图，其中紫色虚点线代表 C1C-C1W DCB 估计值，彩色圆形标记表示来自多个跟踪站的 S2W C/N0 值。红色和绿色半透明区域分别表示弹性功率的激活和停用时间戳。C1C-C1W DCB 和 C/N0 的阶跃变化之间的时间相关性显而易见，而在其他时段 DCB 值保持稳定在 0.2 ns 范围内。通过系统地比较所有卫星的 DCB 和弹性功率的时间变化，我们确认了它们的同步发生，证明频内 DCB 偏移确实是由弹性功率操作引起的。
+图\ref{fig:dcb_fig7}、图\ref{fig:dcb_fig8}以及图\ref{fig:dcb_fig9}说明了三次弹性功率事件期间所有 GPS 卫星的个体 C1C-C1W 频内 DCB 时间序列。在事件 1 期间，除 G05 外的所有 IIR-M 和 IIF 卫星均表现出 DCB 偏移偏差。在事件 2 和 3 期间，所有 IIR-M 和 IIF 卫星均表现出 DCB 偏移偏差。为了调查频内 DCB 偏移偏差是否确实受到弹性功率操作的影响，分析了 2024 年弹性功率事件 3 期间卫星 G32 的多站 S2W C/N0 与 C1C-C1W DCB 估计值之间的关系。图\ref{fig:dcb_fig10}展示了对比时间序列图，其中紫色虚点线代表 C1C-C1W DCB 估计值，彩色圆形标记表示来自多个跟踪站的 S2W C/N0 值。红色和绿色半透明区域分别表示弹性功率的激活和停用时间戳。C1C-C1W DCB 和 C/N0 的阶跃变化之间的时间相关性显而易见，而在其他时段 DCB 值保持稳定在 0.2 ns 范围内。通过系统地比较所有卫星的 DCB 和弹性功率的时间变化，确认了它们的同步发生，证明频内 DCB 偏移确实是由弹性功率操作引起的。
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{figures/c2/dcb/fig10.png}

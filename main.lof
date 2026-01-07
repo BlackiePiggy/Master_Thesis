@@ -9,63 +9,64 @@
 \contentsline {figure}{\numberline {2.7}{\ignorespaces 15分钟DCB短期估计方法的流程图}}{29}{figure.caption.23}%
 \contentsline {figure}{\numberline {2.8}{\ignorespaces 2024 年 6 月 3–4 日期间，MGEX 多站监测的 S2W C/N0 信号时间序列（PRN：G03、G24、G32）。不同颜色的空心圆点表示来自不同 MGEX 站点的 C/N0 观测序列；红色与绿色半透明区域分别表示弹性功率的开启与关闭时间段}}{31}{figure.caption.24}%
 \contentsline {figure}{\numberline {2.9}{\ignorespaces 2024 年第 45、155 与 178 日（DOY）期间，GPS IIR-M 与 IIF 卫星在弹性功率激活阶段的地面轨迹投影。三个事件中，弹性功率激活区域均位于 30°W 至 150°W 之间}}{33}{figure.caption.26}%
-\contentsline {figure}{\numberline {2.10}{\ignorespaces 2024 年三个弹性功率事件中，一日内 96 个 15 分钟时间窗估计所得残差的平均分布。横轴表示残差值，纵轴表示出现频率；蓝色柱状条展示残差直方图，橙色曲线表示拟合的正态分布。}}{34}{figure.caption.27}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces 2024 年三个弹性功率事件中，一日内 96 个 15 分钟时间窗估计所得残差的平均分布。横轴表示残差值，纵轴表示出现频率；蓝色柱状条展示残差直方图，橙色曲线表示拟合的正态分布。}}{33}{figure.caption.27}%
 \contentsline {figure}{\numberline {2.11}{\ignorespaces 2024 年三个弹性功率事件期间，GPS IIR-M 与 IIF 卫星的 C1C–C1W 和 C1W–C2W DCB 估计时间序列。不同颜色的点划线表示不同卫星的 DCB 时间序列，每个点对应一次基于 15 分钟时间窗的估计结果}}{35}{figure.caption.29}%
-\contentsline {figure}{\numberline {2.12}{\ignorespaces 2024 年弹性功率事件 3 期间，G32 卫星的多站 S2W C/N0 与 C1C–C1W DCB 估计结果对比。紫色点划线表示 C1C–C1W DCB 的时间序列，彩色圆点表示来自多个 MGEX 站的 S2W C/N0 观测值。红色与绿色半透明矩形分别表示弹性功率的开启与关闭时间。可以观察到，C1C–C1W DCB 的跃变与 C/N0 的变化相一致，而在非跃变时段内保持在 0.2 ns 范围内的稳定性，说明 DCB 的变化确实受到弹性功率切换的影响}}{37}{figure.caption.30}%
-\contentsline {figure}{\numberline {2.13}{\ignorespaces 弹性功率事件 1 期间所有 GPS 卫星的 C1C–C1W DCB 估计时间序列}}{38}{figure.caption.31}%
-\contentsline {figure}{\numberline {2.14}{\ignorespaces 弹性功率事件 2 期间所有 GPS 卫星的 C1C–C1W DCB 估计时间序列}}{38}{figure.caption.32}%
-\contentsline {figure}{\numberline {2.15}{\ignorespaces 弹性功率事件 3 期间所有 GPS 卫星的 C1C–C1W DCB 估计时间序列}}{39}{figure.caption.33}%
+\contentsline {figure}{\numberline {2.12}{\ignorespaces 2024 年弹性功率事件 3 期间，G32 卫星的多站 S2W C/N0 与 C1C–C1W DCB 估计结果对比。紫色点划线表示 C1C–C1W DCB 的时间序列，彩色圆点表示来自多个 MGEX 站的 S2W C/N0 观测值。红色与绿色半透明矩形分别表示弹性功率的开启与关闭时间。可以观察到，C1C–C1W DCB 的跃变与 C/N0 的变化相一致，而在非跃变时段内保持在 0.2 ns 范围内的稳定性，说明 DCB 的变化确实受到弹性功率切换的影响}}{36}{figure.caption.30}%
+\contentsline {figure}{\numberline {2.13}{\ignorespaces 弹性功率事件 1 期间所有 GPS 卫星的 C1C–C1W DCB 估计时间序列}}{37}{figure.caption.31}%
+\contentsline {figure}{\numberline {2.14}{\ignorespaces 弹性功率事件 2 期间所有 GPS 卫星的 C1C–C1W DCB 估计时间序列}}{37}{figure.caption.32}%
+\contentsline {figure}{\numberline {2.15}{\ignorespaces 弹性功率事件 3 期间所有 GPS 卫星的 C1C–C1W DCB 估计时间序列}}{38}{figure.caption.33}%
 \contentsline {figure}{\numberline {2.16}{\ignorespaces 弹性功率事件1期间所有GPS卫星的C1W–C2W DCB估计时间序列}}{39}{figure.caption.34}%
-\contentsline {figure}{\numberline {2.17}{\ignorespaces 弹性功率事件2期间所有GPS卫星的C1W–C2W DCB估计时间序列}}{40}{figure.caption.35}%
+\contentsline {figure}{\numberline {2.17}{\ignorespaces 弹性功率事件2期间所有GPS卫星的C1W–C2W DCB估计时间序列}}{39}{figure.caption.35}%
 \contentsline {figure}{\numberline {2.18}{\ignorespaces 弹性功率事件3期间所有GPS卫星的C1W–C2W DCB估计时间序列}}{40}{figure.caption.36}%
-\contentsline {figure}{\numberline {3.1}{\ignorespaces FPD算法整体流程图}}{48}{figure.caption.38}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces 2020 年 BAIE 测站接收的 G03 卫星 S2W 频点的原始 C/N0 时间序列（上图）及对应的 FPD 检测结果（下图）}}{51}{figure.caption.40}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces 2020 年 BAIE 测站接收的 G05 卫星 S2W 频点的原始 C/N0 时间序列（上图）及对应的 FPD 检测结果（下图）}}{52}{figure.caption.41}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces FPD高度角截止滤除数据示意图。绿色和红色的散点表示高于和低于30°高度角的载噪比数据。下方虚线表示高度角随时间的变化情况}}{53}{figure.caption.42}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces AFPD-DTW流程图}}{54}{figure.caption.43}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces 在不同场景下，DTW 方法与差分方法的异常评分结果对比}}{57}{figure.caption.44}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces 用于 AFPD-DTW 检测中事后处理与实时处理实验的站点全球分布}}{60}{figure.caption.46}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces 2020 年不同 GPS 卫星 S2W 信号的 DTW 异常得分时间序列。彩色圆点表示不同的 GPS 卫星。较高的 DTW 异常得分表示发生弹性功率变化事件的可能性更大}}{61}{figure.caption.47}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces 2021 年不同 GPS 卫星 S2W 信号的 DTW 异常得分时间序列}}{62}{figure.caption.48}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces 基于动态 IQR 阈值的方法用于区分多站点–多卫星组合的 S2W 信号中的弹性功率事件（红色）与非事件（蓝色）}}{65}{figure.caption.51}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces 2020–2021 年期间多站 S2W C/N0 时间序列中由 FPD 漏检的三次弹性功率模式转换}}{66}{figure.caption.52}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces 2024 年 6 月 1 日至 8 日期间 GPS 卫星的 AFPD-DTW 实时检测结果}}{67}{figure.caption.53}%
-\contentsline {figure}{\numberline {3.13}{\ignorespaces 2024 年 6 月 2 日期间具有弹性功率激活的 GPS 卫星轨迹}}{67}{figure.caption.56}%
-\contentsline {figure}{\numberline {3.14}{\ignorespaces 2024 年 6 月 4 日期间具有弹性功率激活的 GPS 卫星轨迹}}{68}{figure.caption.57}%
-\contentsline {figure}{\numberline {3.15}{\ignorespaces 2024 年 9 月 23 日和 2023 年 9 月 27 日 BDS 卫星在 S6I 信号上触发弹性功率时的轨迹}}{70}{figure.caption.59}%
-\contentsline {figure}{\numberline {3.16}{\ignorespaces DLFPD架构}}{72}{figure.caption.62}%
-\contentsline {figure}{\numberline {3.17}{\ignorespaces DLFPD实验中来自全球分布的 30 个 IGS 测站，包含20个测站的sta\_list1和10个测站的sta\_list2}}{75}{figure.caption.64}%
-\contentsline {figure}{\numberline {3.18}{\ignorespaces 基于 MATLAB 的DLFPD交互式数据标注工具操作界面}}{77}{figure.caption.66}%
-\contentsline {figure}{\numberline {3.19}{\ignorespaces DLFPD空间泛化性实验ROC曲线}}{80}{figure.caption.68}%
-\contentsline {figure}{\numberline {3.20}{\ignorespaces DLFPD空间泛化性实验混淆矩阵}}{80}{figure.caption.69}%
-\contentsline {figure}{\numberline {3.21}{\ignorespaces 使用DLFPD对2024年6月1日NNOR测站的G31数据检测的S2W原始数据与检测结果}}{83}{figure.caption.72}%
-\contentsline {figure}{\numberline {3.22}{\ignorespaces 使用DLFPD对2024年6月1日NNOR测站的G32数据检测的S2W原始数据与检测结果}}{83}{figure.caption.73}%
-\contentsline {figure}{\numberline {3.23}{\ignorespaces 使用DLFPD对2024年6月1日CUSV测站的G01数据检测的原始数据与检测结果}}{84}{figure.caption.74}%
-\contentsline {figure}{\numberline {3.24}{\ignorespaces 使用DLFPD对2024年6月1日NKLG测站的G17数据检测的原始数据与检测结果}}{85}{figure.caption.75}%
-\contentsline {figure}{\numberline {3.25}{\ignorespaces 使用DLFPD对2024年6月7日CUSV测站的G12数据检测的原始数据与检测结果(使用20测站训练数据模型)}}{85}{figure.caption.76}%
-\contentsline {figure}{\numberline {3.26}{\ignorespaces 使用DLFPD对2024年6月7日CUSV测站的G12数据检测的原始数据与检测结果(使用30测站训练数据模型)}}{86}{figure.caption.77}%
-\contentsline {figure}{\numberline {3.27}{\ignorespaces DLFPD时间泛化性实验ROC曲线}}{86}{figure.caption.78}%
-\contentsline {figure}{\numberline {3.28}{\ignorespaces DLFPD时间泛化性实验混淆矩阵}}{87}{figure.caption.79}%
-\contentsline {figure}{\numberline {3.29}{\ignorespaces DLFPD时空泛化性实验ROC曲线}}{89}{figure.caption.82}%
-\contentsline {figure}{\numberline {3.30}{\ignorespaces DLFPD时空泛化性实验混淆矩阵}}{89}{figure.caption.83}%
-\contentsline {figure}{\numberline {3.31}{\ignorespaces DLFPD消融实验各实验组的精确率、召回率及 F1 值对比图}}{91}{figure.caption.86}%
-\contentsline {figure}{\numberline {4.1}{\ignorespaces 基于融合多窗口统计特征的 LSTM 自编码器遥测数据异常检测方法流程图}}{102}{figure.caption.91}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces 基于融合多窗口统计特征的 LSTM 自编码器检测实验数据预处理与特征矩阵构建方法}}{103}{figure.caption.92}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces 时序自编码器模型设计与LSTM单元结构}}{104}{figure.caption.93}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces 基于融合多窗口统计特征的 LSTM 自编码器实验的训练数据与测试数据。其中训练数据为模拟星载产品遥测时序数据（左上），测试数据包含正常数据（左中）、斜率漂移异常数据（左下）、离群点异常数据（右上）、整体漂移异常数据（右中）、混合异常数据（右下）}}{105}{figure.caption.94}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces 基于融合多窗口统计特征的 LSTM 自编码器实验的正常数据（左）与斜率漂移异常数据（右）的原始遥测时序、平滑后时序与异常得分时序}}{106}{figure.caption.95}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces 基于融合多窗口统计特征的 LSTM 自编码器实验的离群点异常数据（左）与整体漂移异常数据（右）的原始遥测时序、平滑后时序与异常得分时序}}{107}{figure.caption.96}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces 基于融合多窗口统计特征的 LSTM 自编码器实验的混合异常数据的原始遥测时序、平滑后时序与异常得分时序}}{108}{figure.caption.97}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces 基于STL分解的混合神经网络异常检测方法流程图}}{111}{figure.caption.100}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces 多维时序时间窗口降采样示意图}}{112}{figure.caption.101}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces 时序STL分解示意图}}{114}{figure.caption.102}%
-\contentsline {figure}{\numberline {4.11}{\ignorespaces 基于STL分解的混合神经网络异常检测实验的正常数据（左列）与离群点异常数据（右列）的原始遥测时序、降采样时序、分解后趋势项时序、周期项时序、残差项时序、异常分数时序与检测结果时序示意图}}{115}{figure.caption.103}%
-\contentsline {figure}{\numberline {4.12}{\ignorespaces 基于STL分解的混合神经网络异常检测实验的整体漂移数据（左列）与斜率变化数据（右列）的原始遥测时序、降采样时序、分解后趋势项时序、周期项时序、残差项时序、异常分数时序与检测结果时序示意图}}{117}{figure.caption.104}%
-\contentsline {figure}{\numberline {4.13}{\ignorespaces 基于STL分解的混合神经网络异常检测实验的混合异常数据的原始遥测时序、降采样时序、分解后趋势项时序、周期项时序、残差项时序、异常分数时序与检测结果时序示意图}}{118}{figure.caption.105}%
-\contentsline {figure}{\numberline {5.1}{\ignorespaces 基于15分钟短窗口估计得到的BDS（具有弹性功率功能）卫星 C2I-C6I 频段在2021年第29天的DCB时间序列}}{128}{figure.caption.106}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces 基于15分钟短窗口估计得到的BDS（不具有弹性功率功能）卫星 C2I-C6I 频段在2021年第29天的DCB时间序列}}{128}{figure.caption.107}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces BDS 非差非组合 PPP 在2021年第29日弹性功率事件期间使用不同策略DCB产品的 ENU 定位误差}}{133}{figure.caption.110}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces BDS 单频 PPP 在2021年第29日弹性功率事件期间使用不同策略DCB产品的 ENU 定位误差}}{137}{figure.caption.113}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces FPD算法整体流程图}}{46}{figure.caption.38}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces 2020 年 BAIE 测站接收的 G03 卫星 S2W 频点的原始 C/N0 时间序列（上图）及对应的 FPD 检测结果（下图）}}{49}{figure.caption.40}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces 2020 年 BAIE 测站接收的 G05 卫星 S2W 频点的原始 C/N0 时间序列（上图）及对应的 FPD 检测结果（下图）}}{49}{figure.caption.41}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces FPD高度角截止滤除数据示意图。绿色和红色的散点表示高于和低于30°高度角的载噪比数据。下方虚线表示高度角随时间的变化情况}}{50}{figure.caption.42}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces AFPD-DTW流程图}}{52}{figure.caption.43}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces 在不同场景下，DTW 方法与差分方法的异常评分结果对比}}{55}{figure.caption.44}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces 用于 AFPD-DTW 检测中事后处理与实时处理实验的站点全球分布}}{58}{figure.caption.46}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces 2020 年不同 GPS 卫星 S2W 信号的 DTW 异常得分时间序列。彩色圆点表示不同的 GPS 卫星。较高的 DTW 异常得分表示发生弹性功率变化事件的可能性更大}}{59}{figure.caption.47}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces 2021 年不同 GPS 卫星 S2W 信号的 DTW 异常得分时间序列}}{60}{figure.caption.48}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces 基于动态 IQR 阈值的方法用于区分多站点–多卫星组合的 S2W 信号中的弹性功率事件（红色）与非事件（蓝色）}}{63}{figure.caption.51}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces 2020–2021 年期间多站 S2W C/N0 时间序列中由 FPD 漏检的三次弹性功率模式转换}}{64}{figure.caption.52}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces 2024 年 6 月 1 日至 8 日期间 GPS 卫星的 AFPD-DTW 实时检测结果}}{65}{figure.caption.53}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces 2024 年 6 月 2 日期间具有弹性功率激活的 GPS 卫星轨迹}}{65}{figure.caption.56}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces 2024 年 6 月 4 日期间具有弹性功率激活的 GPS 卫星轨迹}}{66}{figure.caption.57}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces 2024 年 9 月 23 日和 2023 年 9 月 27 日 BDS 卫星在 S6I 信号上触发弹性功率时的轨迹}}{68}{figure.caption.59}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces DLFPD架构}}{70}{figure.caption.62}%
+\contentsline {figure}{\numberline {3.17}{\ignorespaces DLFPD实验中来自全球分布的 30 个 IGS 测站，包含20个测站的sta\_list1和10个测站的sta\_list2}}{73}{figure.caption.64}%
+\contentsline {figure}{\numberline {3.18}{\ignorespaces 基于 MATLAB 的DLFPD交互式数据标注工具操作界面}}{74}{figure.caption.66}%
+\contentsline {figure}{\numberline {3.19}{\ignorespaces DLFPD空间泛化性实验ROC曲线}}{77}{figure.caption.68}%
+\contentsline {figure}{\numberline {3.20}{\ignorespaces DLFPD空间泛化性实验混淆矩阵}}{78}{figure.caption.69}%
+\contentsline {figure}{\numberline {3.21}{\ignorespaces 使用DLFPD对2024年6月1日NNOR测站的G31数据检测的S2W原始数据与检测结果}}{80}{figure.caption.72}%
+\contentsline {figure}{\numberline {3.22}{\ignorespaces 使用DLFPD对2024年6月1日NNOR测站的G32数据检测的S2W原始数据与检测结果}}{81}{figure.caption.73}%
+\contentsline {figure}{\numberline {3.23}{\ignorespaces 使用DLFPD对2024年6月1日CUSV测站的G01数据检测的原始数据与检测结果}}{82}{figure.caption.74}%
+\contentsline {figure}{\numberline {3.24}{\ignorespaces 使用DLFPD对2024年6月1日NKLG测站的G17数据检测的原始数据与检测结果}}{82}{figure.caption.75}%
+\contentsline {figure}{\numberline {3.25}{\ignorespaces 使用DLFPD对2024年6月7日CUSV测站的G12数据检测的原始数据与检测结果(使用20测站训练数据模型)}}{83}{figure.caption.76}%
+\contentsline {figure}{\numberline {3.26}{\ignorespaces 使用DLFPD对2024年6月7日CUSV测站的G12数据检测的原始数据与检测结果(使用30测站训练数据模型)}}{83}{figure.caption.77}%
+\contentsline {figure}{\numberline {3.27}{\ignorespaces DLFPD时间泛化性实验ROC曲线}}{84}{figure.caption.78}%
+\contentsline {figure}{\numberline {3.28}{\ignorespaces DLFPD时间泛化性实验混淆矩阵}}{85}{figure.caption.79}%
+\contentsline {figure}{\numberline {3.29}{\ignorespaces DLFPD时空泛化性实验ROC曲线}}{86}{figure.caption.82}%
+\contentsline {figure}{\numberline {3.30}{\ignorespaces DLFPD时空泛化性实验混淆矩阵}}{87}{figure.caption.83}%
+\contentsline {figure}{\numberline {3.31}{\ignorespaces DLFPD消融实验各实验组的精确率、召回率及 F1 值对比图}}{89}{figure.caption.86}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces 基于融合多窗口统计特征的 LSTM 自编码器遥测数据异常检测方法流程图}}{98}{figure.caption.91}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces 基于融合多窗口统计特征的 LSTM 自编码器检测实验数据预处理与特征矩阵构建方法}}{99}{figure.caption.92}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces 时序自编码器模型设计与LSTM单元结构}}{100}{figure.caption.93}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces 基于融合多窗口统计特征的 LSTM 自编码器实验的训练数据与测试数据。其中训练数据为模拟星载产品遥测时序数据（左上），测试数据包含正常数据（左中）、斜率漂移异常数据（左下）、离群点异常数据（右上）、整体漂移异常数据（右中）、混合异常数据（右下）}}{101}{figure.caption.94}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces 基于融合多窗口统计特征的 LSTM 自编码器实验的正常数据（左）与斜率漂移异常数据（右）的原始遥测时序、平滑后时序与异常得分时序}}{102}{figure.caption.95}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces 基于融合多窗口统计特征的 LSTM 自编码器实验的离群点异常数据（左）与整体漂移异常数据（右）的原始遥测时序、平滑后时序与异常得分时序}}{103}{figure.caption.96}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces 基于融合多窗口统计特征的 LSTM 自编码器实验的混合异常数据的原始遥测时序、平滑后时序与异常得分时序}}{104}{figure.caption.97}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces 基于STL分解的混合神经网络异常检测方法流程图}}{107}{figure.caption.100}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces 多维时序时间窗口降采样示意图}}{108}{figure.caption.101}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces 时序STL分解示意图}}{110}{figure.caption.102}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces 基于STL分解的混合神经网络异常检测实验的正常数据（左列）与离群点异常数据（右列）的原始遥测时序、降采样时序、分解后趋势项时序、周期项时序、残差项时序、异常分数时序与检测结果时序示意图}}{111}{figure.caption.103}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces 基于STL分解的混合神经网络异常检测实验的整体漂移数据（左列）与斜率变化数据（右列）的原始遥测时序、降采样时序、分解后趋势项时序、周期项时序、残差项时序、异常分数时序与检测结果时序示意图}}{113}{figure.caption.104}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces 基于STL分解的混合神经网络异常检测实验的混合异常数据的原始遥测时序、降采样时序、分解后趋势项时序、周期项时序、残差项时序、异常分数时序与检测结果时序示意图}}{114}{figure.caption.105}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces 基于15分钟短窗口估计得到的BDS（具有弹性功率功能）卫星 C2I-C6I 频段在2021年第29天的DCB时间序列}}{123}{figure.caption.106}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces 基于15分钟短窗口估计得到的BDS（不具有弹性功率功能）卫星 C2I-C6I 频段在2021年第29天的DCB时间序列}}{124}{figure.caption.107}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces 2021年第029天MAL2测站的BDS卫星可见性。带*号卫星具有弹性功率功能}}{129}{figure.caption.110}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces BDS UC-PPP 在2021年第29日弹性功率事件期间使用不同策略DCB产品的 ENU 定位误差}}{130}{figure.caption.111}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces BDS SF-PPP 在2021年第29日弹性功率事件期间使用不同策略DCB产品的 ENU 定位误差}}{133}{figure.caption.114}%
 \contentsfinish 
 \contentsfinish 
 \contentsfinish 
