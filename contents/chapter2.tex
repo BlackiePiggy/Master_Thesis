@@ -1,6 +1,10 @@
 % !TEX root = ../main.tex
 
-\chapter{GNSS弹性功率机理与影响}
+\chapter{GNSS弹性功率机理及其对观测信号特性的影响}
+
+弹性功率事件是GNSS现代化进程中引入的一项典型卫星端主动控制机制。其引发的信号物理特性变化已被证明会对高精度GNSS数据处理产生显著影响。特别是在PPP及其模糊度固定应用中，观测模型对信号一致性和硬件偏差稳定性高度敏感。弹性功率开启期间产生的信号功率突变及卫星端硬件延迟漂移，将直接破坏DCB短期保持稳定的经典假设，进而导致定位收敛性能和解算精度下降。
+
+因此，有必要从机理层面对弹性功率进行系统分析，明确其运行方式、时空分布特征以及对观测信号和卫星 DCB 的影响规律。本章首先介绍GNSS弹性功率的基本定义、发展历程及不同卫星型号下的运行模式；随后结合卫星地面轨迹与C/N0观测，揭示弹性功率在观测层面呈现的阶跃提升与整体提升特征；最后从硬件通道特性变化出发，分析弹性功率导致卫星DCB短时不连续的物理原因，并通过实测数据量化其影响幅度，为后续异常检测方法设计与高精度定位修正策略研究提供理论基础。
 
 \section{GNSS弹性功率的定义}
 \subsection{基本概念}
@@ -114,7 +118,7 @@ Mode 10 & IIR-M/IIF & 127--131, 2023 & 120$^\circ$W / 36$^\circ$N; 5$^\circ$W / 
 弹性功率的激活会引起 GNSS 信号物理特性的变化，从而对观测值、相关产品以及最终的定位精度产生显著影响，是高精度用户必须关注的问题。已有研究表明，弹性功率是导致卫星DCB产生显著变化和不确定性的主要因素之一 \cite{zhang2025analysis,xiang2020understanding,liu2024characteristics,abraha2024gnss,esenbuga2020impact,liu2025effects,esenbuuga2020impact}。而 DCB 的精确估计对于精密电离层建模、高精度定位与授时至关重要 \cite{esenbuga2020impact,esenbuuga2020impact}。
 
 \subsubsection{DCB定义与影响}
-差分码偏差（Differential Code Bias，DCB）是指GNSS系统中卫星发射的信号之间或接收机接收到的信号之间的伪码测量误差\cite{Blanchard1993GPS–Theory, Håkansson2017Review}。这种误差来源于设备的硬件特性，如卫星发射天线的延迟差异或接收机信号处理过程中不同频率间的电子干扰\cite{montenbruck2014differential}。
+差分码偏差（Differential Code Bias，DCB）是指GNSS系统中卫星发射的信号之间或接收机接收到的信号之间的伪码测量误差\cite{Blanchard1993GPS, Håkansson2017Review}。这种误差来源于设备的硬件特性，如卫星发射天线的延迟差异或接收机信号处理过程中不同频率间的电子干扰\cite{montenbruck2014differential}。
 
 DCB分为卫星DCB和接收机DCB，分别反映了信号从卫星发射到天线相位中心、以及从接收机天线相位中心到信号捕获跟踪过程中的硬件延迟差异\cite{li2018estimation}。DCB通常以纳秒或米为单位测量，对GNSS信号的伪距测量和载波相位数据的处理有重要影响\cite{Zhang2023A}。
 

@@ -1,6 +1,6 @@
 % !TEX root = ../main.tex
 
-\chapter{GNSS星载产品多维时序异常检测方法}
+\chapter{基于多维遥测时序的GNSS星载产品异常检测方法}
 
 星载设备作为导航信号的物理源头，其运行状态直接决定了定位服务的精度与可靠性。设备的老化或故障将导致信号畸变，进而影响用户端定位。星载设备的健康状态主要由下行的多维遥测数据表征。鉴于故障模式具有渐进性、隐蔽性及强耦合性，传统的阈值监测方法难以满足早期预警需求。如何在故障显性化导致信号质量下降甚至设备故障之前，利用多维遥测数据精准识别隐性异常，是提升系统完好性的关键。
 基于此，本章将研究拓展至遥测数据域，聚焦于老化突发失效与未知硬件故障。针对遥测数据的高维非线性及周期性特征，分别提出了两种基于深度学习的检测方法，并利用基于仿真遥测数据进行了实验验证模型有效性。
@@ -416,7 +416,7 @@ STL 的核心思想是通过嵌套的内循环和外循环迭代计算各分量�
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=1\linewidth]{figures/c4/pic5.png}
+\includegraphics[width=1\linewidth]{figures/c4/pic5r.png}
 \bicaption{基于STL分解的混合神经网络异常检测实验的正常数据（左列）与离群点异常数据（右列）的原始遥测时序、降采样时序、分解后趋势项时序、周期项时序、残差项时序、异常分数时序与检测结果时序示意图}{Schematic illustration of the raw telemetry time series, downsampled time series, decomposed trend component, seasonal component, residual component, anomaly score time series, and detection result time series for normal data (left column) and outlier anomaly data (right column) in the STL decomposition--based hybrid neural network anomaly detection experiment.}
 \label{fig:pic5}
 \end{figure}
@@ -429,7 +429,7 @@ STL 的核心思想是通过嵌套的内循环和外循环迭代计算各分量�
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=1\linewidth]{figures/c4/pic6.png}
+\includegraphics[width=1\linewidth]{figures/c4/pic6r.png}
 \bicaption{基于STL分解的混合神经网络异常检测实验的整体漂移数据（左列）与斜率变化数据（右列）的原始遥测时序、降采样时序、分解后趋势项时序、周期项时序、残差项时序、异常分数时序与检测结果时序示意图}{Schematic illustration of the raw telemetry time series, downsampled time series, decomposed trend component, seasonal component, residual component, anomaly score time series, and detection result time series for overall drift data (left column) and slope change data (right column) in the STL decomposition--based hybrid neural network anomaly detection experiment.}
 \label{fig:pic6}
 \end{figure}
